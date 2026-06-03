@@ -1,0 +1,127 @@
+{
+  "materia": "Redes de Datos (UTN FRC)",
+  "preguntas": [
+    {
+      "id": 1,
+      "texto": "Un administrador de red desea garantizar que el switch conmute sólo tramas correctas. Indique cuál de las siguientes técnicas deberá configurar:",
+      "respuestas": [
+        { "id": "a", "texto": "Cut-through", "correcta": false },
+        { "id": "b", "texto": "Almacenamiento y re-envío", "correcta": true },
+        { "id": "c", "texto": "Tabla CAM", "correcta": false },
+        { "id": "d", "texto": "Fast-switch", "correcta": false },
+        { "id": "e", "texto": "Libre de fragmentos", "correcta": false }
+      ]
+    },
+    {
+      "id": 2,
+      "texto": "Cuáles de las siguientes afirmaciones describen el campo suma de verificación del protocolo IPv4 (seleccione dos):",
+      "respuestas": [
+        { "id": "a", "texto": "Permite saber si el origen debe retransmitir un paquete dañado", "correcta": false },
+        { "id": "b", "texto": "Se utiliza para garantizar la integridad de todo el paquete IPv4", "correcta": false },
+        { "id": "c", "texto": "Lo calculan sólo los routers para saber si encaminar o descartar el paquete", "correcta": true },
+        { "id": "d", "texto": "Se calcula en el origen, el destino y dos veces en cada router", "correcta": false },
+        { "id": "e", "texto": "Permite detectar errores en la cabecera del paquete IPv4", "correcta": true }
+      ]
+    },
+    {
+      "id": 3,
+      "texto": "A partir de la topología planteada, indique cuáles de las siguientes afirmaciones son correctas con respecto a los tipos de puertos:",
+      "imagen": "topologia_stp_p3.png",
+      "respuestas": [
+        { "id": "a", "texto": "Los puertos F0/8, F0/9 y F0/10 son puertos raíz", "correcta": false },
+        { "id": "b", "texto": "Los puertos F0/3, F0/4 y F0/5 son puertos designados", "correcta": false },
+        { "id": "c", "texto": "Los puertos F0/2 y F0/7 son puertos designados", "correcta": false },
+        { "id": "d", "texto": "Los puertos F0/2, F0/4 y F0/7 son puertos raíz", "correcta": true },
+        { "id": "e", "texto": "Los puertos F0/8, F0/9 y F0/10 son puertos designados", "correcta": true }
+      ]
+    },
+    {
+      "id": 4,
+      "texto": "En el método de acceso al medio utilizado por las redes inalámbricas, los dispositivos cuando tienen que transmitir una trama:",
+      "respuestas": [
+        { "id": "a", "texto": "Escuchan el medio y si está libre, envían los datos hacia el medio de transmisión", "correcta": false },
+        { "id": "b", "texto": "Esperan que les llegue una trama de control denominada token para poder transmitir datos", "correcta": false },
+        { "id": "c", "texto": "Escuchan el medio y si está libre, le avisan al emisor que están dispuestos a recibir datos mediante la trama de control RTS", "correcta": false },
+        { "id": "d", "texto": "Escuchan el medio y si está libre, esperan un tiempo aleatorio y envían una trama RTS indicando dirección MAC origen y dirección MAC destino", "correcta": true },
+        { "id": "e", "texto": "Garantizan que las tramas que colisionan, sean confirmadas por el receptor con una trama de control ACK", "correcta": false }
+      ]
+    },
+    {
+      "id": 5,
+      "texto": "Una empresa posee 30 puestos de trabajo en la sucursal de Córdoba, todos conectados con Access point. Se dice que esa red es:",
+      "respuestas": [
+        { "id": "a", "texto": "De banda angosta, dúplex, WLAN", "correcta": false },
+        { "id": "b", "texto": "Banda ancha, dúplex, PAN", "correcta": false },
+        { "id": "c", "texto": "De banda ancha, dúplex, LAN", "correcta": false },
+        { "id": "d", "texto": "De banda ancha, semiduplex, WLAN", "correcta": true },
+        { "id": "e", "texto": "De banda ancha, semiduplex, WAN", "correcta": false }
+      ]
+    },
+    {
+      "id": 6,
+      "texto": "Un switch de 24 bocas (puertos) está conectado a un hub (en el puerto 1), a un router (en el puerto 2) y a computadoras el resto de los puertos. Determine cuántos dominios de broadcast existen:",
+      "respuestas": [
+        { "id": "a", "texto": "1", "correcta": true },
+        { "id": "b", "texto": "Depende si se conectan PC, hubs o switches", "correcta": false },
+        { "id": "c", "texto": "3", "correcta": false },
+        { "id": "d", "texto": "22", "correcta": false },
+        { "id": "e", "texto": "23", "correcta": false },
+        { "id": "f", "texto": "24", "correcta": false },
+        { "id": "g", "texto": "2", "correcta": false }
+      ]
+    },
+    {
+      "id": 7,
+      "texto": "Cuáles de los siguientes protocolos pertenecen a la capa de transporte de la arquitectura TCP/IP (seleccione dos):",
+      "respuestas": [
+        { "id": "a", "texto": "UDP", "correcta": true },
+        { "id": "b", "texto": "IP", "correcta": false },
+        { "id": "c", "texto": "RARP", "correcta": false },
+        { "id": "d", "texto": "ICMP", "correcta": false },
+        { "id": "e", "texto": "VoIP", "correcta": false },
+        { "id": "f", "texto": "DHCP", "correcta": false },
+        { "id": "g", "texto": "TCP", "correcta": true }
+      ]
+    },
+    {
+      "id": 8,
+      "texto": "Indique cuál es el tamaño mínimo de la cabecera de un paquete IPv4:",
+      "respuestas": [
+        { "id": "a", "texto": "15 bytes", "correcta": false },
+        { "id": "b", "texto": "6 bytes", "correcta": false },
+        { "id": "c", "texto": "25 bytes", "correcta": false },
+        { "id": "d", "texto": "40 bytes", "correcta": false },
+        { "id": "e", "texto": "60 bytes", "correcta": false },
+        { "id": "f", "texto": "20 bytes", "correcta": true },
+        { "id": "g", "texto": "18 bytes", "correcta": false },
+        { "id": "h", "texto": "30 bytes", "correcta": false }
+      ]
+    },
+    {
+      "id": 9,
+      "texto": "Teniendo en cuenta que dos dispositivos intercambian datos entre sí a través de Internet. ¿Cuál de los siguientes protocolos garantiza que la información llegue lo más rápido posible aunque puede que llegue desordenada?",
+      "respuestas": [
+        { "id": "a", "texto": "DNS", "correcta": false },
+        { "id": "b", "texto": "TCP", "correcta": false },
+        { "id": "c", "texto": "HTTP", "correcta": false },
+        { "id": "d", "texto": "UDP", "correcta": true },
+        { "id": "e", "texto": "FTP", "correcta": false },
+        { "id": "f", "texto": "ARP", "correcta": false },
+        { "id": "g", "texto": "ICMP", "correcta": false }
+      ]
+    },
+    {
+      "id": 10,
+      "texto": "Determine cuáles de las siguientes direcciones IPv4 se podría utilizar para que una computadora tenga conectividad en Internet (seleccione tres opciones):",
+      "respuestas": [
+        { "id": "a", "texto": "172.32.60.90", "correcta": true },
+        { "id": "b", "texto": "11.10.10.10", "correcta": true },
+        { "id": "c", "texto": "192.168.32.48", "correcta": false },
+        { "id": "d", "texto": "172.29.0.90", "correcta": false },
+        { "id": "e", "texto": "172.26.56.0", "correcta": false },
+        { "id": "f", "texto": "194.168.10.6", "correcta": true },
+        { "id": "g", "texto": "10.10.12.14", "correcta": false }
+      ]
+    }
+  ]
+}
