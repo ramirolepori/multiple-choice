@@ -51,12 +51,12 @@
         {
           "id": "c",
           "texto": "Lo calculan sólo los routers para saber si encaminar o descartar el paquete",
-          "correcta": true
+          "correcta": false
         },
         {
           "id": "d",
           "texto": "Se calcula en el origen, el destino y dos veces en cada router",
-          "correcta": false
+          "correcta": true
         },
         {
           "id": "e",
@@ -65,7 +65,7 @@
         }
       ],
       "parcial": 1,
-      "explicacion": "La suma de verificación cubre solo la cabecera IPv4 (no el paquete completo) y permite detectar errores en ella. Los routers la recalculan porque el TTL cambia en cada salto."
+      "explicacion": "La suma de verificación de IPv4 se calcula 1 vez en el origen, 2 veces en cada router (verifica la entrante + recalcula por cambio de TTL) y 1 vez en el destino. Solo cubre la cabecera, no el paquete completo."
     },
     {
       "id": 3,
@@ -1470,6 +1470,250 @@
         {
           "id": "g",
           "texto": "Se implementan mediante el protocolo IEEE 802.1d",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "parcial": 1,
+      "texto": "Teniendo en cuenta la arquitectura TCP/IP, determine cuál de sus capas recibe paquetes, los encapsula y los entrega a dispositivos conectados a la misma red:",
+      "explicacion": "La capa Host a red (acceso a la red / enlace) recibe paquetes IP de la capa Interred, los encapsula en tramas Ethernet/WiFi y los entrega a dispositivos en la misma red local. Interred (IP) encamina entre redes distintas, no dentro de la misma red.",
+      "respuestas": [
+        { "id": "a", "texto": "Aplicación", "correcta": false },
+        { "id": "b", "texto": "Sesión", "correcta": false },
+        { "id": "c", "texto": "Host a red", "correcta": true },
+        { "id": "d", "texto": "Interred", "correcta": false },
+        { "id": "e", "texto": "Transporte", "correcta": false }
+      ]
+    },
+    {
+      "id": 46,
+      "parcial": 1,
+      "texto": "La tecnología 802.16 se puede clasificar como una red:",
+      "explicacion": "IEEE 802.16 = WiMAX = WMAN (Wireless Metropolitan Area Network). Cubre distancias hasta 70 km en frecuencias de 2.4 a 5.8 GHz. No es WLAN (802.11) ni WPAN (802.15/Bluetooth).",
+      "respuestas": [
+        { "id": "a", "texto": "WLAN", "correcta": false },
+        { "id": "b", "texto": "LAN", "correcta": false },
+        { "id": "c", "texto": "MAN", "correcta": false },
+        { "id": "d", "texto": "WMAN", "correcta": true },
+        { "id": "e", "texto": "WPAN", "correcta": false },
+        { "id": "f", "texto": "PAN", "correcta": false }
+      ]
+    },
+    {
+      "id": 47,
+      "parcial": 1,
+      "texto": "En cuáles de los siguientes dispositivos se ejecuta el método de acceso al medio CSMA/CA (seleccione dos):",
+      "explicacion": "CSMA/CA es el método de acceso de redes 802.11 (WiFi). Lo ejecutan las placas de red inalámbricas (NICs WiFi) y los Access Points. Los hubs y switches usan CSMA/CD o conmutación directa. Los cables UTP son solo medios físicos.",
+      "respuestas": [
+        { "id": "a", "texto": "Placas de red inalámbricas", "correcta": true },
+        { "id": "b", "texto": "Hubs", "correcta": false },
+        { "id": "c", "texto": "Placas de red Ethernet", "correcta": false },
+        { "id": "d", "texto": "Access Point", "correcta": true },
+        { "id": "e", "texto": "Switches", "correcta": false },
+        { "id": "f", "texto": "Cable UTP", "correcta": false }
+      ]
+    },
+    {
+      "id": 48,
+      "parcial": 1,
+      "texto": "Si se realiza un AND booleano entre una dirección IPv4 de una PC y una máscara de subred, se obtiene como resultado:",
+      "explicacion": "IP AND máscara = dirección de red. Los bits de red se conservan (AND con 1) y los de host se anulan (AND con 0), revelando la subred a la que pertenece la dirección.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La dirección de la subred a la cual pertenece la PC",
+          "correcta": true
+        },
+        { "id": "b", "texto": "La máscara de red", "correcta": false },
+        { "id": "c", "texto": "La dirección MAC de la PC", "correcta": false },
+        {
+          "id": "d",
+          "texto": "La clase a la cual pertenece la dirección IP",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La dirección del gateway por defecto de la PC",
+          "correcta": false
+        },
+        { "id": "f", "texto": "La máscara de subred", "correcta": false }
+      ]
+    },
+    {
+      "id": 49,
+      "parcial": 2,
+      "texto": "Cuáles de las siguientes afirmaciones son correctas con respecto a la cabecera del protocolo IPv6 (seleccione tres opciones):",
+      "explicacion": "a: IPv6 tiene 7 campos vs 14 de IPv4. d: cabecera siempre 40 bytes fijos (eliminaron el campo IHL). f: todos los campos de fragmentación se eliminaron del encabezado principal (la fragmentación solo la hace el origen vía extension header). b=FALSO (IPv6 no tiene checksum). c=FALSO (versión 6 en binario = 0110, no 0101). e=FALSO (IPv6 usa 'Hop Limit', no 'TTL').",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Posee menos campos que la cabecera del protocolo IPv4",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Se calcula el checksum de la cabecera en cada salto, en el origen y en el destino",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El campo versión en binario es '0101'",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La longitud de la cabecera es fija",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "El campo TTL garantiza que no se produzcan bucles de encaminamiento",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Elimina los campos relacionados a la fragmentación de paquetes",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "parcial": 1,
+      "texto": "Cuál de las siguientes afirmaciones es correcta sobre el direccionamiento IPv4:",
+      "explicacion": "RFC 1918 define 256 redes Clase C privadas (192.168.0.0/24 a 192.168.255.0/24). La opción dice 255 que es muy cercano (mínima imprecisión). Las demás son claramente incorrectas: solo hay 16 redes B privadas (no 255) y 1 red A privada (no 10).",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se definieron 255 redes clase B para direccionamiento privado",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Se definieron 255 redes clase C para direccionamiento privado",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Se definió una única dirección de red clase A para direccionamiento público",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Se definieron 16 redes clase B para direccionamiento público",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Se definieron 10 redes clase A para direccionamiento privado",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "parcial": 1,
+      "texto": "Determine a partir de la topología, cuáles de las afirmaciones son correctas (seleccione dos):",
+      "imagen": "/images/topologia_p51.png",
+      "explicacion": "El router separa 2 dominios de broadcast (b). Colisión: hub + sus 4 PCs = 1 dominio; enlace router→switch = 1; cada uno de los 5 puertos del switch con PCs = 5 → total 7 dominios de colisión (c).",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Existen 5 dominios de colisión",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Existen dos dominios de broadcast",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Existen 7 dominios de colisión",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Existe un dominio de broadcast",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Existen 4 dominios de colisión",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Existen 3 dominios de broadcast",
+          "correcta": false
+        },
+        {
+          "id": "g",
+          "texto": "Existen 6 dominios de colisión",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "parcial": 1,
+      "texto": "Los estándares desarrollados para redes LAN son definidos y administrados por una serie de autoridades reconocidas, entre las cuales se incluye:",
+      "explicacion": "IEEE es el organismo que define los estándares 802.x (802.3 Ethernet, 802.11 WiFi, 802.1q VLANs, etc.). ITU se enfoca en telecomunicaciones y WAN. IETF estandariza protocolos de Internet. ISO es para estándares generales. Ethernet es una tecnología, no un organismo.",
+      "respuestas": [
+        { "id": "a", "texto": "IBM", "correcta": false },
+        { "id": "b", "texto": "OSI", "correcta": false },
+        { "id": "c", "texto": "ITU", "correcta": false },
+        { "id": "d", "texto": "Ethernet", "correcta": false },
+        { "id": "e", "texto": "IEEE", "correcta": true },
+        { "id": "f", "texto": "IETF", "correcta": false },
+        { "id": "g", "texto": "IXP", "correcta": false }
+      ]
+    },
+    {
+      "id": 53,
+      "parcial": 1,
+      "texto": "A partir de la siguiente topología, determine qué switch se elegirá como Switch raíz cuando se ejecute el protocolo de árbol de expansión (STP):",
+      "imagen": "/images/topologia_stp_p53.png",
+      "explicacion": "En STP, el root bridge se elige por menor Bridge ID = menor prioridad (y si hay empate, menor MAC). Switch2 tiene prioridad 12536, claramente menor que las demás (Switch0=32768, Switch1=48252, Switch3=32768). Switch2 es el root bridge.",
+      "respuestas": [
+        { "id": "a", "texto": "Switch0 y switch3", "correcta": false },
+        { "id": "b", "texto": "Switch0", "correcta": false },
+        { "id": "c", "texto": "Switch2", "correcta": true },
+        { "id": "d", "texto": "Switch3", "correcta": false },
+        { "id": "e", "texto": "Switch1", "correcta": false }
+      ]
+    },
+    {
+      "id": 54,
+      "parcial": 1,
+      "texto": "Cuál de las siguientes características corresponde al protocolo IPv4:",
+      "explicacion": "IPv4 encamina cada paquete de manera independiente (no garantiza orden ni entrega). Retransmitir (a), reordenar (b) y numerar secuencias (e) son responsabilidades de TCP. Las direcciones de 48 bits (d) son MAC, no IP (IPv4 usa 32 bits).",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Retransmite el paquete que no llegó correctamente",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Reordena los paquetes en el destino",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Encamina cada paquete de manera independiente",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Utiliza direcciones de 48 bits",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Utiliza números de secuencia",
           "correcta": false
         }
       ]
