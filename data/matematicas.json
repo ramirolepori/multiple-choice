@@ -1,0 +1,105 @@
+{
+  "materia": "Matemáticas",
+  "preguntas": [
+    {
+      "id": 1,
+      "texto": "¿Cuál es el resultado de 7 × 8?",
+      "respuestas": [
+        { "id": "a", "texto": "54", "correcta": false },
+        { "id": "b", "texto": "56", "correcta": true },
+        { "id": "c", "texto": "58", "correcta": false },
+        { "id": "d", "texto": "48", "correcta": false }
+      ]
+    },
+    {
+      "id": 2,
+      "texto": "De las siguientes operaciones, ¿cuáles son equivalentes a 12 + 5?",
+      "respuestas": [
+        { "id": "a", "texto": "17", "correcta": true },
+        { "id": "b", "texto": "15 + 2", "correcta": true },
+        { "id": "c", "texto": "14 + 4", "correcta": false },
+        { "id": "d", "texto": "10 + 7", "correcta": true }
+      ]
+    },
+    {
+      "id": 3,
+      "texto": "¿Cuál de estos números es primo?",
+      "respuestas": [
+        { "id": "a", "texto": "21", "correcta": false },
+        { "id": "b", "texto": "17", "correcta": true },
+        { "id": "c", "texto": "27", "correcta": false },
+        { "id": "d", "texto": "15", "correcta": false }
+      ]
+    },
+    {
+      "id": 4,
+      "texto": "El perímetro de un rectángulo de base 8 cm y altura 5 cm es:",
+      "respuestas": [
+        { "id": "a", "texto": "26 cm", "correcta": true },
+        { "id": "b", "texto": "40 cm", "correcta": false },
+        { "id": "c", "texto": "20 cm", "correcta": false },
+        { "id": "d", "texto": "32 cm", "correcta": false }
+      ]
+    },
+    {
+      "id": 5,
+      "texto": "¿Cuál es la fracción equivalente a 2/3?",
+      "respuestas": [
+        { "id": "a", "texto": "4/6", "correcta": true },
+        { "id": "b", "texto": "3/4", "correcta": false },
+        { "id": "c", "texto": "6/9", "correcta": true },
+        { "id": "d", "texto": "2/6", "correcta": false }
+      ]
+    },
+    {
+      "id": 6,
+      "texto": "¿Qué ángulo es recto?",
+      "respuestas": [
+        { "id": "a", "texto": "45°", "correcta": false },
+        { "id": "b", "texto": "90°", "correcta": true },
+        { "id": "c", "texto": "120°", "correcta": false },
+        { "id": "d", "texto": "180°", "correcta": false }
+      ]
+    },
+    {
+      "id": 7,
+      "texto": "Si x = 4, ¿cuál es el valor de 3x + 5?",
+      "respuestas": [
+        { "id": "a", "texto": "12", "correcta": false },
+        { "id": "b", "texto": "17", "correcta": true },
+        { "id": "c", "texto": "15", "correcta": false },
+        { "id": "d", "texto": "21", "correcta": false }
+      ]
+    },
+    {
+      "id": 8,
+      "texto": "¿Cuáles de estos números son pares?",
+      "respuestas": [
+        { "id": "a", "texto": "8", "correcta": true },
+        { "id": "b", "texto": "13", "correcta": false },
+        { "id": "c", "texto": "22", "correcta": true },
+        { "id": "d", "texto": "17", "correcta": false }
+      ]
+    },
+    {
+      "id": 9,
+      "texto": "¿Cuál es el resultado de la raíz cuadrada de 49?",
+      "respuestas": [
+        { "id": "a", "texto": "6", "correcta": false },
+        { "id": "b", "texto": "7", "correcta": true },
+        { "id": "c", "texto": "8", "correcta": false },
+        { "id": "d", "texto": "9", "correcta": false }
+      ]
+    },
+    {
+      "id": 10,
+      "texto": "¿Cuál es la pendiente de una recta que sube 3 unidades por cada 1 unidad horizontal?",
+      "respuestas": [
+        { "id": "a", "texto": "1/3", "correcta": false },
+        { "id": "b", "texto": "3", "correcta": true },
+        { "id": "c", "texto": "-3", "correcta": false },
+        { "id": "d", "texto": "0", "correcta": false }
+      ]
+    }
+  ]
+}
