@@ -26,6 +26,7 @@ Formato de ejemplo:
     {
       "id": 1,
       "texto": "¿Cuánto es 2+2?",
+      "imagen": "/images/ejemplo.png",
       "respuestas": [
         { "id": "a", "texto": "4", "correcta": true },
         { "id": "b", "texto": "5", "correcta": false }
@@ -34,6 +35,8 @@ Formato de ejemplo:
   ]
 }
 ```
+
+Las imágenes locales deben guardarse en `public/` y referenciarse desde el JSON con rutas a partir de `/`, por ejemplo `/images/mi-imagen.png`.
 
 ## Deploy en Vercel
 

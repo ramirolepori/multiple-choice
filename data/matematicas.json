@@ -34,7 +34,7 @@
     {
       "id": 4,
       "texto": "Observa el rectángulo y responde: ¿cuál es su perímetro?",
-      "imagen": "https://via.placeholder.com/640x360.png?text=Rect%C3%A1ngulo+8x5",
+      "imagen": "/images/rectangulo-8x5.svg",
       "respuestas": [
         { "id": "a", "texto": "26 cm", "correcta": true },
         { "id": "b", "texto": "40 cm", "correcta": false },

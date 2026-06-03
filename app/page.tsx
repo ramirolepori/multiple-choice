@@ -286,8 +286,13 @@ export default function HomePage() {
                       </div>
                     </div>
                     {pregunta.imagen && (
-                      <div className="mt-4 rounded-3xl border border-slate-800 bg-slate-900/80 p-4">
-                        <img src={pregunta.imagen} alt={`Imagen pregunta ${index + 1}`} className="w-full rounded-3xl object-contain" />
+                      <div className="mt-4 overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/80 p-4">
+                        <img
+                          src={pregunta.imagen}
+                          alt={`Imagen pregunta ${index + 1}`}
+                          className="w-full max-h-80 rounded-3xl object-contain"
+                          loading="lazy"
+                        />
                       </div>
                     )}
                     <div className="mt-5 grid gap-4 sm:grid-cols-2">
@@ -359,8 +364,13 @@ export default function HomePage() {
                       </div>
                     </div>
                     {pregunta.imagen && (
-                      <div className="mt-4 rounded-3xl border border-slate-800 bg-slate-900/80 p-4">
-                        <img src={pregunta.imagen} alt={`Imagen pregunta ${index + 1}`} className="w-full rounded-3xl object-contain" />
+                      <div className="mt-4 overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/80 p-4">
+                        <img
+                          src={pregunta.imagen}
+                          alt={`Imagen pregunta ${index + 1}`}
+                          className="w-full max-h-80 rounded-3xl object-contain"
+                          loading="lazy"
+                        />
                       </div>
                     )}
                     <div className="mt-5 grid gap-4 sm:grid-cols-2">
