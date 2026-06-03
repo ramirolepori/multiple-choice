@@ -6,8 +6,10 @@ export type Respuesta = {
 
 export type Pregunta = {
   id: number;
+  parcial: number;
   texto: string;
   imagen?: string;
+  explicacion?: string;
   respuestas: Respuesta[];
 };
 

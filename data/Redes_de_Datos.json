@@ -5,122 +5,1473 @@
       "id": 1,
       "texto": "Un administrador de red desea garantizar que el switch conmute sólo tramas correctas. Indique cuál de las siguientes técnicas deberá configurar:",
       "respuestas": [
-        { "id": "a", "texto": "Cut-through", "correcta": false },
-        { "id": "b", "texto": "Almacenamiento y re-envío", "correcta": true },
-        { "id": "c", "texto": "Tabla CAM", "correcta": false },
-        { "id": "d", "texto": "Fast-switch", "correcta": false },
-        { "id": "e", "texto": "Libre de fragmentos", "correcta": false }
-      ]
+        {
+          "id": "a",
+          "texto": "Cut-through",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Almacenamiento y re-envío",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Tabla CAM",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Fast-switch",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Libre de fragmentos",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Es la única técnica que almacena la trama completa y ejecuta el CRC antes de reenviar, garantizando que solo pasen tramas correctas."
     },
     {
       "id": 2,
       "texto": "Cuáles de las siguientes afirmaciones describen el campo suma de verificación del protocolo IPv4 (seleccione dos):",
       "respuestas": [
-        { "id": "a", "texto": "Permite saber si el origen debe retransmitir un paquete dañado", "correcta": false },
-        { "id": "b", "texto": "Se utiliza para garantizar la integridad de todo el paquete IPv4", "correcta": false },
-        { "id": "c", "texto": "Lo calculan sólo los routers para saber si encaminar o descartar el paquete", "correcta": true },
-        { "id": "d", "texto": "Se calcula en el origen, el destino y dos veces en cada router", "correcta": false },
-        { "id": "e", "texto": "Permite detectar errores en la cabecera del paquete IPv4", "correcta": true }
-      ]
+        {
+          "id": "a",
+          "texto": "Permite saber si el origen debe retransmitir un paquete dañado",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Se utiliza para garantizar la integridad de todo el paquete IPv4",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Lo calculan sólo los routers para saber si encaminar o descartar el paquete",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Se calcula en el origen, el destino y dos veces en cada router",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Permite detectar errores en la cabecera del paquete IPv4",
+          "correcta": true
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La suma de verificación cubre solo la cabecera IPv4 (no el paquete completo) y permite detectar errores en ella. Los routers la recalculan porque el TTL cambia en cada salto."
     },
     {
       "id": 3,
       "texto": "A partir de la topología planteada, indique cuáles de las siguientes afirmaciones son correctas con respecto a los tipos de puertos:",
       "imagen": "/images/topologia_stp_p3.png",
       "respuestas": [
-        { "id": "a", "texto": "Los puertos F0/8, F0/9 y F0/10 son puertos raíz", "correcta": false },
-        { "id": "b", "texto": "Los puertos F0/3, F0/4 y F0/5 son puertos designados", "correcta": false },
-        { "id": "c", "texto": "Los puertos F0/2 y F0/7 son puertos designados", "correcta": false },
-        { "id": "d", "texto": "Los puertos F0/2, F0/4 y F0/7 son puertos raíz", "correcta": true },
-        { "id": "e", "texto": "Los puertos F0/8, F0/9 y F0/10 son puertos designados", "correcta": true }
-      ]
+        {
+          "id": "a",
+          "texto": "Los puertos F0/8, F0/9 y F0/10 son puertos raíz",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Los puertos F0/3, F0/4 y F0/5 son puertos designados",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Los puertos F0/2 y F0/7 son puertos designados",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Los puertos F0/2, F0/4 y F0/7 son puertos raíz",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Los puertos F0/8, F0/9 y F0/10 son puertos designados",
+          "correcta": true
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Switch2 tiene prioridad 12536 (la más baja) → es el puente raíz, todos sus puertos son designados (F0/8, F0/9 y F0/10). Los puertos raíz de los demás switches son los que los conectan al raíz: F0/2, F0/4 y F0/7."
     },
     {
       "id": 4,
       "texto": "En el método de acceso al medio utilizado por las redes inalámbricas, los dispositivos cuando tienen que transmitir una trama:",
       "respuestas": [
-        { "id": "a", "texto": "Escuchan el medio y si está libre, envían los datos hacia el medio de transmisión", "correcta": false },
-        { "id": "b", "texto": "Esperan que les llegue una trama de control denominada token para poder transmitir datos", "correcta": false },
-        { "id": "c", "texto": "Escuchan el medio y si está libre, le avisan al emisor que están dispuestos a recibir datos mediante la trama de control RTS", "correcta": false },
-        { "id": "d", "texto": "Escuchan el medio y si está libre, esperan un tiempo aleatorio y envían una trama RTS indicando dirección MAC origen y dirección MAC destino", "correcta": true },
-        { "id": "e", "texto": "Garantizan que las tramas que colisionan, sean confirmadas por el receptor con una trama de control ACK", "correcta": false }
-      ]
+        {
+          "id": "a",
+          "texto": "Escuchan el medio y si está libre, envían los datos hacia el medio de transmisión",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Esperan que les llegue una trama de control denominada token para poder transmitir datos",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Escuchan el medio y si está libre, le avisan al emisor que están dispuestos a recibir datos mediante la trama de control RTS",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Escuchan el medio y si está libre, esperan un tiempo aleatorio y envían una trama RTS indicando dirección MAC origen y dirección MAC destino",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Garantizan que las tramas que colisionan, sean confirmadas por el receptor con una trama de control ACK",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "CSMA/CA: el dispositivo escucha el medio, espera un tiempo aleatorio si está libre y envía un RTS con las MACs de origen y destino para reservar el canal antes de transmitir."
     },
     {
       "id": 5,
       "texto": "Una empresa posee 30 puestos de trabajo en la sucursal de Córdoba, todos conectados con Access point. Se dice que esa red es:",
       "respuestas": [
-        { "id": "a", "texto": "De banda angosta, dúplex, WLAN", "correcta": false },
-        { "id": "b", "texto": "Banda ancha, dúplex, PAN", "correcta": false },
-        { "id": "c", "texto": "De banda ancha, dúplex, LAN", "correcta": false },
-        { "id": "d", "texto": "De banda ancha, semiduplex, WLAN", "correcta": true },
-        { "id": "e", "texto": "De banda ancha, semiduplex, WAN", "correcta": false }
-      ]
+        {
+          "id": "a",
+          "texto": "De banda angosta, dúplex, WLAN",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Banda ancha, dúplex, PAN",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "De banda ancha, dúplex, LAN",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "De banda ancha, semiduplex, WLAN",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "De banda ancha, semiduplex, WAN",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "WLAN usa banda ancha y es semidúplex porque el medio inalámbrico es compartido y solo un dispositivo puede transmitir a la vez. El AP define que es una WLAN, no una LAN cableada."
     },
     {
       "id": 6,
       "texto": "Un switch de 24 bocas (puertos) está conectado a un hub (en el puerto 1), a un router (en el puerto 2) y a computadoras el resto de los puertos. Determine cuántos dominios de broadcast existen:",
       "respuestas": [
-        { "id": "a", "texto": "1", "correcta": true },
-        { "id": "b", "texto": "Depende si se conectan PC, hubs o switches", "correcta": false },
-        { "id": "c", "texto": "3", "correcta": false },
-        { "id": "d", "texto": "22", "correcta": false },
-        { "id": "e", "texto": "23", "correcta": false },
-        { "id": "f", "texto": "24", "correcta": false },
-        { "id": "g", "texto": "2", "correcta": false }
-      ]
+        {
+          "id": "a",
+          "texto": "1",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Depende si se conectan PC, hubs o switches",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "22",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "23",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "24",
+          "correcta": false
+        },
+        {
+          "id": "g",
+          "texto": "2",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El router es el único dispositivo que separa dominios de broadcast. Todo lo conectado al switch (hub + PCs) forma un único dominio de broadcast."
     },
     {
       "id": 7,
       "texto": "Cuáles de los siguientes protocolos pertenecen a la capa de transporte de la arquitectura TCP/IP (seleccione dos):",
       "respuestas": [
-        { "id": "a", "texto": "UDP", "correcta": true },
-        { "id": "b", "texto": "IP", "correcta": false },
-        { "id": "c", "texto": "RARP", "correcta": false },
-        { "id": "d", "texto": "ICMP", "correcta": false },
-        { "id": "e", "texto": "VoIP", "correcta": false },
-        { "id": "f", "texto": "DHCP", "correcta": false },
-        { "id": "g", "texto": "TCP", "correcta": true }
-      ]
+        {
+          "id": "a",
+          "texto": "UDP",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "IP",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "RARP",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "ICMP",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "VoIP",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "DHCP",
+          "correcta": false
+        },
+        {
+          "id": "g",
+          "texto": "TCP",
+          "correcta": true
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "TCP y UDP son los dos protocolos de la capa de transporte en TCP/IP. IP pertenece a la capa de red; ICMP, RARP y DHCP no son de transporte."
     },
     {
       "id": 8,
       "texto": "Indique cuál es el tamaño mínimo de la cabecera de un paquete IPv4:",
       "respuestas": [
-        { "id": "a", "texto": "15 bytes", "correcta": false },
-        { "id": "b", "texto": "6 bytes", "correcta": false },
-        { "id": "c", "texto": "25 bytes", "correcta": false },
-        { "id": "d", "texto": "40 bytes", "correcta": false },
-        { "id": "e", "texto": "60 bytes", "correcta": false },
-        { "id": "f", "texto": "20 bytes", "correcta": true },
-        { "id": "g", "texto": "18 bytes", "correcta": false },
-        { "id": "h", "texto": "30 bytes", "correcta": false }
-      ]
+        {
+          "id": "a",
+          "texto": "15 bytes",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "6 bytes",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "25 bytes",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "40 bytes",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "60 bytes",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "20 bytes",
+          "correcta": true
+        },
+        {
+          "id": "g",
+          "texto": "18 bytes",
+          "correcta": false
+        },
+        {
+          "id": "h",
+          "texto": "30 bytes",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La cabecera IPv4 mínima tiene 5 palabras de 32 bits (sin campo de opciones) = 5 × 4 bytes = 20 bytes."
     },
     {
       "id": 9,
       "texto": "Teniendo en cuenta que dos dispositivos intercambian datos entre sí a través de Internet. ¿Cuál de los siguientes protocolos garantiza que la información llegue lo más rápido posible aunque puede que llegue desordenada?",
       "respuestas": [
-        { "id": "a", "texto": "DNS", "correcta": false },
-        { "id": "b", "texto": "TCP", "correcta": false },
-        { "id": "c", "texto": "HTTP", "correcta": false },
-        { "id": "d", "texto": "UDP", "correcta": true },
-        { "id": "e", "texto": "FTP", "correcta": false },
-        { "id": "f", "texto": "ARP", "correcta": false },
-        { "id": "g", "texto": "ICMP", "correcta": false }
-      ]
+        {
+          "id": "a",
+          "texto": "DNS",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "TCP",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "HTTP",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "UDP",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "FTP",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "ARP",
+          "correcta": false
+        },
+        {
+          "id": "g",
+          "texto": "ICMP",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "UDP es no orientado a conexión y no garantiza orden ni entrega, lo que lo hace más rápido que TCP. Es ideal cuando la velocidad importa más que la confiabilidad."
     },
     {
       "id": 10,
       "texto": "Determine cuáles de las siguientes direcciones IPv4 se podría utilizar para que una computadora tenga conectividad en Internet (seleccione tres opciones):",
       "respuestas": [
-        { "id": "a", "texto": "172.32.60.90", "correcta": true },
-        { "id": "b", "texto": "11.10.10.10", "correcta": true },
-        { "id": "c", "texto": "192.168.32.48", "correcta": false },
-        { "id": "d", "texto": "172.29.0.90", "correcta": false },
-        { "id": "e", "texto": "172.26.56.0", "correcta": false },
-        { "id": "f", "texto": "194.168.10.6", "correcta": true },
-        { "id": "g", "texto": "10.10.12.14", "correcta": false }
+        {
+          "id": "a",
+          "texto": "172.32.60.90",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "11.10.10.10",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "192.168.32.48",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "172.29.0.90",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "172.26.56.0",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "194.168.10.6",
+          "correcta": true
+        },
+        {
+          "id": "g",
+          "texto": "10.10.12.14",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Rangos privados: 10.x.x.x, 172.16-31.x.x, 192.168.x.x. Las opciones a (172.32), b (11.x) y f (194.168) quedan fuera de esos rangos, por lo tanto son públicas y ruteables en Internet."
+    },
+    {
+      "id": 11,
+      "texto": "Dos dispositivos están separados entre sí por 8 routers. Cuántas veces se calculará el algoritmo de la suma de verificación de un Paquete IPv4:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "16",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "18",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "17",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "20",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "10",
+          "correcta": false
+        },
+        {
+          "id": "g",
+          "texto": "8",
+          "correcta": false
+        },
+        {
+          "id": "h",
+          "texto": "0",
+          "correcta": false
+        },
+        {
+          "id": "i",
+          "texto": "Depende del tamaño del buffer de los routers",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "1 (origen calcula) + 2×8 (cada router verifica + recalcula por cambio de TTL) + 1 (destino verifica) = 18. El documento de estudio confirma d=18"
+    },
+    {
+      "id": 12,
+      "texto": "El prefijo /28 equivale a cuál de las siguientes máscaras de subred:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "255.255.224.0",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "255.255.248.0",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "255.255.255.240",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "255.255.255.248",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "255.255.255.224",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "255.255.240.0",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "/28 = 28 bits en 1 = 11111111.11111111.11111111.11110000 = 255.255.255.240."
+    },
+    {
+      "id": 13,
+      "texto": "Cuáles de las siguientes características corresponden a las VLANs (seleccione tres opciones):",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se agrega una etiqueta en el paquete IPv6 en los enlaces troncales",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Si se definen 5 VLANs, se configurarán 5 subredes diferentes",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Los usuarios pertenecientes a una VLAN deben estar conectados al mismo switch",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Los switches se conectan entre sí, a través de enlaces de acceso",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Se implementan mediante el protocolo 802.1q",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "Cada VLAN es un dominio de broadcast",
+          "correcta": true
+        },
+        {
+          "id": "g",
+          "texto": "Se implementan en las NIC de las computadoras",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Cada VLAN es un dominio de broadcast independiente (necesita su propia subred), se implementa con el protocolo 802.1q y no requiere que los usuarios estén en el mismo switch físico."
+    },
+    {
+      "id": 14,
+      "texto": "Un router recibe por una de sus interfaces un paquete cuya dirección destino es 255.255.255.255. ¿Qué hará el router con dicho paquete?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se lo envía a todas las PC de la LAN",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Se lo envía al switch de la LAN",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Se lo envía al servidor de la LAN",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Lo retransmite por todas sus interfaces, menos por la que ingresó",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Lo procesa",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Lo encapsula en una trama",
+          "correcta": false
+        },
+        {
+          "id": "g",
+          "texto": "Lo descarta",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Según el criterio de la cátedra, ante un paquete destinado a 255.255.255.255, el router lo retransmite por todas sus interfaces menos por la que ingresó"
+    },
+    {
+      "id": 15,
+      "texto": "El administrador de red configura la dirección IPv6 2001::2460:34:0:980 en un servidor. Cuál de las siguientes direcciones se colocará en la dirección origen de la cabecera de los paquetes IPv6 cuando el servidor envíe datos a la red:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "2001:0000:0000:0000:2460:34:0000:980",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "2001:0000:0000:0000:2460:0034:0000:0980",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "2001:0000:0000:0000:2460:0034:0000:0000:0980",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "2001:0000:2460:0034:0000:0000:0980",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "2001:0000:0000:2460:0034:0000:0000:0980",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "explicacion": "2001::2460:34:0:980 expande el :: en 3 grupos de ceros (necesita 8 grupos totales, tiene 5 explícitos), resultando en 2001:0000:0000:0000:2460:0034:0000:0980."
+    },
+    {
+      "id": 16,
+      "texto": "Una PC desea intercambiar datos con otra computadora ubicada en otro país, utilizando el protocolo IPv6. Para ello será necesario utilizar:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Direcciones privadas",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Se puede utilizar cualquier tipo de dirección IPv6",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Direcciones de enlace local",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Direcciones globales",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Direcciones locales únicas",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "explicacion": "Para comunicarse entre países a través de Internet se necesitan direcciones globales unicast IPv6, equivalentes a las IPs públicas de IPv4, ya que son ruteables globalmente."
+    },
+    {
+      "id": 17,
+      "texto": "Las tecnologías Ethernet, Fastethernet y Gigaethernet ejecutan funciones de las siguientes capas:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Capa física y subcapa MAC de la capa de enlace",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Capa física y subcapa LLC de la capa de enlace",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Capa física, capa de enlace y capa de red",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Capa física y subcapas MAC y LLC de la capa de enlace",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Capa física y capa de enlace",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Ethernet, FastEthernet y GigaEthernet operan en la capa física y la subcapa MAC. La subcapa LLC (802.2) es genérica y no específica de estas tecnologías."
+    },
+    {
+      "id": 18,
+      "texto": "Al administrador de red de una organización el ISP le asignó una dirección IPv4 pública clase B. Si se van a conectar como máximo 20 hosts por subred y se desea maximizar la cantidad de subredes:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se tomarán prestados 4 bits de la parte de host y el prefijo de la máscara será /20",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Se dejaran 5 bits de la parte de host y el prefijo de la máscara será /27",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Se tomarán prestados 5 bits de la parte de red y el prefijo de la máscara será /21",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Se tomarán prestados 6 bits de la parte de host y el prefijo de la máscara será /22",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Se pedirán prestados 5 bits de la parte de host y el prefijo de la máscara será /21",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Para máximo 20 hosts se necesitan 5 bits de host (2⁵-2=30). En clase B (/16), los 11 bits restantes van a subredes → /27. Dejar 5 bits maximiza la cantidad de subredes posibles."
+    },
+    {
+      "id": 19,
+      "texto": "Aníbal está caminando por la facultad y desea tener conectividad inalámbrica en todos los edificios del campus. Qué servicios se requieren para que Juan pueda desplazarse dentro del sistema de distribución (seleccione dos opciones):",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Reconexión",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Coordinación",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Implementación",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Asociación",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Reasociación",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "Producción",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Para desplazarse entre APs en el sistema de distribución se necesita Asociación (conectarse a un AP) y Reasociación (transferir la conexión al siguiente AP al moverse)."
+    },
+    {
+      "id": 20,
+      "texto": "Las conexiones entre operadores de redes de diferente jerarquía, donde el operador de mayor jerarquía le vende una conexión al operador de menor jerarquía se denominan:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "ISP",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Conexiones de peering",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "IXP",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Conexiones de tránsito",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Conexiones punto a punto",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Conexiones de backbone",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Tránsito es la relación jerárquica donde el ISP de mayor nivel vende conectividad al de menor nivel. Peering es entre pares de igual jerarquía."
+    },
+    {
+      "id": 21,
+      "texto": "La dirección IPv4 127.1.1.1:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Es una dirección privada",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "El administrador la configura en un host en producción",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Permite verificar la correcta instalación de la pila de protocolos TCP/IP",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Es la puerta de enlace de una LAN",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Es una dirección multicast",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "127.x.x.x es la dirección de loopback, reservada para que un host se comunique consigo mismo y verifique que la pila TCP/IP está correctamente instalada."
+    },
+    {
+      "id": 22,
+      "texto": "Una placa de red Fastethernet recibe y procesa una trama si la dirección de destino es (seleccione dos opciones):",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Su dirección IP",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "FF:FF:FF:FF:FF:FF",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "La dirección del gateway",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "255.255.255.255",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Su dirección MAC",
+          "correcta": true
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La NIC opera en capa 2 y solo procesa tramas cuyo destino sea su propia MAC (unicast) o la MAC de broadcast FF:FF:FF:FF:FF:FF. Las IPs son capa 3 y no intervienen aquí."
+    },
+    {
+      "id": 23,
+      "texto": "Se deben conectar dos edificios en un campus universitario, los cuales están ubicados a 200 metros de distancia uno del otro. El administrador de red debe decidir qué tecnología utilizar. Cuáles de las siguientes se podría implementar:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "100BASE-T4",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "1000BASE-SX",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "1000BASE-CX",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "1000BASE-T",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "100BASE-TX",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "100BASE-TX y 1000BASE-T usan UTP con máximo 100m. 1000BASE-SX usa fibra óptica multimodo con alcance de hasta 550m, suficiente para los 200m entre edificios."
+    },
+    {
+      "id": 24,
+      "texto": "Cuál de los siguientes organismos internacionales de normalización desarrolla trabajos de investigación a corto plazo relacionados con los protocolos de Internet:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "IETF",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "ITU",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "IRTF",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "IEEE",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "RFC",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "ISO",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "IETF trabaja en problemas de ingeniería a corto plazo para Internet. IRTF se enfoca en investigación a largo plazo. El material de la cátedra define explícitamente esta diferencia."
+    },
+    {
+      "id": 25,
+      "texto": "En cuál de los siguientes estados de los puertos de un switch, se envían y reciben tramas BPDU (seleccione tres):",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Desactivado",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Envío",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Actualizado",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Escucha",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Bloqueo",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Aprendizaje",
+          "correcta": true
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En Bloqueo se reciben BPDUs pero no se envían. En Desactivado no se procesan. En Escucha, Aprendizaje y Envío se envían Y reciben BPDUs, por eso son los tres estados correctos."
+    },
+    {
+      "id": 26,
+      "parcial": 1,
+      "texto": "Cuáles de las siguientes direcciones IP podrá utilizar un administrador de red, si desea implementar un esquema de direccionamiento IP con 40 subredes, maximizando la cantidad de hosts por subred (seleccione dos):",
+      "explicacion": "Para ≥40 subredes se necesitan mínimo 6 bits prestados (2^6=64). a (Clase A /8 → /14: 6 bits prestados, 262142 hosts) y f (Clase B /16 → /22: 6 bits prestados, 1022 hosts) son las únicas que usan exactamente 6 bits, maximizando hosts. b y d no llegan a 40 subredes; c y e usan 7 bits.",
+      "respuestas": [
+        { "id": "a", "texto": "100.0.0.0/14", "correcta": true },
+        { "id": "b", "texto": "199.60.5.0/29", "correcta": false },
+        { "id": "c", "texto": "98.0.0.0/15", "correcta": false },
+        { "id": "d", "texto": "190.60.0.0/21", "correcta": false },
+        { "id": "e", "texto": "189.85.0.0/23", "correcta": false },
+        { "id": "f", "texto": "140.56.0.0/22", "correcta": true }
+      ]
+    },
+    {
+      "id": 27,
+      "parcial": 2,
+      "texto": "Agustín está aprendiendo a utilizar Wireshark, realiza una captura de paquetes IPv6 y encuentra que uno de ellos va dirigido a la dirección FF02::2. Indique cuál de las siguientes afirmaciones es correcta:",
+      "explicacion": "FF02::X son direcciones multicast de alcance link-local en IPv6 (prefijo FF = multicast). FF02::2 es el grupo de todos los routers en el enlace. Al ser multicast, el paquete es procesado por un GRUPO de dispositivos, no por uno solo ni por todos.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El paquete está destinado a un dispositivo ubicado en el mismo segmento de red",
+          "correcta": false
+        },
+        { "id": "b", "texto": "Es una dirección inválida", "correcta": false },
+        {
+          "id": "c",
+          "texto": "El paquete será procesado por un grupo de dispositivos",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Es una dirección de enlace local",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El paquete es un broadcast dentro del segmento de red",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "parcial": 2,
+      "texto": "Si el tamaño de una trama inalámbrica es de 1554 bytes, determine la carga útil (datos) en el paquete IPv6:",
+      "nota_tutor": "⚠️ Overhead WLAN (MAC 30 + FCS 4 = 34 bytes): paquete IPv6 = 1554-34 = 1520. Carga útil IPv6 = 1520-40 (cabecera IPv6) = 1480 bytes (opción b). El estudiante marcó e=1520 (tamaño del paquete IPv6, no el payload). Verificar con docente qué se entiende por 'carga útil en el paquete IPv6'.",
+      "respuestas": [
+        { "id": "a", "texto": "1500 bytes", "correcta": false },
+        { "id": "b", "texto": "1480 bytes", "correcta": true },
+        { "id": "c", "texto": "Es una trama inválida", "correcta": false },
+        { "id": "d", "texto": "1400 bytes", "correcta": false },
+        { "id": "e", "texto": "1520 bytes", "correcta": false },
+        { "id": "f", "texto": "1534 bytes", "correcta": false }
+      ]
+    },
+    {
+      "id": 29,
+      "parcial": 1,
+      "texto": "Una empresa está dividida en 10 áreas de trabajo. Si el administrador plantea un esquema de direccionamiento utilizando subredes:",
+      "explicacion": "En subnetting tradicional (sin VLSM), todas las subredes deben usar la misma máscara. Las otras opciones son incorrectas: b dice que la máscara puede ser menor (es al revés, es mayor); d dice 3 bits (2^3=8 < 10, insuficiente).",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La máxima cantidad de bits que puede formar parte de la máscara es 31",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Las subredes pueden tener una máscara menor que la máscara por defecto",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Se permite que cada área posea su propia máscara de subred en función de la cantidad de hosts",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El administrador deberá reservar 3 bits para subredes",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Todas las subredes deben poseer la misma máscara de subred",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "parcial": 1,
+      "texto": "Mientras se está intercambiando datos entre una PC y un servidor, una NIC recibe desde el medio de transmisión (UTP) una trama y cuando realiza el cálculo del CRC, el resultado coincide con el valor que viene en dicha trama. ¿Qué hará la placa de red?",
+      "nota_tutor": "⚠️ La imagen marca a=verde, pero lógicamente para una NIC receptora con CRC OK la acción correcta sería desencapsular y entregar a la capa superior (b). Si el dispositivo actúa como relay/switch, a tiene más sentido. Verificar con docente.",
+      "explicacion": "Si el CRC coincide, la trama es válida. Según el criterio de la cátedra, la NIC procede a encapsular y enviar la trama (posiblemente en el rol de relay/switch). Si fuera un host receptor, la acción correcta sería desencapsular.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Encapsular y enviar la trama",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Desencapsular y entregar a la capa superior",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Enviar confirmación de recepción al origen",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Pedir retransmisión al origen",
+          "correcta": false
+        },
+        { "id": "e", "texto": "Descartar la trama", "correcta": false }
+      ]
+    },
+    {
+      "id": 31,
+      "parcial": 1,
+      "texto": "Un paquete para su correcta transmisión, se divide en 3 fragmentos. Cuál de las siguientes afirmaciones es correcta con respecto al protocolo IPv4:",
+      "explicacion": "En IPv4, todos los fragmentos de un mismo paquete comparten el mismo número de Identificación (para que el destino pueda rearmarlos) y el mismo campo Protocolo. Lo que difiere entre fragmentos es el desplazamiento, el bit MF y la suma de verificación.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Todos los fragmentos tendrán la misma suma de verificación y el mismo protocolo",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Todos los fragmentos tendrán diferente número de Identificación y el mismo protocolo",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Todos los fragmentos tendrán el mismo desplazamiento y diferente Identificación",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Todos los fragmentos tendrán el mismo número de Identificación y el mismo protocolo",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Todos los fragmentos tendrán la misma dirección origen y destino, pero diferente identificación",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "parcial": 1,
+      "texto": "Si el tamaño de una trama inalámbrica es de 1554 bytes, determine la carga útil (datos) en el paquete IPv4:",
+      "explicacion": "Overhead WLAN = 34 bytes (MAC 30 + FCS 4). Paquete IPv4 = 1554-34 = 1520 bytes. Cabecera IPv4 mínima = 20 bytes. Carga útil IPv4 = 1520-20 = 1500 bytes.",
+      "respuestas": [
+        { "id": "a", "texto": "1534 bytes", "correcta": false },
+        { "id": "b", "texto": "Es una trama inválida", "correcta": false },
+        { "id": "c", "texto": "1520 bytes", "correcta": false },
+        { "id": "d", "texto": "1400 bytes", "correcta": false },
+        { "id": "e", "texto": "1480 bytes", "correcta": false },
+        { "id": "f", "texto": "1500 bytes", "correcta": true }
+      ]
+    },
+    {
+      "id": 33,
+      "parcial": 1,
+      "texto": "Cuáles de las siguientes direcciones IP podrá utilizar un administrador de red, si desea implementar un esquema de direccionamiento IP con 20 subredes, maximizando la cantidad de hosts por subred (seleccione dos):",
+      "explicacion": "Para ≥20 subredes se necesitan mínimo 5 bits prestados (2^5=32≥20). b (Clase B /16→/21: 5 bits, 2046 hosts) y d (Clase C /24→/29: 5 bits, 6 hosts) son las únicas con exactamente 5 bits prestados, minimizando los bits tomados y maximizando así los bits de host restantes.",
+      "respuestas": [
+        { "id": "a", "texto": "189.85.0.0/23", "correcta": false },
+        { "id": "b", "texto": "190.60.0.0/21", "correcta": true },
+        { "id": "c", "texto": "98.0.0.0/15", "correcta": false },
+        { "id": "d", "texto": "199.60.5.0/29", "correcta": true },
+        { "id": "e", "texto": "100.0.0.0/14", "correcta": false },
+        { "id": "f", "texto": "140.56.0.0/22", "correcta": false }
+      ]
+    },
+    {
+      "id": 34,
+      "parcial": 1,
+      "texto": "La siguiente dirección 01:00:5E:00:04:C9 aparece en el campo destino de una trama. Indique cuál de las siguientes afirmaciones es correcta:",
+      "explicacion": "01:00:5E es el OUI multicast IPv4. El primer byte 01 en binario es 00000001: el LSB en 1 indica dirección multicast. Las multicast dirigen la trama a un grupo específico de dispositivos que se suscribieron a ese grupo, ni a uno solo (unicast) ni a todos (broadcast).",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La trama será procesada solo por un grupo de máquinas de la LAN",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Es una dirección jerárquica",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La trama será procesada solo por una PC",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Todas las PC de la LAN procesarán la trama",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Nunca puede aparecer esa dirección en el campo de destino de una trama",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "parcial": 1,
+      "texto": "Una empresa decide implementar un esquema de direccionamiento IP utilizando subredes. El administrador decide utilizar la IP 160.4.0.0/23. Ello implica que:",
+      "explicacion": "160.4.0.0 es clase B (/16). Con /23 se toman 7 bits prestados del host → 2^7=128 subredes. Cada subred pierde 2 direcciones (red y broadcast): 128 × 2 = 256 direcciones no utilizables en total.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se ganan 256 direcciones IP del total del espacio de direccionamiento",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Se pierden 512 direcciones IP del total del espacio de direccionamiento",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Se pierden 128 direcciones IP del total del espacio de direccionamiento",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Se pierden 510 direcciones IP del total del espacio de direccionamiento",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Se pierden 64 direcciones IP del total del espacio de direccionamiento",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Se ganan 510 direcciones IP del total del espacio de direccionamiento",
+          "correcta": false
+        },
+        {
+          "id": "g",
+          "texto": "Se pierden 256 direcciones IP del total del espacio de direccionamiento",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "parcial": 1,
+      "texto": "Una trama Ethernet contiene en su carga útil (datos):",
+      "explicacion": "La trama Ethernet encapsula el paquete IP completo: cabecera de red (IP) + cabecera de transporte (TCP/UDP) + datos de la capa de aplicación. La cabecera de enlace es parte de la trama misma, no de su payload.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Cabecera de la capa de transporte y cabecera de la capa de red",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Datos de la capa de aplicación",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Cabecera de la capa de red, cabecera de la capa de transporte y datos de la capa de aplicación",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Cabecera de la capa de enlace, cabecera de la capa de transporte y datos de la capa de aplicación",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Cabecera de la capa de enlace, cabecera de la capa de red y datos de la capa de aplicación",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "parcial": 1,
+      "texto": "Un administrador de red debe garantizar que el switch conmute tramas de la manera más rápida posible. Cuál de las siguientes técnicas deberá configurar:",
+      "explicacion": "Cut-through es la técnica más rápida: reenvía la trama en cuanto lee la dirección MAC destino, sin esperar que llegue completa. Sacrifica detección de errores a cambio de velocidad (opuesto al store-and-forward).",
+      "respuestas": [
+        { "id": "a", "texto": "Libre de fragmentos", "correcta": false },
+        { "id": "b", "texto": "Tabla CAM", "correcta": false },
+        { "id": "c", "texto": "Almacenamiento y re-envío", "correcta": false },
+        { "id": "d", "texto": "Cut-through", "correcta": true },
+        { "id": "e", "texto": "Fast-switch", "correcta": false }
+      ]
+    },
+    {
+      "id": 38,
+      "parcial": 1,
+      "texto": "Un switch de 24 bocas (puertos) está conectado a un hub (en el puerto 1), a un router (en el puerto 2) y a computadoras el resto de los puertos. Determine cuántos dominios de colisión existen:",
+      "explicacion": "Cada puerto del switch es un dominio de colisión separado. Los 24 puertos = 24 dominios de colisión. El hub en puerto 1 extiende su propio dominio pero sigue siendo 1 solo dominio desde la perspectiva del switch. Distinto de broadcast (que sería 1 por el router).",
+      "respuestas": [
+        { "id": "a", "texto": "22", "correcta": false },
+        { "id": "b", "texto": "3", "correcta": false },
+        { "id": "c", "texto": "23", "correcta": false },
+        {
+          "id": "d",
+          "texto": "Depende si se conectan PC o hubs",
+          "correcta": false
+        },
+        { "id": "e", "texto": "2", "correcta": false },
+        { "id": "f", "texto": "1", "correcta": false },
+        { "id": "g", "texto": "24", "correcta": true }
+      ]
+    },
+    {
+      "id": 39,
+      "parcial": 1,
+      "texto": "Un usuario se queja que la velocidad de su PC en la red es inapropiada, por ello el administrador decide actualizar la placa de red de la PC de FastEthernet a GigaEthernet. Eso implica que (seleccione dos):",
+      "explicacion": "GigaEthernet opera a 1000 Mbps (b). Al reemplazar físicamente la NIC, la nueva placa tiene una MAC diferente grabada en su ROM por el fabricante (f). No hay que reinstalar el SO ni cambiar la IP. La velocidad pasa de 100 a 1000 Mbps = 10x más rápido, no 100x.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se debe reinstalar el sistema operativo",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "La velocidad de la placa será de 1000 Mbps",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Se debe actualizar la dirección IPv4 de la PC",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La velocidad de la placa será de 100 Mbps",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La velocidad ahora será 100 veces más rápida",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "La PC tendrá otra dirección MAC",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "parcial": 1,
+      "texto": "Un router posee dos interfaces fastethernet y una interfaz serial. Si recibe por una de sus interfaces fastethernet un paquete de 1000 bytes y debe encaminarlo a la interfaz serial cuya MTU es de 1500 bytes, se deberá:",
+      "explicacion": "El paquete (1000 bytes) es menor que la MTU de salida (1500 bytes), por lo que NO hay fragmentación. El router simplemente encapsula el paquete IP en una nueva trama del tipo de la interfaz serial y lo reenvía.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Encapsular dicho paquete en una trama",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Descartar siempre el paquete",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Dividir el paquete en dos fragmentos",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Dividir el paquete en tres fragmentos",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Descartar el paquete sólo si el bit MF está activo",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "parcial": 1,
+      "texto": "Determine a partir de la topología, cuáles de las afirmaciones son correctas (seleccione dos):",
+      "imagen": "/images/topologia_colision_broadcast_p41.png",
+      "explicacion": "El router separa 2 dominios de broadcast (hub side y switch side). Para colisión: el hub forma 1 dominio con todos sus dispositivos; el router→switch es 1; cada puerto del switch es 1 (4 PCs) → total 1+1+4=6 dominios de colisión.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Existen dos dominios de broadcast",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Existen 3 dominios de broadcast",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Existe un dominio de broadcast",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Existen 7 dominios de colisión",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Existen 6 dominios de colisión",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "Existen 5 dominios de colisión",
+          "correcta": false
+        },
+        {
+          "id": "g",
+          "texto": "Existen 4 dominios de colisión",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "parcial": 1,
+      "texto": "Cuáles de las siguientes afirmaciones son correctas con respecto a la arquitectura de Internet (seleccione dos):",
+      "explicacion": "Tier 1 son las redes de los grandes operadores globales con fibra en al menos dos continentes (b). Tier 3 son los ISPs locales que brindan conectividad a usuarios residenciales y empresas (e). Tier 2 se conecta a Tier 1 vía TRÁNSITO (no peering), y los IXP usan PEERING (no tránsito).",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Las redes Tier 3 ofrecen servicios de conectividad a los operadores Tier 2",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Las redes Tier 1 son las redes de los grandes operadores, quienes invirtieron en tendidos de fibra óptica en al menos dos continentes",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Los IXP se conectan entre sí a través de conexiones de tránsito",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Las redes Tier 2 se conectan a las redes Tier 1 a través de conexiones de peering",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Las redes Tier 3 brindan servicios de conexión a Internet a los usuarios residenciales y a empresas",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "parcial": 1,
+      "texto": "Cuál de las siguientes es una organización voluntaria que emite estándares internacionales en cualquier ámbito científico y tecnológico, industrial, de infraestructura, seguridad, electrónica, tecnología de información, etc.:",
+      "explicacion": "ISO (International Organization for Standardization) es una organización voluntaria no gubernamental que crea estándares para prácticamente todos los sectores (no solo tecnología). IEEE y ITU son específicos de electrónica/telecomunicaciones; DoD es militar.",
+      "respuestas": [
+        { "id": "a", "texto": "DoD", "correcta": false },
+        { "id": "b", "texto": "ISO", "correcta": true },
+        { "id": "c", "texto": "IAB", "correcta": false },
+        { "id": "d", "texto": "ITU", "correcta": false },
+        { "id": "e", "texto": "TCP/IP", "correcta": false },
+        { "id": "f", "texto": "IEEE", "correcta": false }
+      ]
+    },
+    {
+      "id": 44,
+      "parcial": 1,
+      "texto": "Cuáles de las siguientes características corresponden a las VLANs (seleccione tres opciones):",
+      "explicacion": "b: VLANs se configuran en switches (no hubs). e: mejoran la seguridad al aislar el tráfico. f: agrupan usuarios lógicamente sin importar su ubicación física, incluso en distintos switches. d es FALSA (pueden estar en distintos switches vía trunk). g es FALSA (802.1d = STP, VLANs usan 802.1q).",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se implementan mediante hubs configurables",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Se implementan mediante configuración en los switches",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Todas las VLANs deben pertenecer a la misma subred",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Los empleados pertenecientes a una VLAN deben estar conectados al mismo switch",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Facilitan la implementación de seguridad en la empresa",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "Agrupan empleados lógicamente independientemente de cuál sea su ubicación física",
+          "correcta": true
+        },
+        {
+          "id": "g",
+          "texto": "Se implementan mediante el protocolo IEEE 802.1d",
+          "correcta": false
+        }
       ]
     }
   ]

@@ -27,6 +27,7 @@ export default function TestApp({ materias }: TestAppProps) {
   const [nombre, setNombre] = useState('');
   const [materiaId, setMateriaId] = useState(materias[0]?.materia ?? '');
   const [cantidad, setCantidad] = useState(10);
+  const [parcial, setParcial] = useState(1);
   const [usarLimite, setUsarLimite] = useState(false);
   const [limiteMinutos, setLimiteMinutos] = useState(15);
   const [fase, setFase] = useState<'inicio' | 'test' | 'resultado'>('inicio');
@@ -42,10 +43,33 @@ export default function TestApp({ materias }: TestAppProps) {
   const ultimoCambioRef = useRef<number>(0);
 
   const materia = useMemo(() => materias.find((m) => m.materia === materiaId) ?? materias[0], [materiaId, materias]);
-  const opcionesCantidad = useMemo(
-    () => cantidadOpciones.filter((valor) => valor <= materia.preguntas.length),
+  const parcialesDisponibles = useMemo(
+    () => Array.from(new Set(materia.preguntas.map((pregunta) => pregunta.parcial))).sort((a, b) => a - b),
     [materia],
   );
+  useEffect(() => {
+    if (parcialesDisponibles.length) {
+      setParcial(parcialesDisponibles[0]);
+    }
+  }, [parcialesDisponibles]);
+
+  const preguntasFiltradas = useMemo(
+    () => materia.preguntas.filter((pregunta) => pregunta.parcial === parcial),
+    [materia, parcial],
+  );
+
+  const opcionesCantidad = useMemo(() => {
+    const total = preguntasFiltradas.length;
+    if (total === 0) return [];
+    return total < 10 ? [total] : cantidadOpciones.filter((valor) => valor <= total);
+  }, [preguntasFiltradas]);
+
+  useEffect(() => {
+    const total = preguntasFiltradas.length;
+    if (total > 0 && cantidad > total) {
+      setCantidad(total);
+    }
+  }, [preguntasFiltradas, cantidad]);
 
   useEffect(() => {
     if (fase !== 'test') return;
@@ -72,7 +96,7 @@ export default function TestApp({ materias }: TestAppProps) {
   }, [activePregunta, fase, tiempoInicio]);
 
   const iniciarTest = () => {
-    const seleccionadas = shuffle(materia.preguntas).slice(0, cantidad);
+    const seleccionadas = shuffle(preguntasFiltradas).slice(0, cantidad);
     const inicial = Object.fromEntries(seleccionadas.map((pregunta) => [pregunta.id.toString(), [] as string[]]));
     setPreguntas(seleccionadas);
     setSelecciones(inicial);
@@ -99,14 +123,20 @@ export default function TestApp({ materias }: TestAppProps) {
     ultimoCambioRef.current = ahora;
   };
 
-  const onToggleRespuesta = (preguntaId: string, respuestaId: string) => {
+  const onToggleRespuesta = (preguntaId: string, respuestaId: string, multipleCorrect: boolean) => {
     registrarInteraccion(preguntaId);
     setSelecciones((actual) => {
       const seleccion = actual[preguntaId] ?? [];
-      const tiene = seleccion.includes(respuestaId);
+      if (multipleCorrect) {
+        const tiene = seleccion.includes(respuestaId);
+        return {
+          ...actual,
+          [preguntaId]: tiene ? seleccion.filter((id) => id !== respuestaId) : [...seleccion, respuestaId],
+        };
+      }
       return {
         ...actual,
-        [preguntaId]: tiene ? seleccion.filter((id) => id !== respuestaId) : [...seleccion, respuestaId],
+        [preguntaId]: [respuestaId],
       };
     });
   };
@@ -188,6 +218,20 @@ export default function TestApp({ materias }: TestAppProps) {
               </label>
 
               <label className="space-y-2 rounded-3xl border border-slate-800 bg-slate-950/80 p-4">
+                <span className="text-sm text-slate-400">Parcial</span>
+                <select
+                  value={parcial}
+                  onChange={(event) => setParcial(Number(event.target.value))}
+                  className="w-full rounded-2xl border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-cyan-400"
+                >
+                  {parcialesDisponibles.map((valor) => (
+                    <option key={valor} value={valor}>Parcial {valor}</option>
+                  ))}
+                </select>
+                <p className="text-xs text-slate-500">Esta parcial tiene {preguntasFiltradas.length} preguntas disponibles.</p>
+              </label>
+
+              <label className="space-y-2 rounded-3xl border border-slate-800 bg-slate-950/80 p-4">
                 <span className="text-sm text-slate-400">Cant. preguntas</span>
                 <select
                   value={cantidad}
@@ -198,8 +242,8 @@ export default function TestApp({ materias }: TestAppProps) {
                     <option key={valor} value={valor}>{valor} preguntas</option>
                   ))}
                 </select>
-                {materia.preguntas.length < cantidad && (
-                  <p className="text-xs text-amber-300">Esta materia tiene {materia.preguntas.length} preguntas disponibles; selecciona un valor menor.</p>
+                {preguntasFiltradas.length < cantidad && (
+                  <p className="text-xs text-amber-300">Esta parcial tiene {preguntasFiltradas.length} preguntas disponibles; selecciona un valor menor.</p>
                 )}
               </label>
             </div>
@@ -243,7 +287,7 @@ export default function TestApp({ materias }: TestAppProps) {
             </div>
 
             <button
-              disabled={cantidad > materia.preguntas.length}
+              disabled={cantidad > preguntasFiltradas.length || preguntasFiltradas.length === 0}
               onClick={iniciarTest}
               className="inline-flex items-center justify-center rounded-3xl bg-cyan-500 px-6 py-4 text-base font-semibold text-slate-950 transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:bg-slate-700"
             >
@@ -299,20 +343,24 @@ export default function TestApp({ materias }: TestAppProps) {
                       </div>
                     )}
                     <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                      {pregunta.respuestas.map((respuesta) => (
-                        <label
-                          key={respuesta.id}
-                          className={`group block cursor-pointer rounded-3xl border p-4 transition ${seleccion.includes(respuesta.id) ? 'border-cyan-400 bg-cyan-500/10' : 'border-slate-700 bg-slate-900/80'} hover:border-cyan-400`}
-                        >
-                          <input
-                            type="checkbox"
-                            checked={seleccion.includes(respuesta.id)}
-                            onChange={() => onToggleRespuesta(pregunta.id.toString(), respuesta.id)}
-                            className="mr-3 h-4 w-4 rounded border-slate-500 bg-slate-800 text-cyan-400 focus:ring-cyan-400"
-                          />
-                          <span className="text-sm text-slate-100">{respuesta.texto}</span>
-                        </label>
-                      ))}
+                      {pregunta.respuestas.map((respuesta) => {
+                        const multipleCorrect = pregunta.respuestas.filter((r) => r.correcta).length > 1;
+                        return (
+                          <label
+                            key={respuesta.id}
+                            className={`group block cursor-pointer rounded-3xl border p-4 transition ${seleccion.includes(respuesta.id) ? 'border-cyan-400 bg-cyan-500/10' : 'border-slate-700 bg-slate-900/80'} hover:border-cyan-400`}
+                          >
+                            <input
+                              type={multipleCorrect ? 'checkbox' : 'radio'}
+                              name={`pregunta-${pregunta.id}`}
+                              checked={seleccion.includes(respuesta.id)}
+                              onChange={() => onToggleRespuesta(pregunta.id.toString(), respuesta.id, multipleCorrect)}
+                              className="mr-3 h-4 w-4 rounded border-slate-500 bg-slate-800 text-cyan-400 focus:ring-cyan-400"
+                            />
+                            <span className="text-sm text-slate-100">{respuesta.texto}</span>
+                          </label>
+                        );
+                      })}
                     </div>
                   </article>
                 );
@@ -397,6 +445,11 @@ export default function TestApp({ materias }: TestAppProps) {
                         );
                       })}
                     </div>
+                    {pregunta.explicacion && (
+                      <div className="mt-4 rounded-3xl bg-slate-900/80 p-4 text-sm text-slate-300">
+                        {pregunta.explicacion}
+                      </div>
+                    )}
                   </article>
                 );
               })}
