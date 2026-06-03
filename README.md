@@ -44,5 +44,7 @@ Formato de ejemplo:
 ## Notas
 
 - No guarda progreso entre sesiones.
-- El puntaje se calcula con +0.5 por respuesta correcta y -0.5 por respuesta incorrecta.
-- El tiempo límite se usa como countdown de la prueba.
+- El puntaje total del test siempre se escala a 10 puntos.
+- Cada pregunta vale 10 dividido por la cantidad de preguntas seleccionadas.
+- Cada respuesta correcta suma y cada incorrecta resta el mismo peso.
+- El límite de tiempo es opcional y solo se aplica si lo activas.

@@ -5,38 +5,37 @@ import { materias } from '../lib/materias';
 import type { Materia, Pregunta, RespuestaSeleccion } from '../types';
 
 const cantidadOpciones = [10, 20, 30];
+const totalTestMax = 10;
 
 function shuffle<T>(items: T[]) {
   return [...items].sort(() => Math.random() - 0.5);
 }
 
-function calcularPuntaje(pregunta: Pregunta, seleccion: string[]) {
+function calcularPuntaje(pregunta: Pregunta, seleccion: string[], totalPreguntas: number) {
   const correctas = pregunta.respuestas.filter((r) => r.correcta).map((r) => r.id);
-  const ganancia = seleccion.filter((id) => correctas.includes(id)).length * 0.5;
-  const resta = seleccion.filter((id) => !correctas.includes(id)).length * 0.5;
+  const valorPregunta = totalPreguntas ? totalTestMax / totalPreguntas : 0;
+  const valorPorRespuesta = valorPregunta / Math.max(correctas.length, 1);
+  const ganancia = seleccion.filter((id) => correctas.includes(id)).length * valorPorRespuesta;
+  const resta = seleccion.filter((id) => !correctas.includes(id)).length * valorPorRespuesta;
   return Math.max(0, ganancia - resta);
-}
-
-function totalPreguntasCorrectas(pregunta: Pregunta, seleccion: string[]) {
-  const correctas = pregunta.respuestas.filter((r) => r.correcta).map((r) => r.id);
-  return correctas.every((id) => seleccion.includes(id)) && seleccion.every((id) => correctas.includes(id));
 }
 
 export default function HomePage() {
   const [nombre, setNombre] = useState('');
   const [materiaId, setMateriaId] = useState(materias[0]?.materia ?? '');
   const [cantidad, setCantidad] = useState(10);
+  const [usarLimite, setUsarLimite] = useState(false);
   const [limiteMinutos, setLimiteMinutos] = useState(15);
   const [fase, setFase] = useState<'inicio' | 'test' | 'resultado'>('inicio');
   const [preguntas, setPreguntas] = useState<Pregunta[]>([]);
   const [selecciones, setSelecciones] = useState<Record<string, string[]>>({});
   const [puntajes, setPuntajes] = useState<Record<string, number>>({});
   const [tiempos, setTiempos] = useState<Record<string, number>>({});
-  const [segundosRestantes, setSegundosRestantes] = useState(0);
+  const [segundosRestantes, setSegundosRestantes] = useState<number | null>(null);
+  const [segundosTranscurridos, setSegundosTranscurridos] = useState(0);
   const [tiempoInicio, setTiempoInicio] = useState<number | null>(null);
   const [resultado, setResultado] = useState({ total: 0, maximo: 0, porcentaje: 0, tiempoTotal: 0 });
   const [activePregunta, setActivePregunta] = useState<string | null>(null);
-  const timeRef = useRef<number | null>(null);
   const ultimoCambioRef = useRef<number>(0);
 
   const materia = useMemo(() => materias.find((m) => m.materia === materiaId) ?? materias[0], [materiaId]);
@@ -48,17 +47,21 @@ export default function HomePage() {
   useEffect(() => {
     if (fase !== 'test') return;
     const interval = setInterval(() => {
-      setSegundosRestantes((actual) => {
-        if (actual <= 1) {
-          clearInterval(interval);
-          onEnviar();
-          return 0;
-        }
-        return actual - 1;
-      });
+      if (usarLimite) {
+        setSegundosRestantes((actual) => {
+          if (actual === null || actual <= 1) {
+            clearInterval(interval);
+            onEnviar();
+            return 0;
+          }
+          return actual - 1;
+        });
+      } else {
+        setSegundosTranscurridos((actual) => actual + 1);
+      }
     }, 1000);
     return () => clearInterval(interval);
-  }, [fase]);
+  }, [fase, usarLimite]);
 
   useEffect(() => {
     if (!fase || !activePregunta || !tiempoInicio) return;
@@ -72,7 +75,8 @@ export default function HomePage() {
     setSelecciones(inicial);
     setPuntajes({});
     setTiempos({});
-    setSegundosRestantes(limiteMinutos * 60);
+    setSegundosRestantes(usarLimite ? limiteMinutos * 60 : null);
+    setSegundosTranscurridos(0);
     setTiempoInicio(Date.now());
     setFase('test');
     setActivePregunta(seleccionadas[0]?.id.toString() ?? null);
@@ -116,15 +120,15 @@ export default function HomePage() {
     }
     const puntajeTotal = preguntas.reduce((acum, pregunta) => {
       const seleccion = selecciones[pregunta.id.toString()] ?? [];
-      const puntaje = calcularPuntaje(pregunta, seleccion);
+      const puntaje = calcularPuntaje(pregunta, seleccion, preguntas.length);
       return acum + puntaje;
     }, 0);
-    const maximo = preguntas.reduce((acum, pregunta) => acum + pregunta.respuestas.filter((r) => r.correcta).length * 0.5, 0);
+    const maximo = preguntas.length ? totalTestMax : 0;
     const tiempoTotal = Math.round((ahora - (tiempoInicio ?? ahora)) / 1000);
-    setPuntajes(Object.fromEntries(preguntas.map((pregunta) => [pregunta.id.toString(), calcularPuntaje(pregunta, selecciones[pregunta.id.toString()] ?? [])])));
+    setPuntajes(Object.fromEntries(preguntas.map((pregunta) => [pregunta.id.toString(), calcularPuntaje(pregunta, selecciones[pregunta.id.toString()] ?? [], preguntas.length)])));
     setResultado({
       total: Number(puntajeTotal.toFixed(2)),
-      maximo: Number(maximo.toFixed(2)),
+      maximo,
       porcentaje: maximo ? Number(((puntajeTotal / maximo) * 100).toFixed(1)) : 0,
       tiempoTotal,
     });
@@ -198,29 +202,39 @@ export default function HomePage() {
             </div>
 
             <div className="grid gap-5 lg:grid-cols-2">
-              <label className="space-y-2 rounded-3xl border border-slate-800 bg-slate-950/80 p-4">
-                <span className="text-sm text-slate-400">Tiempo límite</span>
-                <div className="flex items-center gap-3">
+              <label className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-4">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-sm text-slate-400">Usar límite de tiempo</span>
                   <input
-                    type="number"
-                    min={5}
-                    max={60}
-                    value={limiteMinutos}
-                    onChange={(event) => setLimiteMinutos(Number(event.target.value))}
-                    className="w-24 rounded-2xl border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-cyan-400"
+                    type="checkbox"
+                    checked={usarLimite}
+                    onChange={() => setUsarLimite((prev) => !prev)}
+                    className="h-5 w-5 rounded border-slate-600 bg-slate-900 text-cyan-400 focus:ring-cyan-400"
                   />
-                  <span className="text-slate-400">minutos</span>
                 </div>
-                <p className="text-xs text-slate-500">Se iniciará un countdown visible durante el test.</p>
+                {usarLimite && (
+                  <div className="flex items-center gap-3">
+                    <input
+                      type="number"
+                      min={5}
+                      max={60}
+                      value={limiteMinutos}
+                      onChange={(event) => setLimiteMinutos(Number(event.target.value))}
+                      className="w-24 rounded-2xl border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-cyan-400"
+                    />
+                    <span className="text-slate-400">minutos</span>
+                  </div>
+                )}
+                <p className="text-xs text-slate-500">El tiempo es opcional: si no lo activas, el test solo medirá cuánto tardaste.</p>
               </label>
 
               <div className="rounded-3xl border border-slate-800 bg-cyan-950/20 p-5 text-slate-100">
                 <p className="text-sm uppercase tracking-[0.35em] text-cyan-300/80">Reglas de puntuación</p>
                 <ul className="mt-3 space-y-2 text-sm text-slate-300">
-                  <li>Cada respuesta correcta suma +0.5 puntos.</li>
-                  <li>Cada respuesta incorrecta resta -0.5 puntos.</li>
+                  <li>El test se escala a 10 puntos, sin importar la cantidad de preguntas.</li>
+                  <li>Cada pregunta vale 10 / cantidad de preguntas.</li>
+                  <li>Cada respuesta correcta suma y cada incorrecta resta el mismo peso.</li>
                   <li>El puntaje mínimo por pregunta es 0.</li>
-                  <li>Responde todas las preguntas y presiona Enviar al final.</li>
                 </ul>
               </div>
             </div>
@@ -243,8 +257,12 @@ export default function HomePage() {
                 <p className="text-lg font-semibold text-white">{materia.materia}</p>
               </div>
               <div className="space-y-1 text-right">
-                <p className="text-sm text-slate-400">Tiempo restante</p>
-                <p className="text-2xl font-semibold text-cyan-300">{Math.floor(segundosRestantes / 60).toString().padStart(2, '0')}:{(segundosRestantes % 60).toString().padStart(2, '0')}</p>
+                <p className="text-sm text-slate-400">{usarLimite ? 'Tiempo restante' : 'Tiempo transcurrido'}</p>
+                <p className="text-2xl font-semibold text-cyan-300">
+                  {usarLimite
+                    ? `${Math.floor((segundosRestantes ?? 0) / 60).toString().padStart(2, '0')}:${((segundosRestantes ?? 0) % 60).toString().padStart(2, '0')}`
+                    : `${Math.floor(segundosTranscurridos / 60).toString().padStart(2, '0')}:${(segundosTranscurridos % 60).toString().padStart(2, '0')}`}
+                </p>
               </div>
             </div>
 
@@ -267,6 +285,11 @@ export default function HomePage() {
                         Tiempo enfocado: {tiempo}s
                       </div>
                     </div>
+                    {pregunta.imagen && (
+                      <div className="mt-4 rounded-3xl border border-slate-800 bg-slate-900/80 p-4">
+                        <img src={pregunta.imagen} alt={`Imagen pregunta ${index + 1}`} className="w-full rounded-3xl object-contain" />
+                      </div>
+                    )}
                     <div className="mt-5 grid gap-4 sm:grid-cols-2">
                       {pregunta.respuestas.map((respuesta) => (
                         <label
@@ -335,6 +358,11 @@ export default function HomePage() {
                         Puntaje: {puntaje.toFixed(1)}
                       </div>
                     </div>
+                    {pregunta.imagen && (
+                      <div className="mt-4 rounded-3xl border border-slate-800 bg-slate-900/80 p-4">
+                        <img src={pregunta.imagen} alt={`Imagen pregunta ${index + 1}`} className="w-full rounded-3xl object-contain" />
+                      </div>
+                    )}
                     <div className="mt-5 grid gap-4 sm:grid-cols-2">
                       {pregunta.respuestas.map((respuesta) => {
                         const esSeleccionada = seleccion.includes(respuesta.id);

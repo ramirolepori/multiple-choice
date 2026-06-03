@@ -7,6 +7,7 @@ export type Respuesta = {
 export type Pregunta = {
   id: number;
   texto: string;
+  imagen?: string;
   respuestas: Respuesta[];
 };
 
