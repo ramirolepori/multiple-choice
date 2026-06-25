@@ -1,0 +1,4752 @@
+{
+  "materia": "Investigación Operativa",
+  "preguntas": [
+    {
+      "id": 1,
+      "texto": "La Investigación Operativa (IO) se define principalmente como:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La aplicación del método científico a problemas de las organizaciones para producir soluciones racionales",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Una rama de la matemática pura dedicada a resolver sistemas de ecuaciones",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Un conjunto de reglas de intuición para decidir rápidamente",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Una técnica exclusivamente contable para registrar operaciones",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Un software de optimización",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La IO es la aplicación del método científico a problemas de las organizaciones, a fin de producir soluciones racionales que sirvan a los objetivos de toda la organización."
+    },
+    {
+      "id": 2,
+      "texto": "¿Dónde y en qué contexto se ubica el origen de la Investigación Operativa?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "En Gran Bretaña, durante la Segunda Guerra Mundial",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "En Estados Unidos, durante la crisis de 1929",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "En Alemania, durante la Revolución Industrial",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "En Francia, durante la Ilustración",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "En Japón, durante la posguerra",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Existe consenso en ubicar el origen de la IO en Gran Bretaña durante la Segunda Guerra Mundial, con el estudio de problemas tácticos y estratégicos (radares, bombardeos, minas)."
+    },
+    {
+      "id": 3,
+      "texto": "La primera técnica matemática ampliamente aceptada en IO fue el Método Simplex. ¿Quién y en qué año lo desarrolló?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "George Dantzig, en 1947",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "John von Neumann, en 1928",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Leonard Kantorovich, en 1939",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Harold Kuhn, en 1951",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "George Dantzig, en 1965",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El Método Simplex de Programación Lineal fue desarrollado en 1947 por el matemático norteamericano George B. Dantzig."
+    },
+    {
+      "id": 4,
+      "texto": "Los tres conjuntos básicos de elementos que componen un modelo matemático de optimización son:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Variables/parámetros, restricciones y función objetivo",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Datos, hipótesis y conclusiones",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Entradas, procesos y salidas",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Costos, ingresos y utilidades",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Vértices, aristas y caras",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Un modelo matemático comprende: variables y parámetros, restricciones, y función objetivo."
+    },
+    {
+      "id": 5,
+      "texto": "Las variables exógenas (o externas) de un modelo se caracterizan por:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "No ser controlables por el decisor (ej.: inflación, tipo de cambio)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Ser las que el decisor quiere determinar con el modelo",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Ser siempre iguales a cero en el óptimo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Representar la función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Coincidir con las variables de holgura",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Las variables exógenas/externas son no controlables por el decisor; las endógenas/internas (de decisión) son las que se busca determinar."
+    },
+    {
+      "id": 6,
+      "texto": "Los parámetros de un modelo matemático son:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Valores conocidos que relacionan las variables de decisión con las restricciones y la función objetivo",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Las variables cuyo valor se desconoce y se quiere hallar",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Siempre números enteros",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El resultado de la optimización",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Las restricciones de no negatividad",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Los parámetros son valores conocidos (coeficientes técnicos, costos, disponibilidades) que vinculan variables con restricciones y objetivo; pueden ser determinísticos o probabilísticos."
+    },
+    {
+      "id": 7,
+      "texto": "Según el objetivo del problema, los modelos de IO se clasifican en:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Modelos de optimización y modelos de descripción",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Modelos lineales y no lineales",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Modelos hard y soft",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Modelos primal y dual",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Modelos gráficos y analíticos",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Una clasificación es según el objetivo: de optimización (maximizar/minimizar) o de descripción. Otra es según la naturaleza de los datos."
+    },
+    {
+      "id": 8,
+      "texto": "Según la naturaleza de los datos, un modelo en el que todos los datos relevantes se suponen conocidos con certeza es un modelo:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Determinístico",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Estocástico",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Mixto",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Probabilístico",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Aleatorio",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Modelo determinístico: todos los datos se suponen conocidos. Estocástico: algunos datos son inciertos pero con probabilidad conocida. Mixto: combina ambas categorías."
+    },
+    {
+      "id": 9,
+      "texto": "La Programación Lineal, el Transporte y la Programación No Lineal se ubican, según la naturaleza de los datos, dentro de los modelos:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Determinísticos",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Estocásticos",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Mixtos",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "De simulación",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "De teoría de colas",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En el esquema de la cátedra, la PL, Transporte/Asignación, PL Entera, Flujo en Redes y la PNL son modelos determinísticos."
+    },
+    {
+      "id": 10,
+      "texto": "¿Cuál de las siguientes NO es una etapa de la metodología de la IO según el libro de la cátedra?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Maximización forzada de la función objetivo sin restricciones",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Identificación del problema y relevamiento de la información",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Construcción del modelo matemático",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Validación del modelo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Seguimiento y control",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Las etapas son: identificación del problema y relevamiento, construcción del modelo, resolución, validación, toma de decisión e implementación, y seguimiento y control."
+    },
+    {
+      "id": 11,
+      "texto": "La validación de un modelo comprende dos aspectos. ¿Cuáles son?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Validación técnica (no omitir variables/relaciones) y validación operacional (resultados factibles en el sistema real)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Validación contable y validación legal",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Validación de hardware y de software",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Validación primal y validación dual",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Validación gráfica y validación analítica",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La validación técnica verifica que no se hayan omitido variables/relaciones significativas; la operacional, que los resultados sean factibles en el sistema real."
+    },
+    {
+      "id": 12,
+      "texto": "La diferencia central entre la IO Hard y la IO Soft es que:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La Hard usa modelos matemáticos sobre hechos medibles; la Soft trabaja la estructuración de problemas, incluye lo cualitativo y apunta a decisiones grupales",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La Hard es más rápida y la Soft más lenta",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La Hard solo sirve para minimizar y la Soft para maximizar",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La Soft es la única que usa computadoras",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "No existe ninguna diferencia, son sinónimos",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La IO Hard estructura problemas a partir de hechos medibles y recurre a modelos matemáticos (decisiones individuales). La IO Soft trabaja la estructuración, incluye información cualitativa y facilita acuerdos en decisiones grupales."
+    },
+    {
+      "id": 13,
+      "texto": "Un modelo matemático debe ser una representación exacta de la realidad para ser útil.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": true
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Falso. El modelo no tiene que ser exacto, solo lo bastante aproximado como para dar mejores resultados que el sentido común. Es una representación abstracta, un 'espejo' de la realidad."
+    },
+    {
+      "id": 14,
+      "texto": "La función objetivo define la medida de efectividad del sistema como una función de las variables de decisión.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Verdadero. La función objetivo expresa la medida de efectividad (utilidad, costo, tiempo) en función de las variables de decisión, y se busca su valor óptimo."
+    },
+    {
+      "id": 15,
+      "texto": "Optimizar significa llevar una magnitud a su máximo o a su mínimo, según se trate de algo beneficioso o perjudicial.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Verdadero. Optimizar es llevar una magnitud a su óptimo: máximo si es beneficioso (maximizar) o mínimo si es perjudicial (minimizar)."
+    },
+    {
+      "id": 16,
+      "texto": "La definición de Lawrence y Pasternak describe a la IO con tres componentes. ¿Cuáles son?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El arte de modelar, la ciencia de desarrollar técnicas de solución y la capacidad de comunicar resultados",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La intuición, la experiencia y la suerte",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El cálculo, el álgebra y la estadística",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La observación, la hipótesis y la conclusión",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La planificación, la ejecución y el control",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Lawrence y Pasternak: la IO es el arte de modelar situaciones complejas, la ciencia de desarrollar técnicas de solución, y la capacidad de comunicar efectivamente los resultados."
+    },
+    {
+      "id": 17,
+      "texto": "El enfoque de la IO se basa en el supuesto de:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La racionalidad: las personas/organizaciones optimizan con recursos limitados",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La irracionalidad de los mercados",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La certeza absoluta de todos los pronósticos",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La ausencia total de restricciones",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La improvisación como método",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La IO se basa en el supuesto de racionalidad: las personas y organizaciones actúan reflexivamente y optimizan su utilidad/costos con recursos limitados."
+    },
+    {
+      "id": 18,
+      "texto": "La etapa de implementación de un estudio de IO es poco relevante para el éxito del trabajo.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": true
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Falso. La etapa de toma de decisión e implementación es de vital importancia para el éxito; requiere explicar la solución a los sectores afectados para minimizar el rechazo."
+    },
+    {
+      "id": 19,
+      "texto": "Un modelo es de Programación Lineal (PL) cuando:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La función objetivo y todas las restricciones son lineales, y las variables son no negativas",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La función objetivo es lineal pero las restricciones pueden ser cuadráticas",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Al menos una restricción es no lineal",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Hay más de una función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Las variables deben ser obligatoriamente enteras",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En PL la función objetivo y todas las restricciones son lineales, y las variables son no negativas."
+    },
+    {
+      "id": 20,
+      "texto": "¿Cuál de las siguientes restricciones NO cumple el requisito de linealidad?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "X1 · X2 ≥ 8",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "5/3 X1 + 7 X2 ≤ 20",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "X1 + X2 = 36",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "3 X1 - 2 X2 ≥ -12",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "√8 X1 + 5 X2 ≤ 7",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El producto de dos variables (X1·X2) viola la linealidad. Potencias de variables, raíces de variables o variables en el denominador también la violan."
+    },
+    {
+      "id": 21,
+      "texto": "Un PL está en forma estándar cuando:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Todas las restricciones son igualdades (sin importar si es máximo o mínimo)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Todas las restricciones son del tipo ≤",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Todas las restricciones son del tipo ≥",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La función objetivo es de maximización",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "No hay variables de holgura",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La forma estándar tiene TODAS las restricciones como igualdades, independientemente de que la FO sea de máximo o mínimo. Es la forma con que arranca el Simplex."
+    },
+    {
+      "id": 22,
+      "texto": "Un PL está en forma canónica cuando:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "En máximo todas las restricciones son ≤, y en mínimo todas son ≥",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Todas las restricciones son igualdades",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Todas las restricciones son ≥ sin importar el objetivo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La función objetivo no tiene términos independientes",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Todas las variables son artificiales",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Forma canónica: en máximo todas ≤; en mínimo todas ≥. (En cambio, estándar = todas igualdades.)"
+    },
+    {
+      "id": 23,
+      "texto": "Para convertir una restricción del tipo ≤ a igualdad se agrega una variable de holgura (slack). Esta variable:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se suma y representa el sobrante del recurso; en la FO lleva coeficiente cero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Se resta y representa el exceso; en la FO lleva coeficiente cero",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Se suma y lleva coeficiente positivo en la FO",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No modifica la restricción",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Es siempre una variable artificial",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En restricciones ≤ se agrega una holgura sumando (sobrante del recurso). En restricciones ≥ se agrega una variable de excedente restando. Ambas entran en la FO con coeficiente cero."
+    },
+    {
+      "id": 24,
+      "texto": "Para convertir una restricción del tipo ≥ a igualdad se agrega una variable de:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Excedente (surplus), restando",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Holgura, sumando",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Artificial, multiplicando",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Decisión, sumando",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Holgura, restando",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En restricciones ≥ se agrega una variable de excedente (surplus) restando, que representa el exceso por encima del mínimo requerido. Lleva coeficiente cero en la FO."
+    },
+    {
+      "id": 25,
+      "texto": "Si en el vector del lado derecho (B) de una restricción existe un valor negativo, antes de iniciar el Simplex se debe:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Multiplicar ambos miembros de esa restricción por -1 (lo que invierte el sentido de la desigualdad)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Eliminar la restricción",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Cambiar la función objetivo de máximo a mínimo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Agregar dos variables de holgura",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Dejar el valor negativo tal cual",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si bi < 0, se multiplican ambos miembros de la restricción por -1, lo que invierte el sentido de la desigualdad, para poder armar la solución básica inicial."
+    },
+    {
+      "id": 26,
+      "texto": "Una solución factible (o posible) de un PL es aquella que:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Cumple todas las restricciones y todas las variables son no negativas",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Tiene exactamente m variables positivas",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Maximiza la función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Solo cumple las restricciones de no negatividad",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Tiene todas las variables iguales a cero",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Una solución factible cumple todas las restricciones y la no negatividad (xj ≥ 0). No necesariamente es óptima ni básica."
+    },
+    {
+      "id": 27,
+      "texto": "Siendo m el número de restricciones, una solución factible BÁSICA tiene:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "No más de m variables positivas",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Más de m variables positivas",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Exactamente n variables positivas",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Siempre cero variables positivas",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Más de n-m variables positivas",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Una solución factible básica tiene no más de m variables positivas. Si tiene exactamente m, es no degenerada; si tiene menos de m, es degenerada."
+    },
+    {
+      "id": 28,
+      "texto": "Una solución factible básica es DEGENERADA cuando:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Tiene menos de m variables positivas (alguna variable básica vale cero)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Tiene exactamente m variables positivas",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Tiene más de m variables positivas",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No cumple alguna restricción",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Todas sus variables son artificiales",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Solución básica degenerada: menos de m valores positivos (o más de n-m nulos); una variable básica queda en cero."
+    },
+    {
+      "id": 29,
+      "texto": "Una solución con MÁS de m variables positivas es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Factible NO básica",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Factible básica no degenerada",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Factible básica degenerada",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No factible",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Óptima",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si tiene más de m variables positivas, es una solución factible NO básica (no corresponde a un vértice)."
+    },
+    {
+      "id": 30,
+      "texto": "Dado un PL en forma estándar con 5 variables y 3 restricciones, una solución X1=5, X2=3, X3=12, X4=0, X5=0 es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Factible básica no degenerada (exactamente m=3 positivas)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Factible no básica",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Degenerada",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No factible",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Óptima por definición",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Con m=3 restricciones y 3 variables positivas (X1, X2, X3), es una solución factible básica no degenerada (exactamente m positivas)."
+    },
+    {
+      "id": 31,
+      "texto": "Dado un PL en forma estándar con 5 variables y 3 restricciones, una solución X1=0, X2=1, X3=8, X4=0, X5=0 es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Factible básica degenerada (solo 2 positivas, menos de m=3)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Factible básica no degenerada",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Factible no básica",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No factible",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "No clasificable",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Con m=3 y solo 2 variables positivas (X2, X3), es factible básica degenerada (menos de m positivas)."
+    },
+    {
+      "id": 32,
+      "texto": "Una solución X1=-5, X2=0, X3=2, X4=1, X5=0 (con todas las restricciones cumplidas salvo el signo) es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "No factible (viola la no negatividad: X1=-5)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Factible básica",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Factible no básica",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Degenerada",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Óptima",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Al tener una variable negativa (X1=-5) viola la restricción de no negatividad, por lo tanto NO es factible."
+    },
+    {
+      "id": 33,
+      "texto": "El conjunto de soluciones factibles (región factible) de un PL es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Un conjunto convexo",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Un conjunto cóncavo",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Siempre un único punto",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Un conjunto abierto sin frontera",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Un conjunto no convexo en general",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La región factible (poliedro de soluciones) es un conjunto convexo: el segmento entre dos puntos factibles también es factible."
+    },
+    {
+      "id": 34,
+      "texto": "Si un PL tiene solución óptima, ésta se encuentra:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "En al menos uno de los vértices del poliedro",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Siempre en el interior de la región factible",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Siempre fuera de la región factible",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "En el centro de gravedad del poliedro",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "En un punto donde no se cumple ninguna restricción",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si el PL tiene solución, ésta está en al menos un vértice. Por eso el Simplex solo recorre vértices y descarta puntos interiores."
+    },
+    {
+      "id": 35,
+      "texto": "Las soluciones factibles ubicadas en los vértices del poliedro son:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Soluciones factibles básicas",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Soluciones factibles no básicas",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Soluciones no factibles",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Siempre soluciones degeneradas",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Siempre soluciones óptimas",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Las soluciones en los vértices son soluciones factibles básicas: aquí se conectan la geometría (vértice) y el álgebra (solución básica)."
+    },
+    {
+      "id": 36,
+      "texto": "En una restricción LIMITANTE (que determina el óptimo), la variable de holgura asociada:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Es nula (no hay sobrante del recurso)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Es positiva (hay sobrante)",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Es negativa",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Es siempre artificial",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "No existe",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En las restricciones limitantes no hay sobrante de insumo, por lo que la variable de holgura es nula. En las no limitantes la holgura es positiva."
+    },
+    {
+      "id": 37,
+      "texto": "Un PL tiene infinitas soluciones óptimas cuando, gráficamente:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La función objetivo es paralela a una restricción limitante",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La función objetivo pasa por el origen",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La región factible es un único punto",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No hay región factible",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La región factible es abierta",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si la recta de la FO es paralela a una restricción limitante, hay dos vértices óptimos y todos los puntos del segmento entre ellos: infinitas soluciones óptimas."
+    },
+    {
+      "id": 38,
+      "texto": "La solución óptima es DEGENERADA cuando, gráficamente:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El óptimo cae en un vértice donde se cruzan 3 o más rectas de restricción",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La FO es paralela a una restricción",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La región factible es abierta",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Hay una sola restricción limitante",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El óptimo está en el origen",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si el óptimo se da en un vértice 'sobredefinido' (se cruzan 3 o más restricciones), la solución óptima es degenerada."
+    },
+    {
+      "id": 39,
+      "texto": "El Teorema 1 de combinaciones lineales convexas afirma que toda combinación lineal convexa de soluciones factibles de un PL es otra solución factible.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Verdadero. Es el Teorema 1: toda combinación lineal convexa de soluciones factibles es otra solución factible (de ahí que el conjunto factible sea convexo)."
+    },
+    {
+      "id": 40,
+      "texto": "El teorema fundamental de la PL sostiene que si un PL es resoluble, existe al menos una solución factible básica que también es óptima.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Verdadero. Este teorema (Teorema 3) justifica que el Simplex solo recorra vértices: si hay óptimo, existe al menos una solución factible básica óptima."
+    },
+    {
+      "id": 41,
+      "texto": "En la forma matricial Max Z = CX, sujeto a AX ≤ B, X ≥ 0, el elemento C es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Un vector fila de orden 1×n (coeficientes de la FO)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Una matriz de orden m×n",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Un vector columna de orden n×1",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Un escalar",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El vector del lado derecho",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "C es vector fila (1×n) de coeficientes de la FO; X es vector columna (n×1); A es matriz (m×n); B es vector columna (m×1) del lado derecho."
+    },
+    {
+      "id": 42,
+      "texto": "El supuesto de DIVISIBILIDAD en la Programación Lineal expresa que:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Las variables de decisión pueden tomar cualquier valor fraccionario dentro de su rango",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El valor de la función objetivo debe ser divisible a cualquier nivel fraccionario",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Los recursos deben dividirse en partes iguales",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Las restricciones se pueden dividir por cualquier número",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La función objetivo se divide entre las variables",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La divisibilidad se refiere a las VARIABLES DE DECISIÓN, que pueden asumir valores fraccionarios. No se refiere al valor de la función objetivo (esa redacción es una trampa típica de parcial)."
+    },
+    {
+      "id": 43,
+      "texto": "El supuesto de divisibilidad en la PL expresa que el valor de la función objetivo debe ser divisible a cualquier nivel fraccionario.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": true
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Falso. La divisibilidad se refiere a las variables de decisión (que pueden tomar valores fraccionarios), no al valor de la función objetivo."
+    },
+    {
+      "id": 44,
+      "texto": "Los supuestos básicos sobre los que se construye un modelo de PL incluyen:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Proporcionalidad, aditividad, divisibilidad y certidumbre",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Concavidad, convexidad y degeneración",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Dualidad, sensibilidad y holgura",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Aleatoriedad, riesgo e incertidumbre",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Linealidad, no negatividad y enteros",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Los supuestos de la PL son proporcionalidad, aditividad, divisibilidad y certidumbre (todos los parámetros se conocen con exactitud)."
+    },
+    {
+      "id": 45,
+      "texto": "El supuesto de certidumbre de la PL implica que todos los parámetros del modelo se conocen con exactitud.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Verdadero. El supuesto de certidumbre supone que todos los parámetros se conocen con exactitud; el análisis de sensibilidad estudia justamente qué pasa cuando ese supuesto se relaja."
+    },
+    {
+      "id": 46,
+      "texto": "El supuesto de proporcionalidad NO se cumple cuando, por ejemplo:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Asignar demasiados operarios reduce el rendimiento por trabajador (economías o deseconomías de escala)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Las variables son no negativas",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Hay una sola función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Las restricciones son lineales",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Los parámetros se conocen con exactitud",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La proporcionalidad falla cuando aparecen economías o deseconomías de escala (ej.: el rendimiento por trabajador disminuye al asignar demasiados operarios), generando no linealidad."
+    },
+    {
+      "id": 47,
+      "texto": "El método gráfico para resolver un PL es aplicable, en la práctica, cuando el problema tiene:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Dos variables de decisión",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Cualquier número de variables",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Solo una restricción",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Variables enteras únicamente",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Función objetivo no lineal",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El método gráfico es práctico con dos variables de decisión (se trabaja en el plano). Con más variables se recurre al Simplex."
+    },
+    {
+      "id": 48,
+      "texto": "En las restricciones no determinantes del óptimo (no limitantes), las variables de holgura son:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Positivas (hay sobrante de insumo)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Nulas",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Negativas",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Iguales a m",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Artificiales",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En las restricciones no limitantes siempre hay sobrante de insumo, por lo que las variables de holgura son positivas."
+    },
+    {
+      "id": 49,
+      "texto": "Si un PL es factible, entonces necesariamente tiene una única solución óptima.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": true
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Falso. Un PL factible puede no tener óptimo (no acotado) o tener infinitas soluciones óptimas. La factibilidad no garantiza un óptimo único."
+    },
+    {
+      "id": 50,
+      "texto": "El Método Simplex recorre la región factible de la siguiente manera:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Salta de un vértice a un vértice vecino mejorando el objetivo, hasta que no puede mejorar más",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Evalúa todos los puntos interiores de la región",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Recorre solo el centro de la región factible",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Calcula la derivada de la función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Prueba combinaciones aleatorias de variables",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El Simplex recorre vértices (soluciones factibles básicas) de forma inteligente: en cada paso pasa a un vértice adyacente que mejora la FO, hasta alcanzar el óptimo."
+    },
+    {
+      "id": 51,
+      "texto": "En la primera fase del Simplex, las variables básicas iniciales son aquellas cuyas columnas:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Forman los m vectores unitarios (matriz identidad) en la matriz A",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Tienen el mayor coeficiente en la FO",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Son todas artificiales",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Tienen valor cero en el lado derecho",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Aparecen primero en el planteo",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Las variables básicas iniciales son las asociadas a los m vectores unitarios (configuración de matriz identidad); su valor es el término independiente bi. El resto son no básicas (valen cero)."
+    },
+    {
+      "id": 52,
+      "texto": "La fila (cj - zj) de la tabla simplex representa:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La diferencia marginal: cuánto cambia z si ingresa una unidad de esa variable",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El valor de la variable en la solución actual",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El coeficiente técnico de la restricción",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El precio de venta del producto",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El número de iteraciones realizadas",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La fila cj - zj es la diferencia marginal: mide el cambio en z ante el ingreso de una unidad de cada variable no básica. Es la base del criterio de optimidad."
+    },
+    {
+      "id": 53,
+      "texto": "En un problema de MAXIMIZACIÓN, la solución es óptima cuando:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Todas las diferencias (cj - zj) son ≤ 0",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Todas las diferencias (cj - zj) son ≥ 0",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Existe al menos una (cj - zj) > 0",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Todas las variables son básicas",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El valor de z es cero",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En máximo, la solución es óptima cuando todas las (cj - zj) ≤ 0: ya no hay variable cuyo ingreso aumente z."
+    },
+    {
+      "id": 54,
+      "texto": "En un problema de MINIMIZACIÓN, la solución es óptima cuando:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Todas las diferencias (cj - zj) son ≥ 0",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Todas las diferencias (cj - zj) son ≤ 0",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Existe al menos una (cj - zj) < 0",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Todas las variables son no básicas",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El valor de z es máximo",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En mínimo, la solución es óptima cuando todas las (cj - zj) ≥ 0: ya no hay variable cuyo ingreso disminuya z."
+    },
+    {
+      "id": 55,
+      "texto": "En un problema de maximización, la variable que ENTRA a la base es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La de mayor (cj - zj) positiva",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La de menor (cj - zj) negativa",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La de menor cociente θ",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La primera variable no básica",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La de mayor valor en el lado derecho",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En máximo entra la variable con mayor (cj - zj) positiva, porque es la que más aumenta z por unidad."
+    },
+    {
+      "id": 56,
+      "texto": "En un problema de minimización, la variable que ENTRA a la base es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La de menor (cj - zj) negativa (la más negativa)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La de mayor (cj - zj) positiva",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La de mayor cociente θ",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La última variable básica",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La artificial con menor coeficiente",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En mínimo entra la variable con la (cj - zj) más negativa, porque es la que más disminuye z por unidad."
+    },
+    {
+      "id": 57,
+      "texto": "La variable que SALE de la base se determina por el criterio del mínimo cociente θ = αi / αik, considerando:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Solo los αik estrictamente positivos; sale la del menor cociente",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Todos los αik, incluso negativos; sale la del mayor cociente",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Solo los αik negativos; sale la del menor cociente",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La variable con mayor coeficiente en la FO",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La variable artificial siempre",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El criterio del mínimo cociente usa solo los αik estrictamente positivos. Sale la variable del menor cociente, que es el máximo valor que puede tomar la entrante sin violar la no negatividad."
+    },
+    {
+      "id": 58,
+      "texto": "Si en la columna de la variable que debería entrar a la base TODOS los αij son ≤ 0, estamos ante:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Un problema no acotado (z crece o decrece indefinidamente)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Un problema no factible",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Una solución degenerada",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Múltiples soluciones óptimas",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La solución óptima",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si todos los αij ≤ 0 no se puede elegir variable que sale: la FO no tiene tope. Es un problema no acotado, que en la práctica suele indicar error de modelización."
+    },
+    {
+      "id": 59,
+      "texto": "Las variables artificiales se utilizan cuando:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Hay restricciones de igualdad (=) o de mayor o igual (≥), donde faltan vectores unitarios para iniciar",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Todas las restricciones son del tipo ≤",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La función objetivo es de máximo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El lado derecho es positivo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Hay más variables que restricciones",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Las artificiales se agregan cuando faltan vectores unitarios (restricciones = o ≥) para armar la solución básica inicial. Son un artificio matemático, no del problema original."
+    },
+    {
+      "id": 60,
+      "texto": "En un problema de MAXIMIZACIÓN, las variables artificiales se introducen en la función objetivo con coeficiente:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "-M (muy grande y negativo)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "+M (muy grande y positivo)",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Cero",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Igual al de las variables de decisión",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Uno",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En máximo, las artificiales llevan coeficiente -M (penalización grande y negativa) para forzar al Simplex a sacarlas de la base. En mínimo llevan +M."
+    },
+    {
+      "id": 61,
+      "texto": "En un problema de MINIMIZACIÓN, las variables artificiales se introducen en la función objetivo con coeficiente:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "+M (muy grande y positivo)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "-M (muy grande y negativo)",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Cero",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Negativo pequeño",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Igual al lado derecho",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En mínimo, las artificiales llevan coeficiente +M (penalización grande y positiva) para que el algoritmo las expulse rápidamente de la base."
+    },
+    {
+      "id": 62,
+      "texto": "Si al llegar al óptimo queda una variable artificial en la base con valor POSITIVO, el problema original es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "No factible (incompatible)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "No acotado",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Degenerado pero factible",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "De solución única",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "De infinitas soluciones",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si se cumple el criterio de optimidad pero queda una artificial positiva en la base, el problema original es no factible (incompatible): las restricciones se contradicen."
+    },
+    {
+      "id": 63,
+      "texto": "Si al llegar al óptimo queda una variable artificial en la base con valor NULO, la solución encontrada es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Válida para el problema original, pero degenerada",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "No factible",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "No acotada",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Inexistente",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Inválida y debe descartarse",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si la artificial queda en la base con valor nulo, la solución sí es válida para el problema original, pero es degenerada (tendrá menos de m positivas)."
+    },
+    {
+      "id": 64,
+      "texto": "Un problema de PL es DEGENERADO cuando:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Una variable básica queda con valor igual a 0",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "En la solución óptima queda una variable artificial con valor > 0",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Las tasas de sustitución de la variable que entra son todas ≤ 0",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El (cj - zj) de una variable no básica es igual a 0",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Una variable no básica queda con valor igual a 0",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Degeneración: una variable BÁSICA queda en 0 (menos de m positivas). La opción del artificial positivo es no factibilidad; las tasas ≤0 es no acotamiento; el (cj-zj)=0 de no básica es múltiples óptimas."
+    },
+    {
+      "id": 65,
+      "texto": "En la tabla simplex, ¿qué indica que el problema tiene MÚLTIPLES soluciones óptimas?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Una variable NO básica tiene (cj - zj) = 0 en la tabla óptima",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Una variable básica queda en cero",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Todos los αij de una columna son ≤ 0",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Queda una artificial positiva en la base",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El valor de z es negativo",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si en la tabla óptima una variable NO básica tiene (cj - zj) = 0, puede ingresar a la base dando otra solución con el mismo z: infinitas soluciones óptimas (gráficamente, FO paralela a una restricción limitante)."
+    },
+    {
+      "id": 66,
+      "texto": "La columna VLD (Vector del Lado Derecho) de la tabla simplex contiene:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Los valores de las variables básicas en la solución actual y el valor de la FO",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Los coeficientes técnicos de las restricciones",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Las diferencias marginales cj - zj",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Los coeficientes de la función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Las tasas de sustitución",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La columna VLD contiene el valor de las variables básicas en la solución presente y, en su fila correspondiente, el valor de la función objetivo."
+    },
+    {
+      "id": 67,
+      "texto": "La fila zj de la tabla simplex se calcula como:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La suma de los productos de la columna CB por los elementos de la j-ésima columna",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La resta cj menos el lado derecho",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El producto del lado derecho por el coeficiente",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La derivada de la función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El cociente entre cj y αij",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Cada zj es la suma de (CB × elemento de la columna j). Luego cj - zj se obtiene restando zj de cj."
+    },
+    {
+      "id": 68,
+      "texto": "Las operaciones que se usan para actualizar la tabla simplex (encontrar la nueva SFB) son:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Operaciones elementales por filas (multiplicar una fila por un número y sumar a una fila otra multiplicada)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Derivación parcial de la función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Integración de las restricciones",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Resolución gráfica del sistema",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Cálculo del determinante de A",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La actualización se hace por operaciones elementales en filas, llevando la columna de la variable que entra a vector unitario (elemento pivot = 1)."
+    },
+    {
+      "id": 69,
+      "texto": "El elemento PIVOT de una iteración del Simplex se ubica en:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La intersección de la columna de la variable que entra y la fila de la variable que sale",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La esquina superior izquierda de la tabla",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La fila zj",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La columna VLD",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La fila cj - zj",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El elemento pivot está en la intersección entre la columna de la variable que entra y la fila de la variable que sale; debe convertirse en 1 dividiendo toda la fila por su valor."
+    },
+    {
+      "id": 70,
+      "texto": "¿Cuál de los siguientes casos NO se identifica por tener una variable artificial positiva en la base óptima?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Problema no acotado",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Problema no factible",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Problema incompatible",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Sistema de restricciones contradictorio",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Región factible vacía",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El no acotamiento se detecta por tasas de sustitución ≤ 0 en la columna de la variable que entraría, NO por artificial positiva. La artificial positiva indica no factibilidad/incompatibilidad."
+    },
+    {
+      "id": 71,
+      "texto": "En un problema de minimización, si la variable xj ingresa a la base, los nuevos valores de las variables básicas se calculan como:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "λi - θ·λij",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "λi + θ·λij",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "λi · θ / λij",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "cj - zj",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "bi / αij",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Los nuevos valores de las variables básicas se obtienen como λi - θ·λij (válido tanto para máximo como para mínimo), donde θ es el valor de la variable entrante."
+    },
+    {
+      "id": 72,
+      "texto": "En un problema de minimización, el valor de zj puede interpretarse como el costo de producir una unidad de la variable no básica xj.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Verdadero. En minimización, zj se interpreta como el costo (en términos del objetivo) de producir una unidad de la variable no básica con los recursos actuales."
+    },
+    {
+      "id": 73,
+      "texto": "Un empate al elegir la variable que SALE de la base (dos cocientes mínimos iguales) anticipa:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Una solución degenerada (una variable básica quedará en cero)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Un problema no acotado",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Un problema no factible",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Múltiples soluciones óptimas",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El fin óptimo del algoritmo",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Un empate en el mínimo cociente al elegir la variable que sale genera que alguna variable básica quede en cero: solución degenerada."
+    },
+    {
+      "id": 74,
+      "texto": "¿Por qué el Simplex solo necesita examinar los vértices del poliedro?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Porque un teorema garantiza que, si hay óptimo, existe al menos una solución factible básica (vértice) óptima",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Porque los puntos interiores no cumplen las restricciones",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Porque los vértices son infinitos",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Porque la FO no es lineal",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Porque las variables son enteras",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El teorema fundamental garantiza que si el PL es resoluble existe al menos una SFB óptima; por eso basta recorrer vértices."
+    },
+    {
+      "id": 75,
+      "texto": "En la solución de partida del Simplex (con todas las variables de decisión en cero), el valor de la función objetivo es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Cero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Igual al lado derecho",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Igual a M",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El valor óptimo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Infinito",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En la solución inicial (vértice origen, variables de decisión nulas), z = 0, ya que las holguras tienen coeficiente cero en la FO."
+    },
+    {
+      "id": 76,
+      "texto": "En forma canónica, un PL de maximización con 7 variables de decisión y 4 restricciones tiene un número máximo de soluciones básicas igual a:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "C(11,4) = 330",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "C(7,4) = 35",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "C(11,7) = 330 pero distinto cálculo conceptual",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "7 × 4 = 28",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "4! = 24",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Al pasar a estándar se agregan 4 holguras: n = 7 + 4 = 11 variables, m = 4. El número máximo de soluciones básicas es C(n,m) = C(11,4) = 330."
+    },
+    {
+      "id": 77,
+      "texto": "El número máximo de soluciones básicas de un PL se calcula como:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La combinación C(n, m), con n = total de variables (incluidas holguras) y m = número de restricciones",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El producto n × m",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La permutación de n variables",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El factorial de m",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La suma n + m",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Las soluciones básicas surgen de elegir m variables básicas entre las n totales: C(n,m) = n! / [m!(n-m)!]."
+    },
+    {
+      "id": 78,
+      "texto": "Si todos los elementos de la columna de la variable que entra son negativos o cero, el problema es no acotado.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Verdadero. No poder elegir variable de salida (todos los αij ≤ 0) implica que la FO crece/decrece indefinidamente: problema no acotado."
+    },
+    {
+      "id": 79,
+      "texto": "El óptimo de un PL de maximización siempre se encuentra en el vértice más alejado del origen.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": true
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Falso. El óptimo depende de la dirección de la función objetivo y de la forma de la región factible, no necesariamente es el vértice más alejado del origen."
+    },
+    {
+      "id": 80,
+      "texto": "La variable de holgura asociada a una restricción que en el óptimo resulta NO limitante:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Será una variable básica positiva en la tabla óptima",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Será nula y no básica",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Será negativa",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Se convertirá en artificial",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Tendrá cj - zj positivo",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si la restricción no es limitante, sobra recurso: su holgura es positiva y por lo tanto básica en la solución óptima."
+    },
+    {
+      "id": 81,
+      "texto": "En el diagrama del método Simplex, una vez verificada la optimidad, el paso a chequear antes de concluir es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Si quedó alguna variable artificial positiva en la base (para detectar no factibilidad)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Si la FO es lineal",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Si hay más de dos variables de decisión",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Si el lado derecho es entero",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Si la región es acotada gráficamente",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Tras la optimidad se revisa si hay una artificial positiva en la base: si la hay, el problema es no factible; si no, la solución es óptima."
+    },
+    {
+      "id": 82,
+      "texto": "Con relación al gráfico de la región factible (vértices B, C, D, G y N), ¿cuál de las siguientes afirmaciones es correcta?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se trata de un problema degenerado o con solución/es degenerada/s",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "En la solución del punto N todas las restricciones son limitantes",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El problema tiene infinitas soluciones óptimas",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Tiene 2 soluciones factibles no básicas",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El punto N corresponde a una solución no factible",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En el gráfico de la cátedra, el punto D corresponde a una solución factible básica degenerada (vértice sobredefinido), por lo que se trata de un problema con solución/es degenerada/s.",
+      "imagen": "/images/grafico_region_factible_puntoN.png"
+    },
+    {
+      "id": 83,
+      "texto": "En la teoría de dualidad, al problema original se lo llama 'primal' y al asociado 'dual'. Una propiedad clave es que:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El dual del dual es el primal",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El dual no tiene relación con el primal",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El dual siempre tiene más restricciones que variables",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El primal y el dual tienen distinto valor óptimo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El dual solo existe si el primal es de máximo",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El dual del dual es el primal; los términos 'primal' y 'dual' son relativos al marco de referencia elegido."
+    },
+    {
+      "id": 84,
+      "texto": "Si el problema primal tiene n variables principales y m restricciones, el problema dual tendrá:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "m variables principales y n restricciones",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "n variables principales y m restricciones",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "n variables y n restricciones",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "m variables y m restricciones",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "2n variables y 2m restricciones",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Cada restricción del primal genera una variable del dual y cada variable del primal genera una restricción del dual: el dual tiene m variables y n restricciones."
+    },
+    {
+      "id": 85,
+      "texto": "En la forma canónica de la dualidad, si el primal es Max CX sujeto a AX ≤ B, X ≥ 0, el dual es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Min B'Y sujeto a A'Y ≥ C', Y ≥ 0",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Max B'Y sujeto a A'Y ≤ C', Y ≥ 0",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Min B'Y sujeto a A'Y ≤ C', Y ≤ 0",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Max C'Y sujeto a AY ≥ B, Y ≥ 0",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Min C'Y sujeto a AY = B, Y libre",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Forma canónica: el dual de Max CX, AX ≤ B, X ≥ 0 es Min B'Y, A'Y ≥ C', Y ≥ 0."
+    },
+    {
+      "id": 86,
+      "texto": "En la forma canónica de la dualidad, una restricción '≤' en el problema de MÁXIMO da origen, en el de mínimo, a:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Una variable ≥ 0",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Una variable ≤ 0",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Una variable no restringida",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Una restricción de igualdad",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Una variable artificial",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Restricción ≤ en el máximo → variable ≥ 0 en el mínimo. Es una de las reglas de correspondencia de la dualidad mixta."
+    },
+    {
+      "id": 87,
+      "texto": "Una restricción de IGUALDAD (=) en un problema da origen, en el otro problema, a:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Una variable no restringida (libre, sin restricción de signo)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Una variable ≥ 0",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Una variable ≤ 0",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Una restricción ≤",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Una variable artificial",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Las restricciones de igualdad dan origen a variables no restringidas (libres) en el otro problema."
+    },
+    {
+      "id": 88,
+      "texto": "Una restricción '≥' en un problema de MÁXIMO origina, en el problema de mínimo, a:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Una variable ≤ 0 (no positiva)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Una variable ≥ 0",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Una variable no restringida",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Una restricción de igualdad",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Una variable de holgura",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Restricción ≥ en el máximo → variable ≤ 0 (no positiva) en el mínimo."
+    },
+    {
+      "id": 89,
+      "texto": "La relación de DUALIDAD DÉBIL entre los valores objetivos establece que, para soluciones factibles cualesquiera:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Z (máximo) ≤ G (mínimo)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Z (máximo) ≥ G (mínimo)",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Z = G siempre",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Z y G no tienen relación",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Z (máximo) = 2·G (mínimo)",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Para cualquier par de soluciones factibles, el valor del problema de máximo es ≤ al del problema de mínimo (Z ≤ G). La igualdad se da en el óptimo."
+    },
+    {
+      "id": 90,
+      "texto": "El Teorema Fundamental de la Dualidad establece que, respecto al primal y al dual, exactamente una de estas proposiciones es cierta. ¿Cuál NO es una de ellas?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Ambos problemas tienen siempre soluciones óptimas distintas (Z* ≠ G*)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Ambos tienen óptimo y Z* = G*",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Uno es no acotado y el otro es no factible",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Ambos son no factibles",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Si uno es no acotado, el otro no es factible",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Las tres posibilidades son: (1) ambos con óptimo y Z*=G*; (2) uno no acotado y el otro no factible; (3) ambos no factibles. Que ambos tengan óptimos distintos es FALSO (en el óptimo Z*=G*)."
+    },
+    {
+      "id": 91,
+      "texto": "Si el problema primal es NO ACOTADO, entonces su dual es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "No factible",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "También no acotado",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Acotado con óptimo finito",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Degenerado",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Idéntico al primal",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Por el teorema fundamental: si un problema es no acotado, el otro es no factible."
+    },
+    {
+      "id": 92,
+      "texto": "El TEOREMA DÉBIL DE HOLGURA COMPLEMENTARIA sostiene que, en el óptimo:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Si una variable en un problema es positiva, la restricción correspondiente en el otro es sin holgura; y si una restricción es con holgura, la variable correspondiente en el otro es nula",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Todas las variables duales son positivas",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La suma de las variables primales iguala a la de las duales",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Las holguras del primal son iguales a las del dual",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El primal y el dual tienen la misma cantidad de variables positivas",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Holgura complementaria (caso canónico): si una variable en un problema es positiva → la restricción correspondiente en el otro está activa (sin holgura); si una restricción tiene holgura → la variable correspondiente en el otro es nula."
+    },
+    {
+      "id": 93,
+      "texto": "Según la holgura complementaria, si en el óptimo una restricción del primal tiene holgura positiva (no es limitante), entonces su variable dual asociada (precio sombra) es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Igual a cero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Positiva",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Negativa",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Igual al coeficiente de la FO",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Indeterminada",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si la restricción tiene holgura (recurso no escaso), su variable dual / precio sombra es cero: una unidad adicional de un recurso que sobra no aporta valor."
+    },
+    {
+      "id": 94,
+      "texto": "Según la holgura complementaria, si una restricción del primal tiene precio sombra POSITIVO, entonces esa restricción:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Es limitante (sin holgura, recurso escaso)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Es no limitante (con holgura)",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Puede eliminarse del modelo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Tiene variable de holgura positiva",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "No afecta al óptimo",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Precio sombra positivo ⇒ recurso escaso ⇒ la restricción es limitante (su holgura es cero). Es la lectura inversa de la holgura complementaria: y > 0 ⇒ S = 0."
+    },
+    {
+      "id": 95,
+      "texto": "La interpretación económica de la variable dual yi en el óptimo es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La cantidad en que se incrementa la FO ante un incremento unitario del lado derecho bi",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El costo de fabricar el producto i",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La cantidad producida del producto i",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El sobrante del recurso i",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El número de iteraciones del Simplex",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En el óptimo, yi = ∂Z*/∂bi: representa cuánto aumenta la función objetivo por cada unidad adicional del i-ésimo recurso (valor marginal del recurso)."
+    },
+    {
+      "id": 96,
+      "texto": "Económicamente, el vector de variables duales Y* se interpreta como:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Un vector de precios sombra (valoración interna o precio justo de los recursos)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Un vector de cantidades a producir",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El gradiente de la región factible",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El conjunto de holguras del primal",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Los costos fijos del problema",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Y* es el vector de precios sombra: la valoración interna o precio justo de los recursos del lado derecho."
+    },
+    {
+      "id": 97,
+      "texto": "El PRECIO SOMBRA indica:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La variación en el valor de la FO ante un incremento del lado derecho de una restricción (es el valor de la variable dual)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El precio de mercado del producto",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El costo de las variables artificiales",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La cantidad de recurso sobrante",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La pendiente de la función objetivo",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El precio sombra es la variación de la FO ante un incremento unitario del lado derecho de una restricción; coincide con el valor de la variable dual correspondiente."
+    },
+    {
+      "id": 98,
+      "texto": "En un problema de MAXIMIZACIÓN, ¿qué relación hay entre el precio sombra y el precio dual?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Son iguales",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Son opuestos (uno es el negativo del otro)",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El precio dual es siempre cero",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El precio sombra es siempre negativo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "No tienen relación",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En maximización, precio sombra y precio dual son iguales. En minimización, uno es el opuesto del otro."
+    },
+    {
+      "id": 99,
+      "texto": "En un problema de MINIMIZACIÓN, la relación entre precio sombra y precio dual es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Uno es el opuesto del otro",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Son iguales",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Ambos son siempre positivos",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Ambos valen cero",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El precio sombra es el doble del dual",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En minimización, precio sombra y precio dual son opuestos. (En maximización son iguales.)"
+    },
+    {
+      "id": 100,
+      "texto": "El PRECIO DUAL representa:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La mejora o desmejora de la FO ante un incremento del lado derecho, según el precio dual sea positivo o negativo",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Siempre una mejora de la FO",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El costo de producción unitario",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La cantidad de variables básicas",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El valor de la holgura de la restricción",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Precio dual positivo: mejora la FO (crece en máximo, decrece en mínimo) ante un aumento del lado derecho. Precio dual negativo: desmejora."
+    },
+    {
+      "id": 101,
+      "texto": "El COSTO REDUCIDO (reduced cost) de una variable representa:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Cuánto debe mejorar el coeficiente de una variable no básica en la FO para que resulte conveniente incorporarla a la solución",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El costo total de producción",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El precio sombra de la restricción",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El valor de la variable en el óptimo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La holgura de la restricción",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El costo reducido (relacionado con cj - zj) indica, para una variable no básica (valor cero), cuánto debería cambiar su coeficiente en la FO para que entre a la base."
+    },
+    {
+      "id": 102,
+      "texto": "En la tabla simplex, el costo reducido se encuentra en:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La fila cj - zj (correspondiente a la variable)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La columna VLD",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La columna CB",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La fila zj de las restricciones",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El elemento pivot",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El costo reducido está vinculado a la fila cj - zj de la variable correspondiente."
+    },
+    {
+      "id": 103,
+      "texto": "El INTERVALO DE OPTIMIDAD (objective coefficient ranges) corresponde a:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El rango en que puede variar un coeficiente de la FO sin que cambie la base óptima",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El rango del lado derecho sin que cambie la base",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El rango de variación de las variables de holgura",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El número de iteraciones del Simplex",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El intervalo donde el problema es no acotado",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El intervalo de optimidad es el rango en que un coeficiente de la función objetivo (cj) puede variar manteniendo la misma base óptima (la solución no cambia de vértice)."
+    },
+    {
+      "id": 104,
+      "texto": "El INTERVALO DE FACTIBILIDAD (righthand side ranges) corresponde a:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El rango en que puede variar el lado derecho (bi) sin que cambie la base óptima",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El rango de variación de los coeficientes de la FO",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El intervalo donde la FO es no lineal",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El rango de las variables artificiales",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El número máximo de soluciones básicas",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El intervalo de factibilidad es el rango en que el lado derecho de una restricción puede variar manteniendo la base óptima (válido el precio sombra correspondiente)."
+    },
+    {
+      "id": 105,
+      "texto": "Si se modifica el coeficiente de la FO de una variable BÁSICA dentro del intervalo de optimidad:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La base no cambia, pero sí cambia el valor de la función objetivo",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "No cambia nada",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Cambia la base óptima",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El problema se vuelve no factible",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La variable se vuelve no básica",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Dentro del intervalo, la base se mantiene; pero como la variable es básica (positiva), modificar su coeficiente sí altera el valor de z."
+    },
+    {
+      "id": 106,
+      "texto": "Si se modifica el coeficiente de la FO de una variable NO básica dentro de su intervalo de optimidad:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "No cambia ni la base ni el valor de la FO",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Cambia el valor de la FO",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Cambia la base óptima",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La variable entra a la base",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El problema se vuelve no acotado",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La variable no básica vale cero, así que modificar su coeficiente dentro del intervalo no afecta ni la base ni el valor de z."
+    },
+    {
+      "id": 107,
+      "texto": "Si se modifica el lado derecho (bi) de una restricción LIMITANTE, dentro del intervalo de sensibilidad:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "No cambia la base óptima, pero sí cambian los valores de las variables positivas y el valor de la FO",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "No cambia nada",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Cambia la base óptima",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Solo cambia la variable de holgura correspondiente",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El problema se vuelve infactible",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Dentro del intervalo, la base óptima no cambia; pero al ser una restricción limitante, sí cambian los valores de las variables positivas y el valor de la función objetivo."
+    },
+    {
+      "id": 108,
+      "texto": "Si el cambio del lado derecho de una restricción limitante EXCEDE el intervalo de sensibilidad:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Cambia la solución completa (cambia la base)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "No cambia nada",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Solo cambia el valor de la FO",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Solo cambia la holgura",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El precio sombra se mantiene siempre válido",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si el nuevo valor cae fuera del intervalo, cambia la solución completa: la base óptima se modifica y hay que re-resolver."
+    },
+    {
+      "id": 109,
+      "texto": "El precio sombra es válido únicamente:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Dentro del intervalo de sensibilidad (de factibilidad) del lado derecho",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Para cualquier valor del lado derecho",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Solo si la restricción es no limitante",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Solo en problemas de minimización",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Cuando la variable dual es negativa",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El precio sombra es constante y válido solo dentro del intervalo de factibilidad; fuera de él, cambia la base y deja de aplicar."
+    },
+    {
+      "id": 110,
+      "texto": "Si una restricción tiene holgura positiva, su precio sombra es cero. Una unidad adicional de ese recurso conviene adquirirla:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "No, porque al sobrar el recurso su valor marginal es cero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Sí, porque siempre conviene tener más recursos",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Sí, pero solo en minimización",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Depende del coeficiente de la FO",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Sí, porque mejora la base",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Recurso con holgura ⇒ sobra ⇒ precio sombra cero ⇒ una unidad más no aporta nada a la FO; no conviene pagar por ella."
+    },
+    {
+      "id": 111,
+      "texto": "Para decidir si conviene introducir una NUEVA variable (producto) al modelo, se compara:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Su contribución a la FO contra su costo de oportunidad (calculado con los precios sombra de los recursos que consume)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Su coeficiente técnico contra el lado derecho",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El número de restricciones contra el de variables",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Su valor inicial contra cero",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La holgura disponible contra el precio de venta",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Se calcula ck - zk: el costo de introducir la nueva variable se obtiene con los precios sombra de los recursos limitantes que consume; si ck - zk es positivo conviene introducirla."
+    },
+    {
+      "id": 112,
+      "texto": "El análisis de sensibilidad existe porque uno de los supuestos de la PL es el de:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Certidumbre (todos los parámetros se conocen con exactitud), supuesto que en la realidad rara vez se cumple",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "No negatividad de las variables",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Linealidad de la función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Existencia de un único óptimo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Convexidad de la región",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La PL supone certidumbre (parámetros exactos). Como en la práctica hay incertidumbre, el análisis de sensibilidad estudia cuánto pueden variar los parámetros sin alterar las conclusiones."
+    },
+    {
+      "id": 113,
+      "texto": "Cuando en el óptimo un insumo es ESCASO (limitante), su variable dual asociada es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Positiva",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Nula",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Negativa",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Igual al coeficiente de la FO",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Indeterminada",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Insumo escaso (restricción limitante) ⇒ variable dual positiva: agregar una unidad de ese recurso mejora la FO."
+    },
+    {
+      "id": 114,
+      "texto": "Al realizar el análisis de sensibilidad, una restricción del tipo ≤ con holgura positiva siempre tendrá un aumento admisible infinito en el lado derecho.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Verdadero. Si una restricción ≤ tiene holgura positiva (sobra recurso), aumentar su lado derecho no cambia nada: el aumento admisible es infinito (el precio sombra es cero)."
+    },
+    {
+      "id": 115,
+      "texto": "¿Cuál es el efecto de aumentar la PRODUCCIÓN MÍNIMA exigida (restricción ≥) en un problema de minimización de costos, si el cambio cae dentro del intervalo?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La base no cambia, pero el costo total (FO) empeora/aumenta",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El costo total disminuye",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La base cambia siempre",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El precio sombra se vuelve cero",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "No hay ningún efecto",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Aumentar una exigencia mínima limitante en un problema de mínimo de costos hace que la FO (costo) aumente. Dentro del intervalo la base se mantiene, pero cambian valores de variables y de z."
+    },
+    {
+      "id": 116,
+      "texto": "En un problema de minimización de costos no degenerado donde x1 resulta NO básica (x1*=0), para saber cuánto debe modificarse el costo de x1 antes de empezar a usarlo, se observa:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La disminución permisible (allowable decrease) del coeficiente c1",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El incremento permisible de c1",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El precio sombra de la restricción",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El valor de la variable x1",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La disminución permisible de x1",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En minimización, una variable no básica conviene incorporarla si su costo baja lo suficiente; esa magnitud es la disminución permisible (allowable decrease) de su coeficiente c1, que coincide con su costo reducido."
+    },
+    {
+      "id": 117,
+      "texto": "En un problema de programación lineal con dos variables de decisión, si se modifica el lado derecho (bi) de una restricción limitante dentro del intervalo de sensibilidad (selecciona las dos correctas):",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Cambian valores de las variables en la solución óptima",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Se obtiene un nuevo valor para la función objetivo",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Cambia la base",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Solo cambia el valor de la variable de holgura correspondiente",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Cambia la inclinación de la función objetivo",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Dentro del intervalo, la base se mantiene (no cambia), pero cambian los valores de las variables y el valor de la FO. La inclinación de la FO no se altera (eso depende de los coeficientes de la FO, no del lado derecho)."
+    },
+    {
+      "id": 118,
+      "texto": "Una relación correcta entre restricciones y precios sombra es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Las restricciones con precio sombra positivo deben ser limitantes",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Las restricciones con precio sombra positivo deben ser no limitantes",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Las restricciones con precio sombra igual a cero deben ser limitantes",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Todas las restricciones tienen precio sombra positivo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El precio sombra positivo implica holgura positiva",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Por holgura complementaria: precio sombra (variable dual) positivo ⇒ holgura nula ⇒ restricción limitante. Si y > 0, entonces S = 0."
+    },
+    {
+      "id": 119,
+      "texto": "El valor óptimo del primal y del dual, cuando ambos tienen solución, cumplen:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Z* = G* (son iguales)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Z* > G* siempre",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Z* < G* siempre",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Z* = -G*",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "No hay relación entre ellos",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En el óptimo, los valores de las funciones objetivo del primal y del dual coinciden: Z* = G* (dualidad fuerte)."
+    },
+    {
+      "id": 120,
+      "texto": "El planteo del dual de: Max Z = 8x1 + 6x2, s.a. 5x1+5x2 ≤ 300; 4x1+8x2 ≤ 400; 6x1+4x2 ≤ 320; x ≥ 0, es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Min G = 300y1+400y2+320y3, s.a. 5y1+4y2+6y3 ≥ 8; 5y1+8y2+4y3 ≥ 6; y ≥ 0",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Max G = 300y1+400y2+320y3, s.a. 5y1+4y2+6y3 ≤ 8; y ≥ 0",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Min G = 8y1+6y2, s.a. 5y1+5y2 ≥ 300; y ≥ 0",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Min G = 300y1+400y2+320y3, s.a. 5y1+4y2+6y3 ≤ 8; y ≤ 0",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Max G = 8y1+6y2, s.a. restricciones de igualdad",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Los lados derechos del primal pasan a coeficientes de la FO del dual; los coeficientes de la FO del primal pasan a lados derechos del dual; A se transpone; las ≤ de un máximo dan ≥ en el mínimo con variables ≥ 0."
+    },
+    {
+      "id": 121,
+      "texto": "En la forma estándar de la dualidad (primal con restricciones de igualdad), las variables del dual son:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "No restringidas (libres, sin restricción de signo)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Todas ≥ 0",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Todas ≤ 0",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Todas iguales a cero",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Todas artificiales",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si el primal tiene todas restricciones de igualdad (forma estándar), las variables duales son no restringidas (libres)."
+    },
+    {
+      "id": 122,
+      "texto": "Dado un primal de MÍNIMO con 5 variables de decisión, 3 restricciones del tipo ≤ y 2 del tipo ≥, ¿cuántas variables NO POSITIVAS tendrá su dual?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "3 (una por cada restricción ≤ del primal de mínimo)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "5",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "0",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "1",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En un primal de mínimo, una restricción ≤ (no canónica) genera una variable dual ≤ 0 (no positiva). Hay 3 restricciones ≤ ⇒ 3 variables no positivas."
+    },
+    {
+      "id": 123,
+      "texto": "Dado un primal de MÍNIMO con 3 restricciones ≤ y 2 restricciones ≥, ¿cuántas variables NO NEGATIVAS tendrá su dual?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "2 (una por cada restricción ≥ del primal de mínimo)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "5",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "0",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "4",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En un primal de mínimo, una restricción ≥ (canónica) genera una variable dual ≥ 0 (no negativa). Hay 2 restricciones ≥ ⇒ 2 variables no negativas."
+    },
+    {
+      "id": 124,
+      "texto": "Para calcular los nuevos valores de las variables ante un cambio del lado derecho bi de una restricción limitante, se utilizan:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Las tasas de sustitución de la columna de la variable de holgura/artificial asociada a esa restricción (de la tabla óptima)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Los coeficientes de la función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El número de iteraciones del Simplex",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Los precios de venta de los productos",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La inversa de la matriz de la FO",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Se usan las tasas de sustitución de la columna de la holgura (o artificial) asociada a la restricción: xi = λi + Δbi·αij."
+    },
+    {
+      "id": 125,
+      "texto": "El costo reducido de una variable que SÍ es básica (positiva) en la solución óptima es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Cero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Positivo",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Negativo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Igual a su coeficiente en la FO",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Igual al precio sombra",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Las variables básicas tienen costo reducido (cj - zj) igual a cero; el costo reducido distinto de cero es propio de las variables no básicas."
+    },
+    {
+      "id": 126,
+      "texto": "La utilidad principal de la información del costo reducido es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Saber cuánto debería cambiar el coeficiente de una variable no básica para que convenga producirla",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Calcular el número de restricciones",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Determinar el lado derecho de cada restricción",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Conocer la pendiente de la región factible",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Saber cuántos vértices tiene el poliedro",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El costo reducido indica la mejora necesaria en el coeficiente de una variable no básica (actualmente no conviene producir) para que entre a la solución óptima."
+    },
+    {
+      "id": 127,
+      "texto": "Cuando en el óptimo de un PL un insumo es escaso, la variable dual relacionada con esa restricción es positiva.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Verdadero. Insumo escaso ⇒ restricción limitante ⇒ variable dual (precio sombra) positiva, porque una unidad adicional mejoraría el objetivo."
+    },
+    {
+      "id": 128,
+      "texto": "El precio sombra de una restricción no limitante (con holgura) es siempre cero.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Verdadero. Si la restricción tiene holgura (recurso sobrante), su precio sombra es cero (holgura complementaria)."
+    },
+    {
+      "id": 129,
+      "texto": "Si el precio adicional solicitado por una unidad de un recurso limitante es SUPERIOR a su precio sombra (valor marginal), conviene:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "No adquirir más recurso, porque cuesta más de lo que aporta",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Adquirir todo el recurso posible",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Cambiar la función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Eliminar la restricción",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Adquirir el recurso solo en minimización",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si el costo de la unidad adicional supera al precio sombra (lo que esa unidad aportaría a la FO), no conviene comprarla aunque el recurso sea limitante."
+    },
+    {
+      "id": 130,
+      "texto": "Un modelo es de Programación No Lineal (PNL) cuando:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La función objetivo y/o alguna restricción son no lineales",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Todas las funciones son lineales pero hay muchas variables",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Las variables deben ser enteras",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Hay más de una función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Las restricciones son todas de igualdad",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En PNL la función objetivo y/o al menos una restricción son no lineales."
+    },
+    {
+      "id": 131,
+      "texto": "Una diferencia central entre PNL y PL respecto a la solución óptima es que, en PNL:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La solución óptima puede NO encontrarse en un vértice (incluso puede ser un punto interior)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La solución óptima siempre está en un vértice",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Nunca existe solución óptima",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El óptimo siempre está en el origen",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La región factible nunca es convexa",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "A diferencia de la PL, en PNL el óptimo puede no estar en un vértice; puede estar en la frontera o incluso ser un punto interior de la región factible."
+    },
+    {
+      "id": 132,
+      "texto": "Aun cuando los programas no lineales son más difíciles que los lineales, se puede aplicar en ellos la técnica de búsqueda en los vértices para encontrar la solución óptima.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": true
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Falso. En PNL el óptimo puede no estar en un vértice (puede ser un punto interior o de la frontera), por lo que la búsqueda en vértices NO garantiza encontrar el óptimo."
+    },
+    {
+      "id": 133,
+      "texto": "En PNL, un problema de optimización NO restringida con función objetivo CÓNCAVA garantiza que:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Un máximo local es también un máximo global",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Un mínimo local es un mínimo global",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "No existe solución",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El óptimo está en un vértice",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Hay infinitos óptimos",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Sin restricciones, una FO cóncava garantiza que todo máximo local es global; una FO convexa garantiza que todo mínimo local es global."
+    },
+    {
+      "id": 134,
+      "texto": "Se denomina PROGRAMACIÓN CONVEXA a los problemas de PNL que tienen:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "FO cóncava (en máximo) o convexa (en mínimo) y región factible convexa, condiciones que aseguran que un óptimo local es global",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "FO lineal y restricciones no lineales",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Variables enteras y región convexa",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "FO convexa en máximo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Restricciones no convexas",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Programación convexa: FO cóncava (máx) o convexa (mín) + región factible convexa. Estas condiciones son suficientes para que un óptimo local sea global."
+    },
+    {
+      "id": 135,
+      "texto": "En la programación NO convexa, la principal dificultad es que:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Aunque se encuentre un óptimo local, no hay garantía de que sea el óptimo global",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Nunca existe un óptimo local",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Siempre hay infinitos óptimos globales",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La región factible es siempre vacía",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "No se puede usar software",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En programación no convexa no se cumplen los supuestos de convexidad, por lo que hallar un óptimo local no garantiza que sea global."
+    },
+    {
+      "id": 136,
+      "texto": "La región de soluciones factibles de un PNL es convexa si:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La función g(x) de cada restricción ≤ es convexa y la g(x) de cada restricción ≥ es cóncava",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Todas las restricciones son lineales únicamente",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La función objetivo es lineal",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Hay una sola variable de decisión",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Todas las g(x) son cóncavas",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La región factible de un PNL es convexa si g(x) asociada a cada restricción ≤ es convexa y g(x) asociada a cada restricción ≥ es cóncava."
+    },
+    {
+      "id": 137,
+      "texto": "La Programación Cuadrática (PC) se diferencia de la PL en que:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La función objetivo incluye el cuadrado de una variable o el producto de dos variables",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Las restricciones son no lineales",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Hay infinitas variables",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No tiene función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Las variables son binarias",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En la Programación Cuadrática la única diferencia con la PL es que la FO incluye términos cuadráticos (cuadrado de una variable o producto de dos variables). Las restricciones siguen siendo lineales."
+    },
+    {
+      "id": 138,
+      "texto": "Una función es SEPARABLE cuando:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Cada término incluye una sola variable, pudiendo expresarse como suma de funciones de distintas variables",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Tiene productos de variables",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Es siempre lineal",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No tiene términos cuadráticos",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Tiene una sola variable",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Una función separable tiene cada término con una única variable, por lo que se expresa como suma de funciones de variables individuales (cumple aditividad pero no proporcionalidad)."
+    },
+    {
+      "id": 139,
+      "texto": "El MULTIPLICADOR DE LAGRANGE en PNL es análogo a:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La variable dual de la PL (existe uno por cada restricción)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El costo reducido",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La variable de holgura",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El elemento pivot",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La pendiente de la FO",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El multiplicador de Lagrange es el análogo de la variable dual de la PL: hay uno por restricción y mide la tasa de cambio del óptimo respecto al lado derecho."
+    },
+    {
+      "id": 140,
+      "texto": "¿Cuál es la DIFERENCIA principal entre el multiplicador de Lagrange (PNL) y el precio sombra (PL)?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El precio sombra es constante en un intervalo de validez; el multiplicador de Lagrange generalmente varía continuamente y solo vale en el punto (no se conoce su rango de validez)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El precio sombra solo existe en minimización",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El multiplicador de Lagrange siempre es cero",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No tienen ninguna relación",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El multiplicador de Lagrange es siempre mayor que el precio sombra",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Ambos miden cuánto crece el óptimo por unidad adicional de recurso (∂Z/∂bi). La diferencia: el precio sombra es constante en un intervalo de sensibilidad; el multiplicador de Lagrange, por la no linealidad, suele cambiar al variar el bi y solo es válido en el punto, sin un rango definido."
+    },
+    {
+      "id": 141,
+      "texto": "¿En qué se PARECEN el multiplicador de Lagrange y la variable dual / precio sombra?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Ambos son las derivadas parciales del valor óptimo de la FO respecto al lado derecho bi (interpretación matemática equivalente)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Ambos son siempre iguales a cero",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Ambos solo existen sin restricciones",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Ambos miden la pendiente de la región factible",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Ambos son variables de decisión",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Matemáticamente, tanto el multiplicador de Lagrange como las variables duales son las derivadas parciales del valor óptimo de la FO respecto a un bi: misma interpretación marginal."
+    },
+    {
+      "id": 142,
+      "texto": "El multiplicador de Lagrange es igual al precio sombra en cuanto a su rango de aplicación, pero difieren en la interpretación matemática.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": true
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Falso. Es al revés: son equivalentes en su interpretación matemática (ambos son la derivada del óptimo respecto a bi), pero difieren en el rango de aplicación (el precio sombra vale en un intervalo; el de Lagrange solo en el punto y suele variar)."
+    },
+    {
+      "id": 143,
+      "texto": "El gradiente reducido del informe de sensibilidad de un PNL tiene una interpretación análoga a:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El costo reducido (reduced cost) de la PL",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El precio sombra de la PL",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El elemento pivot",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La variable de holgura",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El valor de la FO",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "En PNL, el gradiente reducido tiene una interpretación análoga a la del costo reducido de la PL."
+    },
+    {
+      "id": 144,
+      "texto": "En la optimización RESTRINGIDA de PNL, para garantizar que un óptimo local sea también global, se requiere además que:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El conjunto de restricciones (región factible) sea convexo",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La FO sea lineal",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Haya una sola restricción",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Todas las variables sean enteras",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El lado derecho sea positivo",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Con restricciones, además de la concavidad/convexidad de la FO, se necesita que la región factible sea convexa para asegurar que un óptimo local sea global."
+    },
+    {
+      "id": 145,
+      "texto": "¿Por qué no existe un único algoritmo que resuelva todos los problemas de PNL (a diferencia de la PL con el Simplex)?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Porque los PNL se presentan de formas muy diversas; se han desarrollado algoritmos para tipos específicos",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Porque la PNL no tiene solución nunca",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Porque la PNL solo tiene una variable",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Porque la PNL no usa computadoras",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Porque todos los PNL son convexos",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Debido a la gran diversidad de formas de los problemas no lineales, no existe un algoritmo universal; se desarrollaron algoritmos para los tipos más comunes, muchos basados en el gradiente."
+    },
+    {
+      "id": 146,
+      "texto": "El modelo de selección de cartera de inversión (portafolio) es un ejemplo clásico de:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Programación cuadrática (minimiza la varianza, que es cuadrática)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Programación lineal pura",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Programación entera",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Optimización no restringida sin función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Un problema de transporte",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "La selección de cartera minimiza la varianza del rendimiento (función cuadrática) sujeta a restricciones lineales: es un caso típico de programación cuadrática."
+    },
+    {
+      "id": 147,
+      "texto": "¿Cuál de estas afirmaciones sobre la solución óptima de un PL es VERDADERA?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La solución óptima se encuentra en por lo menos un vértice",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Todo programa lineal tiene una solución óptima",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Si un PL es factible, entonces debe tener al menos una solución óptima",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La solución óptima utiliza todos los recursos disponibles",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Si la solución óptima incluye alguna variable artificial, el problema es No Factible",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Si hay óptimo, está en al menos un vértice (V). No todo PL tiene óptimo (puede ser no acotado). Un PL factible puede no tener óptimo. El óptimo no necesariamente agota todos los recursos. Una artificial NULA en la base no implica no factibilidad (sería degeneración); solo una artificial POSITIVA implica no factibilidad."
+    },
+    {
+      "id": 148,
+      "texto": "En un Programa Lineal NO ACOTADO, ¿cuáles afirmaciones son verdaderas? (selecciona dos)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La función objetivo puede moverse tan lejos como se desee en la dirección de optimización y todavía tocar al menos un punto del conjunto factible",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Al menos una variable de decisión se puede hacer tan grande como se desee sin dejar la región factible",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Al menos una de las restricciones no puede ser satisfecha",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "En la solución óptima queda una variable artificial con valor > 0",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La región factible es vacía",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "No acotado: la región factible es abierta en el sentido de optimización, la FO crece sin tope y alguna variable de decisión puede crecer indefinidamente dentro de la región. La artificial positiva y la región vacía corresponden a NO factibilidad, no a no acotamiento."
+    },
+    {
+      "id": 149,
+      "texto": "La existencia de economías o deseconomías de escala en un problema puede dar lugar a características de no linealidad en el modelo.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Verdadero",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Falso",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Verdadero. Las economías/deseconomías de escala violan el supuesto de proporcionalidad y generan no linealidad (por ejemplo, costos que crecen más que proporcionalmente)."
+    },
+    {
+      "id": 150,
+      "texto": "En PL, un incremento del lado derecho bi (dentro del intervalo) produce en la FO un cambio igual a:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "yi · Δbi (variable dual por el incremento)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "ci · Δbi",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "zi / Δbi",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Δbi al cuadrado",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "cero siempre",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "El cambio en la FO es yi·Δbi (precio sombra por el incremento del lado derecho), válido mientras yi permanezca constante, es decir, dentro del intervalo de sensibilidad."
+    },
+    {
+      "id": 151,
+      "texto": "Para identificar las restricciones LIMITANTES en el vértice óptimo de un problema gráfico, se observa que:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Son aquellas cuyas rectas se cruzan en el vértice óptimo (su holgura es cero)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Son las que tienen mayor lado derecho",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Son todas las restricciones del problema",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Son las paralelas a la función objetivo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Son las que tienen holgura positiva",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Las restricciones limitantes son las que pasan por (se cruzan en) el vértice óptimo; su holgura es nula. Resolviendo ese sistema de ecuaciones se obtiene el óptimo."
+    },
+    {
+      "id": 152,
+      "texto": "En PNL, una función f es CONVEXA si, geométricamente:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El segmento que une dos puntos cualesquiera de su gráfica nunca queda por debajo de la gráfica",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El segmento que une dos puntos siempre queda por debajo de la gráfica",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La función es siempre creciente",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La función tiene un único punto de inflexión",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La segunda derivada es negativa",
+          "correcta": false
+        }
+      ],
+      "parcial": 1,
+      "explicacion": "Función convexa: el segmento entre dos puntos de la gráfica nunca queda por debajo de ella (f''(x) > 0 en el intervalo). Una función cóncava es lo opuesto (f''(x) < 0)."
+    }
+  ]
+}
