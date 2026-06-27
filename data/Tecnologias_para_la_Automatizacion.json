@@ -1,0 +1,581 @@
+{
+  "materia": "Tecnologías para la Automatización",
+  "preguntas": [
+    {
+      "id": 1,
+      "texto": "¿Qué afirmaciones son correctas sobre la función millis() en ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Devuelve el tiempo en milisegundos desde que inició el programa", "correcta": true },
+        { "id": "b", "texto": "Solo funciona si se usa delay()", "correcta": false },
+        { "id": "c", "texto": "Permite crear temporizadores sin bloquear el loop principal", "correcta": true },
+        { "id": "d", "texto": "No está disponible en Arduino IDE", "correcta": false },
+        { "id": "e", "texto": "Resetea cada segundo", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "millis() devuelve los milisegundos transcurridos desde el arranque del programa (desborda a los ~49 días). Se usa para temporizar de forma no bloqueante comparando tiempos, evitando detener el loop como hace delay()."
+    },
+    {
+      "id": 2,
+      "texto": "¿Qué afirmaciones describen adecuadamente el bus SPI?",
+      "respuestas": [
+        { "id": "a", "texto": "Puede transmitir a través de Wi-Fi", "correcta": false },
+        { "id": "b", "texto": "Utiliza lineas CLK, MISO, MOSI y SS", "correcta": true },
+        { "id": "c", "texto": "Requiere 8 lineas de conexión", "correcta": false },
+        { "id": "d", "texto": "Es una comunicación sincrona", "correcta": true },
+        { "id": "e", "texto": "No requiere configuración de reloj", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "SPI es un bus serie síncrono que usa cuatro líneas: CLK (reloj), MISO, MOSI y SS/CS. Al ser síncrono, requiere una señal de reloj compartida que coordina la transferencia entre maestro y esclavo."
+    },
+    {
+      "id": 3,
+      "texto": "¿Qué funciones tiene el botón BOOT en la ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "No tiene ninguna función práctica", "correcta": false },
+        { "id": "b", "texto": "Cargar el bootloader", "correcta": false },
+        { "id": "c", "texto": "Activar el modo de carga de firmware", "correcta": true },
+        { "id": "d", "texto": "Borrar la memoria EEPROM", "correcta": false },
+        { "id": "e", "texto": "Reiniciar la placa", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "El botón BOOT (GPIO0) pone la placa en modo de descarga/flasheo de firmware. Manteniéndolo pulsado durante el reset, la ESP32 entra en el modo que permite cargar un nuevo programa."
+    },
+    {
+      "id": 4,
+      "texto": "¿Qué sucede si aplicamos una tensión mayor a la admitida en un pin de entrada?",
+      "respuestas": [
+        { "id": "a", "texto": "El pin se desconecta", "correcta": false },
+        { "id": "b", "texto": "El valor leído es más preciso", "correcta": false },
+        { "id": "c", "texto": "Puede dañar el microcontrolador", "correcta": true },
+        { "id": "d", "texto": "Se activa el modo seguro", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "Los pines de la ESP32 trabajan a 3.3V. Aplicar una tensión superior a la admitida puede dañar de forma permanente el pin o el microcontrolador, ya que no son tolerantes a 5V."
+    },
+    {
+      "id": 5,
+      "texto": "¿Qué afirmaciones son ciertas sobre delay() en código de ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Es preferido en aplicaciones con Wi-Fi activo", "correcta": false },
+        { "id": "b", "texto": "Detiene completamente la ejecución del programa por ese tiempo", "correcta": true },
+        { "id": "c", "texto": "Solo funciona con funciones analógicas", "correcta": false },
+        { "id": "d", "texto": "Permite ejecutar múltiples tareas en paralelo", "correcta": false },
+        { "id": "e", "texto": "Su uso excesivo puede afectar el rendimiento", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "delay() bloquea la ejecución del loop durante el tiempo indicado, impidiendo atender otras tareas. Su uso excesivo afecta el rendimiento; para temporizar sin bloquear se prefiere millis()."
+    },
+    {
+      "id": 6,
+      "texto": "¿Qué afirmaciones son correctas sobre el canal PWM en ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Cada canal funciona solo en modo entrada", "correcta": false },
+        { "id": "b", "texto": "PWM solo funciona si se define en el setup()", "correcta": false },
+        { "id": "c", "texto": "Hay solo un canal disponible", "correcta": false },
+        { "id": "d", "texto": "Se pueden configurar frecuencia y resolución por canal", "correcta": true },
+        { "id": "e", "texto": "Se pueden usar hasta 16 canales PWM", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "El periférico LEDC de la ESP32 ofrece hasta 16 canales PWM independientes, y en cada uno se puede configurar la frecuencia y la resolución (bits) de forma personalizada."
+    },
+    {
+      "id": 7,
+      "texto": "¿Qué ventajas tiene usar sensores digitales frente a analógicos en ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Se leen con digitalRead()", "correcta": true },
+        { "id": "b", "texto": "No requieren conversión ADC", "correcta": true },
+        { "id": "c", "texto": "Usan menos corriente", "correcta": false },
+        { "id": "d", "texto": "Tienen mayor resolución", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "Los sensores digitales entregan estados HIGH/LOW que se leen directamente con digitalRead() y no necesitan pasar por el conversor ADC, lo que simplifica la lectura frente a los analógicos."
+    },
+    {
+      "id": 8,
+      "texto": "¿Qué afirmaciones sobre la señal digital 'LOW' son correctas?",
+      "respuestas": [
+        { "id": "a", "texto": "Enciende automáticamente el pin", "correcta": false },
+        { "id": "b", "texto": "Es una señal de alta frecuencia", "correcta": false },
+        { "id": "c", "texto": "Equivale a voltaje cercano a 0V", "correcta": true },
+        { "id": "d", "texto": "Apaga una salida digital", "correcta": true },
+        { "id": "e", "texto": "Representa un 1 lógico", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "El nivel LOW corresponde a un 0 lógico, con una tensión cercana a 0V (GND). En una salida digital, escribir LOW apaga el pin."
+    },
+    {
+      "id": 9,
+      "texto": "¿Cuál es la finalidad del conversor DAC (digital a analógico) presente en algunos pines de ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Controlar dispositivos analógicos", "correcta": true },
+        { "id": "b", "texto": "Ampliar la memoria", "correcta": false },
+        { "id": "c", "texto": "Medir corriente", "correcta": false },
+        { "id": "d", "texto": "Generar salidas analógicas continuas", "correcta": true },
+        { "id": "e", "texto": "Leer señales digitales", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "El DAC convierte un valor digital en una tensión analógica real y continua (no PWM), lo que permite controlar dispositivos analógicos como generar señales de audio o niveles de tensión variables."
+    },
+    {
+      "id": 10,
+      "texto": "¿Cuál es el propósito de la función map() en Arduino/ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Convertir enteros en texto", "correcta": false },
+        { "id": "b", "texto": "Cambiar el tipo de variable", "correcta": false },
+        { "id": "c", "texto": "Escalar un rango de valores a otro", "correcta": true },
+        { "id": "d", "texto": "Leer valores digitales", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "map() reescala linealmente un valor de un rango de entrada a otro de salida, por ejemplo convertir una lectura ADC de 0–4095 a un rango de 0–255 o 0–100."
+    },
+    {
+      "id": 11,
+      "texto": "¿Qué se puede conectar a un pin de entrada analógica en la ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Sensor de temperatura con salida variable", "correcta": true },
+        { "id": "b", "texto": "Potenciómetro", "correcta": true },
+        { "id": "c", "texto": "Motor paso a paso", "correcta": false },
+        { "id": "d", "texto": "Leds", "correcta": false },
+        { "id": "e", "texto": "Pulsador", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "Una entrada analógica lee tensiones variables. Un sensor de temperatura con salida analógica y un potenciómetro entregan una tensión proporcional; un LED, un motor o un pulsador no son entradas analógicas."
+    },
+    {
+      "id": 12,
+      "texto": "¿Qué pines pueden usarse para salidas PWM en la ESP32 DevKit V1?",
+      "respuestas": [
+        { "id": "a", "texto": "Pines I2C", "correcta": false },
+        { "id": "b", "texto": "GPIOs con soporte PWM", "correcta": true },
+        { "id": "c", "texto": "Todos los GPIOs", "correcta": false },
+        { "id": "d", "texto": "GPIO34 a GPIO39", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "En la ESP32, casi cualquier GPIO de salida puede asignarse a un canal PWM (LEDC), pero los GPIO34–39 son solo de entrada y no pueden usarse como salida PWM."
+    },
+    {
+      "id": 13,
+      "texto": "¿Qué afirmaciones sobre la arquitectura de la ESP32 son verdaderas?",
+      "respuestas": [
+        { "id": "a", "texto": "Puede manejar hasta 16 canales PWM", "correcta": true },
+        { "id": "b", "texto": "Posee coprocesadores para ciertas tareas", "correcta": true },
+        { "id": "c", "texto": "Solo soporta un núcleo de ejecución", "correcta": false },
+        { "id": "d", "texto": "Tiene soporte para múltiples ADC y DAC", "correcta": true },
+        { "id": "e", "texto": "No tiene interfaz USB directa", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "La ESP32 ofrece hasta 16 canales PWM, un coprocesador ULP de bajo consumo, dos núcleos y varios canales ADC junto con dos DAC. No soporta un solo núcleo."
+    },
+    {
+      "id": 14,
+      "texto": "¿Qué componentes se pueden controlar mediante salidas digitales de la ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Pantallas LCD", "correcta": true },
+        { "id": "b", "texto": "Leds", "correcta": true },
+        { "id": "c", "texto": "Potenciómetros", "correcta": false },
+        { "id": "d", "texto": "Motores DC", "correcta": false },
+        { "id": "e", "texto": "Relés", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "Las salidas digitales conmutan entre HIGH/LOW para controlar LEDs, relés y comunicarse con pantallas LCD. Un potenciómetro es una entrada y un motor DC requiere etapa de potencia/PWM."
+    },
+    {
+      "id": 15,
+      "texto": "¿Cuál es el uso de la función analogRead(pin) en la ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Cambiar el duty cycle del PWM", "correcta": false },
+        { "id": "b", "texto": "Calcular el voltaje de salida", "correcta": false },
+        { "id": "c", "texto": "Retornar un valor entre 0 y 4095", "correcta": true },
+        { "id": "d", "texto": "Leer señales de entrada digital", "correcta": false },
+        { "id": "e", "texto": "Leer un valor de tensión en un pin analógico", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "analogRead() lee la tensión presente en un pin analógico y, con la resolución por defecto de 12 bits, devuelve un valor entero entre 0 y 4095."
+    },
+    {
+      "id": 16,
+      "texto": "¿Qué características tiene el procesador Xtensa LX6 en la ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Doble núcleo", "correcta": true },
+        { "id": "b", "texto": "Fabricado por Texas Instruments", "correcta": false },
+        { "id": "c", "texto": "Corre a 16 MHz", "correcta": false },
+        { "id": "d", "texto": "Arquitectura de 32 bits", "correcta": true },
+        { "id": "e", "texto": "Capacidad para procesamiento paralelo", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "El Xtensa LX6 es un procesador de 32 bits, de doble núcleo (lo que habilita procesamiento paralelo) y alcanza hasta 240 MHz. Es un diseño de Tensilica/Cadence, no de Texas Instruments."
+    },
+    {
+      "id": 17,
+      "texto": "¿Qué afirmaciones describen el uso del LED integrado de la ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Se borra al desconectar la alimentación", "correcta": false },
+        { "id": "b", "texto": "Es útil para pruebas rápidas", "correcta": true },
+        { "id": "c", "texto": "Requiere librería externa", "correcta": false },
+        { "id": "d", "texto": "Se puede controlar con digitalWrite()", "correcta": true },
+        { "id": "e", "texto": "Solo enciende con el bootloader", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "El LED integrado (habitualmente GPIO2) se controla directamente con digitalWrite() sin librerías externas y resulta muy práctico para pruebas rápidas tipo 'Blink'."
+    },
+    {
+      "id": 18,
+      "texto": "¿Cuáles son protocolos de comunicación soportados por la ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "UART", "correcta": true },
+        { "id": "b", "texto": "SPI", "correcta": true },
+        { "id": "c", "texto": "I2C", "correcta": true },
+        { "id": "d", "texto": "PCIe", "correcta": false },
+        { "id": "e", "texto": "HDMI", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "La ESP32 soporta de forma nativa los buses serie UART, SPI e I2C. PCIe y HDMI son interfaces de PC/video que la placa no implementa."
+    },
+    {
+      "id": 19,
+      "texto": "¿Qué afirmaciones describen correctamente la EEPROM en ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Tiene 1MB por defecto", "correcta": false },
+        { "id": "b", "texto": "Permite almacenar datos que persisten tras un reinicio", "correcta": true },
+        { "id": "c", "texto": "Es útil para guardar configuraciones", "correcta": true },
+        { "id": "d", "texto": "Solo almacena código", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "La EEPROM (emulada sobre Flash en la ESP32) guarda datos no volátiles que persisten tras un reinicio o corte de energía, ideal para almacenar configuraciones o parámetros del usuario."
+    },
+    {
+      "id": 20,
+      "texto": "¿Cuál es la función principal del regulador de tensión en la ESP32 DevKit V1?",
+      "respuestas": [
+        { "id": "a", "texto": "Actuar como conversor ADC", "correcta": false },
+        { "id": "b", "texto": "Adaptar el voltaje de entrada a niveles seguros para el microcontrolador", "correcta": true },
+        { "id": "c", "texto": "Reemplazar el puerto USB", "correcta": false },
+        { "id": "d", "texto": "Proteger la placa de sobrevoltajes", "correcta": true },
+        { "id": "e", "texto": "Convertir señales digitales en analógicas", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "El regulador (típicamente AMS1117) baja los 5V del USB/VIN a los 3.3V que necesita el microcontrolador, entregando una tensión estable y segura y protegiéndolo de sobrevoltajes."
+    },
+    {
+      "id": 21,
+      "texto": "¿Qué afirmaciones sobre sensores analógicos son correctas?",
+      "respuestas": [
+        { "id": "a", "texto": "No son compatibles con ESP32", "correcta": false },
+        { "id": "b", "texto": "Usan solo pines digitales", "correcta": false },
+        { "id": "c", "texto": "Varian su salida en voltaje", "correcta": true },
+        { "id": "d", "texto": "Requieren lectura con analogRead()", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "Un sensor analógico entrega una tensión variable proporcional a la magnitud medida, que se lee con analogRead() a través de un pin con capacidad ADC."
+    },
+    {
+      "id": 22,
+      "texto": "¿Qué componentes podemos utilizar con salidas PWM?",
+      "respuestas": [
+        { "id": "a", "texto": "Buzzer", "correcta": true },
+        { "id": "b", "texto": "LED", "correcta": true },
+        { "id": "c", "texto": "Relé mecánico", "correcta": false },
+        { "id": "d", "texto": "Sensor de temperatura", "correcta": false },
+        { "id": "e", "texto": "Servo", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "El PWM permite regular el brillo de un LED, generar tonos en un buzzer y posicionar un servo (ancho de pulso). Un relé mecánico es ON/OFF y un sensor de temperatura es una entrada."
+    },
+    {
+      "id": 23,
+      "texto": "¿Cuáles son funciones tipicas de los pines GPIO?",
+      "respuestas": [
+        { "id": "a", "texto": "Lectura de entradas digitales", "correcta": true },
+        { "id": "b", "texto": "Conexión directa a HDMI", "correcta": false },
+        { "id": "c", "texto": "Generación de salidas digitales", "correcta": true },
+        { "id": "d", "texto": "Uso como tarjeta gráfica", "correcta": false },
+        { "id": "e", "texto": "Procesamiento de imágenes", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "Los pines GPIO (General Purpose Input/Output) sirven para leer entradas digitales y generar salidas digitales; no cumplen funciones de video ni de procesamiento gráfico."
+    },
+    {
+      "id": 24,
+      "texto": "¿Cuáles memorias están presentes en la ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "DRAM", "correcta": false },
+        { "id": "b", "texto": "ROM", "correcta": true },
+        { "id": "c", "texto": "SSD", "correcta": false },
+        { "id": "d", "texto": "SRAM", "correcta": true },
+        { "id": "e", "texto": "FLASH", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "La ESP32 integra memoria ROM (rutinas de arranque), SRAM (datos en ejecución) y Flash (almacenamiento del programa). No utiliza DRAM ni unidades SSD."
+    },
+    {
+      "id": 25,
+      "texto": "¿Qué dispositivos utilizan modulación por ancho de pulso (PWM)?",
+      "respuestas": [
+        { "id": "a", "texto": "Servos", "correcta": true },
+        { "id": "b", "texto": "Transistores", "correcta": false },
+        { "id": "c", "texto": "Relés", "correcta": false },
+        { "id": "d", "texto": "Leds", "correcta": true },
+        { "id": "e", "texto": "Motores DC", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "El PWM controla la posición de servos, el brillo de LEDs y la velocidad de motores DC variando el ciclo de trabajo. Un transistor es un componente de conmutación/amplificación y el relé funciona ON/OFF."
+    },
+    {
+      "id": 26,
+      "texto": "¿Qué elementos son necesarios para programar la ESP32 desde un entorno de desarrollo local?",
+      "respuestas": [
+        { "id": "a", "texto": "IDE Visual Studio en la nube", "correcta": false },
+        { "id": "b", "texto": "Cable USB de datos", "correcta": true },
+        { "id": "c", "texto": "Puerto HDMI", "correcta": false },
+        { "id": "d", "texto": "Conexión a una red ZigBee", "correcta": false },
+        { "id": "e", "texto": "Placa reconocida en el gestor de placas de Arduino IDE", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "Para programar localmente se necesita un cable USB de datos (no solo de carga) y tener la placa instalada/reconocida en el gestor de placas del IDE. No hacen falta HDMI ni ZigBee."
+    },
+    {
+      "id": 27,
+      "texto": "¿Qué hace la función digitalRead(pin) en ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Devuelve un valor booleano", "correcta": true },
+        { "id": "b", "texto": "Inicia una comunicación serial", "correcta": false },
+        { "id": "c", "texto": "Cambia el estado del pin", "correcta": false },
+        { "id": "d", "texto": "Configura el pin como salida", "correcta": false },
+        { "id": "e", "texto": "Lee si hay una señal HIGH o LOW en un pin digital", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "digitalRead() lee el estado lógico de un pin digital y devuelve HIGH o LOW (valor booleano), según la tensión presente. No modifica ni configura el pin."
+    },
+    {
+      "id": 28,
+      "texto": "¿Qué se debe verificar al conectar sensores a pines analógicos del ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Que la tensión esté dentro del rango de alimentación", "correcta": true },
+        { "id": "b", "texto": "Que el pin tenga capacidad ADC", "correcta": true },
+        { "id": "c", "texto": "Que la señal esté modulada", "correcta": false },
+        { "id": "d", "texto": "Que tenga función capacitiva", "correcta": false },
+        { "id": "e", "texto": "Que el sensor esté conectado por SPI", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "Al conectar un sensor analógico hay que asegurarse de que la tensión de la señal no supere el rango admitido (0–3.3V) y de que el pin elegido tenga capacidad ADC."
+    },
+    {
+      "id": 29,
+      "texto": "¿Qué tipo de microcontrolador es la ESP32 DevKit V1?",
+      "respuestas": [
+        { "id": "a", "texto": "Microprocesador ARM", "correcta": false },
+        { "id": "b", "texto": "FPGA", "correcta": false },
+        { "id": "c", "texto": "Solo funciona con Wi-Fi, no con Bluetooth", "correcta": false },
+        { "id": "d", "texto": "Microcontrolador de bajo consumo", "correcta": true },
+        { "id": "e", "texto": "SoC con doble núcleo", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "La ESP32 es un SoC (System on Chip) de bajo consumo con doble núcleo, Wi-Fi y Bluetooth integrados. No usa núcleo ARM ni es una FPGA."
+    },
+    {
+      "id": 30,
+      "texto": "¿Qué ventajas ofrece usar el ESP32 sobre Arduino Uno?",
+      "respuestas": [
+        { "id": "a", "texto": "Soporte para multitarea con RTOS", "correcta": true },
+        { "id": "b", "texto": "Mayor número de pines digitales", "correcta": false },
+        { "id": "c", "texto": "Conectividad Wi-Fi y Bluetooth integradas", "correcta": true },
+        { "id": "d", "texto": "Más memoria y velocidad de procesamiento", "correcta": true },
+        { "id": "e", "texto": "Mayor consumo de energía", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "Frente al Arduino Uno, la ESP32 aporta Wi-Fi y Bluetooth integrados, mucha más memoria y velocidad, y soporte de multitarea con FreeRTOS. Un mayor consumo no es una ventaja."
+    },
+    {
+      "id": 31,
+      "texto": "¿Qué características hacen a la ESP32 ideal para proyectos de IoT?",
+      "respuestas": [
+        { "id": "a", "texto": "Soporte de red celular", "correcta": false },
+        { "id": "b", "texto": "Comunidad activa de desarrollo", "correcta": true },
+        { "id": "c", "texto": "Conectividad Wi-Fi y Bluetooth", "correcta": true },
+        { "id": "d", "texto": "Bajo costo", "correcta": true },
+        { "id": "e", "texto": "Sin conectividad", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "La ESP32 es ideal para IoT por su conectividad Wi-Fi/Bluetooth integrada, su bajo costo y una comunidad de desarrollo muy activa. No incluye módem celular de forma nativa."
+    },
+    {
+      "id": 32,
+      "texto": "¿Qué condiciones son necesarias para comunicación UART?",
+      "respuestas": [
+        { "id": "a", "texto": "Reloj compartido entre dispositivos", "correcta": false },
+        { "id": "b", "texto": "Transmisión de datos en paralelo", "correcta": false },
+        { "id": "c", "texto": "Solo un dispositivo puede transmitir", "correcta": false },
+        { "id": "d", "texto": "Baud rate (velocidad) igual entre emisor y receptor", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "UART es asíncrona: no comparte reloj, por lo que ambos dispositivos deben acordar el mismo baud rate. Es serie (no paralela) y full-duplex (ambos pueden transmitir)."
+    },
+    {
+      "id": 33,
+      "texto": "¿Qué afirmaciones son correctas sobre la función analogWrite() en Arduino IDE con ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Sirve para leer voltajes analógicos", "correcta": false },
+        { "id": "b", "texto": "Solo funciona en pines de entrada", "correcta": false },
+        { "id": "c", "texto": "Se usa para generar PWM", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "analogWrite() genera una señal PWM en un pin de salida para simular un valor 'analógico' (por ejemplo brillo o velocidad). No lee tensiones ni funciona sobre entradas."
+    },
+    {
+      "id": 34,
+      "texto": "¿Qué se requiere para cargar un programa en la ESP32 DevKit V1?",
+      "respuestas": [
+        { "id": "a", "texto": "Sistema operativo Linux", "correcta": false },
+        { "id": "b", "texto": "Fuente externa de 12V", "correcta": false },
+        { "id": "c", "texto": "IDE compatible como Arduino IDE", "correcta": true },
+        { "id": "d", "texto": "Cable USB de datos", "correcta": true },
+        { "id": "e", "texto": "Drivers específicos para la placa", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "Para flashear la placa se necesita un IDE compatible (Arduino IDE/PlatformIO), un cable USB de datos y los drivers del conversor USB-serie (CP2102/CH340). No requiere Linux ni fuente de 12V."
+    },
+    {
+      "id": 35,
+      "texto": "¿Qué afirmaciones son válidas sobre digitalRead()?",
+      "respuestas": [
+        { "id": "a", "texto": "Requiere inicializar I2C", "correcta": false },
+        { "id": "b", "texto": "Siempre devuelve un número decimal", "correcta": false },
+        { "id": "c", "texto": "Puede usarse para leer botones o sensores digitales", "correcta": true },
+        { "id": "d", "texto": "Solo funciona con entradas analógicas", "correcta": false },
+        { "id": "e", "texto": "Devuelve HIGH o LOW según el voltaje en el pin", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "digitalRead() devuelve HIGH o LOW según la tensión del pin y sirve para leer botones o sensores digitales. No depende de I2C ni trabaja con entradas analógicas."
+    },
+    {
+      "id": 36,
+      "texto": "¿Qué afirmaciones sobre los pines GPIO son verdaderas?",
+      "respuestas": [
+        { "id": "a", "texto": "Se usan como entradas o salidas digitales", "correcta": true },
+        { "id": "b", "texto": "Todos soportan funciones analógicas", "correcta": false },
+        { "id": "c", "texto": "Algunos soportan detección capacitiva (touch)", "correcta": true },
+        { "id": "d", "texto": "Son configurables desde el código", "correcta": true },
+        { "id": "e", "texto": "No se pueden usar para PWM", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "Los GPIO se configuran por software como entrada o salida digital y algunos incluyen sensado capacitivo (touch). No todos tienen ADC, y muchos sí admiten PWM."
+    },
+    {
+      "id": 37,
+      "texto": "¿Qué pines de la ESP32 se utilizan para comunicación UART?",
+      "respuestas": [
+        { "id": "a", "texto": "EN", "correcta": false },
+        { "id": "b", "texto": "GPIO3 (RX)", "correcta": true },
+        { "id": "c", "texto": "GPIO18 (CLK)", "correcta": false },
+        { "id": "d", "texto": "GPIO1 (TX)", "correcta": true },
+        { "id": "e", "texto": "GND", "correcta": false },
+        { "id": "f", "texto": "GPIO22 (SCL)", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "La UART0 por defecto usa GPIO1 como TX y GPIO3 como RX. GPIO18 (CLK) corresponde a SPI, GPIO22 (SCL) a I2C, y EN/GND no son líneas de datos UART."
+    },
+    {
+      "id": 38,
+      "texto": "¿Qué sucede si se conecta un dispositivo de 5V directamente a un pin de entrada de ESP32 (3.3V)?",
+      "respuestas": [
+        { "id": "a", "texto": "El programa se ejecuta más rápido", "correcta": false },
+        { "id": "b", "texto": "El microcontrolador podría no reconocer el estado correctamente", "correcta": true },
+        { "id": "c", "texto": "Puede dañar el pin o la placa", "correcta": true },
+        { "id": "d", "texto": "Mejora la velocidad de lectura", "correcta": false },
+        { "id": "e", "texto": "Aumenta la duración de la batería", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "Los pines de la ESP32 son de 3.3V y no toleran 5V: aplicar esa tensión puede dañar el pin o la placa. Por eso se recomienda usar divisores de tensión o conversores de nivel."
+    },
+    {
+      "id": 39,
+      "texto": "¿Qué características definen la comunicación I²C?",
+      "respuestas": [
+        { "id": "a", "texto": "Es completamente asíncrona", "correcta": false },
+        { "id": "b", "texto": "Permite un maestro y varios esclavos", "correcta": true },
+        { "id": "c", "texto": "Cada dispositivo tiene una dirección única", "correcta": true },
+        { "id": "d", "texto": "Permite varios maestros simultáneos", "correcta": false },
+        { "id": "e", "texto": "Usa líneas SDA y SCL", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "I2C es un bus síncrono de dos líneas (SDA de datos y SCL de reloj) donde un maestro direcciona a varios esclavos, cada uno con una dirección única. Al usar reloj compartido no es asíncrono."
+    },
+    {
+      "id": 40,
+      "texto": "¿Cuál es la resolución típica del ADC en ESP32 al usar analogRead() sin modificarla?",
+      "respuestas": [
+        { "id": "a", "texto": "Valores entre 0 y 4095", "correcta": true },
+        { "id": "b", "texto": "16 bits", "correcta": false },
+        { "id": "c", "texto": "24 bits", "correcta": false },
+        { "id": "d", "texto": "12 bits", "correcta": true },
+        { "id": "e", "texto": "8 bits", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "El ADC de la ESP32 trabaja por defecto a 12 bits de resolución, lo que entrega valores entre 0 y 4095 (2^12 = 4096 niveles)."
+    },
+    {
+      "id": 41,
+      "texto": "¿Qué es una protoboard y cuál es su utilidad al usar ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Permite prototipar circuitos fácilmente", "correcta": true },
+        { "id": "b", "texto": "Reemplaza el GPIO", "correcta": false },
+        { "id": "c", "texto": "Es una memoria externa", "correcta": false },
+        { "id": "d", "texto": "Placa para conexiones rápidas sin soldadura", "correcta": true },
+        { "id": "e", "texto": "Es un tipo de microcontrolador", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "La protoboard es una placa de conexiones rápidas sin soldadura que permite armar y modificar prototipos de circuitos fácilmente. No es memoria, microcontrolador ni reemplaza los GPIO."
+    },
+    {
+      "id": 42,
+      "texto": "¿Qué afirmaciones sobre setup() y loop() en Arduino/ESP32 son correctas?",
+      "respuestas": [
+        { "id": "a", "texto": "loop() se ejecuta una sola vez", "correcta": false },
+        { "id": "b", "texto": "loop() es llamado desde el firmware", "correcta": false },
+        { "id": "c", "texto": "setup() es opcional", "correcta": false },
+        { "id": "d", "texto": "setup() se ejecuta solo una vez al inicio", "correcta": true },
+        { "id": "e", "texto": "loop() se repite continuamente mientras la placa esté encendida", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "setup() corre una única vez al inicio para configurar la placa, y loop() se ejecuta de forma repetida y continua mientras la placa esté encendida."
+    },
+    {
+      "id": 43,
+      "texto": "¿Cuál es el propósito del botón ENABLE (EN) en la ESP32?",
+      "respuestas": [
+        { "id": "a", "texto": "Controlar el encendido de la placa", "correcta": true },
+        { "id": "b", "texto": "Eliminar el bootloader", "correcta": false },
+        { "id": "c", "texto": "Activar la memoria EEPROM", "correcta": false },
+        { "id": "d", "texto": "Conectar el Wi-Fi", "correcta": false },
+        { "id": "e", "texto": "Reiniciar el microcontrolador", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "El botón EN está conformado al pin de reset/habilitación: al pulsarlo reinicia el microcontrolador y controla el encendido del chip. No borra el bootloader ni activa el Wi-Fi."
+    },
+    {
+      "id": 44,
+      "texto": "¿Qué afirmaciones son correctas sobre el uso de la función pinMode()?",
+      "respuestas": [
+        { "id": "a", "texto": "Se utiliza en el bloque setup()", "correcta": true },
+        { "id": "b", "texto": "Sirve para inicializar la comunicación I2C", "correcta": false },
+        { "id": "c", "texto": "Permite configurar un pin como entrada o salida", "correcta": true },
+        { "id": "d", "texto": "Solo funciona en placas Arduino Uno", "correcta": false }
+      ],
+      "parcial": 1,
+      "explicacion": "pinMode() configura un pin como entrada (INPUT/INPUT_PULLUP) o salida (OUTPUT) y suele llamarse dentro de setup(). Funciona en ESP32 y otras placas, no solo en Arduino Uno."
+    },
+    {
+      "id": 45,
+      "texto": "¿Qué lenguajes y entornos se pueden usar para programar una ESP32 DevKit V1?",
+      "respuestas": [
+        { "id": "a", "texto": "Ensamblador en Notepad", "correcta": false },
+        { "id": "b", "texto": "C++ en Arduino IDE", "correcta": true },
+        { "id": "c", "texto": "Scratch", "correcta": false },
+        { "id": "d", "texto": "Python en Visual Studio Code", "correcta": false },
+        { "id": "e", "texto": "C++ en PlatformIO", "correcta": true }
+      ],
+      "parcial": 1,
+      "explicacion": "La ESP32 se programa habitualmente en C++ usando Arduino IDE o PlatformIO. Scratch y escribir ensamblador en Notepad no son entornos válidos para compilar y cargar el firmware."
+    }
+  ]
+}
