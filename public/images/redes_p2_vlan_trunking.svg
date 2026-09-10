@@ -1,54 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
-  <rect x="0" y="0" width="900" height="470" rx="18" fill="#ffffff"/>
-  <text x="450" y="32" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">Segmentación con VLANs y enlace troncal entre edificios</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <symbol id="sw" viewBox="0 0 96 62">
+      <path d="M6 28 L48 46 L90 28 L90 40 L48 58 L6 40 Z" fill="#bbf7d0" stroke="#15803d" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M48 10 L90 28 L48 46 L6 28 Z" fill="#dcfce7" stroke="#15803d" stroke-width="2.5" stroke-linejoin="round"/>
+      <g stroke="#15803d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 24 H60"/><path d="M53 19 L60 24 L53 29"/>
+        <path d="M64 33 H34"/><path d="M41 28 L34 33 L41 38"/>
+      </g>
+    </symbol>
+    <symbol id="pc" viewBox="0 0 88 74">
+      <rect x="5" y="5" width="78" height="52" rx="6" fill="#e2e8f0" stroke="#334155" stroke-width="2.5"/>
+      <rect x="13" y="13" width="62" height="36" rx="3" fill="#64748b"/>
+      <path d="M35 57 h18 l4 9 h-26 z" fill="#cbd5e1" stroke="#334155" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="20" y="65" width="48" height="7" rx="3.5" fill="#cbd5e1" stroke="#334155" stroke-width="2.5"/>
+    </symbol>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="460" rx="18" fill="#ffffff"/>
+  <text x="500" y="28" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Segmentación con VLANs y enlace troncal entre edificios</text>
 
   <!-- edificios -->
-  <rect x="52" y="66" width="360" height="330" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="8 5"/>
-  <text x="72" y="90" font-size="13" font-weight="700" fill="#64748b">Edificio 1</text>
-  <rect x="488" y="66" width="360" height="330" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="8 5"/>
-  <text x="508" y="90" font-size="13" font-weight="700" fill="#64748b">Edificio 2</text>
+  <rect x="50" y="58" width="420" height="342" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="70" y="84" font-size="14.5" font-weight="700" fill="#64748b">Edificio 1</text>
+  <rect x="530" y="58" width="420" height="342" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="550" y="84" font-size="14.5" font-weight="700" fill="#64748b">Edificio 2</text>
 
   <!-- troncal -->
-  <line x1="322" y1="180" x2="578" y2="180" stroke="#b45309" stroke-width="4"/>
-  <rect x="352" y="130" width="196" height="40" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="450" y="147" text-anchor="middle" font-size="12.5" font-weight="700" fill="#92400e">Enlace troncal (fibra óptica)</text>
-  <text x="450" y="162" text-anchor="middle" font-size="11.5" fill="#b45309">transporta VLAN 10 y VLAN 20 etiquetadas</text>
-
+  <line x1="340" y1="160" x2="660" y2="160" stroke="#b45309" stroke-width="4.5"/>
   <!-- enlaces de acceso -->
   <g stroke="#64748b" stroke-width="2">
-    <line x1="192" y1="206" x2="150" y2="300"/>
-    <line x1="272" y1="206" x2="318" y2="300"/>
-    <line x1="628" y1="206" x2="586" y2="300"/>
-    <line x1="708" y1="206" x2="754" y2="300"/>
+    <line x1="278" y1="184" x2="190" y2="310"/>
+    <line x1="322" y1="184" x2="410" y2="310"/>
+    <line x1="678" y1="184" x2="590" y2="310"/>
+    <line x1="722" y1="184" x2="810" y2="310"/>
   </g>
 
   <!-- switches -->
-  <rect x="142" y="154" width="180" height="52" rx="12" fill="#dcfce7" stroke="#15803d" stroke-width="2.5"/>
-  <text x="232" y="176" text-anchor="middle" font-size="15" font-weight="700" fill="#14532d">Switch 1</text>
-  <text x="232" y="194" text-anchor="middle" font-size="10.5" fill="#166534">con soporte de VLAN</text>
+  <use href="#sw" x="260" y="134" width="80" height="52"/>
+  <use href="#sw" x="660" y="134" width="80" height="52"/>
+  <text x="300" y="126" text-anchor="middle" font-size="16" font-weight="700" fill="#14532d">Switch 1</text>
+  <text x="700" y="126" text-anchor="middle" font-size="16" font-weight="700" fill="#14532d">Switch 2</text>
 
-  <rect x="578" y="154" width="180" height="52" rx="12" fill="#dcfce7" stroke="#15803d" stroke-width="2.5"/>
-  <text x="668" y="176" text-anchor="middle" font-size="15" font-weight="700" fill="#14532d">Switch 2</text>
-  <text x="668" y="194" text-anchor="middle" font-size="10.5" fill="#166534">con soporte de VLAN</text>
+  <!-- etiqueta troncal -->
+  <text x="500" y="186" text-anchor="middle" font-size="14.5" font-weight="700" fill="#92400e">Enlace troncal (fibra óptica)</text>
+  <text x="500" y="205" text-anchor="middle" font-size="12.5" fill="#b45309">transporta VLAN 10 y VLAN 20 etiquetadas</text>
 
   <!-- PCs -->
-  <g>
-    <rect x="94" y="300" width="112" height="52" rx="10" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
-    <text x="150" y="320" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Admin1</text>
-    <text x="150" y="338" text-anchor="middle" font-size="11" font-weight="700" fill="#1d4ed8">VLAN 10</text>
+  <use href="#pc" x="162" y="310" width="56" height="47"/>
+  <use href="#pc" x="382" y="310" width="56" height="47"/>
+  <use href="#pc" x="562" y="310" width="56" height="47"/>
+  <use href="#pc" x="782" y="310" width="56" height="47"/>
 
-    <rect x="262" y="300" width="112" height="52" rx="10" fill="#fdf2f8" stroke="#be185d" stroke-width="2"/>
-    <text x="318" y="320" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Ventas1</text>
-    <text x="318" y="338" text-anchor="middle" font-size="11" font-weight="700" fill="#be185d">VLAN 20</text>
-
-    <rect x="530" y="300" width="112" height="52" rx="10" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
-    <text x="586" y="320" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Admin2</text>
-    <text x="586" y="338" text-anchor="middle" font-size="11" font-weight="700" fill="#1d4ed8">VLAN 10</text>
-
-    <rect x="698" y="300" width="112" height="52" rx="10" fill="#fdf2f8" stroke="#be185d" stroke-width="2"/>
-    <text x="754" y="320" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Ventas2</text>
-    <text x="754" y="338" text-anchor="middle" font-size="11" font-weight="700" fill="#be185d">VLAN 20</text>
+  <g text-anchor="middle">
+    <text x="190" y="377" font-size="15" font-weight="700" fill="#0f172a">Admin1</text>
+    <text x="190" y="395" font-size="13" font-weight="700" fill="#1d4ed8">VLAN 10</text>
+    <text x="410" y="377" font-size="15" font-weight="700" fill="#0f172a">Ventas1</text>
+    <text x="410" y="395" font-size="13" font-weight="700" fill="#be185d">VLAN 20</text>
+    <text x="590" y="377" font-size="15" font-weight="700" fill="#0f172a">Admin2</text>
+    <text x="590" y="395" font-size="13" font-weight="700" fill="#1d4ed8">VLAN 10</text>
+    <text x="810" y="377" font-size="15" font-weight="700" fill="#0f172a">Ventas2</text>
+    <text x="810" y="395" font-size="13" font-weight="700" fill="#be185d">VLAN 20</text>
   </g>
 
-  <text x="450" y="432" text-anchor="middle" font-size="12" fill="#475569">No hay ningún router en la topología: sólo dos switches unidos por un enlace troncal.</text>
+  <text x="500" y="434" text-anchor="middle" font-size="13" fill="#475569">No hay ningún router en la topología: sólo dos switches unidos por un enlace troncal.</text>
 </svg>
