@@ -28,6 +28,7 @@ export default function TestApp({ materias }: TestAppProps) {
   const [materiaId, setMateriaId] = useState(materias[0]?.materia ?? '');
   const [cantidad, setCantidad] = useState(10);
   const [parcial, setParcial] = useState(1);
+  const [temas, setTemas] = useState<string[]>([]);
   const [usarLimite, setUsarLimite] = useState(false);
   const [limiteMinutos, setLimiteMinutos] = useState(15);
   const [fase, setFase] = useState<'inicio' | 'test' | 'resultado'>('inicio');
@@ -53,10 +54,38 @@ export default function TestApp({ materias }: TestAppProps) {
     }
   }, [parcialesDisponibles]);
 
-  const preguntasFiltradas = useMemo(
+  const preguntasDelParcial = useMemo(
     () => materia.preguntas.filter((pregunta) => pregunta.parcial === parcial),
     [materia, parcial],
   );
+
+  // Temas disponibles (con su cantidad) para la materia y parcial elegidos.
+  // Si ninguna pregunta tiene tema, la lista queda vacía y el selector no se muestra.
+  const temasDisponibles = useMemo(() => {
+    const conteo = new Map<string, number>();
+    preguntasDelParcial.forEach((pregunta) => {
+      if (pregunta.tema) conteo.set(pregunta.tema, (conteo.get(pregunta.tema) ?? 0) + 1);
+    });
+    return Array.from(conteo.entries())
+      .map(([tema, cantidad]) => ({ tema, cantidad }))
+      .sort((a, b) => a.tema.localeCompare(b.tema, 'es'));
+  }, [preguntasDelParcial]);
+
+  // Al cambiar de materia o parcial arrancamos con todos los temas marcados.
+  useEffect(() => {
+    setTemas(temasDisponibles.map((item) => item.tema));
+  }, [temasDisponibles]);
+
+  const preguntasFiltradas = useMemo(() => {
+    if (!temasDisponibles.length) return preguntasDelParcial;
+    return preguntasDelParcial.filter((pregunta) => !pregunta.tema || temas.includes(pregunta.tema));
+  }, [preguntasDelParcial, temas, temasDisponibles]);
+
+  const alternarTema = (tema: string) => {
+    setTemas((actuales) =>
+      actuales.includes(tema) ? actuales.filter((valor) => valor !== tema) : [...actuales, tema],
+    );
+  };
 
   const opcionesCantidad = useMemo(() => {
     const total = preguntasFiltradas.length;
@@ -228,7 +257,7 @@ export default function TestApp({ materias }: TestAppProps) {
                     <option key={valor} value={valor}>Parcial {valor}</option>
                   ))}
                 </select>
-                <p className="text-xs text-slate-500">Esta parcial tiene {preguntasFiltradas.length} preguntas disponibles.</p>
+                <p className="text-xs text-slate-500">Esta parcial tiene {preguntasDelParcial.length} preguntas disponibles.</p>
               </label>
 
               <label className="space-y-2 rounded-3xl border border-slate-800 bg-slate-950/80 p-4">
@@ -247,6 +276,69 @@ export default function TestApp({ materias }: TestAppProps) {
                 )}
               </label>
             </div>
+
+            {temasDisponibles.length > 0 && (
+              <div className="space-y-3 rounded-3xl border border-slate-800 bg-slate-950/80 p-4">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <span className="text-sm text-slate-400">Temas</span>
+                    <p className="text-xs text-slate-500">
+                      Elegí sobre qué temas querés que salgan las preguntas.
+                    </p>
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setTemas(temasDisponibles.map((item) => item.tema))}
+                      className="rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300 transition hover:border-cyan-400 hover:text-cyan-300"
+                    >
+                      Todos
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setTemas([])}
+                      className="rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300 transition hover:border-cyan-400 hover:text-cyan-300"
+                    >
+                      Ninguno
+                    </button>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {temasDisponibles.map(({ tema, cantidad }) => {
+                    const activo = temas.includes(tema);
+                    return (
+                      <button
+                        key={tema}
+                        type="button"
+                        aria-pressed={activo}
+                        onClick={() => alternarTema(tema)}
+                        className={`rounded-2xl border px-3 py-2 text-left text-sm transition ${
+                          activo
+                            ? 'border-cyan-400 bg-cyan-400/10 text-cyan-200'
+                            : 'border-slate-700 bg-slate-900 text-slate-400 hover:border-slate-500'
+                        }`}
+                      >
+                        {tema}
+                        <span className={activo ? 'ml-2 text-cyan-300/80' : 'ml-2 text-slate-600'}>
+                          {cantidad}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {preguntasFiltradas.length === 0 ? (
+                  <p className="text-xs text-amber-300">
+                    No hay preguntas con los temas elegidos; seleccioná al menos uno.
+                  </p>
+                ) : (
+                  <p className="text-xs text-slate-500">
+                    {preguntasFiltradas.length} preguntas disponibles con los temas elegidos.
+                  </p>
+                )}
+              </div>
+            )}
 
             <div className="grid gap-5 lg:grid-cols-2">
               <label className="space-y-4 rounded-3xl border border-slate-800 bg-slate-950/80 p-4">

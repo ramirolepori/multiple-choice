@@ -595,7 +595,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "2001::2460:34:0:980 expande el :: en 3 grupos de ceros (necesita 8 grupos totales, tiene 5 explícitos), resultando en 2001:0000:0000:0000:2460:0034:0000:0980."
+      "explicacion": "2001::2460:34:0:980 expande el :: en 3 grupos de ceros (necesita 8 grupos totales, tiene 5 explícitos), resultando en 2001:0000:0000:0000:2460:0034:0000:0980.",
+      "tema": "IPv6"
     },
     {
       "id": 16,
@@ -628,7 +629,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Para comunicarse entre países a través de Internet se necesitan direcciones globales unicast IPv6, equivalentes a las IPs públicas de IPv4, ya que son ruteables globalmente."
+      "explicacion": "Para comunicarse entre países a través de Internet se necesitan direcciones globales unicast IPv6, equivalentes a las IPs públicas de IPv4, ya que son ruteables globalmente.",
+      "tema": "IPv6"
     },
     {
       "id": 17,
@@ -1016,7 +1018,8 @@
           "texto": "El paquete es un broadcast dentro del segmento de red",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "IPv6"
     },
     {
       "id": 28,
@@ -1054,7 +1057,8 @@
           "texto": "1534 bytes",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Protocolo IPv4"
     },
     {
       "id": 29,
@@ -1829,7 +1833,8 @@
           "texto": "Elimina los campos relacionados a la fragmentación de paquetes",
           "correcta": true
         }
-      ]
+      ],
+      "tema": "Protocolo IPv4"
     },
     {
       "id": 50,
@@ -3066,7 +3071,8 @@
           "texto": "Switch",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 93,
@@ -3099,7 +3105,8 @@
           "texto": "En los grandes proveedores de servicios",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Router: hardware y configuración"
     },
     {
       "id": 94,
@@ -3127,7 +3134,8 @@
           "texto": "Se agrega una etiqueta en la máquina fuente y la máquina destino la saca",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 95,
@@ -3155,7 +3163,8 @@
           "texto": "Estado de enlace",
           "correcta": true
         }
-      ]
+      ],
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 96,
@@ -3188,7 +3197,8 @@
           "texto": "Los dispositivos no se pueden comunicar porque pertenecen a áreas diferentes",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 97,
@@ -3221,7 +3231,8 @@
           "texto": "Al incremento del retardo y demasiados paquetes y se degrada el desempeño de la red",
           "correcta": true
         }
-      ]
+      ],
+      "tema": "Control de congestión"
     },
     {
       "id": 98,
@@ -3264,7 +3275,8 @@
           "texto": "Checksum",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "IPv6"
     },
     {
       "id": 99,
@@ -3292,7 +3304,8 @@
           "texto": "El algoritmo de Dijkstra",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 100,
@@ -3325,7 +3338,8 @@
           "texto": "Agrandar el tamaño de las tablas de enrutamiento",
           "correcta": true
         }
-      ]
+      ],
+      "tema": "IPv6"
     },
     {
       "id": 101,
@@ -3363,7 +3377,8 @@
           "texto": "BGP",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 102,
@@ -3396,7 +3411,8 @@
           "texto": "Audio bajo demanda",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 103,
@@ -3429,7 +3445,8 @@
           "texto": "16",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "IPv6"
     },
     {
       "id": 104,
@@ -3457,7 +3474,8 @@
           "texto": "Programación o planificación de paquetes",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 105,
@@ -3485,7 +3503,8 @@
           "texto": "30 segundos",
           "correcta": true
         }
-      ]
+      ],
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 106,
@@ -3513,7 +3532,8 @@
           "texto": "Ninguna de las opciones",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 107,
@@ -3551,7 +3571,8 @@
           "texto": "IS-IS",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 108,
@@ -3584,7 +3605,8 @@
           "texto": "Ninguna de las opciones",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 109,
@@ -3617,7 +3639,8 @@
           "texto": "Ninguna de las opciones",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Router: hardware y configuración"
     },
     {
       "id": 110,
@@ -3645,7 +3668,8 @@
           "texto": "Al primero que llega",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 111,
@@ -3678,7 +3702,8 @@
           "texto": "Ninguna de las opciones",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 112,
@@ -3749,7 +3774,8 @@
           "texto": "Enrutamiento estático",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 114,
@@ -3783,7 +3809,8 @@
           "texto": "Enlace de datos y Física",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 115,
@@ -3816,7 +3843,8 @@
           "texto": "Cambiar a otro algoritmo",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 116,
@@ -3844,7 +3872,8 @@
           "texto": "65 y 66",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 117,
@@ -3877,7 +3906,8 @@
           "texto": "Ninguna de las opciones",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 118,
@@ -3910,7 +3940,8 @@
           "texto": "Se relaciona con el tráfico entre un emisor y un receptor en particular",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Control de congestión"
     },
     {
       "id": 119,
@@ -3943,7 +3974,8 @@
           "texto": "Solo arma la tabla de enrutamiento",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 120,
@@ -3971,7 +4003,8 @@
           "texto": "El cliente no lo notará",
           "correcta": true
         }
-      ]
+      ],
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 121,
@@ -4009,7 +4042,8 @@
           "texto": "11:11:11:11:11:11",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "ICMP y ARP"
     },
     {
       "id": 122,
@@ -4042,7 +4076,8 @@
           "texto": "Los paquetes pertenecientes al archivo pueden llegar desordenados al dispositivo destino",
           "correcta": true
         }
-      ]
+      ],
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 123,
@@ -4075,7 +4110,8 @@
           "texto": "Transmite 5 paquetes juntos y luego un paquete cada 1 segundo",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 124,
@@ -4103,7 +4139,8 @@
           "texto": "Al conjunto de Router que tienen el mismo protocolo de enrutamiento",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 125,
@@ -4131,7 +4168,8 @@
           "texto": "Se descarta el último paquete que llegó con la misma prioridad",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 126,
@@ -4164,7 +4202,8 @@
           "texto": "Detección tardía al azar",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Control de congestión"
     },
     {
       "id": 127,
@@ -4197,7 +4236,8 @@
           "texto": "Ninguna de las opciones",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 128,
@@ -4230,7 +4270,8 @@
           "texto": "Costo del enlace",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 129,
@@ -4268,7 +4309,8 @@
           "texto": "Para el origen",
           "correcta": true
         }
-      ]
+      ],
+      "tema": "Control de congestión"
     },
     {
       "id": 130,
@@ -4301,7 +4343,8 @@
           "texto": "No se pudo entregar el paquete",
           "correcta": true
         }
-      ]
+      ],
+      "tema": "ICMP y ARP"
     },
     {
       "id": 131,
@@ -4334,7 +4377,8 @@
           "texto": "Sólo actualizar la dirección MAC",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 132,
@@ -4367,7 +4411,8 @@
           "texto": "Detección temprana aleatoria",
           "correcta": true
         }
-      ]
+      ],
+      "tema": "Control de congestión"
     },
     {
       "id": 133,
@@ -4400,7 +4445,8 @@
           "texto": "El router congestionado empieza a descartar paquetes",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Control de congestión"
     },
     {
       "id": 134,
@@ -4428,7 +4474,8 @@
           "texto": "Ninguna de las opciones",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "ICMP y ARP"
     },
     {
       "id": 135,
@@ -4456,7 +4503,8 @@
           "texto": "HELLO",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 136,
@@ -4484,7 +4532,8 @@
           "texto": "En cualquier momento",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 137,
@@ -4512,7 +4561,8 @@
           "texto": "Tener un sólo servidor en la empresa para varias LAN",
           "correcta": true
         }
-      ]
+      ],
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 138,
@@ -4545,7 +4595,8 @@
           "texto": "Ninguna de las opciones",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 139,
@@ -4578,7 +4629,8 @@
           "texto": "Estabilidad",
           "correcta": false
         }
-      ]
+      ],
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 140,
@@ -4612,7 +4664,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "IHL expresa la longitud de la cabecera IPv4 en palabras de 32 bits. Como la cabecera mínima es de 20 bytes, el valor mínimo de IHL es 5 (5 x 32 bits = 160 bits = 20 bytes)."
+      "explicacion": "IHL expresa la longitud de la cabecera IPv4 en palabras de 32 bits. Como la cabecera mínima es de 20 bytes, el valor mínimo de IHL es 5 (5 x 32 bits = 160 bits = 20 bytes).",
+      "tema": "Protocolo IPv4"
     },
     {
       "id": 141,
@@ -4646,7 +4699,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "DF (Don't Fragment) en 1 prohíbe fragmentar el datagrama. MF (More Fragments) en 1 indica que existen más fragmentos a continuación; el último fragmento viaja siempre con MF=0."
+      "explicacion": "DF (Don't Fragment) en 1 prohíbe fragmentar el datagrama. MF (More Fragments) en 1 indica que existen más fragmentos a continuación; el último fragmento viaja siempre con MF=0.",
+      "tema": "Protocolo IPv4"
     },
     {
       "id": 142,
@@ -4679,7 +4733,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Si el paquete requiere fragmentación pero DF=1, el router lo descarta y notifica al origen con un ICMP tipo 3 (Destino inalcanzable), código 4: «Requiere fragmentar pero el bit DF está activo»."
+      "explicacion": "Si el paquete requiere fragmentación pero DF=1, el router lo descarta y notifica al origen con un ICMP tipo 3 (Destino inalcanzable), código 4: «Requiere fragmentar pero el bit DF está activo».",
+      "tema": "Protocolo IPv4"
     },
     {
       "id": 143,
@@ -4707,7 +4762,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Todos los fragmentos de un mismo datagrama llevan el mismo valor en el campo Identificación, lo que permite al destino agrupar y reensamblar correctamente los fragmentos que le van llegando."
+      "explicacion": "Todos los fragmentos de un mismo datagrama llevan el mismo valor en el campo Identificación, lo que permite al destino agrupar y reensamblar correctamente los fragmentos que le van llegando.",
+      "tema": "Protocolo IPv4"
     },
     {
       "id": 144,
@@ -4741,7 +4797,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El campo Protocolo le indica a la capa de interred del destino a qué protocolo superior debe entregar los datos que transporta el paquete: TCP, UDP o ICMP (valor 1 para ICMP)."
+      "explicacion": "El campo Protocolo le indica a la capa de interred del destino a qué protocolo superior debe entregar los datos que transporta el paquete: TCP, UDP o ICMP (valor 1 para ICMP).",
+      "tema": "Protocolo IPv4"
     },
     {
       "id": 145,
@@ -4774,7 +4831,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Las opciones de IPv4 son: seguridad, encaminamiento estricto desde el origen, encaminamiento libre desde el origen, registrar ruta y marca de tiempo. La reserva de recursos y la compresión no forman parte de las opciones de IPv4."
+      "explicacion": "Las opciones de IPv4 son: seguridad, encaminamiento estricto desde el origen, encaminamiento libre desde el origen, registrar ruta y marca de tiempo. La reserva de recursos y la compresión no forman parte de las opciones de IPv4.",
+      "tema": "Protocolo IPv4"
     },
     {
       "id": 146,
@@ -4807,7 +4865,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "La capa de Interred se ocupa del direccionamiento, el encaminamiento de paquetes y el control de congestión. El acceso al medio corresponde a la capa de enlace y la entrega fiable es responsabilidad de TCP en la capa de transporte."
+      "explicacion": "La capa de Interred se ocupa del direccionamiento, el encaminamiento de paquetes y el control de congestión. El acceso al medio corresponde a la capa de enlace y la entrega fiable es responsabilidad de TCP en la capa de transporte.",
+      "tema": "Protocolo IPv4"
     },
     {
       "id": 147,
@@ -4840,7 +4899,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "IPv4 es no orientado a conexión, encamina cada paquete de forma independiente usando la máscara de red y las tablas de encaminamiento, y no garantiza la entrega ni retransmite: de la fiabilidad se encarga TCP."
+      "explicacion": "IPv4 es no orientado a conexión, encamina cada paquete de forma independiente usando la máscara de red y las tablas de encaminamiento, y no garantiza la entrega ni retransmite: de la fiabilidad se encarga TCP.",
+      "tema": "Protocolo IPv4"
     },
     {
       "id": 148,
@@ -4868,7 +4928,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Todos los fragmentos intermedios viajan con MF=1 indicando que vienen más. El último fragmento del datagrama es el único que lleva MF=0, lo que le indica al destino que ya puede reensamblar."
+      "explicacion": "Todos los fragmentos intermedios viajan con MF=1 indicando que vienen más. El último fragmento del datagrama es el único que lleva MF=0, lo que le indica al destino que ya puede reensamblar.",
+      "tema": "Protocolo IPv4"
     },
     {
       "id": 149,
@@ -4896,7 +4957,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Una dirección IPv6 posee 128 bits (16 bytes) y se escribe como 8 grupos de 4 dígitos hexadecimales separados por dos puntos, por ejemplo 2031:0000:130F:0000:0000:09C0:876A:130B."
+      "explicacion": "Una dirección IPv6 posee 128 bits (16 bytes) y se escribe como 8 grupos de 4 dígitos hexadecimales separados por dos puntos, por ejemplo 2031:0000:130F:0000:0000:09C0:876A:130B.",
+      "tema": "IPv6"
     },
     {
       "id": 150,
@@ -4929,7 +4991,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "En IPv6 se omiten los ceros iniciales de cada grupo y se reemplaza una única secuencia de grupos consecutivos de ceros por «::». Usar «::» más de una vez haría ambigua la reconstrucción de la dirección."
+      "explicacion": "En IPv6 se omiten los ceros iniciales de cada grupo y se reemplaza una única secuencia de grupos consecutivos de ceros por «::». Usar «::» más de una vez haría ambigua la reconstrucción de la dirección.",
+      "tema": "IPv6"
     },
     {
       "id": 151,
@@ -4962,7 +5025,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Las direcciones locales de enlace usan el prefijo FE80::/10. Se configuran automáticamente en toda interfaz IPv6 habilitada y un router nunca reenvía ese tráfico fuera del enlace."
+      "explicacion": "Las direcciones locales de enlace usan el prefijo FE80::/10. Se configuran automáticamente en toda interfaz IPv6 habilitada y un router nunca reenvía ese tráfico fuera del enlace.",
+      "tema": "IPv6"
     },
     {
       "id": 152,
@@ -4995,7 +5059,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "FF00::/8 es multicast, 2000::/3 unicast global y FE80::/10 local de enlace. FC00::/7 corresponde a las ULA (locales únicas) y ::1/128 es la dirección de loopback, mientras que la no especificada es ::/128."
+      "explicacion": "FF00::/8 es multicast, 2000::/3 unicast global y FE80::/10 local de enlace. FC00::/7 corresponde a las ULA (locales únicas) y ::1/128 es la dirección de loopback, mientras que la no especificada es ::/128.",
+      "tema": "IPv6"
     },
     {
       "id": 153,
@@ -5023,7 +5088,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "La dirección :: (todos ceros) sólo indica la ausencia de dirección y se usa como origen mientras el nodo aún no tiene una asignada. Nunca debe asignarse a una interfaz ni usarse como destino."
+      "explicacion": "La dirección :: (todos ceros) sólo indica la ausencia de dirección y se usa como origen mientras el nodo aún no tiene una asignada. Nunca debe asignarse a una interfaz ni usarse como destino.",
+      "tema": "IPv6"
     },
     {
       "id": 154,
@@ -5056,7 +5122,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "IPv6 elimina el broadcast (lo reemplaza por multicast), suprime la suma de verificación de la cabecera, permite conectividad extremo a extremo sin NAT y simplifica la cabecera, además de ampliar enormemente el espacio de direcciones."
+      "explicacion": "IPv6 elimina el broadcast (lo reemplaza por multicast), suprime la suma de verificación de la cabecera, permite conectividad extremo a extremo sin NAT y simplifica la cabecera, además de ampliar enormemente el espacio de direcciones.",
+      "tema": "IPv6"
     },
     {
       "id": 155,
@@ -5090,7 +5157,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "IPv6 elimina el checksum de cabecera, el IHL (su cabecera es de tamaño fijo, 40 bytes) y los campos de fragmentación. Se mantienen Versión y las direcciones de origen y destino, que pasan a ocupar 128 bits."
+      "explicacion": "IPv6 elimina el checksum de cabecera, el IHL (su cabecera es de tamaño fijo, 40 bytes) y los campos de fragmentación. Se mantienen Versión y las direcciones de origen y destino, que pasan a ocupar 128 bits.",
+      "tema": "IPv6"
     },
     {
       "id": 156,
@@ -5118,7 +5186,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Anycast es «uno al más cercano»: la misma dirección se asigna a varias interfaces (normalmente en distintos nodos) y los routers deciden cuál es el destino más cercano. Es adecuada para balanceo de carga."
+      "explicacion": "Anycast es «uno al más cercano»: la misma dirección se asigna a varias interfaces (normalmente en distintos nodos) y los routers deciden cuál es el destino más cercano. Es adecuada para balanceo de carga.",
+      "tema": "IPv6"
     },
     {
       "id": 157,
@@ -5151,7 +5220,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Escuchando los anuncios de router (RA), el nodo obtiene el prefijo de red, el router por defecto, el límite de saltos, la MTU del enlace y la validez del tiempo de vida, con lo que construye su dirección global."
+      "explicacion": "Escuchando los anuncios de router (RA), el nodo obtiene el prefijo de red, el router por defecto, el límite de saltos, la MTU del enlace y la validez del tiempo de vida, con lo que construye su dirección global.",
+      "tema": "IPv6"
     },
     {
       "id": 158,
@@ -5184,7 +5254,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "IPv6 no usa máscaras de subred y realiza una división fija 50-50: 64 bits de prefijo de red y 64 de identificador de interfaz, por lo que no existe VLSM. Un prefijo menor a /64 identifica una ruta o rango sumarizado."
+      "explicacion": "IPv6 no usa máscaras de subred y realiza una división fija 50-50: 64 bits de prefijo de red y 64 de identificador de interfaz, por lo que no existe VLSM. Un prefijo menor a /64 identifica una ruta o rango sumarizado.",
+      "tema": "IPv6"
     },
     {
       "id": 159,
@@ -5217,7 +5288,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "IPv6 admite configuración manual, autoconfiguración sin estado (SLAAC, a partir de los anuncios de router) y autoconfiguración con estado mediante DHCPv6. RARP y ARP no se utilizan en IPv6."
+      "explicacion": "IPv6 admite configuración manual, autoconfiguración sin estado (SLAAC, a partir de los anuncios de router) y autoconfiguración con estado mediante DHCPv6. RARP y ARP no se utilizan en IPv6.",
+      "tema": "IPv6"
     },
     {
       "id": 160,
@@ -5245,7 +5317,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Los primeros 64 bits (FEC0:0:0:2AC4::/64) son el identificador de red y los 64 bits restantes, 2AA:FF:FE9A:82D4, corresponden al identificador de interfaz."
+      "explicacion": "Los primeros 64 bits (FEC0:0:0:2AC4::/64) son el identificador de red y los 64 bits restantes, 2AA:FF:FE9A:82D4, corresponden al identificador de interfaz.",
+      "tema": "IPv6"
     },
     {
       "id": 161,
@@ -5274,7 +5347,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "IPv6 traslada las opciones a cabeceras de extensión que se encadenan mediante el campo Next Header (NH). Así la cabecera base queda fija y simple, y las opciones sólo las procesa quien realmente las necesita."
+      "explicacion": "IPv6 traslada las opciones a cabeceras de extensión que se encadenan mediante el campo Next Header (NH). Así la cabecera base queda fija y simple, y las opciones sólo las procesa quien realmente las necesita.",
+      "tema": "IPv6"
     },
     {
       "id": 162,
@@ -5302,7 +5376,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Se omiten los ceros iniciales de cada grupo (0DB8→DB8, 00AC→AC, 003A→3A) y se reemplaza por «::» la única secuencia de grupos consecutivos en cero. El grupo aislado 0000 que queda antes de 003A no puede comprimirse con un segundo «::»."
+      "explicacion": "Se omiten los ceros iniciales de cada grupo (0DB8→DB8, 00AC→AC, 003A→3A) y se reemplaza por «::» la única secuencia de grupos consecutivos en cero. El grupo aislado 0000 que queda antes de 003A no puede comprimirse con un segundo «::».",
+      "tema": "IPv6"
     },
     {
       "id": 163,
@@ -5330,7 +5405,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "ICMP trabaja junto a IPv4 en la capa de red y sus mensajes se encapsulan dentro de un paquete IPv4 cuyo campo Protocolo vale 1, lo que permite al destino identificarlo como ICMP."
+      "explicacion": "ICMP trabaja junto a IPv4 en la capa de red y sus mensajes se encapsulan dentro de un paquete IPv4 cuyo campo Protocolo vale 1, lo que permite al destino identificarlo como ICMP.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 164,
@@ -5363,7 +5439,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "La cabecera ICMP tiene 8 bytes: 4 fijos (Tipo, Código y Suma de verificación) y 4 que dependen del tipo de mensaje. Los datos incluyen la cabecera IPv4 original más 8 bytes del paquete que provocó el error."
+      "explicacion": "La cabecera ICMP tiene 8 bytes: 4 fijos (Tipo, Código y Suma de verificación) y 4 que dependen del tipo de mensaje. Los datos incluyen la cabecera IPv4 original más 8 bytes del paquete que provocó el error.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 165,
@@ -5396,7 +5473,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Los códigos del tipo 3 son: 0 red inalcanzable, 1 host inalcanzable, 2 protocolo inalcanzable, 3 puerto inalcanzable, 4 requiere fragmentar con DF activo y 5 red de destino desconocida. «Tiempo de vida excedido» y «Source Quench» son otros tipos de mensaje ICMP."
+      "explicacion": "Los códigos del tipo 3 son: 0 red inalcanzable, 1 host inalcanzable, 2 protocolo inalcanzable, 3 puerto inalcanzable, 4 requiere fragmentar con DF activo y 5 red de destino desconocida. «Tiempo de vida excedido» y «Source Quench» son otros tipos de mensaje ICMP.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 166,
@@ -5424,7 +5502,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El campo TTL se decrementa en cada salto para evitar que un paquete quede dando vueltas indefinidamente. Cuando llega a 0 el router descarta el paquete y avisa al origen con un ICMP Time exceeded."
+      "explicacion": "El campo TTL se decrementa en cada salto para evitar que un paquete quede dando vueltas indefinidamente. Cuando llega a 0 el router descarta el paquete y avisa al origen con un ICMP Time exceeded.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 167,
@@ -5452,7 +5531,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Si un router recibe un paquete y advierte que existe otro router de la MISMA red que ofrece un camino mejor hacia el destino, envía un ICMP Redirect al host para que actualice su gateway y deje de dar un rodeo innecesario."
+      "explicacion": "Si un router recibe un paquete y advierte que existe otro router de la MISMA red que ofrece un camino mejor hacia el destino, envía un ICMP Redirect al host para que actualice su gateway y deje de dar un rodeo innecesario.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 168,
@@ -5485,7 +5565,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "tracert envía echo request con TTL=1, 2, 3… Cada router que agota el TTL responde con un Time exceeded revelando su dirección, hasta que el destino contesta con un echo reply. Controla un máximo de 30 saltos."
+      "explicacion": "tracert envía echo request con TTL=1, 2, 3… Cada router que agota el TTL responde con un Time exceeded revelando su dirección, hasta que el destino contesta con un echo reply. Controla un máximo de 30 saltos.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 169,
@@ -5513,7 +5594,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "ARP (Address Resolution Protocol) resuelve, dada una dirección IP, la dirección MAC correspondiente dentro de la MISMA red, y mantiene esa información en la tabla o caché ARP. El proceso inverso lo hacía RARP."
+      "explicacion": "ARP (Address Resolution Protocol) resuelve, dada una dirección IP, la dirección MAC correspondiente dentro de la MISMA red, y mantiene esa información en la tabla o caché ARP. El proceso inverso lo hacía RARP.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 170,
@@ -5541,7 +5623,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Como el emisor desconoce la MAC del destino, la solicitud ARP se envía en broadcast (FF:FF:FF:FF:FF:FF) para que la reciban todos los equipos de la red; sólo responde el que posee la IP consultada, con un ARP Reply en unicast."
+      "explicacion": "Como el emisor desconoce la MAC del destino, la solicitud ARP se envía en broadcast (FF:FF:FF:FF:FF:FF) para que la reciban todos los equipos de la red; sólo responde el que posee la IP consultada, con un ARP Reply en unicast.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 171,
@@ -5570,7 +5653,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "La PC-A determina por la máscara que el destino está en otra LAN, por lo que encapsula la trama con la MAC de su gateway (Giga0 de R1). Las direcciones IP de origen y destino permanecen sin cambios de extremo a extremo."
+      "explicacion": "La PC-A determina por la máscara que el destino está en otra LAN, por lo que encapsula la trama con la MAC de su gateway (Giga0 de R1). Las direcciones IP de origen y destino permanecen sin cambios de extremo a extremo.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 172,
@@ -5599,7 +5683,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El router arma una trama nueva para la LAN 2: pone como MAC origen la de Giga1 y necesita la MAC de PC-E. Si no la tiene en su tabla ARP, la resuelve con una solicitud ARP en esa LAN. Las IP de origen y destino no cambian."
+      "explicacion": "El router arma una trama nueva para la LAN 2: pone como MAC origen la de Giga1 y necesita la MAC de PC-E. Si no la tiene en su tabla ARP, la resuelve con una solicitud ARP en esa LAN. Las IP de origen y destino no cambian.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 173,
@@ -5632,7 +5717,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Cada dispositivo mantiene su propia caché ARP y las entradas aprendidas dinámicamente no son permanentes: tienen un temporizador asociado y se eliminan al vencer, obligando a resolver nuevamente la MAC."
+      "explicacion": "Cada dispositivo mantiene su propia caché ARP y las entradas aprendidas dinámicamente no son permanentes: tienen un temporizador asociado y se eliminan al vencer, obligando a resolver nuevamente la MAC.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 174,
@@ -5665,7 +5751,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Las opciones del comando arp son: -a para visualizar la tabla, -s para definir una entrada estática y -d para eliminar entradas. Las opciones -r y -n con esos significados no existen."
+      "explicacion": "Las opciones del comando arp son: -a para visualizar la tabla, -s para definir una entrada estática y -d para eliminar entradas. Las opciones -r y -n con esos significados no existen.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 175,
@@ -5693,7 +5780,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "ARP sólo resuelve direcciones dentro de la propia red. Para alcanzar un destino en otra red, la PC resuelve y almacena la MAC de su gateway, nunca la del servidor remoto."
+      "explicacion": "ARP sólo resuelve direcciones dentro de la propia red. Para alcanzar un destino en otra red, la PC resuelve y almacena la MAC de su gateway, nunca la del servidor remoto.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 176,
@@ -5726,7 +5814,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "RARP permite que una estación sin disco obtenga su IP a partir de su MAC mediante un mapeo estático configurado en el servidor, y exige un servidor por cada LAN. Fue justamente BOOTP el que reemplazó a RARP."
+      "explicacion": "RARP permite que una estación sin disco obtenga su IP a partir de su MAC mediante un mapeo estático configurado en el servidor, y exige un servidor por cada LAN. Fue justamente BOOTP el que reemplazó a RARP.",
+      "tema": "ICMP y ARP"
     },
     {
       "id": 177,
@@ -5759,7 +5848,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "BOOTP fue diseñado para estaciones sin disco: usa mapeos estáticos IP-MAC configurados en tablas del servidor, corre sobre UDP 67/68, permite que clientes y servidor estén en LAN distintas y entrega la ruta del S.O. a descargar por TFTP. La asignación dinámica es propia de DHCP."
+      "explicacion": "BOOTP fue diseñado para estaciones sin disco: usa mapeos estáticos IP-MAC configurados en tablas del servidor, corre sobre UDP 67/68, permite que clientes y servidor estén en LAN distintas y entrega la ruta del S.O. a descargar por TFTP. La asignación dinámica es propia de DHCP.",
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 178,
@@ -5792,7 +5882,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Las desventajas de BOOTP son la configuración manual de las tablas, la dificultad ante cambios y traslados, la necesidad permanente del administrador y la imposibilidad de asignar direcciones dinámicamente. Sí permite configurar varios parámetros y admite clientes en otras LAN."
+      "explicacion": "Las desventajas de BOOTP son la configuración manual de las tablas, la dificultad ante cambios y traslados, la necesidad permanente del administrador y la imposibilidad de asignar direcciones dinámicamente. Sí permite configurar varios parámetros y admite clientes en otras LAN.",
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 179,
@@ -5825,7 +5916,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "DHCP es un protocolo cliente/servidor que corre sobre UDP (puertos 67 y 68), brinda administración centralizada, entrega la configuración en alquiler por un tiempo determinado y permite reutilizar direcciones, facilitando cambios y traslados."
+      "explicacion": "DHCP es un protocolo cliente/servidor que corre sobre UDP (puertos 67 y 68), brinda administración centralizada, entrega la configuración en alquiler por un tiempo determinado y permite reutilizar direcciones, facilitando cambios y traslados.",
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 180,
@@ -5858,7 +5950,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "DHCP contempla tres métodos: dinámica (direcciones temporales renovables), automática (dirección permanente asignada automáticamente desde un pool en el primer uso) y estática o manual (IP fija asociada a una MAC, típica de servidores e impresoras)."
+      "explicacion": "DHCP contempla tres métodos: dinámica (direcciones temporales renovables), automática (dirección permanente asignada automáticamente desde un pool en el primer uso) y estática o manual (IP fija asociada a una MAC, típica de servidores e impresoras).",
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 181,
@@ -5891,7 +5984,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Release libera la IP, Decline avisa que la dirección ofrecida ya está en uso y Nack es la negativa del servidor. En cambio Inform es una consulta del CLIENTE sobre la configuración local, y Offer es el ofrecimiento que hace el SERVIDOR."
+      "explicacion": "Release libera la IP, Decline avisa que la dirección ofrecida ya está en uso y Nack es la negativa del servidor. En cambio Inform es una consulta del CLIENTE sobre la configuración local, y Offer es el ofrecimiento que hace el SERVIDOR.",
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 182,
@@ -5924,7 +6018,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El Discover se envía en broadcast (origen 0.0.0.0, destino 255.255.255.255) para localizar servidores DHCP e incluye un ID de transacción, un número aleatorio que permite asociar los mensajes y respuestas de esa negociación."
+      "explicacion": "El Discover se envía en broadcast (origen 0.0.0.0, destino 255.255.255.255) para localizar servidores DHCP e incluye un ID de transacción, un número aleatorio que permite asociar los mensajes y respuestas de esa negociación.",
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 183,
@@ -5953,7 +6048,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Los routers no reenvían broadcasts, por lo que el Discover no llega al servidor. El agente relay escucha esos broadcasts, completa el campo «relay agent IP address» y los reenvía como unicast al servidor DHCP, evitando tener un servidor por LAN."
+      "explicacion": "Los routers no reenvían broadcasts, por lo que el Discover no llega al servidor. El agente relay escucha esos broadcasts, completa el campo «relay agent IP address» y los reenvía como unicast al servidor DHCP, evitando tener un servidor por LAN.",
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 184,
@@ -5986,7 +6082,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "DHCP puede entregar dirección IP, máscara de subred, gateway por defecto, servidor y nombre DNS, MTU de la interfaz, servidores NTP, SMTP y TFTP, entre otros. La MAC viene grabada en la interfaz y los hosts no ejecutan protocolos de encaminamiento."
+      "explicacion": "DHCP puede entregar dirección IP, máscara de subred, gateway por defecto, servidor y nombre DNS, MTU de la interfaz, servidores NTP, SMTP y TFTP, entre otros. La MAC viene grabada en la interfaz y los hosts no ejecutan protocolos de encaminamiento.",
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 185,
@@ -6014,7 +6111,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El Discover llega a ambos servidores y cada uno responde con su propio DHCP Offer. El cliente elige una de las ofertas y la solicita con un DHCP Request; el servidor elegido confirma con un Ack y el otro libera la dirección reservada."
+      "explicacion": "El Discover llega a ambos servidores y cada uno responde con su propio DHCP Offer. El cliente elige una de las ofertas y la solicita con un DHCP Request; el servidor elegido confirma con un Ack y el otro libera la dirección reservada.",
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)"
     },
     {
       "id": 186,
@@ -6047,7 +6145,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Los requisitos de un algoritmo de encaminamiento son: exactitud, sencillez, robustez, estabilidad, equidad y eficiencia. La orientación a conexión y el cifrado no forman parte de esa lista."
+      "explicacion": "Los requisitos de un algoritmo de encaminamiento son: exactitud, sencillez, robustez, estabilidad, equidad y eficiencia. La orientación a conexión y el cifrado no forman parte de esa lista.",
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 187,
@@ -6080,7 +6179,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El encaminamiento se divide en estático (no adaptativo) y dinámico (adaptativo), y este último puede ser centralizado, distribuido o aislado según dónde y cómo se tomen las decisiones."
+      "explicacion": "El encaminamiento se divide en estático (no adaptativo) y dinámico (adaptativo), y este último puede ser centralizado, distribuido o aislado según dónde y cómo se tomen las decisiones.",
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 188,
@@ -6113,7 +6213,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "La inundación reenvía cada paquete por todas las líneas menos la de entrada. Genera muchos duplicados, pero es robusta, converge rápidamente y garantiza que el paquete alcance todos los nodos. Se controla con contadores de saltos, números de secuencia o registro de paquetes ya difundidos."
+      "explicacion": "La inundación reenvía cada paquete por todas las líneas menos la de entrada. Genera muchos duplicados, pero es robusta, converge rápidamente y garantiza que el paquete alcance todos los nodos. Se controla con contadores de saltos, números de secuencia o registro de paquetes ya difundidos.",
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 189,
@@ -6146,7 +6247,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Al crecer las redes crecen las tablas de encaminamiento, con más consumo de memoria, más procesamiento y más ancho de banda para las actualizaciones. Agrupando routers en regiones, cada uno conoce su región en detalle e ignora la estructura interna de las demás."
+      "explicacion": "Al crecer las redes crecen las tablas de encaminamiento, con más consumo de memoria, más procesamiento y más ancho de banda para las actualizaciones. Agrupando routers en regiones, cada uno conoce su región en detalle e ignora la estructura interna de las demás.",
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 190,
@@ -6180,7 +6282,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Vector distancia guarda para cada destino la mejor distancia y la línea de salida, sin conocer la topología. Envía actualizaciones periódicas, usa Fulkerson-Bellman-Ford, consume pocos recursos, converge lentamente y puede presentar bucles."
+      "explicacion": "Vector distancia guarda para cada destino la mejor distancia y la línea de salida, sin conocer la topología. Envía actualizaciones periódicas, usa Fulkerson-Bellman-Ford, consume pocos recursos, converge lentamente y puede presentar bucles.",
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 191,
@@ -6209,7 +6312,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "La red 18.0.0.0 está conectada al Router C. Desde el Router A hay que atravesar RB y RC, es decir 2 saltos, y la salida es por la interfaz S0, que es la que lo conecta hacia RB."
+      "explicacion": "La red 18.0.0.0 está conectada al Router C. Desde el Router A hay que atravesar RB y RC, es decir 2 saltos, y la salida es por la interfaz S0, que es la que lo conecta hacia RB.",
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 192,
@@ -6242,7 +6346,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Contra los bucles se usan: el TTL, el horizonte dividido (sólo el router que informó una red caída puede enviar nueva información sobre ella), las actualizaciones generadas por eventos, los temporizadores de espera y la definición de una métrica máxima."
+      "explicacion": "Contra los bucles se usan: el TTL, el horizonte dividido (sólo el router que informó una red caída puede enviar nueva información sobre ella), las actualizaciones generadas por eventos, los temporizadores de espera y la definición de una métrica máxima.",
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 193,
@@ -6275,7 +6380,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Los pasos son: descubrir vecinos (HELLO), medir el costo hacia cada uno (ECHO), construir el LSP, inundarlo a todos los routers, construir el grafo de la red con la base de datos topológica y ejecutar Dijkstra para calcular el camino más corto."
+      "explicacion": "Los pasos son: descubrir vecinos (HELLO), medir el costo hacia cada uno (ECHO), construir el LSP, inundarlo a todos los routers, construir el grafo de la red con la base de datos topológica y ejecutar Dijkstra para calcular el camino más corto.",
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 194,
@@ -6308,7 +6414,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Estado de enlace conoce la topología, mantiene una base de datos topológica, no presenta bucles, converge rápido, envía actualizaciones ante eventos y usa como métrica el costo de los enlaces. Consume, eso sí, muchos más recursos que vector distancia."
+      "explicacion": "Estado de enlace conoce la topología, mantiene una base de datos topológica, no presenta bucles, converge rápido, envía actualizaciones ante eventos y usa como métrica el costo de los enlaces. Consume, eso sí, muchos más recursos que vector distancia.",
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 195,
@@ -6341,7 +6448,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Los IGP actúan dentro de un sistema autónomo: RIP (vector distancia), OSPF e IS-IS (estado de enlace). El único EGP es BGP, que intercambia rutas ENTRE sistemas autónomos y es un protocolo de vector de rutas."
+      "explicacion": "Los IGP actúan dentro de un sistema autónomo: RIP (vector distancia), OSPF e IS-IS (estado de enlace). El único EGP es BGP, que intercambia rutas ENTRE sistemas autónomos y es un protocolo de vector de rutas.",
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 196,
@@ -6374,7 +6482,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "RIP corre sobre UDP 520, usa como métrica la cantidad de saltos con un máximo de 15, envía actualizaciones periódicas cada 30 segundos a sus vecinos y tiene distancia administrativa 120. Al ser vector distancia, desconoce la topología."
+      "explicacion": "RIP corre sobre UDP 520, usa como métrica la cantidad de saltos con un máximo de 15, envía actualizaciones periódicas cada 30 segundos a sus vecinos y tiene distancia administrativa 120. Al ser vector distancia, desconoce la topología.",
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 197,
@@ -6407,7 +6516,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "RIPv1 es classful, no envía máscara y actualiza por broadcast (255.255.255.255). RIPv2 es classless, soporta VLSM y CIDR, envía la máscara, usa multicast 224.0.0.9 y permite autenticación. El límite de 15 saltos se mantiene en ambas."
+      "explicacion": "RIPv1 es classful, no envía máscara y actualiza por broadcast (255.255.255.255). RIPv2 es classless, soporta VLSM y CIDR, envía la máscara, usa multicast 224.0.0.9 y permite autenticación. El límite de 15 saltos se mantiene en ambas.",
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 198,
@@ -6435,7 +6545,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "La distancia administrativa mide la confiabilidad de una ruta y gana la MENOR: redes directamente conectadas 0, rutas estáticas 1, OSPF 110, IS-IS 115 y RIP 120."
+      "explicacion": "La distancia administrativa mide la confiabilidad de una ruta y gana la MENOR: redes directamente conectadas 0, rutas estáticas 1, OSPF 110, IS-IS 115 y RIP 120.",
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 199,
@@ -6468,7 +6579,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "OSPF es un IGP de estado de enlace definido en la RFC 2328: encapsula sus actualizaciones en un datagrama IP en el puerto 89, usa multicast 224.0.0.5 y 224.0.0.6, aplica Dijkstra, toma como métrica el ancho de banda y actualiza ante eventos, no periódicamente."
+      "explicacion": "OSPF es un IGP de estado de enlace definido en la RFC 2328: encapsula sus actualizaciones en un datagrama IP en el puerto 89, usa multicast 224.0.0.5 y 224.0.0.6, aplica Dijkstra, toma como métrica el ancho de banda y actualiza ante eventos, no periódicamente.",
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 200,
@@ -6502,7 +6614,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "OSPF divide el sistema autónomo en áreas para facilitar su gestión. Existe siempre un área 0 troncal por la que debe pasar toda comunicación entre áreas, y cada router conoce en detalle sólo su área, compartiendo dentro de ella la misma base de datos de estado de enlace."
+      "explicacion": "OSPF divide el sistema autónomo en áreas para facilitar su gestión. Existe siempre un área 0 troncal por la que debe pasar toda comunicación entre áreas, y cada router conoce en detalle sólo su área, compartiendo dentro de ella la misma base de datos de estado de enlace.",
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 201,
@@ -6531,7 +6644,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Los ABR (Area Border Router) se conectan a dos o más áreas, deben formar parte de la red troncal y su función es resumir todas las redes de un área y enviar ese resumen al resto de las áreas. Quien intercambia rutas con otros sistemas autónomos es el ASBR."
+      "explicacion": "Los ABR (Area Border Router) se conectan a dos o más áreas, deben formar parte de la red troncal y su función es resumir todas las redes de un área y enviar ese resumen al resto de las áreas. Quien intercambia rutas con otros sistemas autónomos es el ASBR.",
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 202,
@@ -6559,7 +6673,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "En redes de broadcast se elige un DR (Designated Router) que crea adyacencia con el resto y un BDR de respaldo. Las actualizaciones se envían sólo al DR y BDR (multicast 224.0.0.6), lo que evita una malla completa de adyacencias."
+      "explicacion": "En redes de broadcast se elige un DR (Designated Router) que crea adyacencia con el resto y un BDR de respaldo. Las actualizaciones se envían sólo al DR y BDR (multicast 224.0.0.6), lo que evita una malla completa de adyacencias.",
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 203,
@@ -6592,7 +6707,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "BGP es el protocolo EGP que intercambia rutas entre sistemas autónomos. Corre sobre TCP 179 manteniendo sesiones permanentes entre pares, es un protocolo de vector de rutas basado en políticas configuradas manualmente y BGPv4 soporta CIDR y sumarización."
+      "explicacion": "BGP es el protocolo EGP que intercambia rutas entre sistemas autónomos. Corre sobre TCP 179 manteniendo sesiones permanentes entre pares, es un protocolo de vector de rutas basado en políticas configuradas manualmente y BGPv4 soporta CIDR y sumarización.",
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 204,
@@ -6620,7 +6736,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "BGP aplica primero las «preferencias locales» establecidas por el administrador. Sólo en ausencia de esas políticas la ruta preferida es SIEMPRE la que tiene el camino de sistemas autónomos más corto."
+      "explicacion": "BGP aplica primero las «preferencias locales» establecidas por el administrador. Sólo en ausencia de esas políticas la ruta preferida es SIEMPRE la que tiene el camino de sistemas autónomos más corto.",
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 205,
@@ -6653,7 +6770,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "BGP distingue redes stub (una sola conexión a otro SA), multihomed o multihospedadas (conectadas a dos o más SA) y de tránsito (los ISP Tier 1, que transportan tráfico ajeno). El concepto de área troncal pertenece a OSPF."
+      "explicacion": "BGP distingue redes stub (una sola conexión a otro SA), multihomed o multihospedadas (conectadas a dos o más SA) y de tránsito (los ISP Tier 1, que transportan tráfico ajeno). El concepto de área troncal pertenece a OSPF.",
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)"
     },
     {
       "id": 206,
@@ -6686,7 +6804,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Las VLAN crean redes lógicas separadas sobre una misma red física, agrupan usuarios independientemente de su ubicación, reducen los dominios de broadcast y aportan seguridad. Requieren switches configurables y cada VLAN usa una subred distinta."
+      "explicacion": "Las VLAN crean redes lógicas separadas sobre una misma red física, agrupan usuarios independientemente de su ubicación, reducen los dominios de broadcast y aportan seguridad. Requieren switches configurables y cada VLAN usa una subred distinta.",
+      "tema": "VLANs y ruteo entre VLANs"
     },
     {
       "id": 207,
@@ -6715,7 +6834,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Las subinterfaces son interfaces virtuales múltiples asociadas a una misma interfaz física; cada una pertenece a una subred distinta y actúa como gateway de su VLAN. Así, el router acepta el tráfico etiquetado por el troncal y encamina internamente entre VLANs."
+      "explicacion": "Las subinterfaces son interfaces virtuales múltiples asociadas a una misma interfaz física; cada una pertenece a una subred distinta y actúa como gateway de su VLAN. Así, el router acepta el tráfico etiquetado por el troncal y encamina internamente entre VLANs.",
+      "tema": "VLANs y ruteo entre VLANs"
     },
     {
       "id": 208,
@@ -6744,7 +6864,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Los puertos de acceso (untagged) pertenecen a una única VLAN y entregan las tramas sin etiqueta a la PC, que desconoce su existencia. El puerto troncal (tagged) transporta varias VLANs y conserva la etiqueta con el ID de VLAN, necesaria para que el router sepa a qué subinterfaz corresponde cada trama."
+      "explicacion": "Los puertos de acceso (untagged) pertenecen a una única VLAN y entregan las tramas sin etiqueta a la PC, que desconoce su existencia. El puerto troncal (tagged) transporta varias VLANs y conserva la etiqueta con el ID de VLAN, necesaria para que el router sepa a qué subinterfaz corresponde cada trama.",
+      "tema": "VLANs y ruteo entre VLANs"
     },
     {
       "id": 209,
@@ -6778,7 +6899,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "La pertenencia a una VLAN es lógica, no física: Admin1 y Admin2 se comunican aunque estén en edificios distintos porque el enlace troncal transporta la VLAN 10 etiquetada. En cambio Admin1 y Ventas1, aun compartiendo switch, están en VLANs distintas y necesitarían un router o switch de capa 3."
+      "explicacion": "La pertenencia a una VLAN es lógica, no física: Admin1 y Admin2 se comunican aunque estén en edificios distintos porque el enlace troncal transporta la VLAN 10 etiquetada. En cambio Admin1 y Ventas1, aun compartiendo switch, están en VLANs distintas y necesitarían un router o switch de capa 3.",
+      "tema": "VLANs y ruteo entre VLANs"
     },
     {
       "id": 210,
@@ -6811,7 +6933,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El control de congestión es global: garantiza que la red pueda transportar todo el tráfico que ingresa e involucra a todos los hosts y routers. El control de flujo es extremo a extremo entre un emisor y un receptor puntual, para que el emisor no sature al receptor."
+      "explicacion": "El control de congestión es global: garantiza que la red pueda transportar todo el tráfico que ingresa e involucra a todos los hosts y routers. El control de flujo es extremo a extremo entre un emisor y un receptor puntual, para que el emisor no sature al receptor.",
+      "tema": "Control de congestión"
     },
     {
       "id": 211,
@@ -6844,7 +6967,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Las causas de congestión son la escasa memoria en los routers, los procesadores lentos, los enlaces de poco ancho de banda y la modernización incompleta, que sólo traslada el cuello de botella a otro punto de la red."
+      "explicacion": "Las causas de congestión son la escasa memoria en los routers, los procesadores lentos, los enlaces de poco ancho de banda y la modernización incompleta, que sólo traslada el cuello de botella a otro punto de la red.",
+      "tema": "Control de congestión"
     },
     {
       "id": 212,
@@ -6877,7 +7001,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Los métodos de ciclo abierto buscan evitar la congestión con un buen diseño y deciden qué tráfico aceptar o descartar sin mirar el estado de la red. Los de ciclo cerrado (retroalimentación) monitorean la red, informan la congestión a quien pueda resolverla y toman medidas correctivas."
+      "explicacion": "Los métodos de ciclo abierto buscan evitar la congestión con un buen diseño y deciden qué tráfico aceptar o descartar sin mirar el estado de la red. Los de ciclo cerrado (retroalimentación) monitorean la red, informan la congestión a quien pueda resolverla y toman medidas correctivas.",
+      "tema": "Control de congestión"
     },
     {
       "id": 213,
@@ -6910,7 +7035,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Con ECN el router marca dos bits en el paquete IP (campo tipo de servicio en IPv4, clase de tráfico en IPv6). El DESTINO se entera de la congestión y avisa al origen activando otro bit en la capa de transporte, y el origen reduce su transmisión."
+      "explicacion": "Con ECN el router marca dos bits en el paquete IP (campo tipo de servicio en IPv4, clase de tráfico en IPv6). El DESTINO se entera de la congestión y avisa al origen activando otro bit en la capa de transporte, y el origen reduce su transmisión.",
+      "tema": "Control de congestión"
     },
     {
       "id": 214,
@@ -6943,7 +7069,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El criterio depende de la aplicación: en transferencia de archivos un paquete viejo es más valioso (los siguientes dependen de él), mientras que en multimedia interesa el más reciente. En video conviene descartar las actualizaciones antes que los cuadros completos."
+      "explicacion": "El criterio depende de la aplicación: en transferencia de archivos un paquete viejo es más valioso (los siguientes dependen de él), mientras que en multimedia interesa el más reciente. En video conviene descartar las actualizaciones antes que los cuadros completos.",
+      "tema": "Control de congestión"
     },
     {
       "id": 215,
@@ -6971,7 +7098,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Con RED, cuando la longitud promedio de la cola supera un umbral el router descarta al azar una pequeña fracción de paquetes ANTES de agotar el búfer. El emisor detecta que no llegan los ACK y, junto con TCP, reduce su tasa de transmisión."
+      "explicacion": "Con RED, cuando la longitud promedio de la cola supera un umbral el router descarta al azar una pequeña fracción de paquetes ANTES de agotar el búfer. El emisor detecta que no llegan los ACK y, junto con TCP, reduce su tasa de transmisión.",
+      "tema": "Control de congestión"
     },
     {
       "id": 216,
@@ -7004,7 +7132,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Un flujo es un conjunto de paquetes que va de un origen a un destino, y su QoS se define por cuatro parámetros: ancho de banda, retardo, variación del retardo (jitter) y pérdida o confiabilidad."
+      "explicacion": "Un flujo es un conjunto de paquetes que va de un origen a un destino, y su QoS se define por cuatro parámetros: ancho de banda, retardo, variación del retardo (jitter) y pérdida o confiabilidad.",
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 217,
@@ -7032,7 +7161,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El sobreaprovisionamiento consiste en dotar a la red de tanta capacidad de router, espacio en búfer y ancho de banda que los paquetes nunca se congestionen. Su desventaja es el costo; el sistema telefónico es el ejemplo clásico."
+      "explicacion": "El sobreaprovisionamiento consiste en dotar a la red de tanta capacidad de router, espacio en búfer y ancho de banda que los paquetes nunca se congestionen. Su desventaja es el costo; el sistema telefónico es el ejemplo clásico.",
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 218,
@@ -7065,7 +7195,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El modelado de tráfico regula la tasa promedio y las ráfagas de un flujo, moderando el tráfico en el servidor y reduciendo la congestión. El usuario y la red acuerdan un patrón (SLA) y la supervisión de tráfico controla que se cumpla, marcando el exceso para su eventual descarte."
+      "explicacion": "El modelado de tráfico regula la tasa promedio y las ráfagas de un flujo, moderando el tráfico en el servidor y reduciendo la congestión. El usuario y la red acuerdan un patrón (SLA) y la supervisión de tráfico controla que se cumpla, marcando el exceso para su eventual descarte.",
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 219,
@@ -7098,7 +7229,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "La cubeta con goteo convierte un flujo desigual en un flujo continuo: entrega un paquete por pulso de reloj a tasa constante y descarta lo que desborda su cola finita. Quien permite ráfagas es la cubeta con fichas."
+      "explicacion": "La cubeta con goteo convierte un flujo desigual en un flujo continuo: entrega un paquete por pulso de reloj a tasa constante y descarta lo que desborda su cola finita. Quien permite ráfagas es la cubeta con fichas.",
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 220,
@@ -7131,7 +7263,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "La cubeta con fichas es flexible y apta para tráfico a ráfagas: un reloj genera fichas, cada paquete consume una y los hosts inactivos acumulan permisos hasta el tamaño «n» de la cubeta. Cuando la cubeta se vacía, se vuelve a transmitir un paquete por pulso de reloj."
+      "explicacion": "La cubeta con fichas es flexible y apta para tráfico a ráfagas: un reloj genera fichas, cada paquete consume una y los hosts inactivos acumulan permisos hasta el tamaño «n» de la cubeta. Cuando la cubeta se vacía, se vuelve a transmitir un paquete por pulso de reloj.",
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 221,
@@ -7159,7 +7292,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Los flujos se almacenan en el búfer del receptor antes de entregarse a la aplicación. Eso agrega retardo inicial, pero suaviza la variación del retardo y evita huecos en la reproducción; por eso se aplica en audio y video bajo demanda."
+      "explicacion": "Los flujos se almacenan en el búfer del receptor antes de entregarse a la aplicación. Eso agrega retardo inicial, pero suaviza la variación del retardo y evita huecos en la reproducción; por eso se aplica en audio y video bajo demanda.",
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 222,
@@ -7192,7 +7326,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "FIFO usa una única cola por orden de llegada. Por prioridad se atiende siempre primero lo de mayor prioridad, castigando al resto. FQ mantiene una cola por flujo y las recorre round-robin con igual prioridad, mientras que WFQ pondera las colas para dar más ancho de banda a los flujos en tiempo real."
+      "explicacion": "FIFO usa una única cola por orden de llegada. Por prioridad se atiende siempre primero lo de mayor prioridad, castigando al resto. FQ mantiene una cola por flujo y las recorre round-robin con igual prioridad, mientras que WFQ pondera las colas para dar más ancho de banda a los flujos en tiempo real.",
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 223,
@@ -7225,7 +7360,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "IntServ reserva recursos extremo a extremo con RSVP y exige mantener estado por flujo en cada router, lo que no escala. DiffServ clasifica los paquetes en clases (campo ToS en IPv4, Clase de tráfico en IPv6), se implementa localmente en cada router y no necesita estado por flujo."
+      "explicacion": "IntServ reserva recursos extremo a extremo con RSVP y exige mantener estado por flujo en cada router, lo que no escala. DiffServ clasifica los paquetes en clases (campo ToS en IPv4, Clase de tráfico en IPv6), se implementa localmente en cada router y no necesita estado por flujo.",
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 224,
@@ -7258,7 +7394,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "MPLS (MultiProtocol Label Switching) es orientado a conexión e independiente de las capas de red y enlace. Incorpora una etiqueta de significado local, que se reasocia en cada salto, permite conmutación muy rápida, reserva de recursos y agrupar flujos en una FEC."
+      "explicacion": "MPLS (MultiProtocol Label Switching) es orientado a conexión e independiente de las capas de red y enlace. Incorpora una etiqueta de significado local, que se reasocia en cada salto, permite conmutación muy rápida, reserva de recursos y agrupar flujos en una FEC.",
+      "tema": "Calidad de servicio (QoS)"
     },
     {
       "id": 225,
@@ -7291,7 +7428,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "La RAM es volátil y contiene el IOS en ejecución, el running-config, la tabla de enrutamiento, la caché ARP y el búfer de paquetes. La ROM guarda el bootstrap, el POST y un IOS limitado; la NVRAM el startup-config; y la flash la imagen del IOS."
+      "explicacion": "La RAM es volátil y contiene el IOS en ejecución, el running-config, la tabla de enrutamiento, la caché ARP y el búfer de paquetes. La ROM guarda el bootstrap, el POST y un IOS limitado; la NVRAM el startup-config; y la flash la imagen del IOS.",
+      "tema": "Router: hardware y configuración"
     },
     {
       "id": 226,
@@ -7324,7 +7462,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El arranque tiene tres fases: POST y carga del bootstrap desde la ROM; localización y carga del IOS (normalmente desde flash a la RAM, porque la DRAM es mucho más rápida); y búsqueda del startup-config en la NVRAM, recurriendo a TFTP y finalmente al modo Setup si no lo encuentra."
+      "explicacion": "El arranque tiene tres fases: POST y carga del bootstrap desde la ROM; localización y carga del IOS (normalmente desde flash a la RAM, porque la DRAM es mucho más rápida); y búsqueda del startup-config en la NVRAM, recurriendo a TFTP y finalmente al modo Setup si no lo encuentra.",
+      "tema": "Router: hardware y configuración"
     },
     {
       "id": 227,
@@ -7352,7 +7491,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Todos los cambios de configuración se aplican sobre el running-config, que reside en la RAM y el IOS implementa de inmediato. Como la RAM es volátil, hay que guardarlo en la NVRAM como startup-config para que sobreviva a un reinicio o apagado."
+      "explicacion": "Todos los cambios de configuración se aplican sobre el running-config, que reside en la RAM y el IOS implementa de inmediato. Como la RAM es volátil, hay que guardarlo en la NVRAM como startup-config para que sobreviva a un reinicio o apagado.",
+      "tema": "Router: hardware y configuración"
     },
     {
       "id": 228,
@@ -7385,7 +7525,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Las conexiones del router se agrupan en puertos de administración (consola y auxiliar, que no reenvían paquetes) e interfaces en banda (LAN y WAN, con direccionamiento IP). Cada interfaz es miembro de una red IP distinta y el IOS impide que dos interfaces activas estén en la misma red."
+      "explicacion": "Las conexiones del router se agrupan en puertos de administración (consola y auxiliar, que no reenvían paquetes) e interfaces en banda (LAN y WAN, con direccionamiento IP). Cada interfaz es miembro de una red IP distinta y el IOS impide que dos interfaces activas estén en la misma red.",
+      "tema": "Router: hardware y configuración"
     },
     {
       "id": 229,
@@ -7414,7 +7555,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El router aprende automáticamente las redes a las que está directamente conectado, así que sólo hay que declarar las restantes: 9 redes totales menos 2 conectadas = 7 rutas estáticas por router."
+      "explicacion": "El router aprende automáticamente las redes a las que está directamente conectado, así que sólo hay que declarar las restantes: 9 redes totales menos 2 conectadas = 7 rutas estáticas por router.",
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 230,
@@ -7448,7 +7590,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El router4 tiene su LAN 172.16.4.0/24 en eth2, por lo que declararla vía 10.10.10.9 es incorrecto y redundante. Ese renglón debería ser la ruta hacia 172.16.1.0, que es la única red que le falta: sin ella el tráfico de vuelta hacia la LAN del router1 no encuentra camino."
+      "explicacion": "El router4 tiene su LAN 172.16.4.0/24 en eth2, por lo que declararla vía 10.10.10.9 es incorrecto y redundante. Ese renglón debería ser la ruta hacia 172.16.1.0, que es la única red que le falta: sin ella el tráfico de vuelta hacia la LAN del router1 no encuentra camino.",
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 231,
@@ -7477,7 +7620,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Cada router decide sólo en función de su propia tabla y de la IP de destino, por lo que el camino de ida y el de vuelta son independientes y pueden diferir. Por eso traceroute muestra únicamente los saltos de ida, que no necesariamente coinciden con los del retorno."
+      "explicacion": "Cada router decide sólo en función de su propia tabla y de la IP de destino, por lo que el camino de ida y el de vuelta son independientes y pueden diferir. Por eso traceroute muestra únicamente los saltos de ida, que no necesariamente coinciden con los del retorno.",
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 232,
@@ -7505,7 +7649,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "Si las rutas de los routers están bien, el echo request llega al servidor; el problema está en el retorno. Sin gateway por defecto configurado, el servidor no sabe cómo alcanzar una red distinta a la suya y la respuesta nunca sale de su LAN."
+      "explicacion": "Si las rutas de los routers están bien, el echo request llega al servidor; el problema está en el retorno. Sin gateway por defecto configurado, el servidor no sabe cómo alcanzar una red distinta a la suya y la respuesta nunca sale de su LAN.",
+      "tema": "Encaminamiento: conceptos y algoritmos"
     },
     {
       "id": 233,
@@ -7538,7 +7683,8 @@
         }
       ],
       "parcial": 2,
-      "explicacion": "El control de admisión se aplica en redes de circuitos virtuales: ante congestión no se aceptan nuevos circuitos, o bien se aceptan encaminándolos por rutas menos congestionadas. Al establecer el circuito se negocia volumen, forma de tráfico y QoS, y la red reserva recursos en toda la ruta."
+      "explicacion": "El control de admisión se aplica en redes de circuitos virtuales: ante congestión no se aceptan nuevos circuitos, o bien se aceptan encaminándolos por rutas menos congestionadas. Al establecer el circuito se negocia volumen, forma de tráfico y QoS, y la red reserva recursos en toda la ruta.",
+      "tema": "Control de congestión"
     }
   ]
 }

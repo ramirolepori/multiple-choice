@@ -1,0 +1,4605 @@
+{
+  "materia": "Redes de Datos - Parciales",
+  "preguntas": [
+    {
+      "id": 1,
+      "texto": "Una computadora de una LAN de una empresa que implementa direccionamiento privado recibe desde un servidor web de Internet la página que había solicitado. El encabezado del paquete que llega a dicha computadora contiene:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "IP origen privada - IP destino pública",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "IP origen privada - IP destino privada",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "IP origen pública - IP destino pública",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "IP origen pública - IP destino privada",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "NAT y PAT",
+      "explicacion": "El origen es el servidor web de Internet, que tiene dirección pública. El router de borde ya tradujo la dirección de destino, por lo que cuando el paquete llega a la computadora dentro de la LAN el destino es su IP privada."
+    },
+    {
+      "id": 2,
+      "texto": "Una computadora tiene asignada una IP dinámicamente. El administrador la traslada a otra red de la empresa. Para que dicha computadora tenga conectividad, será necesario:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Modificar su dirección MAC",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Modificar su dirección IP y su dirección MAC",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Mantener su dirección IP y modificar su dirección MAC",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No hacer nada, ya tiene conectividad",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Modificar su dirección IP",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "Justamente la ventaja de DHCP es que facilita cambios y traslados: al conectarse en la nueva red el cliente inicia el proceso Discover/Offer/Request/Ack y recibe automáticamente una IP válida para esa subred, sin intervención del administrador."
+    },
+    {
+      "id": 3,
+      "texto": "¿Cuál de los siguientes parámetros de Calidad de Servicio es importante en la transmisión de un correo electrónico?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Métrica",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Confidencialidad",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Ancho de banda",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Variabilidad del retardo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Retardo",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Pérdida o Confiabilidad",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "El correo electrónico tolera bien el retardo y el jitter (no es una aplicación en tiempo real) y necesita poco ancho de banda, pero no tolera perder información: el mensaje debe llegar completo. Por eso el parámetro crítico es la pérdida o confiabilidad."
+    },
+    {
+      "id": 4,
+      "texto": "En la implementación de la tecnología MPLS:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Los routers agregan una etiqueta entre la capa de red y la capa de transporte",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Los routers encaminan en función de la dirección MAC destino de los paquetes",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Los routers procesan cada paquete y lo encaminan en función de la dirección IP destino",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Los routers mantienen tablas y conmutan en función de la etiqueta contenida entre la capa de red y la de enlace de datos",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Se incorpora un nuevo encabezado entre la capa de transporte y de red, conteniendo una nueva dirección IP",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "MPLS inserta la etiqueta entre la capa de red y la de enlace de datos (por eso se la llama «capa 2,5»). Los routers mantienen una tabla indexada por etiqueta y conmutan en base a ella, sin analizar la dirección IP de destino en cada salto."
+    },
+    {
+      "id": 5,
+      "texto": "Un router analiza sus interfaces de salida y detecta que una de ellas se está congestionando. ¿Cuál de los siguientes métodos de control de congestión se implementa, si el router selecciona al azar algunos paquetes de la cola y los descarta?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Paquete regulador",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Detección temprana aleatoria",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Algoritmo de cubeta con ficha",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Notificación explícita de congestión",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Detección tardía al azar",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "RED (Random Early Detection) descarta al azar una pequeña fracción de paquetes cuando la longitud promedio de la cola supera un umbral, es decir ANTES de que el búfer se agote. Al no recibir los ACK, TCP en el emisor reduce su tasa de transmisión."
+    },
+    {
+      "id": 6,
+      "texto": "¿Cuáles de los siguientes se utilizan para detectar una congestión en los métodos de control de congestión de ciclo cerrado? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Capacidad del disco rígido de los servidores",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Cantidad de paquetes descartados por los routers",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Longitud promedio de la cola de paquetes en los routers",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Bucles o loops de encaminamiento",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Capacidad de procesamiento de los hosts receptores",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Cantidad de routers que tienen que atravesar los paquetes",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "Los métodos de ciclo cerrado monitorean el sistema para detectar cuándo y dónde se produce la congestión. Los indicadores que se miden son el porcentaje de paquetes descartados y la longitud promedio de las colas (además del retardo de los paquetes)."
+    },
+    {
+      "id": 7,
+      "texto": "¿Cuál de los siguientes es un tipo de red que NO se maneja en el protocolo BGP?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Red multihomed (multihospedada)",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Red de tránsito",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Red de broadcast",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Red de conexión única o stub",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Red de multidifusión",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "BGP clasifica las redes en stub (una sola conexión a otro SA), multihomed (dos o más) y de tránsito (los ISP Tier 1). «Red de broadcast» no es una categoría de BGP: es un tipo de red de OSPF, junto con las punto a punto."
+    },
+    {
+      "id": 8,
+      "texto": "El modelado de tráfico en el servidor como técnica para brindar Calidad de Servicio consiste en:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Controlar y regular la tasa promedio y las ráfagas en el origen de una transmisión de datos",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Establecer el ritmo con el cual los datos llegan al host receptor",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Almacenar los datos en el buffer del cliente antes de su reproducción",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Brindar suficientes recursos de red para evitar que se produzca congestión",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "El modelado de tráfico (traffic shaping) regula la tasa promedio y las ráfagas del flujo que entra a la red, moderando el tráfico en el servidor. Las otras opciones describen el control de flujo, el almacenamiento en búfer y el sobreaprovisionamiento."
+    },
+    {
+      "id": 9,
+      "texto": "¿Cuáles de las siguientes características corresponden a CIDR? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Permite manejar direcciones IP de 128 bits",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Permite implementar un encaminamiento geográfico",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Permite incrementar el tamaño de las tablas de encaminamiento de los routers",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Reparte las direcciones privadas clase C en bloques de tamaño variable",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Las direcciones IPv4 se asignan por clases A, B y C",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Permite reducir el tamaño de las tablas de encaminamiento de los routers",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento IPv4, VLSM y CIDR",
+      "explicacion": "CIDR elimina el direccionamiento por clases y asigna los bloques de forma regional o geográfica, lo que permite sumarizar rutas contiguas en un único anuncio y así REDUCIR el tamaño de las tablas de encaminamiento."
+    },
+    {
+      "id": 10,
+      "texto": "Una empresa de telecomunicaciones posee una gran cantidad de routers y tiene implementado el protocolo OSPF. Si un dispositivo perteneciente a una red del área 1 quiere comunicarse con un servidor Web del área 4, indique cuál de las siguientes afirmaciones es correcta:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se deberá ejecutar el protocolo BGP para esta comunicación",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "El paquete atravesará primero el área 1, luego el área 0 y por último el área 4",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "El paquete atravesará primero el área 1 y luego se comunicará directamente con el área 4",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No se pueden comunicar porque pertenecen a sistemas autónomos diferentes",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Los dispositivos no se pueden comunicar porque pertenecen a áreas diferentes",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "En OSPF toda comunicación entre áreas distintas debe pasar obligatoriamente por el área 0 o troncal (backbone). Las áreas no se comunican directamente entre sí. Ambas áreas pertenecen al mismo sistema autónomo, por lo que no interviene BGP."
+    },
+    {
+      "id": 11,
+      "texto": "¿Cuáles de las siguientes características corresponden a los Servicios Diferenciados como método para brindar Calidad de Servicio? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se marcan los paquetes cerca del origen según la clase a la que pertenecen",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Se reservan recursos extremo a extremo para cada flujo individual",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Se implementa a través del protocolo ICMP",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Todos los flujos viajan por el mismo camino físico",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Se establecen contratos SLA entre el cliente y la red",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "DiffServ brinda QoS basada en CLASES de tráfico: el ISP marca los paquetes cerca del origen (campo ToS en IPv4, Clase de tráfico en IPv6) y se acuerdan contratos SLA. La reserva extremo a extremo por flujo con RSVP corresponde a Servicios Integrados."
+    },
+    {
+      "id": 12,
+      "texto": "Un router aprende cómo llegar a una red de tres formas diferentes: a través del protocolo RIP, a través del protocolo OSPF y mediante una ruta estática establecida por el administrador de la red. ¿Qué ruta instalará el router en su tabla de encaminamiento?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Luego de aplicar el algoritmo de la ruta más corta, instalará la de menor métrica",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "La determinada por el administrador de la red",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "La aprendida a través del protocolo RIP",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La aprendida a través del protocolo OSPF",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Es indiferente, puede ser cualquiera de las tres rutas",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "Cuando una red se aprende por varias vías, el router compara la distancia administrativa y gana la MENOR. La ruta estática tiene AD 1, muy por debajo de OSPF (110) y RIP (120), por lo que se instala la configurada por el administrador."
+    },
+    {
+      "id": 13,
+      "texto": "¿Cuál de las siguientes características corresponde al protocolo RARP?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Permite que un único servidor RARP asigne direcciones IP a todas las LANs de la empresa",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Facilita cambios y traslados de computadoras entre LANs de una misma empresa",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Permite que una computadora cuando arranca, envíe su dirección MAC y obtenga una dirección IPv4 desde un servidor",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Permite averiguar la dirección MAC de una computadora a partir de una dirección IPv4 conocida",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "RARP es el proceso inverso a ARP: la estación envía su MAC y el servidor le devuelve la IPv4 correspondiente según un mapeo estático. Requiere un servidor por cada LAN y no facilita traslados, por eso fue reemplazado por BOOTP."
+    },
+    {
+      "id": 14,
+      "texto": "A partir de la siguiente topología, indique cuál de los siguientes comandos se deberá configurar en el router R6 para definir su correspondiente par BGP INTERNO:",
+      "imagen": "/images/rdd_par_bgp_sistemas_autonomos.png",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "neighbor 150.4.1.2 remote-as 600",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "neighbor 170.1.2.1 remote-as 600",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "neighbor 170.1.2.1 remote-as 500",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "neighbor 170.1.2.2 remote-as 500",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "neighbor 150.4.1.2 remote-as 500",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "neighbor 150.4.1.1 remote-as 500",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "Un par BGP interno (iBGP) se establece con un router del MISMO sistema autónomo. R6 está en el SA 500, igual que R4, cuya interfaz es 150.4.1.2. Por eso el comando es «neighbor 150.4.1.2 remote-as 500»."
+    },
+    {
+      "id": 15,
+      "texto": "¿Cuál de las siguientes es una ventaja del encaminamiento dinámico?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El administrador debe configurar las rutas ante cambios en la topología de la red",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Es muy seguro porque se conocen las rutas por las cuales viajan los paquetes",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Los routers deben enviarse actualizaciones de encaminamiento, consumiendo ancho de banda de los enlaces",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Los routers actualizan sus tablas de encaminamiento ante la detección de un cambio de topología de la red",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Los administradores pueden configurar los routers de manera remota",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "La ventaja del encaminamiento dinámico es la adaptación automática: ante la caída de un enlace o un cambio de topología, los routers reconstruyen sus tablas sin intervención del administrador. Las opciones a y c son desventajas del estático y del dinámico respectivamente."
+    },
+    {
+      "id": 16,
+      "texto": "El servidor DHCP ubicado en la LAN-1 puede configurar los parámetros IP de una computadora ubicada en la LAN-2 y otra computadora ubicada en la LAN-3:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Siempre debe haber un servidor DHCP en cada LAN",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Si las computadoras no tienen configurada la puerta de enlace o gateway por defecto",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Nunca",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Sólo si está configurada la función Agente Relay del protocolo DHCP",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Si las computadoras tienen habilitada la configuración estática",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "El DHCP Discover es un broadcast que el router no reenvía. Con la función de agente relay configurada, el router completa el campo «relay agent IP address» y reenvía la solicitud como unicast al servidor, evitando tener un servidor DHCP en cada LAN."
+    },
+    {
+      "id": 17,
+      "texto": "Un mensaje ARP-request es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Multicast",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Unicast",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Broadcast",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Anycast",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "Como el emisor desconoce la MAC del destino, la solicitud ARP se envía a la dirección de broadcast FF:FF:FF:FF:FF:FF para que la reciban todos los equipos de la red. Sólo responde el que posee la IP consultada, y lo hace con un ARP-reply en unicast."
+    },
+    {
+      "id": 18,
+      "texto": "El comando arp -s permite:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Definir una entrada dinámica en la tabla ARP",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Definir una entrada estática en la tabla ARP",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Definir una entrada estática en la tabla de encaminamiento",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Visualizar la caché ARP",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Asignar una dirección IP a una interfaz",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Borrar una entrada de la tabla ARP",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "Las opciones del comando arp son: -s para definir una entrada estática, -d para eliminar entradas y -a para visualizar la tabla. Una entrada estática no vence por temporizador, a diferencia de las aprendidas dinámicamente."
+    },
+    {
+      "id": 19,
+      "texto": "¿Cuáles de los siguientes dispositivos intervienen en el control de flujo? (Seleccione dos)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Servidores",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Enlaces de comunicación",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Computadoras",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Switches",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Access Points",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Routers",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "El control de flujo es un control EXTREMO A EXTREMO entre un emisor y un receptor determinados, e independiente del estado de la red: sólo intervienen los equipos de los extremos (servidores y computadoras). Los routers intervienen en el control de congestión, que es global."
+    },
+    {
+      "id": 20,
+      "texto": "La PC-A le envía datos a la PC-B, la cual está a 5 routers de distancia. En la mitad de la ruta se detecta que el paquete no se puede entregar a la PC-B. El router que detecta el problema construye un mensaje ICMP. ¿Qué direcciones se colocan en la cabecera del paquete IP de dicho mensaje?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Origen: MAC del router - destino: MAC de A",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Origen: MAC de B - destino: MAC de A",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Origen: IP de B – destino: IP de A",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Origen: IP del router - destino: IP de B",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Origen: IP del router - destino: IP de A",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "El mensaje ICMP siempre se envía al ORIGEN del paquete que provocó el error, es decir a la PC-A, y lo construye el router que detectó el problema, que figura como origen. Además se trata de la cabecera IP, por lo que llevan direcciones IP y no MAC."
+    },
+    {
+      "id": 21,
+      "texto": "En la planificación FQ (fair queueing, encolamiento justo) como método para brindar Calidad de Servicio:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Los paquetes son clasificados en varias colas y se va procesando un paquete de cada una de las colas",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Los paquetes se atienden en estricto orden de llegada",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Los paquetes se clasifican en varias colas y se encaminan por ej. 5 paquetes de la cola1, luego 3 de la cola2, luego 1 de la cola3, y se vuelve a la cola1",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Cuando se encaminaron todos los paquetes de máxima prioridad, se continúa luego con los de siguiente prioridad y así sucesivamente",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "En FQ el router mantiene una cola por cada flujo y las explora de forma circular (round-robin), enviando un paquete de cada una. La opción c describe WFQ (ponderado) y la d describe el algoritmo por prioridad."
+    },
+    {
+      "id": 22,
+      "texto": "Un router recibe dos paquetes que provienen desde el router A. El primero posee versión=4 y el segundo versión=6. Si el router tiene registrado que el último paquete que inundó del router A fue el que tenía versión=5, indique cuál de las afirmaciones es correcta si se está implementando el algoritmo de inundación controlada:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El router enviará por todas las interfaces de salida menos por la que entró, sólo el paquete con versión=5",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "El router enviará por todas las interfaces de salida menos por la que entró, ambos paquetes",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El router enviará por todas las interfaces de salida menos por la que entró, sólo el paquete con versión=4",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El router enviará por todas las interfaces de salida menos por la que entró, sólo el paquete con versión=6",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "El router no inundará ninguno de los dos paquetes recibidos, ya que la inundación es controlada",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "La inundación controlada lleva un registro por número de secuencia: sólo reenvía los paquetes cuyo número es MAYOR al último ya difundido. Como el último inundado fue el 5, el paquete con versión=6 se reenvía y el de versión=4 se descarta por ser antiguo (duplicado)."
+    },
+    {
+      "id": 23,
+      "texto": "Un router tiene configurado un protocolo que implementa el algoritmo de estado de enlace. ¿Qué hará el router después de obtener todos los paquetes de estado de enlace desde los otros routers?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Inunda los paquetes por todas sus interfaces",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Envía la tabla de encaminamiento a los vecinos directamente conectados",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Construye el grafo de la red y ejecuta el algoritmo de Dijkstra",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Inunda los paquetes HELLO recibidos desde sus vecinos directamente conectados",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Arma la tabla de encaminamiento con dicha información",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "Los pasos del algoritmo son: descubrir vecinos (HELLO), medir costos (ECHO), construir el LSP, inundarlo, y una vez que tiene la base de datos topológica completa construir el grafo de la red y ejecutar Dijkstra. Recién con el resultado de Dijkstra arma la tabla."
+    },
+    {
+      "id": 24,
+      "texto": "Un router multiprotocolo tiene configurados los protocolos RIP y OSPF. Si aprende cómo llegar a la misma red a través de ambos protocolos, incorporará a la tabla de encaminamiento la ruta aprendida a través de:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Cualquiera de los dos protocolos, ya que el router es multiprotocolo",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "OSPF porque tiene distancia administrativa menor que RIP",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "OSPF porque posee la distancia administrativa de 1",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "RIP porque fue la ruta que aprendió primero",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "OSPF porque es un protocolo inter sistema autónomo",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "OSPF tiene distancia administrativa 110 y RIP 120; gana la menor, por lo que se instala la ruta de OSPF. Ojo con la opción c: la AD de 1 corresponde a las rutas estáticas, no a OSPF. Y OSPF es un IGP, no un protocolo entre sistemas autónomos."
+    },
+    {
+      "id": 25,
+      "texto": "¿Cuáles de las siguientes características corresponden a los Servicios Integrados como método para brindar Calidad de Servicio? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Los flujos de paquetes de una comunicación siguen el mismo camino físico",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Se marcan los paquetes cerca del origen según la clase a la que pertenecen",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Es escalable en redes grandes como Internet",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Se utilizan los campos TOS y clase de tráfico del protocolo IP",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Requiere el protocolo de reserva RSVP",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "IntServ reserva recursos extremo a extremo para cada flujo mediante RSVP, lo que obliga a que todos los paquetes del flujo sigan el mismo camino. Su desventaja es que NO es escalable, porque cada router debe mantener información de estado de cada flujo."
+    },
+    {
+      "id": 26,
+      "texto": "Determine cuál de las siguientes afirmaciones define mejor la función de la distancia administrativa:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Permite configurar rutas estáticamente",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Permite que el administrador conozca la distancia que existe entre dos routers ABR",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Determina la forma en la cual el router debe consultar la tabla de encaminamiento",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Determina la confiabilidad de una ruta cuando se están implementando varios protocolos IGP",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Mide la distancia en saltos entre un dispositivo origen y destino",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "La distancia administrativa es un valor que define la CONFIABILIDAD de una ruta y lo usan los routers para elegir la mejor cuando aprenden un mismo destino por distintas vías: conectadas 0, estáticas 1, OSPF 110, IS-IS 115 y RIP 120."
+    },
+    {
+      "id": 27,
+      "texto": "¿Cuáles de los siguientes mensajes DHCP se construyen en el servidor? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "DHCP request",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "DHCP offer",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "DHCP discover",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "DHCP Nack",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "DHCP decline",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "DHCP release",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "El servidor construye Offer (ofrecimiento de parámetros), Ack (confirmación) y Nack (negativa). Discover, Request, Decline, Release e Inform son mensajes que construye el CLIENTE."
+    },
+    {
+      "id": 28,
+      "texto": "Cuando una red o parte de ella recibe más tráfico de datos de lo que es capaz de cursar, produciendo demoras en la entrega de los datos y pérdida de información, para solucionar el problema se debe implementar:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Calidad de Servicio",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Encaminamiento",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Ventana estática",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Control de carga",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Control de congestión",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "Control de flujo",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "Ése es exactamente el concepto de congestión: hay más paquetes que la capacidad de la red para procesarlos, lo que incrementa el retardo y degrada el rendimiento. El mecanismo que lo corrige es el control de congestión, que es global a toda la red."
+    },
+    {
+      "id": 29,
+      "texto": "La computadora A le está enviando datos a través de Internet a la computadora B. Cuando el router advierte que uno de sus enlaces está congestionado, analiza los paquetes que están en la cola de salida. Luego construye un paquete a través del protocolo ICMP y se lo envía al origen de la transmisión (A) solicitando que reduzca la tasa de transmisión. Este método de control de congestión es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "De ciclo cerrado, denominado Detección Temprana Aleatoria",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "De ciclo cerrado, denominado Paquete Regulador",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "De ciclo abierto, denominado Paquete Regulador",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "De ciclo cerrado, denominado Notificación explícita de congestión",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "De ciclo abierto, denominado Notificación explícita de congestión",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "De ciclo abierto, denominado Detección Temprana Aleatoria",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "Es un método de ciclo cerrado (hay retroalimentación) del tipo paquete regulador: el router congestionado envía un «source quench» directamente al host origen pidiéndole reducir el tráfico. Se distingue de ECN en que ahí el aviso llega primero al destino y éste avisa al origen."
+    },
+    {
+      "id": 30,
+      "texto": "¿Qué utilizan los routers para calcular la ruta más corta entre dos nodos de un grafo?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El algoritmo de Dijkstra",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El algoritmo de inundación",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El algoritmo de vector de enlace",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El algoritmo de vector distancia",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El algoritmo de Bellman Ford",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "Dijkstra es el algoritmo de la ruta más corta sobre un grafo y lo implementan los protocolos de estado de enlace como OSPF. Bellman-Ford (Fulkerson) es el que utiliza vector distancia, que no construye el grafo de la red."
+    },
+    {
+      "id": 31,
+      "texto": "¿Cuál de las siguientes características corresponde a VLSM?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Permite definir máscaras de subred largas para pocos hosts",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Permite aprovechar mejor las direcciones IP privadas de una empresa",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Es una técnica que se utiliza para el direccionamiento IPv6",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Exige que todas las subredes de la empresa posean la misma máscara de subred",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Permite definir máscaras de subred cortas para pocos hosts",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento IPv4, VLSM y CIDR",
+      "explicacion": "VLSM permite usar máscaras de distinta longitud según la cantidad de hosts de cada subred: para pocos hosts se usa una máscara larga (por ejemplo /30 para un enlace punto a punto) y así no se desperdician direcciones. En IPv6 no existe VLSM."
+    },
+    {
+      "id": 32,
+      "texto": "Una computadora tiene asignada una dirección IP a través del protocolo BOOTP. El administrador la traslada a otra red de la empresa. Para que dicha computadora posea conectividad, será necesario:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Actualizar la dirección MAC en el servidor BOOTP",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Mantener la dirección IP y modificar la dirección MAC en el servidor BOOTP",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Actualizar la dirección IP y mantener la dirección MAC en el servidor BOOTP",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "No hacer nada, la PC ya tiene conectividad",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Actualizar la dirección IP y modificar la dirección MAC",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "BOOTP realiza mapeos ESTÁTICOS y permanentes IP-MAC configurados a mano en las tablas del servidor. La MAC no cambia al mover el equipo, pero la IP sí debe actualizarse para que corresponda a la nueva red. Ésta es justamente la desventaja que DHCP vino a resolver."
+    },
+    {
+      "id": 33,
+      "texto": "Indique cuáles de las siguientes características corresponden al protocolo BGP: (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Los pares BGP establecen sesiones UDP para enviar anuncios de rutas",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Soporta sumarización de rutas y CIDR",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Posibilidad de existencia de bucles",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Permite interconectar áreas diferentes dentro de un sistema autónomo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Intercambia información de encaminamiento entre sistemas autónomos diferentes",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "Implementa el algoritmo de vector distancia basado en políticas",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "BGP es el protocolo EGP que intercambia rutas ENTRE sistemas autónomos, y BGPv4 soporta CIDR y sumarización. Corre sobre TCP (puerto 179), no UDP; su objetivo es justamente EVITAR bucles; y es un protocolo de vector de RUTAS, no de vector distancia."
+    },
+    {
+      "id": 34,
+      "texto": "Si se está implementando el algoritmo de cubeta con fichas (token) y el host tiene acumuladas 8 fichas que se generaron cada 1 seg., si se tienen que transmitir 12 paquetes a la red, el host podrá:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Transmitir un paquete cada 1 seg.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Transmitir 4 paquetes juntos y luego un paquete cada 1 seg.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Transmitir los 12 paquetes juntos",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Transmitir 8 paquetes juntos y luego un paquete cada 1 seg.",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "Cada ficha da derecho a transmitir un paquete. Con 8 fichas acumuladas el host envía una ráfaga de 8 paquetes de inmediato; los 4 restantes deben esperar a que el reloj genere una ficha nueva por segundo, o sea un paquete por segundo."
+    },
+    {
+      "id": 35,
+      "texto": "Un router analiza cada una de sus interfaces de salida. Si la interfaz serial 2 entra en «estado de advertencia», el router:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Inunda un paquete regulador por todas sus interfaces",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Envía un paquete regulador al destino de todos los paquetes de la cola de la interfaz serial 2",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Envía un paquete regulador al origen de cada paquete de la cola de la interfaz serial 2",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Avisa a todos los routers vecinos que actualicen sus tablas de encaminamiento",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Inunda un paquete regulador por todas las interfaces menos por la serial 2",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "Cuando una línea de salida supera el umbral entra en estado de advertencia. El router revisa los paquetes encolados en ESA interfaz y envía un paquete regulador al ORIGEN de cada uno, pidiéndole que reduzca el tráfico hacia ese destino."
+    },
+    {
+      "id": 36,
+      "texto": "En el método de control de congestión denominado paquete regulador salto por salto:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El router congestionado se alivia rápidamente, ya que los otros routers absorben la congestión",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El router congestionado le indica al destino que existe congestión en la red",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El router congestionado debe esperar hasta que el origen de la transmisión reduzca el tráfico de datos",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El router congestionado activa un bit en el paquete, para informar al destino de la existencia de la congestión",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "En la variante salto por salto el paquete regulador surte efecto en cada router del camino, que va reduciendo el envío y absorbiendo parte del tráfico. Por eso el router congestionado se alivia rápido, sin esperar a que reaccione el origen (que es lo que ocurre en la variante que afecta al origen)."
+    },
+    {
+      "id": 37,
+      "texto": "En el método de control de congestión denominado paquete regulador que afecta al origen:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El router congestionado se alivia rápidamente, ya que los otros routers absorben la congestión",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "El router congestionado activa un bit en el paquete, para informar al destino de la existencia de la congestión",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El router congestionado debe esperar para aliviar la congestión hasta que el origen de la transmisión reduzca el tráfico de datos",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "El router congestionado le indica al destino que existe congestión en la red",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "En esta variante el aviso viaja hasta el host origen y recién cuando éste reduce su tasa disminuye la congestión, por lo que el alivio es más lento. La opción a describe la variante salto por salto y la b describe ECN."
+    },
+    {
+      "id": 38,
+      "texto": "A una computadora se le está por vencer el tiempo de alquiler de una dirección IP. Indique cuál de los siguientes mensajes debe enviar el cliente al servidor DHCP para solicitar la extensión del mismo:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "DHCP offer",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "DHCP discover",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "DHCP request",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "DHCP Ack",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "DHCP decline",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "DHCP inform",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "El mensaje Request no sólo sirve para solicitar la configuración elegida entre las ofertas: también se utiliza para EXTENDER el tiempo de alquiler de una dirección ya asignada. El servidor responde confirmando con un Ack."
+    },
+    {
+      "id": 39,
+      "texto": "El comando traceroute o tracert se implementa a través de:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Mensajes ICMP redirect haciendo variar el TTL del paquete IPv4",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Mensajes ICMP haciendo variar el campo TTL del paquete IPv4",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Segmentos TCP haciendo variar el campo número de secuencia de la trama",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Paquetes DHCP haciendo variar el rango de las direcciones IP",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Mensajes ARP request y ARP reply",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "tracert envía echo request con TTL creciente (1, 2, 3…). Cada router que agota el TTL responde con un ICMP Time exceeded revelando su dirección, hasta que el destino contesta con echo reply. Controla un máximo de 30 saltos."
+    },
+    {
+      "id": 40,
+      "texto": "Indique cuál de las siguientes afirmaciones describe mejor el objetivo del Control de flujo:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Activar el bit de advertencia cuando se detecta congestión en la red",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Garantizar que los routers no retengan demasiado tiempo los flujos de datos",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Controlar la cantidad de paquetes que fluyen por la red",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Asegurar que un emisor rápido no sature a un receptor lento",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Controlar el flujo de datos entre los routers de la red",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "El control de flujo es extremo a extremo y se ocupa de que el emisor no desborde el búfer del receptor. Controlar la cantidad de paquetes que ingresan a TODA la red es el objetivo del control de congestión, que es global."
+    },
+    {
+      "id": 41,
+      "texto": "Cuando los routers de una red intercambian información en forma colaborativa para el armado y construcción de sus tablas de encaminamiento, se dice que se trata de:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Encaminamiento estático centralizado",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Encaminamiento aislado",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Encaminamiento estático",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Encaminamiento dinámico distribuido",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Encaminamiento dinámico centralizado",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "Es dinámico porque las tablas se construyen y actualizan solas, y distribuido porque la decisión se toma de forma colaborativa entre todos los routers, sin un nodo central que calcule las rutas ni routers que decidan de forma aislada."
+    },
+    {
+      "id": 42,
+      "texto": "El mensaje DHCP a través del cual el cliente informa al servidor DHCP que la dirección IP ofrecida ya está en uso es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "DHCP - duplicate",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "DHCP - request",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "DHCP - decline",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "DHCP - offer",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "DHCP - Nack",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "DHCP - inform",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "Decline es el mensaje con el que el cliente rechaza la dirección ofrecida porque detectó que ya está en uso en la red. No confundir con Nack, que es la NEGATIVA que envía el servidor, ni con Release, con el que el cliente libera una IP que ya tenía."
+    },
+    {
+      "id": 43,
+      "texto": "¿Cuál de las siguientes afirmaciones es correcta con respecto al enrutamiento entre VLANs?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El switch acepta tráfico etiquetado de la VLAN A, lo conmuta a la interfaz correspondiente y le agrega la etiqueta de la VLAN B",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "El router acepta tráfico etiquetado de la VLAN A, lo encamina a la interfaz correspondiente y le agrega la etiqueta de la VLAN B",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Los switches permiten comunicar PC pertenecientes a VLANs diferentes",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No se permite la comunicación entre PC de diferentes VLANs",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "VLANs y ruteo entre VLANs",
+      "explicacion": "El switch no puede pasar tráfico de una VLAN a otra: hace falta un router o un switch de capa 3. El router recibe la trama etiquetada por el enlace troncal, la encamina internamente entre subinterfaces y la devuelve con la etiqueta de la VLAN destino."
+    },
+    {
+      "id": 44,
+      "texto": "El objetivo del algoritmo de encaminamiento jerárquico es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Lograr reducir el tamaño de las tablas de encaminamiento de los routers",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Establecer una jerarquía entre los usuarios de la empresa",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Agrupar los usuarios en regiones o áreas, para reducir la cantidad de routers que hay en la red",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Controlar la cantidad de paquetes duplicados que hay en la red",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Que se implemente preferentemente en redes pequeñas",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "Al crecer las redes crecen las tablas, con más consumo de memoria, procesamiento y ancho de banda. Agrupando los ROUTERS (no los usuarios) en regiones, cada uno conoce en detalle sólo la suya, reduciendo el tamaño de las tablas. Se aplica en redes grandes, no pequeñas."
+    },
+    {
+      "id": 45,
+      "texto": "La PC-A perteneciente a la LAN-A envía un paquete a la PC-B ubicada en LAN-B. ¿Qué dirección MAC de destino colocará la PC-A en la trama?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La dirección IP del router de la LAN-B",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "La dirección MAC del router de la LAN-A",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "La dirección IP del router de la LAN-A",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La dirección MAC de la PC-A",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La dirección MAC de la PC-B",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "La dirección MAC del router de la LAN-B",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "Al detectar por la máscara que el destino está en otra red, la PC-A encapsula la trama con la MAC de su propio gateway, es decir la interfaz del router que da a la LAN-A. Las direcciones MAC sólo tienen validez dentro de cada enlace; las IP de origen y destino no cambian."
+    },
+    {
+      "id": 46,
+      "texto": "Indique cuáles de las siguientes son características del encaminamiento estático (seleccione DOS opciones):",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Los routers deben intercambiar regularmente actualizaciones de encaminamiento",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Se adapta automáticamente a los cambios de topología de la red",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Las rutas son configuradas por el administrador de la red",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Requiere el intercambio de información de encaminamiento entre routers",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Se adapta a los cambios de tráfico en la red",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Las decisiones de encaminamiento se toman independientemente del estado de la red",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "El encaminamiento estático (no adaptativo) se basa en rutas cargadas a mano por el administrador y no reacciona ante cambios de topología ni de tráfico: las decisiones son independientes del estado de la red. Tampoco consume ancho de banda en actualizaciones."
+    },
+    {
+      "id": 47,
+      "texto": "Dos dispositivos se están intercambiando un archivo de 5 MB a través de una red de datagramas. Indique cuál de las siguientes afirmaciones es correcta:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Los routers deberán desencapsular hasta la capa de interred para encaminar cada paquete del archivo, según la dirección IP de destino",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Todos los paquetes del archivo viajarán por la misma ruta física",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Sólo será necesario encaminar el primer paquete perteneciente al archivo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Los paquetes pertenecientes al archivo llegarán ordenados al dispositivo destino",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La decisión de encaminamiento se basa en una etiqueta que se le agrega al archivo",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "En una red de datagramas cada paquete se encamina de forma independiente: el router desencapsula hasta la capa de interred y decide según la IP de destino y su tabla. Por eso pueden seguir rutas distintas y llegar desordenados. Las opciones b, c y e describen circuitos virtuales o MPLS."
+    },
+    {
+      "id": 48,
+      "texto": "¿Cuál de las siguientes afirmaciones describe mejor el mensaje «Destino inalcanzable»?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Lo construye un host o router para indicar un puerto o protocolo no habilitado",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Lo envía un router cuando el destino está a más de 30 saltos",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Lo envía un host o router para verificar conectividad a nivel de red",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Se envía cuando el TTL de un paquete llega a cero",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Lo construye un host o router en respuesta a un mensaje echo-reply",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "El mensaje ICMP tipo 3 (Destino inalcanzable) tiene códigos para red, host, protocolo y puerto inalcanzable, entre otros. Cuando el TTL llega a cero el mensaje es Time exceeded (tipo 11), y para verificar conectividad se usa echo request."
+    },
+    {
+      "id": 49,
+      "texto": "A partir de las siguientes direcciones: 200.3.34.20, 200.3.36.30 y 200.3.40.29, indique cuál es la superred (resumen de rutas) correcta que debería publicar un ISP:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "200.3.34.20/28",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "200.3.32.0/24",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "200.3.34.0/29",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "200.3.32.0/20",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "200.3.20.32/28",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "200.3.20.34/28",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento IPv4, VLSM y CIDR",
+      "explicacion": "Hay que buscar los bits comunes del tercer octeto: 34=00100010, 36=00100100 y 40=00101000 comparten los primeros 4 bits (0010). Eso da 16+4 = 20 bits de prefijo, y la red resultante es 200.3.32.0/20, que abarca de 200.3.32.0 a 200.3.47.255."
+    },
+    {
+      "id": 50,
+      "texto": "A partir de las siguientes direcciones: 200.3.20.34, 200.3.20.36 y 200.3.20.40, indique cuál es la superred (resumen de rutas) correcta que debería publicar un ISP:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "200.3.20.0/24",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "200.3.20.40/28",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "200.3.20.34/27",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "200.3.20.32/29",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "200.3.20.32/27",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "200.3.20.32/28",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento IPv4, VLSM y CIDR",
+      "explicacion": "En el cuarto octeto: 34=00100010, 36=00100100 y 40=00101000 comparten los primeros 4 bits (0010), lo que da un prefijo /28 y la red 200.3.20.32/28 (de .32 a .47). El /27 también las contendría, pero el resumen correcto es el más específico que las abarca a todas."
+    },
+    {
+      "id": 51,
+      "texto": "A partir de las siguientes direcciones: 200.3.32.89, 200.3.32.90 y 200.3.32.92, indique cuál es la superred (resumen de rutas) correcta que debería publicar un ISP:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "200.3.32.80/28",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "200.3.32.0/24",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "200.3.32.80/29",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "200.3.88.0/21",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "200.3.80.0/21",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "200.3.32.88/29",
+          "correcta": true
+        },
+        {
+          "id": "g",
+          "texto": "200.3.32.88/28",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento IPv4, VLSM y CIDR",
+      "explicacion": "89=01011001, 90=01011010 y 92=01011100 comparten los primeros 5 bits (01011), lo que da prefijo /29 y red 200.3.32.88/29, que abarca de .88 a .95. Las opciones con .80 quedan descartadas porque el bloque .80/29 llega sólo hasta .87 y no contiene a las tres direcciones."
+    },
+    {
+      "id": 52,
+      "texto": "¿Cuáles de las siguientes características corresponden al protocolo RIP versión 2? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Es un protocolo classful",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Envía actualizaciones de encaminamiento a la dirección 255.255.255.255",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Permite que se implementen máscaras de subred de longitud variable",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Envía parte o toda su tabla de encaminamiento a la dirección 224.0.0.9",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "No soporta CIDR",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Envía actualizaciones de encaminamiento a la dirección 224.0.0.5",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "RIPv2 es classless: soporta VLSM y CIDR, envía la máscara en las actualizaciones y usa la dirección multicast 224.0.0.9. El broadcast 255.255.255.255 corresponde a RIPv1 y la multicast 224.0.0.5 es la de OSPF."
+    },
+    {
+      "id": 53,
+      "texto": "¿Cuáles de las siguientes características corresponden al protocolo RIP versión 1? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Envía parte o toda su tabla de encaminamiento a la dirección 224.0.0.9",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Es un protocolo classful",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Envía actualizaciones de encaminamiento a la dirección 255.255.255.255",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Permite que se implementen máscaras de subred de longitud variable",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Envía la máscara de subred en sus actualizaciones de encaminamiento",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "RIPv1 es classful: no envía la máscara de subred en sus actualizaciones y por lo tanto no soporta VLSM ni CIDR. Sus actualizaciones viajan por broadcast a 255.255.255.255. El multicast 224.0.0.9 es propio de RIPv2."
+    },
+    {
+      "id": 54,
+      "texto": "Indique cuál de las siguientes es una ventaja del algoritmo de vector distancia:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Todos los routers comparten la misma base de datos topológica",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Los routers pueden armar el grafo de la red",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Todos los routers poseen la misma tabla de encaminamiento",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Utiliza el algoritmo de Dijkstra para calcular las rutas más cortas",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "No se requieren routers con gran capacidad de procesamiento",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "Converge rápidamente",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "La ventaja de vector distancia es que consume pocos recursos del router. Ojo: mantener una base de datos topológica, armar el grafo, usar Dijkstra y converger rápido son características del algoritmo de ESTADO DE ENLACE, no de vector distancia, que justamente desconoce la topología y converge lentamente."
+    },
+    {
+      "id": 55,
+      "texto": "¿Cuál de las siguientes es una tecnología que se utiliza actualmente en los ISP de Internet, es orientada a conexión, muy rápida, incorpora una etiqueta y conmuta en base a ella, garantizando que todos los datos sigan el mismo camino físico?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "VLAN",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "IP",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "RSVP",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "TCP",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Sistema Autónomo",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "MPLS",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "MPLS (MultiProtocol Label Switching) es orientada a conexión, incorpora una etiqueta entre la capa de red y la de enlace y conmuta en base a ella, lo que la hace muy rápida y permite reservar recursos a lo largo de toda la ruta."
+    },
+    {
+      "id": 56,
+      "texto": "¿Cuáles de las siguientes características corresponden a la tecnología MPLS? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Los routers conmutan según la dirección MAC de las tramas",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Los routers mantienen tablas y conmutan rápidamente sin desencapsular hasta la capa de Interred",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Los paquetes de un mismo flujo se encaminan de forma independiente",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Permite intercambiar actualizaciones de encaminamiento entre los routers de diferente fabricante",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Se pueden reservar recursos en toda la ruta que siguen los datos",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "Los routers conmutan en función de la dirección IP destino",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "MPLS conmuta por etiqueta sin necesidad de subir hasta la capa de interred, lo que la hace muy rápida, y al ser orientada a conexión permite reservar recursos en toda la ruta. Justamente por eso los paquetes de un mismo flujo NO viajan de forma independiente: siguen el mismo camino."
+    },
+    {
+      "id": 57,
+      "texto": "¿En cuál de los siguientes se implementa el algoritmo de estado de enlace?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Protocolo BGP",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Protocolo RIPv1",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Protocolo EGP",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Algoritmo de Fulkerson Bellman Ford",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Protocolo RIPv2",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Algoritmo de vector distancia",
+          "correcta": false
+        },
+        {
+          "id": "g",
+          "texto": "Protocolo OSPF",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "OSPF es el protocolo IGP que implementa estado de enlace: construye la base de datos topológica con los LSP y ejecuta Dijkstra. RIP en sus dos versiones es vector distancia y BGP es un EGP de vector de rutas."
+    },
+    {
+      "id": 58,
+      "texto": "Cada vez que una PC debe enviar una trama a un destino perteneciente a su misma red ejecuta un ARP-request:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Sólo si no lo encuentra en su tabla ARP",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Siempre",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Nunca",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Depende del protocolo de encaminamiento configurado",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Depende del protocolo DHCP",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "La PC primero consulta su caché ARP; si ya tiene la MAC del destino la usa directamente. Sólo cuando no la encuentra envía la solicitud ARP por broadcast. Como las entradas tienen temporizador, cada tanto debe volver a resolverla."
+    },
+    {
+      "id": 59,
+      "texto": "Si una empresa requiere 2300 hosts y el ISP está implementando CIDR, le asignará:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "200.6.18.0/20",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "200.6.18.0/22",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "200.6.18.0/23",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "200.6.18.0/24",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Cuatro direcciones de clase C consecutivas",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Una dirección de clase B",
+          "correcta": false
+        },
+        {
+          "id": "g",
+          "texto": "200.6.18.0/21",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento IPv4, VLSM y CIDR",
+      "explicacion": "Hay que buscar el bloque más chico que alcance: /21 da 2^11−2 = 2046 hosts, insuficiente para 2300. El siguiente es /20, con 2^12−2 = 4094 hosts, que sí alcanza. Asignar una clase B entera sería un desperdicio enorme."
+    },
+    {
+      "id": 60,
+      "texto": "Si una empresa requiere 1300 hosts y el ISP está implementando CIDR, le asignará:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "200.6.18.0/21",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "200.6.18.0/20",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "200.6.18.0/22",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Dos direcciones de clase C consecutivas",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Una dirección de clase B",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "200.6.18.0/24",
+          "correcta": false
+        },
+        {
+          "id": "g",
+          "texto": "200.6.18.0/23",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento IPv4, VLSM y CIDR",
+      "explicacion": "/22 ofrece 2^10−2 = 1022 hosts, insuficiente para 1300. El bloque inmediato superior es /21, con 2^11−2 = 2046 hosts, que alcanza sin desperdiciar tanto como un /20 (4094)."
+    },
+    {
+      "id": 61,
+      "texto": "Indique cuáles de las siguientes afirmaciones son correctas con respecto al tipo de mensaje «echo-request» (seleccione DOS opciones):",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Lo utilizan los comandos ping y tracert",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Lo genera un router cuando el TTL llega a cero",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Se encapsula en un segmento TCP",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Es un mensaje de broadcast",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Se utiliza en los comandos ipconfig e ifconfig",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Se encapsula en un paquete IPv4",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "El echo request (tipo 8) es el mensaje ICMP que usan ping y tracert para verificar conectividad, y como todo mensaje ICMP se encapsula en un paquete IPv4 con el campo Protocolo igual a 1. Cuando el TTL llega a cero el mensaje es Time exceeded."
+    },
+    {
+      "id": 62,
+      "texto": "El agente relay del protocolo DHCP:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Requiere que se instale un servidor DHCP en cada LAN",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Es la forma de identificar al administrador de una red LAN",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Permite que un host pueda obtener una dirección IP desde un servidor DHCP ubicado en otra LAN",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Es el software que se debe instalar en el cliente DHCP",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "El agente relay se configura en el router: escucha los broadcasts DHCP de su LAN, completa el campo «relay agent IP address» y los reenvía como unicast al servidor. Justamente ELIMINA la necesidad de tener un servidor DHCP en cada LAN."
+    },
+    {
+      "id": 63,
+      "texto": "El agente relay del protocolo DHCP permite:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Tener un servidor DHCP en cada red o subred de la empresa",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Averiguar la dirección MAC a partir de una dirección IP",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Redirigir las consultas del protocolo ARP a un servidor DHCP",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Tener un único servidor DHCP para toda la empresa",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "La ventaja del relay es centralizar: con un único servidor DHCP, que tiene configurados varios rangos de direcciones, se atiende a todas las LAN de la empresa. Averiguar la MAC a partir de la IP es tarea de ARP."
+    },
+    {
+      "id": 64,
+      "texto": "¿Cuál de las siguientes características define el control de congestión de ciclo abierto?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Monitorean el sistema para detectar cuándo y dónde ocurren congestiones",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Se toman acciones correctivas una vez que se detecta la congestión",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Informan a los hosts involucrados sobre la congestión",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Evitan que se produzca congestión limitando la cantidad de paquetes que ingresan a la red",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "Los métodos de ciclo abierto buscan EVITAR la congestión mediante un buen diseño, decidiendo qué tráfico aceptar o descartar sin observar el estado de la red. Monitorear, informar y corregir son propias del ciclo cerrado (con retroalimentación)."
+    },
+    {
+      "id": 65,
+      "texto": "Los algoritmos de encaminamiento deben cumplir ciertos requisitos. ¿Cuál de los siguientes hace referencia a «…cuando una red está operativa, es deseable que funcione de manera continua sin fallas, a pesar de los cambios de topología y de tráfico…»?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Robustez",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Eficiencia",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Sencillez",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Exactitud",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Equidad",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "La robustez es la capacidad del algoritmo de seguir funcionando ante fallas de hardware, caídas de enlaces y cambios de topología o de tráfico, sin necesidad de reiniciar la red. Los requisitos completos son: exactitud, sencillez, robustez, estabilidad, equidad y eficiencia."
+    },
+    {
+      "id": 66,
+      "texto": "Cuando se implementa el desprendimiento de carga (descarte de paquetes), si en la cola de la interfaz del router hay paquetes de una transmisión de archivos, conviene descartar el paquete que posee:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Menor valor de TTL",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Menor número de checksum",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Menor número de saltos",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Mayor número de puerto",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Mayor número de secuencia",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "Menor número de secuencia",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "En una transferencia de archivos un paquete viejo es MÁS importante que uno nuevo, porque los siguientes dependen de él para el reensamblado. Por eso conviene descartar el más reciente, que es el de mayor número de secuencia."
+    },
+    {
+      "id": 67,
+      "texto": "En el desprendimiento de carga (descarte de paquetes) durante el control de la congestión es preferible:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Descartar un paquete viejo de una transmisión de correo electrónico",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Descartar un paquete viejo de una transmisión de archivos",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Descartar un paquete viejo de una transmisión multimedia",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Descartar un paquete nuevo de una transmisión de video",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Descartar un paquete viejo de una transmisión de páginas web",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "El criterio depende de la aplicación: en multimedia un paquete nuevo vale más que uno viejo (un cuadro atrasado ya no sirve), por lo que descartar el viejo es lo correcto. En archivos y correo ocurre lo contrario, y en video descartar un paquete nuevo sería lo peor."
+    },
+    {
+      "id": 68,
+      "texto": "Si en un router se configuran los siguientes comandos, indique cuál de las siguientes afirmaciones es correcta:\n\nnetwork 172.30.0.0 0.0.255.255 area 2\nnetwork 205.17.33.0 0.0.0.255 area 0",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se configuró un router interno de OSPF",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Se configuró el protocolo BGP",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Se configuró un router ABR de OSPF",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Se configuró un router ASBR de OSPF",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Se configuró el protocolo RIP",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Se configuró un protocolo de vector distancia",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "La sintaxis con máscara de wildcard y la palabra «area» es propia de OSPF. Como el router tiene redes declaradas en DOS áreas distintas (la 2 y la troncal 0), se trata de un ABR (Area Border Router). Un router interno tendría todas sus redes en una sola área."
+    },
+    {
+      "id": 69,
+      "texto": "El protocolo OSPF maneja varios tipos de routers para implementar jerarquía entre áreas. El tipo de router ASBR permite:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Encaminar información sólo en el área troncal",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Interconectar los routers con otros sistemas autónomos diferentes",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Interconectar el área troncal (área 0) con otra área diferente",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Encaminar información entre switches diferentes",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Encaminar información de encaminamiento dentro de una misma área",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "El ASBR (Autonomous System Border Router) intercambia información de encaminamiento con routers de OTROS sistemas autónomos. Quien conecta la troncal con otra área es el ABR, y quien encamina dentro de un área es el router interno."
+    },
+    {
+      "id": 70,
+      "texto": "El protocolo OSPF maneja varios tipos de routers para implementar jerarquía entre áreas. El tipo de router ABR permite:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Interconectar el área troncal (área 0) con otras áreas diferentes",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Interconectar los routers con otros sistemas autónomos diferentes",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Encaminar información entre routers pertenecientes al área cero",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Encaminar información entre switches diferentes",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "El ABR (Area Border Router) se conecta a dos o más áreas, debe formar parte de la red troncal y su función es resumir las redes de su área y anunciarlas al resto. Interconectar con otros sistemas autónomos es tarea del ASBR."
+    },
+    {
+      "id": 71,
+      "texto": "El protocolo OSPF maneja varios tipos de routers para implementar jerarquía entre áreas. El tipo de router troncal:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Encamina información de encaminamiento dentro de las diferentes áreas",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Interconecta los routers con otros sistemas autónomos diferentes",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Se conecta a través de enlaces troncales con otros sistemas autónomos",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Encamina información entre switches diferentes",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Encamina información entre routers pertenecientes al área cero",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "Los routers troncales pertenecen al área 0 y encaminan dentro de ella. No confundir con el ASBR, que es el que dialoga con otros sistemas autónomos, ni con el ABR, que une un área con la troncal."
+    },
+    {
+      "id": 72,
+      "texto": "En el algoritmo de cubeta con goteo como método para brindar Calidad de Servicio:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Los hosts pueden acumular fichas y luego enviar varios paquetes juntos a la red",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Es un algoritmo flexible, apto para ráfaga de datos, pero en forma controlada",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Un flujo de datos desigual se convierte en un flujo continuo de datos a la red",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Es un algoritmo apto para ráfaga de datos",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El flujo de salida tiene una tasa variable",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "La cubeta con goteo entrega un paquete por pulso de reloj a tasa CONSTANTE, sin importar lo irregular que sea la entrada: convierte un flujo desigual en uno continuo. Acumular permisos y enviar ráfagas es propio de la cubeta con fichas."
+    },
+    {
+      "id": 73,
+      "texto": "El host «A» le está enviando información al host «B». ¿Cuál será la función de un «paquete regulador» en el control de la congestión?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Indicar al host «B» que reduzca la tasa de transmisión de paquetes",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Indicar al host «A» que reduzca la tasa de transmisión de paquetes",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Indicar al host «B» la existencia de congestión en la red",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Indicar al host «B» que aumente el tamaño del buffer de entrada",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Indicar al host «A» que aumente el tamaño del buffer de salida",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "El paquete regulador (source quench) lo envía el router congestionado al ORIGEN de la transmisión, que en este caso es el host A, solicitándole que reduzca su tasa de envío. Avisarle al destino sería el mecanismo de ECN."
+    },
+    {
+      "id": 74,
+      "texto": "¿Cuál de las siguientes afirmaciones es correcta con respecto al encaminamiento en redes de circuitos virtuales?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Los paquetes del archivo seguirán rutas diferentes para incrementar la performance de la red",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Todos los paquetes de una comunicación viajan por la misma ruta física",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "La capa de transporte en el destino deberá ordenar los paquetes que lleguen desordenados",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Los paquetes pertenecientes a una misma comunicación pueden seguir caminos diferentes",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Los paquetes deben numerarse para que se puedan ordenar en el destino",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "En una red de circuitos virtuales se establece la ruta al inicio de la comunicación y todos los paquetes la siguen, por lo que llegan en orden y no hace falta reordenarlos. Seguir caminos distintos y llegar desordenados es propio de las redes de datagramas."
+    },
+    {
+      "id": 75,
+      "texto": "Una empresa posee 5 redes LAN y un solo servidor DHCP en la LAN-1. Cuando una computadora de la LAN-3 se inicie, solicitará una dirección IP. El servidor DHCP sabrá qué rango de dirección IP asignarle a partir de:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La dirección IP de la interfaz del router conectada a la LAN-3",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El servidor DHCP no puede saber qué dirección IP asignarle",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La dirección MAC de la computadora",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La dirección IP del servidor DHCP",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La dirección MAC de la interfaz del router conectada a la LAN-1",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "La dirección MAC del servidor DHCP",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "El agente relay completa el campo «relay agent IP address» con la dirección de la interfaz por la que recibió el broadcast, es decir la que da a la LAN-3. El servidor usa ese dato para saber de qué rango o ámbito debe tomar la dirección."
+    },
+    {
+      "id": 76,
+      "texto": "Un router aprende cómo llegar a una red a través de dos rutas diferentes mediante el protocolo OSPF. Indique cuál de las afirmaciones es correcta:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El router elegirá la ruta que tenga un menor número de saltos",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "El router elegirá la ruta que posea la menor métrica",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "El router seleccionará la ruta que atraviese un menor número de sistemas autónomos",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El router instalará en la tabla de encaminamiento la que tenga menor distancia administrativa",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El router instalará en la tabla de encaminamiento la ruta que posea menor ancho de banda",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "Como ambas rutas vienen del mismo protocolo, la distancia administrativa es idéntica y no sirve para desempatar: decide la MÉTRICA, que en OSPF es el costo calculado a partir del ancho de banda. Cuidado con la opción e: OSPF prefiere el MAYOR ancho de banda, que es el que da menor costo."
+    },
+    {
+      "id": 77,
+      "texto": "El administrador de una red implementó el protocolo RIP. Si se configuró el «horizonte dividido» y teniendo en cuenta la siguiente topología, determine cuál de las siguientes afirmaciones es correcta:",
+      "imagen": "/images/rdd_par_rip_horizonte_dividido.png",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El router RB enviará al router RA información sobre las redes 14.0.0.0 y 20.0.0.0",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "El router RA enviará al router RB información sobre las redes 14.0.0.0, 16.0.0.0, 20.0.0.0 y 24.0.0.0",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El router RB enviará al router RA información sobre las redes 14.0.0.0, 16.0.0.0, 20.0.0.0 y 24.0.0.0",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El router RB enviará al router RA información sobre las redes 16.0.0.0 y 24.0.0.0",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "El router RA enviará al router RB información sobre las redes 16.0.0.0 y 24.0.0.0",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "El horizonte dividido impide anunciar una red por la misma interfaz por la que se aprendió. RB aprendió 14.0.0.0 y 20.0.0.0 del lado de RA, así que no se las reenvía; sólo le informa lo que conoce por el otro lado: 16.0.0.0 y 24.0.0.0."
+    },
+    {
+      "id": 78,
+      "texto": "Una PC perteneciente a la red 24.0.0.0 envía información a otra PC ubicada en la red 20.0.0.0. A partir de la siguiente topología y tablas de encaminamiento, sabiendo que se está implementando el protocolo RIP, determine cuál de las afirmaciones es correcta:",
+      "imagen": "/images/rdd_par_rip_horizonte_dividido.png",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Los paquetes no llegarán al destino, ya que existe un bucle o loop entre los routers RA y RB",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Los paquetes llegarán correctamente ya que la red es convergente",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Existe un loop entre los routers RB y RC, por lo cual los paquetes no pueden ser entregados al destinatario",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La información llegará rápidamente ya que los routers los inundarán por todas sus interfaces",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Los routers no saben cómo llegar a la red 20.0.0.0",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "Las tres tablas son coherentes entre sí: RC llega a 20.0.0.0 con métrica 2 por S3, RB con métrica 1 por S1 y RA la tiene directamente conectada en F0. No hay métricas crecientes ni contradicciones, por lo que la red está convergente y los paquetes llegan sin problemas."
+    },
+    {
+      "id": 79,
+      "texto": "Un router aprende cómo llegar a una red a través de varios protocolos de encaminamiento, como RIP, OSPF e IS-IS. ¿Cuál de las tres rutas instalará en su tabla de encaminamiento?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La aprendida a través del protocolo RIP porque es la que posee menor número de saltos",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Primero ejecutará el algoritmo de Dijkstra y luego elegirá la ruta más corta",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La aprendida por el protocolo RIP porque es la que posee menor métrica",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La aprendida a través del protocolo OSPF porque posee menor distancia administrativa",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "La aprendida a través del protocolo IS-IS porque es un protocolo de gateway exterior",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "Cuando la misma red se aprende por protocolos distintos no se comparan métricas (no son comparables entre sí) sino distancias administrativas: OSPF 110, IS-IS 115 y RIP 120. Gana la menor, o sea OSPF. Además IS-IS es un IGP, no un protocolo de gateway exterior."
+    },
+    {
+      "id": 80,
+      "texto": "Un router de una empresa de telecomunicaciones es multiprotocolo y tiene configurados dos protocolos de encaminamiento IGP. Si dicho router aprende cómo llegar a una misma red con ambos protocolos, ¿qué ruta instalará en su tabla de encaminamiento?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La ruta que posea el menor número de saltos",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "La ruta del protocolo que posea la menor métrica",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La ruta que posea el mayor ancho de banda",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La ruta que atraviese la menor cantidad de sistemas autónomos",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "La ruta del protocolo que posea la menor distancia administrativa",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "Las métricas de protocolos distintos no son comparables: RIP cuenta saltos y OSPF calcula costo por ancho de banda. Por eso el criterio de desempate entre protocolos es siempre la distancia administrativa, y se instala la de menor valor."
+    },
+    {
+      "id": 81,
+      "texto": "¿Cuáles de las siguientes afirmaciones corresponden al algoritmo de encaminamiento jerárquico?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Agrupa los usuarios en regiones o áreas",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Envía actualizaciones periódicas entre los routers vecinos",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Agrupa los usuarios en regiones o áreas, para reducir la cantidad de routers que hay en la red",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Es implementado por el protocolo OSPF cuando la red posee gran cantidad de routers",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Controla la cantidad de paquetes duplicados que hay en la red",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "OSPF implementa la jerarquía mediante la división del sistema autónomo en áreas, justamente cuando la red es grande. Ojo con las opciones a y c: el algoritmo agrupa ROUTERS, no usuarios, y no reduce la cantidad de routers sino el tamaño de sus tablas."
+    },
+    {
+      "id": 82,
+      "texto": "¿Cuáles de los siguientes mensajes DHCP se construyen en el cliente? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "DHCP decline",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "DHCP Nack",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "DHCP request",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "DHCP Ack",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "DHCP offer",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "El cliente construye Discover, Request, Decline, Release e Inform. El servidor es el que responde con Offer, Ack y Nack."
+    },
+    {
+      "id": 83,
+      "texto": "¿Cuál de las siguientes es una ventaja del encaminamiento estático?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Las tablas de encaminamiento se reconfiguran automáticamente cuando se cae un enlace",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Se requiere mucho procesamiento en los routers",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El administrador debe configurar todas las rutas en ambos sentidos en los routers",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El administrador sabe exactamente las rutas por las cuales viajan los paquetes",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Los routers intercambian información de encaminamiento periódicamente",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Se adapta a los cambios de topología de red",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "La ventaja del estático es el control total y la previsibilidad, además de no consumir CPU ni ancho de banda en actualizaciones. Tener que configurar todo a mano es su desventaja, no su ventaja."
+    },
+    {
+      "id": 84,
+      "texto": "Uno de los métodos que se implementa para brindar calidad de servicio son los Servicios Diferenciados. ¿Cuáles de las siguientes son algunas de sus características? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se requiere el protocolo de reserva RSVP",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Todos los datos viajan por el mismo camino físico",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El router debe mantener información de estado de cada flujo individual",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No se garantiza QoS extremo a extremo",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Los paquetes se marcan según su importancia en los campos TOS y clase de tráfico del protocolo IP",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "Es necesario reservar recursos extremo a extremo para cada flujo individual",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "DiffServ se implementa de manera LOCAL en cada router y por clases de tráfico, marcando los paquetes en el campo ToS de IPv4 o Clase de tráfico de IPv6. Al no reservar recursos extremo a extremo no puede garantizar la QoS de punta a punta: eso lo hace IntServ con RSVP."
+    },
+    {
+      "id": 85,
+      "texto": "¿Cuáles de las siguientes características corresponden al protocolo OSPF? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Todos los routers de la topología poseen las mismas tablas de encaminamiento",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Mantiene la adyacencia con sus routers vecinos a través de paquetes HELLO",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Es capaz de construir un grafo de toda la red, para luego ejecutar el algoritmo de Dijkstra",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Cada router posee una base de datos topológica diferente",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Converge muy lentamente",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Es un protocolo classful",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "OSPF descubre y mantiene adyacencias con paquetes HELLO y, con la base de datos topológica completa, arma el grafo y ejecuta Dijkstra. Dentro de un área todos comparten la MISMA base de datos, pero cada router obtiene su propia tabla (el árbol más corto desde sí mismo)."
+    },
+    {
+      "id": 86,
+      "texto": "¿Cuáles de las siguientes características corresponden al protocolo «Routing Information Protocol»? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Independientemente de que se produzcan cambios en la red, envía actualizaciones periódicas",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Elige la mejor ruta en función del ancho de banda de los enlaces",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Es un protocolo de gateway inter sistema autónomo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Utiliza el algoritmo de Dijkstra para el cálculo de la mejor ruta",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Los routers mantienen una base de datos topológica",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Por desconocimiento de la topología de la red, pueden producirse bucles",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "RIP envía actualizaciones cada 30 segundos haya o no cambios, y al ser vector distancia desconoce la topología, lo que habilita bucles y el conteo al infinito. El ancho de banda como métrica, Dijkstra y la base topológica corresponden a OSPF."
+    },
+    {
+      "id": 87,
+      "texto": "Indique cuáles de las siguientes son soluciones para evitar que se presenten bucles en el algoritmo de vector distancia (seleccione DOS opciones):",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Armar un grafo de la red y ejecutar el algoritmo de la ruta más corta",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Inundar las tablas de encaminamiento",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Aumentar la métrica al infinito",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Configurar el horizonte dividido en el router",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Enviar actualizaciones apenas se produzca un cambio en la topología de la red",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "Desactivar las interfaces del router",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "Las soluciones son el TTL, el horizonte dividido, las actualizaciones generadas por eventos y los temporizadores de espera, además de definir un valor MÁXIMO de métrica. Ojo con la opción c: el problema se llama justamente «conteo al infinito», por lo que dejar crecer la métrica es el síntoma y no la solución."
+    },
+    {
+      "id": 88,
+      "texto": "El comando ping que se ejecuta desde Windows consiste en enviar:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "4 segmentos TCP echo-request y echo-reply",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "4 mensajes ICMP echo-request y echo-reply",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "3 mensajes UDP echo-request y echo-reply",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "4 mensajes ICMP time-exceeded al origen de una transmisión",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "3 mensajes ICMP echo-request y echo-reply",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "ping verifica conectividad de capa 3 con mensajes ICMP (no TCP ni UDP) de tipo echo request, y espera los echo reply. En Windows envía 4 por defecto; en Linux envía de forma continua hasta interrumpirlo."
+    },
+    {
+      "id": 89,
+      "texto": "En el método de control de congestión denominado Detección Temprana Aleatoria:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El router descarta los paquetes analizando su nivel de prioridad en función del tipo de aplicación",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "El router selecciona de la cola aleatoriamente los paquetes que debe encaminar",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "En tráfico multimedial es mejor descartar un paquete nuevo que uno antiguo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El router descarta al azar algunos paquetes de la cola de salida, para evitar que se llene el búfer",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "El router descarta los últimos paquetes que van llegando a la cola",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "RED descarta al azar una pequeña fracción de paquetes ANTES de que se agote el búfer, cuando la longitud promedio de la cola supera un umbral. El emisor detecta la falta de ACK y, junto con TCP, reduce su tasa."
+    },
+    {
+      "id": 90,
+      "texto": "Considerando que se está implementando el algoritmo de cubeta con fichas (token) y el host tiene acumuladas 20 fichas que se generaron cada 1 seg., si se tienen que transmitir 25 paquetes a la red, el host podrá:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Transmitir los 25 paquetes juntos",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Transmitir 5 paquetes juntos y luego un paquete cada 1 seg.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Transmitir un paquete cada 1 seg.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Transmitir 20 paquetes juntos y luego un paquete cada 1 seg.",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Transmitir 20 paquetes juntos, esperar 5 segundos y transmitir los 5 paquetes en una ráfaga",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "Cada ficha habilita el envío de un paquete: con 20 fichas acumuladas sale una ráfaga de 20. Los 5 restantes deben esperar a que el reloj genere fichas nuevas, una por segundo, por lo que salen de a uno."
+    },
+    {
+      "id": 91,
+      "texto": "¿Cuál de los siguientes es un parámetro que permite medir la Calidad de Servicio de un flujo de datos?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Cantidad de saltos",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Distancia administrativa",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Métrica",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Confiabilidad",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Cifrado",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "Los cuatro parámetros que definen la QoS de un flujo son ancho de banda, retardo, variación del retardo (jitter) y pérdida o confiabilidad. La cantidad de saltos, la métrica y la distancia administrativa son conceptos de encaminamiento."
+    },
+    {
+      "id": 92,
+      "texto": "Una computadora de una LAN de una empresa que implementa direccionamiento privado solicita a un servidor de Internet una página web. El encabezado del paquete que SALE de dicha computadora contiene:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "IP origen privada - IP destino pública",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "IP origen privada - IP destino privada",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "IP origen pública - IP destino privada",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "IP origen pública - IP destino pública",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "NAT y PAT",
+      "explicacion": "Al salir de la computadora el paquete todavía no fue traducido: lleva como origen su IP privada y como destino la IP pública del servidor web. Recién cuando pasa por el router de borde se reemplaza el origen por una dirección pública."
+    },
+    {
+      "id": 93,
+      "texto": "Un mensaje ARP-reply es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Simplecast",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Broadcast",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Multicast",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Unicast",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "El ARP-request sale en broadcast porque se desconoce a quién preguntarle, pero la respuesta se envía en UNICAST directamente al equipo que consultó, ya que su MAC venía en la solicitud."
+    },
+    {
+      "id": 94,
+      "texto": "El protocolo DHCP pertenece a cuál de las siguientes capas de la pila de protocolos TCP/IP:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Transporte",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Aplicación",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Presentación",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Enlace",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Interred",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Sesión",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "Aunque DHCP entrega parámetros de la capa de interred, el protocolo en sí corre SOBRE UDP (puertos 67 y 68), por lo que pertenece a la capa de aplicación. Presentación y sesión no existen como capas propias en el modelo TCP/IP."
+    },
+    {
+      "id": 95,
+      "texto": "Indique cuál de las siguientes afirmaciones hace referencia al algoritmo de encaminamiento de inundación controlada:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se implementa para interconectar sistemas autónomos distintos",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "El router enviará el paquete por todas las líneas de salida, menos por donde ingresó, si el número de versión del paquete es mayor al último que posee registrado de ese router",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Cada router envía su tabla de encaminamiento periódicamente a sus routers vecinos",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Sólo envía el paquete por las líneas de salida si el número de versión es menor o igual al último que posee registrado el router",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Converge lentamente",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "La inundación controlada reenvía por todas las líneas menos la de entrada, pero sólo si el número de secuencia o versión es MAYOR al último registrado para ese origen. Así se descartan los duplicados que ya circularon y se evita inundar la red indefinidamente."
+    },
+    {
+      "id": 96,
+      "texto": "Indique a qué concepto corresponde la siguiente definición: «parte del software de la capa de Interred, responsable de decidir sobre qué línea de salida se debe transmitir un paquete que llega»",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Algoritmo de encaminamiento",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Tabla de encaminamiento",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Distancia administrativa",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Protocolo de gateway interior",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Control de congestión",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "Ésa es la definición textual de algoritmo de encaminamiento. No confundirlo con la TABLA de encaminamiento, que es la estructura de datos donde se guarda el resultado de aplicar dicho algoritmo."
+    },
+    {
+      "id": 97,
+      "texto": "Un router aprende cómo llegar a la misma red con el protocolo RIP. Si conoce dos caminos, uno a través de 6 saltos y otro a través de 9 saltos:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Incorporará en la tabla de encaminamiento la ruta que posee 6 saltos",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Incorporará en la tabla de encaminamiento la ruta que posee 9 saltos",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Incorporará ambas rutas y balanceará la carga entre ellas",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Descartará ambas rutas porque superan el límite de RIP",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "La métrica de RIP es la cantidad de saltos y se elige siempre la menor, o sea la de 6. Ambas están por debajo del límite de 15 saltos, así que las dos son válidas; el balanceo de carga sólo se aplica entre rutas de IGUAL métrica."
+    },
+    {
+      "id": 98,
+      "texto": "Si se está implementando el algoritmo de cubeta con fichas (token) y el host tiene acumuladas 10 fichas que se generaron cada 1 seg., si se tienen que transmitir 15 paquetes a la red, el host podrá:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Transmitir 10 paquetes juntos y luego un paquete cada 1 seg.",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Transmitir los 15 paquetes juntos",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Transmitir 5 paquetes juntos y luego un paquete cada 1 seg.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Transmitir un paquete cada 1 seg.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "Con 10 fichas acumuladas el host envía una ráfaga de 10 paquetes de inmediato. Los 5 restantes salen de a uno, a medida que el reloj genera una ficha nueva por segundo."
+    },
+    {
+      "id": 99,
+      "texto": "A partir de la siguiente topología, indique cuál de los siguientes comandos se deberá configurar en el router R6 para definir su correspondiente par BGP EXTERNO:",
+      "imagen": "/images/rdd_par_bgp_sistemas_autonomos.png",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "neighbor 170.1.2.1 remote-as 600",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "neighbor 150.4.1.1 remote-as 400",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "neighbor 150.4.1.2 remote-as 500",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "neighbor 170.1.2.2 remote-as 500",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "neighbor 172.9.6.1 remote-as 500",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "Un par BGP externo (eBGP) se establece con un router de OTRO sistema autónomo. R6 pertenece al SA 500 y su vecino externo es R7, del SA 600, cuya interfaz es 170.1.2.1. La opción con el SA 400 correspondería a R4, no a R6."
+    },
+    {
+      "id": 100,
+      "texto": "«Cuando la ejecución del algoritmo de encaminamiento no consume demasiados recursos del router…» hace referencia a cuál requisito de los algoritmos de encaminamiento:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Sencillez",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Robustez",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Equidad",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Exactitud",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Estabilidad",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "La sencillez apunta a que el algoritmo sea liviano en procesamiento y memoria. La robustez es seguir funcionando ante fallas, la estabilidad es converger a un resultado estable y la equidad es tratar por igual a todos los flujos."
+    },
+    {
+      "id": 101,
+      "texto": "La máquina A le está enviando datos a través de Internet a la máquina B. Cuando un router advierte que uno de sus enlaces está congestionado, activa dos bits en el encabezado IP para indicar a la máquina B que existe congestión. El destino (B) observa la congestión e informa al origen (A) activando un bit de la capa de transporte. Cuando A se entera, reduce la tasa de paquetes hacia la red. Este método de control de congestión es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "De ciclo cerrado, Notificación explícita de congestión",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "De ciclo abierto, Notificación explícita de congestión",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "De ciclo cerrado, Paquete regulador",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "De ciclo cerrado, Detección Temprana Aleatoria",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "De ciclo abierto, Control de admisión",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "Es ECN (Explicit Congestion Notification), un método de ciclo cerrado. Lo que lo distingue del paquete regulador es el recorrido del aviso: el router marca dos bits del paquete IP, se entera el DESTINO y éste avisa al origen por la capa de transporte."
+    },
+    {
+      "id": 102,
+      "texto": "¿Cuáles de las siguientes características corresponden a VLSM - Variable Length Subnet Mask? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Exige que todas las áreas o departamentos de la empresa posean la misma máscara de subred",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Permite crear para muchos hosts, máscaras largas",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Permite tomar una subred y volverla a dividir en sub-redes más pequeñas",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Permite crear para pocos hosts, máscaras largas",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Se implementa especialmente con direcciones privadas",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento IPv4, VLSM y CIDR",
+      "explicacion": "VLSM permite subdividir una subred ya creada y usar máscaras de distinta longitud: cuanto más larga la máscara, menos hosts entran (por ejemplo un /30 para un enlace punto a punto). Se usa tanto en direcciones públicas como privadas."
+    },
+    {
+      "id": 103,
+      "texto": "Un mensaje ARP-reply se encapsula en:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Un paquete con dirección destino 255.255.255.255",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Un paquete con dirección destino unicast",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Una trama con dirección destino unicast",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Una trama con dirección destino multicast",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Una trama con dirección destino FF:FF:FF:FF:FF:FF",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "ARP trabaja a nivel de capa de enlace, por lo que sus mensajes viajan en TRAMAS y no en paquetes IP. La respuesta va en unicast a la MAC del solicitante; el broadcast FF:FF:FF:FF:FF:FF corresponde al ARP-request."
+    },
+    {
+      "id": 104,
+      "texto": "Las tablas ARP:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Tienen sólo entradas dinámicas",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Poseen sólo entradas estáticas",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Pueden tener entradas dinámicas y estáticas",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Necesitan configuración de las entradas dinámicas",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "Las entradas dinámicas se aprenden solas mediante request/reply y vencen por temporizador; las estáticas las carga el administrador con «arp -s» y no vencen. Una tabla ARP puede combinar ambos tipos."
+    },
+    {
+      "id": 105,
+      "texto": "¿Cuáles de las siguientes características corresponden al protocolo RIP? (Seleccione TRES opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Posibilidad de existencia de bucles",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La versión 2 del protocolo soporta VLSM y CIDR",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "La métrica que utiliza es el número de saltos",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Utiliza el ancho de banda de los enlaces como métrica",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Mantiene una base de datos topológica de la red",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "Es un protocolo de gateway exterior",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "RIP es un IGP de vector distancia: usa como métrica la cantidad de saltos (máximo 15), desconoce la topología y por eso puede presentar bucles. Sólo su versión 2 es classless y soporta VLSM y CIDR."
+    },
+    {
+      "id": 106,
+      "texto": "El protocolo OSPF envía sus actualizaciones de encaminamiento a través de direcciones:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Multicast",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Broadcast",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Unicast",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Anycast",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "OSPF usa las direcciones multicast 224.0.0.5 (todos los routers OSPF) y 224.0.0.6 (DR y BDR). Así sólo procesan las actualizaciones los routers que ejecutan el protocolo, sin molestar al resto de los equipos de la red."
+    },
+    {
+      "id": 107,
+      "texto": "El protocolo RIPv1 envía sus actualizaciones de encaminamiento a la siguiente dirección:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "255.255.255.255",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "224.0.0.9",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "224.0.0.5",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "224.0.0.6",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "RIPv1 actualiza por broadcast a 255.255.255.255, con lo cual todos los equipos de la red reciben y deben procesar la trama. RIPv2 lo mejora usando la multicast 224.0.0.9, y 224.0.0.5 y 224.0.0.6 son de OSPF."
+    },
+    {
+      "id": 108,
+      "texto": "El almacenamiento en buffer como técnica para brindar QoS consiste en:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Almacenar los datos en el buffer del cliente antes de su reproducción",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Controlar y regular la tasa promedio y las ráfagas en el origen",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Brindar suficientes recursos de red para evitar la congestión",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Establecer el ritmo con el cual los datos llegan al host receptor",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "Los flujos se acumulan en el búfer del receptor antes de entregarse a la aplicación. Eso agrega retardo inicial pero atenúa la fluctuación (jitter) y evita huecos en la reproducción, por lo que se aplica en audio y video bajo demanda."
+    },
+    {
+      "id": 109,
+      "texto": "El comando tracert o traceroute se basa en:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Enviar segmentos UDP variando el TTL de 1 a 30",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Enviar mensajes echo request variando el TTL desde 30 a 1",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Enviar mensajes echo request haciendo variar el TTL de 1 a 30",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Enviar paquetes IP variando el número de fragmento entre 1 y 30",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "El TTL arranca en 1 y se va incrementando: con TTL=1 responde el primer router, con TTL=2 el segundo, y así hasta llegar al destino o al máximo de 30 saltos. Hacerlo de 30 a 1 no permitiría descubrir los saltos en orden."
+    },
+    {
+      "id": 110,
+      "texto": "El mensaje utilizado en Dynamic Host Configuration Protocol que tiene por objetivo informar al servidor que ya no necesita utilizar la dirección IP asignada es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Release",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Discover",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Decline",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Inform",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Nack",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "Con Release el cliente devuelve voluntariamente la dirección y cancela el tiempo de alquiler restante, para que el servidor pueda reutilizarla. Decline es distinto: avisa que la IP ofrecida ya estaba en uso por otro equipo."
+    },
+    {
+      "id": 111,
+      "texto": "¿Cuál de los siguientes protocolos permite que una PC obtenga una dirección IPv4 a partir de su dirección MAC, debiendo configurar tablas con mapas estáticos y permanentes en el servidor y requiriendo que la PC esté siempre en la misma LAN que el servidor?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "DHCP versión 6",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Internet Protocol",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Bootstrap protocol",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Reverse Address Resolution protocol",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Address Resolution protocol",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "La pista decisiva es «siempre en la misma LAN que el servidor»: RARP exige un servidor por cada LAN. BOOTP también usa mapeos estáticos, pero admite que el cliente y el servidor estén en LAN diferentes, y ARP hace el camino inverso (de IP a MAC)."
+    },
+    {
+      "id": 112,
+      "texto": "El agente relay de Dynamic Host Configuration Protocol se ejecuta cuando:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Cliente y servidor web se encuentran en diferentes subredes",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Cliente y servidor DHCP se encuentran en diferentes subredes",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Existe un servidor DHCP en cada subred de la empresa",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Cliente y servidor DHCP están en la misma subred",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "El relay hace falta justamente porque el DHCP Discover es un broadcast que el router no reenvía. Si el cliente y el servidor están en la misma subred el broadcast llega solo y el relay es innecesario."
+    },
+    {
+      "id": 113,
+      "texto": "La dirección IP destino en un paquete enviado desde una PC que está arrancando, hacia un servidor Dynamic Host Configuration Protocol es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "0.0.0.0",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "FF-FF-FF-FF-FF-FF",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La dirección IP del servidor DHCP",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "255.255.255.255",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "La PC todavía no tiene IP ni sabe dónde está el servidor, así que el Discover viaja con origen 0.0.0.0 y destino de broadcast 255.255.255.255. Ojo: 0.0.0.0 es el ORIGEN, y FF-FF-FF-FF-FF-FF es una dirección MAC, no IP."
+    },
+    {
+      "id": 114,
+      "texto": "La dirección MAC destino en un paquete enviado desde una PC que está arrancando, hacia un servidor Dynamic Host Configuration Protocol es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "0.0.0.0",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "FF-FF-FF-FF-FF-FF",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "La dirección IP del servidor DHCP",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "255.255.255.255",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "A nivel de trama el Discover se envía a la MAC de broadcast FF-FF-FF-FF-FF-FF para que lo reciban todos los equipos del enlace. El equivalente a nivel de paquete IP es el destino 255.255.255.255."
+    },
+    {
+      "id": 115,
+      "texto": "¿En qué casos preferiría configurar enrutamiento dinámico (en lugar del estático) en los routers de mi red? (Seleccione varias)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Los dispositivos de enrutamiento de los que dispongo no poseen suficiente capacidad de procesamiento (memoria y velocidad)",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "La topología de la red es estable y no sufre demasiadas modificaciones a lo largo del tiempo",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El tamaño de la red es muy grande y los cambios en ella son constantes",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Poseo varias conexiones a Internet y debo hacer balanceo de carga entre los distintos proveedores en función de la carga de los enlaces",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Necesito tener disponibles rutas alternativas para llegar a un destino por si se caen las principales",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": "Presenta una única conexión a un proveedor de servicios de Internet",
+          "correcta": false
+        },
+        {
+          "id": "g",
+          "texto": "El administrador de red no puede estar siempre presente para solucionar fallas de conectividad, pero la red debe encontrar la manera de seguir funcionando",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "El encaminamiento dinámico se justifica en redes grandes y cambiantes, cuando hacen falta rutas alternativas ante caídas, cuando se quiere balancear carga entre enlaces y cuando no hay un administrador disponible de forma permanente. En redes chicas, estables o con una única salida, el estático alcanza y consume menos recursos."
+    },
+    {
+      "id": 116,
+      "texto": "Thiago está descargando en su computadora un archivo muy grande desde un Servidor Web. ¿Cuál de los siguientes métodos permite garantizar que el servidor no sature de información a la computadora, suponiendo que la PC no posee suficiente espacio en su búfer?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Calidad de Servicio",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Control de congestión",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Detección Temprana Aleatoria (RED)",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Control de flujo",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Algoritmo de Dijkstra",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "El problema planteado es entre DOS extremos: un emisor rápido (el servidor) y un receptor lento con poco búfer. Eso es exactamente el control de flujo. El control de congestión actuaría si el problema fuera la saturación de la red en su conjunto, no la del receptor."
+    },
+    {
+      "id": 117,
+      "texto": "Un socket, como punto de conexión entre transmisor y receptor, queda definido por:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Un par de direcciones IP (local y remota), un par de números de puerto (local y remoto) y el protocolo",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Una única dirección IP y un único número de puerto",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Un par de direcciones MAC y el protocolo de capa de enlace",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Un par de números de sistemas autónomos y el protocolo de encapsulamiento",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Capa de transporte",
+      "explicacion": "Una conexión queda identificada de forma única por la quíntupla: IP origen, IP destino, puerto origen, puerto destino y protocolo de transporte. Por eso dos conexiones simultáneas al mismo servidor se distinguen aunque compartan IP y puerto destino."
+    },
+    {
+      "id": 118,
+      "texto": "Un segmento en cuyo encabezado posee el puerto origen 25 y el puerto destino 52.645 es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Una respuesta generada desde un servidor de correo hacia una PC",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Una solicitud generada desde una PC hacia un servidor de correo",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Una respuesta generada desde un servidor web hacia una PC",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Una solicitud generada desde una PC hacia un servidor DNS",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Capa de aplicación",
+      "explicacion": "El puerto 25 corresponde a SMTP (correo electrónico). Como está en el campo ORIGEN, el segmento sale del servidor de correo; el 52.645 es un puerto efímero, típico del cliente. Si fuera una solicitud, el 25 estaría en el destino."
+    },
+    {
+      "id": 119,
+      "texto": "¿Cuál de los siguientes protocolos permite intercambiar archivos entre servidores con distintos sistemas operativos?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "FTP",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "RIP",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "HTTP",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "BGP",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "ICMP",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Capa de aplicación",
+      "explicacion": "FTP (File Transfer Protocol) está diseñado específicamente para transferir archivos entre equipos, salvando las diferencias de sistema operativo y de representación. RIP y BGP son protocolos de encaminamiento e ICMP es de control de la capa de interred."
+    },
+    {
+      "id": 120,
+      "texto": "Indique cuáles de los siguientes son dominios de nivel superior (seleccione varios):",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": ".ar",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": ".frc",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": ".dosmil",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": ".cba",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": ".gov",
+          "correcta": true
+        },
+        {
+          "id": "f",
+          "texto": ".com",
+          "correcta": true
+        },
+        {
+          "id": "g",
+          "texto": ".cordoba",
+          "correcta": false
+        },
+        {
+          "id": "h",
+          "texto": ".uy",
+          "correcta": true
+        }
+      ],
+      "parcial": 3,
+      "tema": "Capa de aplicación",
+      "explicacion": "Los dominios de nivel superior (TLD) son el último rótulo del nombre e incluyen los genéricos (.com, .gov, .org, .net) y los geográficos de país (.ar, .uy). Etiquetas como .frc, .cba o .cordoba son subdominios dentro de un TLD, no dominios de nivel superior."
+    },
+    {
+      "id": 121,
+      "texto": "Si un agente de transferencia de mensajes de correo debe entregar a otro un mensaje dirigido a un usuario registrado en él, ¿a qué registro del DNS debe realizar la consulta?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "MX",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "A",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "CNAME",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "NS",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "PTR",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Capa de aplicación",
+      "explicacion": "El registro MX (Mail eXchange) indica cuál es el servidor de correo responsable de un dominio. El registro A resuelve un nombre a una dirección IPv4, NS indica los servidores de nombres del dominio y CNAME define un alias."
+    },
+    {
+      "id": 122,
+      "texto": "¿Qué ventaja presenta el protocolo TCP frente a UDP?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Garantiza la recepción correcta de los datos, aún en el caso de que se pierdan segmentos",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Posee un encabezado más pequeño y por lo tanto menos sobrecarga",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "No requiere establecer una conexión previa",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Es más rápido porque no espera confirmaciones",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Capa de transporte",
+      "explicacion": "TCP es orientado a conexión y fiable: numera los segmentos, espera confirmaciones y retransmite lo que se pierde. Las otras opciones describen ventajas de UDP, que sacrifica la fiabilidad a cambio de menor sobrecarga y latencia."
+    },
+    {
+      "id": 123,
+      "texto": "¿Cuáles de los siguientes campos permiten implementar la «fiabilidad» del protocolo TCP? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Número de secuencia",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Suma de verificación",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Puerto origen",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Ventana de recepción",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Puntero urgente",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Capa de transporte",
+      "explicacion": "El número de secuencia permite detectar pérdidas, duplicados y reordenar los segmentos, y la suma de verificación detecta errores en los datos. La ventana de recepción existe pero sirve para el control de FLUJO, no para la fiabilidad."
+    },
+    {
+      "id": 124,
+      "texto": "En el campo número de reconocimiento (asentimiento) de un segmento que A le envía a B figura el valor 4501. Esto implica que:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "A recibió correctamente hasta el byte 4500 inclusive",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "A envió 4501 bytes a B",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "A recibió correctamente hasta el byte 4501 inclusive",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "B debe retransmitir desde el byte 4501",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Capa de transporte",
+      "explicacion": "El número de asentimiento indica el SIGUIENTE byte que se espera recibir. Si A envía 4501, está confirmando que recibió todo hasta el 4500 inclusive y le pide a B que continúe desde el 4501."
+    },
+    {
+      "id": 125,
+      "texto": "¿Cuáles de las siguientes afirmaciones corresponden al campo «ventana de recepción» del encabezado de un segmento TCP? (Seleccione DOS opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Si ventana = 0, implica detener momentáneamente la transmisión de datos",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Es dinámica y varía durante la comunicación",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Implementa el control de congestión extremo a extremo",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Su valor lo fija el emisor según la capacidad de la red",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Permanece fijo durante toda la conexión",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Capa de transporte",
+      "explicacion": "La ventana de recepción la anuncia el RECEPTOR e indica cuánto espacio le queda en el búfer; por eso varía a lo largo de la conexión y un valor 0 obliga al emisor a frenar. Es el mecanismo de control de FLUJO, no de congestión."
+    },
+    {
+      "id": 126,
+      "texto": "En una red local tenemos 500 PC con direcciones privadas que queremos que tengan salida a Internet, para lo cual disponemos de una única IP pública. Sabemos que nunca más del 20% estarán conectadas simultáneamente y que las conexiones siempre se iniciarán desde la red privada. ¿Qué tipo de traducción debemos utilizar?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "PAT",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "NAT estático",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "NAT dinámico",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No es posible con una única IP pública",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "NAT y PAT",
+      "explicacion": "Con una sola dirección pública hay que multiplexar a nivel de puerto: eso es PAT (NAT overload). NAT dinámico necesitaría un pool con varias direcciones públicas y NAT estático exigiría una pública por cada equipo."
+    },
+    {
+      "id": 127,
+      "texto": "La empresa tiene un servidor web con una IP privada que quiere hacer visible desde Internet. ¿Qué técnica va a usar?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "NAT estático",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "PAT",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "NAT dinámico",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Encaminamiento dinámico",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "NAT y PAT",
+      "explicacion": "Para que las conexiones puedan INICIARSE desde Internet hace falta una correspondencia fija y permanente entre la IP privada del servidor y una IP pública: eso es NAT estático. PAT y NAT dinámico sólo funcionan para conexiones iniciadas desde adentro."
+    },
+    {
+      "id": 128,
+      "texto": "El método de traducción de direcciones que permite más ahorro de direcciones IP es:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "PAT",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "NAT estático",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "NAT dinámico",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "CIDR",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "NAT y PAT",
+      "explicacion": "PAT permite que cientos de equipos compartan una única dirección pública, diferenciando cada conexión por el número de puerto. Es por lejos el método que más direcciones ahorra."
+    },
+    {
+      "id": 129,
+      "texto": "Un algoritmo de clave asimétrica se basa en:",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Cifrar con una clave K1 y descifrar con otra clave complementaria K2",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Cifrar y descifrar con la misma clave compartida",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Cifrar sin clave, aplicando una función de resumen",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Intercambiar la clave por un canal seguro antes de cifrar",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Seguridad",
+      "explicacion": "En la criptografía asimétrica existe un par de claves complementarias: lo que se cifra con una sólo puede descifrarse con la otra. Cifrar y descifrar con la misma clave corresponde a los algoritmos simétricos."
+    },
+    {
+      "id": 130,
+      "texto": "Pablo le envía a Pilar un documento firmado digitalmente. ¿Cuáles de las siguientes afirmaciones son correctas? (Seleccione TRES opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Pablo no podrá negar que envió ese documento",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Pilar puede asegurar que Pablo es quien envió el documento",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Pilar está tranquila de que el documento no se modificó durante la transmisión",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "El contenido del documento viaja cifrado y nadie más puede leerlo",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Pilar puede modificar el documento y volver a firmarlo como Pablo",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Seguridad",
+      "explicacion": "La firma digital aporta no repudio (a), autenticación del origen (b) e integridad (c). Lo que NO aporta por sí sola es confidencialidad: el documento puede viajar en claro y ser leído por terceros salvo que además se lo cifre."
+    },
+    {
+      "id": 131,
+      "texto": "¿Cuál de los siguientes responde al concepto de «combinación de hardware y software que protege la información de una empresa, analizando el tráfico y permitiendo cierta información y bloqueando otra»?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Firewall",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Proxy inverso",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Router de borde",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Switch de capa 3",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Seguridad",
+      "explicacion": "El firewall es el elemento que filtra el tráfico entre la red interna y la externa según un conjunto de reglas, dejando pasar lo permitido y bloqueando el resto. Un router encamina pero no tiene como función principal filtrar."
+    },
+    {
+      "id": 132,
+      "texto": "Un usuario conectado a Internet desde su hogar realiza una consulta DNS sobre un dominio en particular. ¿Cuál de los siguientes servidores será el primero en atender su consulta?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El servidor DNS local (el configurado en su equipo o entregado por su ISP)",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El servidor raíz",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El servidor autoritativo del dominio consultado",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El servidor del dominio de nivel superior",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Capa de aplicación",
+      "explicacion": "La consulta va siempre primero al servidor DNS local. Si éste no tiene la respuesta en su caché, recién entonces inicia la resolución consultando a los servidores raíz, luego al del TLD y finalmente al autoritativo del dominio."
+    },
+    {
+      "id": 133,
+      "texto": "Complete: el protocolo ___ se utiliza para la entrega de correo desde el agente de usuario hacia el servidor de correo; entre servidores de correo se utiliza ___, que escucha en el puerto ___; y el destinatario puede consultar el mismo mensaje desde distintos dispositivos mediante ___, que escucha en el puerto ___.",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "MIME — SMTP — 25 — IMAP — 143",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "SMTP — IMAP — 143 — POP3 — 110",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "IMAP — SMTP — 110 — POP3 — 25",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "MIME — POP3 — 110 — SMTP — 25",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Capa de aplicación",
+      "explicacion": "SMTP es el protocolo de ENVÍO y transferencia entre servidores, y escucha en el puerto 25. IMAP (puerto 143) permite consultar los mensajes dejándolos en el servidor, de modo que se ven iguales desde varios dispositivos, a diferencia de POP3 que los descarga."
+    },
+    {
+      "id": 134,
+      "texto": "¿Cuáles de los siguientes campos son procesados por los agentes de usuario de correo? (Seleccione TRES opciones)",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Date",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Reply-To",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Subject",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Received",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Return-Path",
+          "correcta": false
+        }
+      ],
+      "parcial": 3,
+      "tema": "Capa de aplicación",
+      "explicacion": "Date (fecha y hora de envío), Reply-To (dirección a la que se responden los mensajes) y Subject (resumen corto del mensaje) son encabezados que el agente de usuario muestra y utiliza. Received y Return-Path los agregan y usan los agentes de transferencia."
+    }
+  ]
+}

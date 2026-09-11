@@ -8,6 +8,7 @@ export type Pregunta = {
   id: number;
   parcial: number;
   texto: string;
+  tema?: string;
   imagen?: string;
   explicacion?: string;
   respuestas: Respuesta[];
