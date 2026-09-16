@@ -76,7 +76,7 @@ export default function PantallaInicio({
   const puedeIniciar = disponibles > 0 && cantidad > 0 && cantidad <= disponibles;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-8 sm:space-y-10">
       <Paso numero={1} titulo="Qué vas a practicar">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <label className="space-y-2">
@@ -143,7 +143,7 @@ export default function PantallaInicio({
                       aria-pressed={activo}
                       onClick={() => onToggleTema(tema)}
                       className={cn(
-                        'flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition',
+                        'flex min-h-[40px] items-center gap-2 rounded-full border px-3.5 py-2 text-sm transition',
                         activo
                           ? 'border-cyan-400/70 bg-cyan-400/10 text-cyan-200'
                           : 'border-slate-700 bg-slate-950/50 text-slate-400 hover:border-slate-500 hover:text-slate-200',
@@ -260,8 +260,9 @@ export default function PantallaInicio({
         </div>
       </Paso>
 
-      <div className="sticky bottom-4 z-20">
-        <Card className="flex flex-col gap-4 border-slate-700 bg-slate-900/95 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+      {/* Resumen y acción siempre al alcance del pulgar, sin volver al tope de la página. */}
+      <div className="sticky bottom-[calc(0.75rem+env(safe-area-inset-bottom))] z-20 sm:bottom-4">
+        <Card className="flex flex-col gap-3 border-slate-700 bg-slate-900/95 backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <div className="min-w-0 space-y-2">
             <p className="truncate text-sm text-slate-400">
               <span className="font-semibold text-white">{materiaId}</span>
@@ -276,7 +277,12 @@ export default function PantallaInicio({
               etiqueta="Proporción del banco de preguntas que vas a practicar"
             />
           </div>
-          <Boton tamano="lg" onClick={onIniciar} disabled={!puedeIniciar} className="shrink-0">
+          <Boton
+            tamano="lg"
+            onClick={onIniciar}
+            disabled={!puedeIniciar}
+            className="w-full shrink-0 sm:w-auto"
+          >
             Comenzar test
           </Boton>
         </Card>

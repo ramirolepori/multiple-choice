@@ -32,6 +32,9 @@ html {
    * hace falta (navegación entre preguntas), no de forma global.
    */
   scroll-behavior: auto;
+  /* iOS agranda el texto al rotar a horizontal si no se fija esto. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -49,11 +52,23 @@ body {
   box-sizing: border-box;
 }
 
+/*
+ * `font: inherit` mantiene los inputs en 16px: por debajo de ese tamaño,
+ * Safari en iOS hace zoom automático al enfocar un campo y descuadra la página.
+ */
 button,
 input,
 select,
 textarea {
   font: inherit;
+}
+
+/* Sin el flash gris de Android al tocar; el estado activo lo maneja cada componente. */
+button,
+label,
+a,
+[role='button'] {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Foco visible y consistente en todo lo interactivo, sin anillo al usar el mouse. */
@@ -65,7 +80,13 @@ textarea {
 
 /* El título de cada pregunta queda por debajo de la barra fija al navegar por anclas. */
 [data-ancla-pregunta] {
-  scroll-margin-top: 7.5rem;
+  scroll-margin-top: 6.5rem;
+}
+
+@media (min-width: 640px) {
+  [data-ancla-pregunta] {
+    scroll-margin-top: 8rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

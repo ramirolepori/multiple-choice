@@ -38,6 +38,12 @@ const materiaChica: Materia = {
   preguntas: [crearPregunta(1, 1, undefined), crearPregunta(2, 1, undefined, 2), crearPregunta(3, 1, undefined)],
 };
 
+/** Una sola pregunta, con diagrama, para probar el visor de imágenes. */
+const materiaConImagen: Materia = {
+  materia: 'Materia Con Imagen',
+  preguntas: [{ ...crearPregunta(1, 1, undefined), imagen: '/images/demo.svg' }],
+};
+
 const comenzar = () => screen.getByRole('button', { name: /comenzar test/i });
 
 async function responderTodoBien(user: ReturnType<typeof userEvent.setup>) {
@@ -206,15 +212,49 @@ describe('TestApp · durante el test', () => {
     expect(segunda).toBeChecked();
   });
 
-  it('el índice lista todas las preguntas del test', async () => {
+  it('el índice lista todas las preguntas con su estado', async () => {
     const user = userEvent.setup();
     render(<TestApp materias={[materiaChica]} />);
     await user.click(comenzar());
 
-    await user.click(screen.getByRole('button', { name: /índice de preguntas/i }));
-
     expect(screen.getByRole('button', { name: /ir a la pregunta 1, sin responder/i })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /ir a la pregunta 3, sin responder/i })).toBeInTheDocument();
+
+    await user.click(screen.getByRole('radio', { name: 'Correcta 1' }));
+    expect(screen.getByRole('button', { name: /ir a la pregunta 1, respondida/i })).toBeInTheDocument();
+  });
+
+  it('la barra inferior de celular navega entre preguntas y abre el índice', async () => {
+    const user = userEvent.setup();
+    render(<TestApp materias={[materiaChica]} />);
+    await user.click(comenzar());
+
+    expect(screen.getByRole('button', { name: /pregunta anterior/i })).toBeDisabled();
+    expect(screen.getByRole('button', { name: /pregunta siguiente/i })).toBeEnabled();
+
+    await user.click(screen.getByRole('button', { name: /pregunta siguiente/i }));
+    expect(Element.prototype.scrollIntoView).toHaveBeenCalled();
+
+    await user.click(screen.getByRole('button', { name: /tocá para ver el índice/i }));
+    const hoja = screen.getByRole('dialog', { name: /índice de preguntas/i });
+    expect(within(hoja).getByRole('button', { name: /ir a la primera sin responder/i })).toBeInTheDocument();
+
+    await user.click(within(hoja).getByRole('button', { name: /cerrar/i }));
+    expect(screen.queryByRole('dialog', { name: /índice de preguntas/i })).not.toBeInTheDocument();
+  });
+
+  it('permite ampliar el diagrama de una pregunta con imagen', async () => {
+    const user = userEvent.setup();
+    render(<TestApp materias={[materiaConImagen]} />);
+    await user.click(comenzar());
+
+    await user.click(screen.getByRole('button', { name: /ampliar diagrama de la pregunta 1/i }));
+
+    const visor = screen.getByRole('dialog', { name: /diagrama de la pregunta 1/i });
+    expect(within(visor).getByRole('img')).toHaveAttribute('src', '/images/demo.svg');
+
+    await user.click(within(visor).getByRole('button', { name: /cerrar/i }));
+    expect(screen.queryByRole('dialog', { name: /diagrama de la pregunta 1/i })).not.toBeInTheDocument();
   });
 });
 

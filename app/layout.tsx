@@ -14,8 +14,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: '#020617',
   colorScheme: 'dark',
+  // Necesario para que env(safe-area-inset-*) devuelva algo en iPhone con notch.
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

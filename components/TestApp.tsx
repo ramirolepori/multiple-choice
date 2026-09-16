@@ -15,7 +15,7 @@ import {
 import PantallaInicio from './PantallaInicio';
 import PantallaResultado from './PantallaResultado';
 import PantallaTest from './PantallaTest';
-import { Card } from './ui';
+import { Card, cn } from './ui';
 
 type Fase = 'inicio' | 'test' | 'resultado';
 
@@ -278,9 +278,18 @@ export default function TestApp({ materias }: TestAppProps) {
   }
 
   return (
-    <main className="min-h-dvh px-4 py-6 md:px-8 md:py-10">
-      <div className="mx-auto max-w-5xl space-y-8">
-        <header className="flex flex-wrap items-end justify-between gap-4">
+    <main className="min-h-dvh px-4 pb-6 pt-[calc(1.25rem+env(safe-area-inset-top))] md:px-8 md:pb-10 md:pt-10">
+      <div className="mx-auto max-w-5xl space-y-6 sm:space-y-8">
+        {/*
+         * Durante el test el encabezado se esconde en celular: son ~90px de alto
+         * que no aportan nada mientras respondés y empujan la primera pregunta.
+         */}
+        <header
+          className={cn(
+            'flex-wrap items-end justify-between gap-4',
+            fase === 'test' ? 'hidden sm:flex' : 'flex',
+          )}
+        >
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300/70">Multiple choice</p>
             <h1 className="mt-1.5 text-2xl font-semibold text-white sm:text-3xl">Plataforma de estudio rápido</h1>

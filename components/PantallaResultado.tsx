@@ -10,7 +10,7 @@ import {
   type EstadoPregunta,
   type ResumenTest,
 } from '../lib/quiz';
-import { Boton, Card, Metrica, cn } from './ui';
+import { Boton, Card, ImagenAmpliable, Metrica, cn } from './ui';
 
 type Filtro = 'todas' | 'repasar' | 'correctas';
 
@@ -219,14 +219,8 @@ export default function PantallaResultado({
                   </div>
 
                   {pregunta.imagen && (
-                    <div className="mt-4 overflow-hidden rounded-xl border border-slate-800 bg-slate-950/60 p-3">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={pregunta.imagen}
-                        alt={`Diagrama de la pregunta ${numero}`}
-                        className="mx-auto max-h-96 w-full rounded-lg object-contain"
-                        loading="lazy"
-                      />
+                    <div className="mt-4">
+                      <ImagenAmpliable src={pregunta.imagen} alt={`Diagrama de la pregunta ${numero}`} />
                     </div>
                   )}
 

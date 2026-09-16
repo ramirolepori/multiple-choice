@@ -20,6 +20,18 @@ Object.defineProperty(window, 'matchMedia', {
 });
 Element.prototype.scrollIntoView = vi.fn();
 
+// La barra inferior usa IntersectionObserver para saber qué pregunta estás mirando.
+class ObservadorFalso implements IntersectionObserver {
+  readonly root = null;
+  readonly rootMargin = '';
+  readonly thresholds: ReadonlyArray<number> = [];
+  observe = vi.fn();
+  unobserve = vi.fn();
+  disconnect = vi.fn();
+  takeRecords = vi.fn(() => []);
+}
+vi.stubGlobal('IntersectionObserver', ObservadorFalso);
+
 afterEach(() => {
   cleanup();
   window.localStorage.clear();
