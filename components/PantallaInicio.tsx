@@ -5,7 +5,7 @@ import { PUNTAJE_MAXIMO } from '../lib/quiz';
 import { BarraProgreso, Boton, Card, TituloCampo, cn } from './ui';
 
 const claseCampo =
-  'w-full rounded-xl border border-slate-700 bg-slate-950/70 px-3.5 py-2.5 text-white outline-none transition focus:border-cyan-400';
+  'w-full rounded-xl border border-contorno bg-slate-950/70 px-3.5 py-2.5 text-white outline-none transition focus:border-cyan-400';
 
 function Paso({ numero, titulo, children }: { numero: number; titulo: string; children: React.ReactNode }) {
   return (
@@ -146,27 +146,30 @@ export default function PantallaInicio({
                         'flex min-h-[40px] items-center gap-2 rounded-full border px-3.5 py-2 text-sm transition',
                         activo
                           ? 'border-cyan-400/70 bg-cyan-400/10 text-cyan-200'
-                          : 'border-slate-700 bg-slate-950/50 text-slate-400 hover:border-slate-500 hover:text-slate-200',
+                          : 'border-contorno bg-slate-950/50 text-slate-400 hover:border-slate-500 hover:text-slate-200',
                       )}
                     >
                       <span
                         aria-hidden
                         className={cn(
                           'grid h-4 w-4 place-items-center rounded-[5px] border text-[10px] font-bold',
-                          activo ? 'border-cyan-300 bg-cyan-300 text-slate-950' : 'border-slate-600',
+                          activo ? 'border-cyan-300 bg-cyan-300 text-slate-950' : 'border-contorno',
                         )}
                       >
                         {activo ? '✓' : ''}
                       </span>
                       {tema}
-                      <span className={activo ? 'text-cyan-300/70' : 'text-slate-600'}>{cuantas}</span>
+                      <span className={activo ? 'text-cyan-300/70' : 'text-tenue'}>
+                        {cuantas}
+                        <span className="sr-only"> preguntas</span>
+                      </span>
                     </button>
                   </li>
                 );
               })}
             </ul>
 
-            <p role="status" className={cn('text-xs', sinTemas ? 'text-amber-300' : 'text-slate-500')}>
+            <p role="status" className={cn('text-xs', sinTemas ? 'text-amber-300' : 'text-tenue')}>
               {sinTemas
                 ? 'No hay preguntas con los temas elegidos: seleccioná al menos uno.'
                 : `${disponibles} preguntas disponibles con los temas elegidos.`}
@@ -203,7 +206,7 @@ export default function PantallaInicio({
                   type="checkbox"
                   checked={usarLimite}
                   onChange={(event) => onUsarLimite(event.target.checked)}
-                  className="h-5 w-5 shrink-0 rounded border-slate-600 bg-slate-900 text-cyan-400 focus:ring-cyan-400"
+                  className="h-5 w-5 shrink-0 rounded border-contorno bg-slate-900 text-cyan-400 focus:ring-cyan-400"
                 />
               </label>
 
@@ -262,7 +265,7 @@ export default function PantallaInicio({
 
       {/* Resumen y acción siempre al alcance del pulgar, sin volver al tope de la página. */}
       <div className="sticky bottom-[calc(0.75rem+env(safe-area-inset-bottom))] z-20 sm:bottom-4">
-        <Card className="flex flex-col gap-3 border-slate-700 bg-slate-900/95 backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        <Card className="flex flex-col gap-3 border-contorno bg-slate-900/95 backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <div className="min-w-0 space-y-2">
             <p className="truncate text-sm text-slate-400">
               <span className="font-semibold text-white">{materiaId}</span>

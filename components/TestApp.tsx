@@ -281,6 +281,16 @@ export default function TestApp({ materias }: TestAppProps) {
     <main className="min-h-dvh px-4 pb-6 pt-[calc(1.25rem+env(safe-area-inset-top))] md:px-8 md:pb-10 md:pt-10">
       <div className="mx-auto max-w-5xl space-y-6 sm:space-y-8">
         {/*
+         * Con el encabezado oculto la página se quedaba sin h1 en celular, así que
+         * se lo reemplaza por uno solo para lectores de pantalla.
+         */}
+        {fase === 'test' && (
+          <h1 className="sr-only sm:hidden">
+            Test de {materia.materia}, parcial {parcialActivo}
+          </h1>
+        )}
+
+        {/*
          * Durante el test el encabezado se esconde en celular: son ~90px de alto
          * que no aportan nada mientras respondés y empujan la primera pregunta.
          */}

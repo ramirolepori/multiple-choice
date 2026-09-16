@@ -220,8 +220,11 @@ describe('TestApp · durante el test', () => {
     expect(screen.getByRole('button', { name: /ir a la pregunta 1, sin responder/i })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /ir a la pregunta 3, sin responder/i })).toBeInTheDocument();
 
+    // Las preguntas salen barajadas, así que se cuentan los estados en vez de
+    // asumir en qué posición cayó "Enunciado 1".
     await user.click(screen.getByRole('radio', { name: 'Correcta 1' }));
-    expect(screen.getByRole('button', { name: /ir a la pregunta 1, respondida/i })).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: /ir a la pregunta \d+, respondida/i })).toHaveLength(1);
+    expect(screen.getAllByRole('button', { name: /ir a la pregunta \d+, sin responder/i })).toHaveLength(2);
   });
 
   it('la barra inferior de celular navega entre preguntas y abre el índice', async () => {
@@ -274,6 +277,38 @@ describe('TestApp · envío', () => {
     await user.click(within(dialogo).getByRole('button', { name: /seguir respondiendo/i }));
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     expect(screen.getByText(/1 de 3 respondidas/i)).toBeInTheDocument();
+  });
+
+  it('cierra el diálogo con Escape y devuelve el foco a quien lo abrió', async () => {
+    const user = userEvent.setup();
+    render(<TestApp materias={[materiaChica]} />);
+    await user.click(comenzar());
+
+    const botonEnviar = screen.getByRole('button', { name: /enviar respuestas/i });
+    await user.click(botonEnviar);
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+
+    await user.keyboard('{Escape}');
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(botonEnviar).toHaveFocus();
+  });
+
+  it('mantiene el foco dentro del diálogo al tabular', async () => {
+    const user = userEvent.setup();
+    render(<TestApp materias={[materiaChica]} />);
+    await user.click(comenzar());
+    await user.click(screen.getByRole('button', { name: /enviar respuestas/i }));
+
+    const dialogo = screen.getByRole('dialog');
+    const focusables = within(dialogo).getAllByRole('button');
+
+    // Desde el último, Tab tiene que volver al primero y no escaparse a la página.
+    focusables[focusables.length - 1].focus();
+    await user.tab();
+    expect(dialogo).toContainElement(document.activeElement as HTMLElement);
+
+    await user.tab({ shift: true });
+    expect(dialogo).toContainElement(document.activeElement as HTMLElement);
   });
 
   it('envía sin preguntar cuando está todo respondido', async () => {

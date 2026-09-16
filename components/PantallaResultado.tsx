@@ -120,10 +120,10 @@ export default function PantallaResultado({
 
   return (
     <div className="space-y-6">
-      <Card className="flex flex-col items-center gap-6 border-slate-700 bg-slate-900/80 p-6 sm:flex-row sm:p-8">
+      <Card className="flex flex-col items-center gap-6 border-contorno bg-slate-900/80 p-6 sm:flex-row sm:p-8">
         <Anillo porcentaje={resumen.porcentaje}>
           <span className={cn('text-3xl font-bold tabular-nums', tono.texto)}>{resumen.puntaje}</span>
-          <span className="text-xs text-slate-500">de {PUNTAJE_MAXIMO}</span>
+          <span className="text-xs text-tenue">de {PUNTAJE_MAXIMO}</span>
         </Anillo>
 
         <div className="flex-1 space-y-4 text-center sm:text-left">
@@ -160,7 +160,7 @@ export default function PantallaResultado({
                 'rounded-full border px-3.5 py-1.5 text-sm transition',
                 filtro === id
                   ? 'border-cyan-400/70 bg-cyan-400/10 text-cyan-200'
-                  : 'border-slate-700 bg-slate-950/50 text-slate-400 hover:border-slate-500 hover:text-slate-200',
+                  : 'border-contorno bg-slate-950/50 text-slate-400 hover:border-slate-500 hover:text-slate-200',
               )}
             >
               {texto} <span className="tabular-nums opacity-60">{cantidad}</span>
@@ -198,7 +198,7 @@ export default function PantallaResultado({
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-tenue">
                           Pregunta {numero}
                         </span>
                         <span
@@ -239,7 +239,7 @@ export default function PantallaResultado({
                             acierto && 'border-emerald-500/60 bg-emerald-500/10',
                             faltante && 'border-emerald-500/30 bg-emerald-500/5',
                             fallo && 'border-rose-500/60 bg-rose-500/10',
-                            !respuesta.correcta && !elegida && 'border-slate-700/70 bg-slate-950/40',
+                            !respuesta.correcta && !elegida && 'border-contorno/70 bg-slate-950/40',
                           )}
                         >
                           <div className="flex items-start gap-2.5">
@@ -251,14 +251,14 @@ export default function PantallaResultado({
                                   ? 'bg-emerald-500/25 text-emerald-300'
                                   : fallo
                                     ? 'bg-rose-500/25 text-rose-300'
-                                    : 'bg-slate-800 text-slate-500',
+                                    : 'bg-slate-800 text-slate-300',
                               )}
                             >
                               {respuesta.correcta ? '✓' : fallo ? '✕' : respuesta.id.toUpperCase()}
                             </span>
                             <span className="text-sm leading-relaxed text-slate-200">{respuesta.texto}</span>
                           </div>
-                          <p className="mt-1.5 pl-[1.9rem] text-xs text-slate-500">
+                          <p className="mt-1.5 pl-[1.9rem] text-xs text-tenue">
                             {acierto && 'La marcaste y es correcta'}
                             {faltante && 'Correcta, no la marcaste'}
                             {fallo && 'La marcaste y es incorrecta'}

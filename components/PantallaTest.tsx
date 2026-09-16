@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Pregunta } from '../types';
 import { esMultiple, formatearTiempo, preguntaKey } from '../lib/quiz';
 import { BarraProgreso, Boton, Card, ImagenAmpliable, cn } from './ui';
+import { useDialogoModal } from './useDialogoModal';
 
 function prefiereMenosMovimiento(): boolean {
   if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return false;
@@ -47,6 +48,8 @@ export default function PantallaTest({
   const [indiceAbierto, setIndiceAbierto] = useState(false);
   const [preguntaActual, setPreguntaActual] = useState(0);
   const confirmarRef = useRef<HTMLButtonElement>(null);
+  const dialogoRef = useDialogoModal(confirmando, () => setConfirmando(false));
+  const hojaRef = useDialogoModal(indiceAbierto, () => setIndiceAbierto(false));
 
   const sinResponder = useMemo(
     () => preguntas.filter((pregunta) => (selecciones[preguntaKey(pregunta)] ?? []).length === 0),
@@ -104,25 +107,10 @@ export default function PantallaTest({
     onEnviar();
   };
 
-  // Escape cierra el diálogo y el foco arranca en la acción principal.
+  // El foco arranca en la acción principal del diálogo de confirmación.
   useEffect(() => {
-    if (!confirmando) return;
-    confirmarRef.current?.focus();
-    const alPresionar = (evento: KeyboardEvent) => {
-      if (evento.key === 'Escape') setConfirmando(false);
-    };
-    document.addEventListener('keydown', alPresionar);
-    return () => document.removeEventListener('keydown', alPresionar);
+    if (confirmando) confirmarRef.current?.focus();
   }, [confirmando]);
-
-  useEffect(() => {
-    if (!indiceAbierto) return;
-    const alPresionar = (evento: KeyboardEvent) => {
-      if (evento.key === 'Escape') setIndiceAbierto(false);
-    };
-    document.addEventListener('keydown', alPresionar);
-    return () => document.removeEventListener('keydown', alPresionar);
-  }, [indiceAbierto]);
 
   // Evita perder un test a medias por un refresh o un cierre accidental.
   useEffect(() => {
@@ -155,7 +143,7 @@ export default function PantallaTest({
                 'h-11 w-11 rounded-xl border text-sm font-medium tabular-nums transition',
                 respondida
                   ? 'border-cyan-400/60 bg-cyan-400/15 text-cyan-200'
-                  : 'border-slate-700 bg-slate-950/60 text-slate-500',
+                  : 'border-contorno bg-slate-950/60 text-tenue',
                 indice === preguntaActual && 'ring-2 ring-cyan-300 ring-offset-2 ring-offset-slate-900',
               )}
             >
@@ -174,7 +162,7 @@ export default function PantallaTest({
       <div className="sticky top-0 z-30 -mx-4 border-b border-slate-800/80 bg-slate-950/90 px-4 py-2.5 backdrop-blur md:-mx-8 md:px-8">
         <div className="flex items-center gap-3 sm:gap-6">
           <div className="min-w-0 flex-1">
-            <p className="hidden truncate text-xs text-slate-500 sm:block">
+            <p className="hidden truncate text-xs text-tenue sm:block">
               {materiaNombre} <span aria-hidden>·</span> Parcial {parcial}
             </p>
             <p className="text-sm font-semibold tabular-nums text-white sm:mt-0.5">
@@ -188,15 +176,20 @@ export default function PantallaTest({
           </div>
 
           <div className="shrink-0 text-right">
-            <p className="text-[11px] text-slate-500">{usarLimite ? 'Restante' : 'Tiempo'}</p>
+            <p className="text-[11px] text-tenue">{usarLimite ? 'Restante' : 'Tiempo'}</p>
+            {/*
+             * El nombre accesible va en un span fijo en vez de un aria-label que
+             * cambia cada segundo: así el lector de pantalla no vuelve a anunciar
+             * el cronómetro en cada tick.
+             */}
             <p
               role="timer"
-              aria-label={`${usarLimite ? 'Tiempo restante' : 'Tiempo transcurrido'}: ${tiempo}`}
               className={cn(
                 'text-lg font-semibold tabular-nums leading-tight transition-colors sm:text-2xl',
                 apremiante ? 'text-rose-400' : 'text-cyan-300',
               )}
             >
+              <span className="sr-only">{usarLimite ? 'Tiempo restante' : 'Tiempo transcurrido'}: </span>
               {tiempo}
             </p>
           </div>
@@ -257,7 +250,7 @@ export default function PantallaTest({
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-tenue">
                         Pregunta {indice + 1} de {preguntas.length}
                       </span>
                       {multiple && (
@@ -304,9 +297,12 @@ export default function PantallaTest({
                           key={respuesta.id}
                           className={cn(
                             'flex min-h-[52px] cursor-pointer items-center gap-3 rounded-xl border p-3.5 transition',
+                            // focus-within ilumina la opción entera al tabular: el
+                            // anillo del radio de 20px solo era muy difícil de ubicar.
+                            'focus-within:border-cyan-300 focus-within:ring-2 focus-within:ring-cyan-300/40',
                             elegida
                               ? 'border-cyan-400/70 bg-cyan-400/10'
-                              : 'border-slate-700/70 bg-slate-950/40 hover:border-slate-600 hover:bg-slate-900/60',
+                              : 'border-contorno bg-slate-950/40 hover:border-slate-400 hover:bg-slate-900/60',
                           )}
                         >
                           <input
@@ -369,12 +365,12 @@ export default function PantallaTest({
             type="button"
             onClick={() => setIndiceAbierto(true)}
             aria-haspopup="dialog"
-            className="flex min-h-[44px] flex-1 flex-col items-center justify-center rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-1"
+            className="flex min-h-[44px] flex-1 flex-col items-center justify-center rounded-xl border border-contorno bg-slate-900/80 px-3 py-1"
           >
             <span className="text-sm font-semibold tabular-nums text-white">
               Pregunta {preguntaActual + 1} de {preguntas.length}
             </span>
-            <span className="text-[11px] text-slate-500">Tocá para ver el índice</span>
+            <span className="text-[11px] text-tenue">Tocá para ver el índice</span>
           </button>
 
           <Boton
@@ -397,10 +393,11 @@ export default function PantallaTest({
             aria-hidden
           />
           <div
+            ref={hojaRef}
             role="dialog"
             aria-modal="true"
             aria-label="Índice de preguntas"
-            className="absolute inset-x-0 bottom-0 max-h-[75dvh] overflow-y-auto rounded-t-2xl border-t border-slate-700 bg-slate-900 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]"
+            className="absolute inset-x-0 bottom-0 max-h-[75dvh] overflow-y-auto rounded-t-2xl border-t border-contorno bg-slate-900 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]"
           >
             <div className="mb-3 flex items-center justify-between gap-3">
               <h2 className="text-base font-semibold text-white">Índice de preguntas</h2>
@@ -430,10 +427,11 @@ export default function PantallaTest({
       {confirmando && (
         <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/85 p-4 backdrop-blur-sm">
           <div
+            ref={dialogoRef}
             role="dialog"
             aria-modal="true"
             aria-labelledby="titulo-confirmar"
-            className="w-full max-w-md rounded-2xl border border-slate-700 bg-slate-900 p-5 shadow-2xl sm:p-6"
+            className="w-full max-w-md rounded-2xl border border-contorno bg-slate-900 p-5 shadow-2xl sm:p-6"
           >
             <h2 id="titulo-confirmar" className="text-lg font-semibold text-white">
               Te faltan {sinResponder.length} {sinResponder.length === 1 ? 'pregunta' : 'preguntas'}

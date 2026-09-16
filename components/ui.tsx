@@ -2,6 +2,7 @@
 
 import { forwardRef, useEffect, useState } from 'react';
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import { useDialogoModal } from './useDialogoModal';
 
 export function cn(...clases: (string | false | null | undefined)[]): string {
   return clases.filter(Boolean).join(' ');
@@ -32,7 +33,7 @@ export function TituloCampo({ children, hint }: { children: ReactNode; hint?: Re
   return (
     <span className="block">
       <span className="text-sm font-medium text-slate-200">{children}</span>
-      {hint ? <span className="mt-0.5 block text-xs text-slate-500">{hint}</span> : null}
+      {hint ? <span className="mt-0.5 block text-xs text-tenue">{hint}</span> : null}
     </span>
   );
 }
@@ -42,10 +43,10 @@ type Tamano = 'sm' | 'md' | 'lg';
 
 const variantes: Record<Variante, string> = {
   primario:
-    'bg-cyan-400 text-slate-950 hover:bg-cyan-300 disabled:bg-slate-800 disabled:text-slate-500 shadow-lg shadow-cyan-500/20 disabled:shadow-none',
-  secundario: 'bg-slate-800 text-slate-100 hover:bg-slate-700 disabled:bg-slate-900 disabled:text-slate-600',
+    'bg-cyan-400 text-slate-950 hover:bg-cyan-300 disabled:bg-slate-800 disabled:text-tenue shadow-lg shadow-cyan-500/20 disabled:shadow-none',
+  secundario: 'bg-slate-800 text-slate-100 hover:bg-slate-700 disabled:bg-slate-900 disabled:text-tenue',
   fantasma:
-    'border border-slate-700 bg-transparent text-slate-300 hover:border-slate-500 hover:text-white disabled:text-slate-600',
+    'border border-contorno bg-transparent text-slate-300 hover:border-slate-400 hover:text-white disabled:text-tenue',
 };
 
 /* Alturas pensadas para el pulgar: md llega a 44px, el mínimo cómodo en celular. */
@@ -133,9 +134,9 @@ export function Metrica({
 
   return (
     <div className="rounded-xl border border-slate-800/80 bg-slate-950/50 px-3 py-2.5 sm:px-4 sm:py-3">
-      <p className="text-[11px] uppercase tracking-wider text-slate-500 sm:text-xs">{etiqueta}</p>
+      <p className="text-[11px] uppercase tracking-wider text-tenue sm:text-xs">{etiqueta}</p>
       <p className={cn('mt-1 text-xl font-semibold tabular-nums sm:text-2xl', tonos[tono])}>{valor}</p>
-      {detalle ? <p className="mt-0.5 text-xs text-slate-500">{detalle}</p> : null}
+      {detalle ? <p className="mt-0.5 text-xs text-tenue">{detalle}</p> : null}
     </div>
   );
 }
@@ -147,15 +148,7 @@ export function Metrica({
 export function ImagenAmpliable({ src, alt }: { src: string; alt: string }) {
   const [abierta, setAbierta] = useState(false);
   const [tamanoReal, setTamanoReal] = useState(false);
-
-  useEffect(() => {
-    if (!abierta) return;
-    const alPresionar = (evento: KeyboardEvent) => {
-      if (evento.key === 'Escape') setAbierta(false);
-    };
-    document.addEventListener('keydown', alPresionar);
-    return () => document.removeEventListener('keydown', alPresionar);
-  }, [abierta]);
+  const visorRef = useDialogoModal(abierta, () => setAbierta(false));
 
   useEffect(() => {
     if (!abierta) setTamanoReal(false);
@@ -167,7 +160,7 @@ export function ImagenAmpliable({ src, alt }: { src: string; alt: string }) {
         type="button"
         onClick={() => setAbierta(true)}
         aria-label={`Ampliar ${alt}`}
-        className="relative block w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-950/60 p-3 transition hover:border-slate-600"
+        className="relative block w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-950/60 p-3 transition hover:border-contorno"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -186,6 +179,7 @@ export function ImagenAmpliable({ src, alt }: { src: string; alt: string }) {
 
       {abierta && (
         <div
+          ref={visorRef}
           role="dialog"
           aria-modal="true"
           aria-label={alt}
