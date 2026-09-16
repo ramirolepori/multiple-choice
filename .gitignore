@@ -7,3 +7,6 @@ yarn-debug.log*
 yarn-error.log*
 .env*
 .vercel
+
+# build output de TypeScript
+*.tsbuildinfo
