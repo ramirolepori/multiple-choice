@@ -10,7 +10,7 @@ import {
   type EstadoPregunta,
   type ResumenTest,
 } from '../lib/quiz';
-import { Boton, Card, ImagenAmpliable, Metrica, cn, prefiereMenosMovimiento } from './ui';
+import { Boton, Card, ImagenAmpliable, Metrica, TiraDeMetricas, cn, prefiereMenosMovimiento } from './ui';
 
 type Filtro = 'todas' | 'repasar' | 'correctas';
 
@@ -28,6 +28,18 @@ const tonosEstado: Record<EstadoPregunta, string> = {
   'sin-responder': 'bg-slate-700/50 text-slate-400',
 };
 
+/*
+ * El repaso se recorre scrolleando, no leyendo: todas las tarjetas eran iguales
+ * y había que frenar en cada una a leer la etiqueta para saber si esa pregunta
+ * te importaba. La raya del costado dice lo mismo de un vistazo.
+ */
+const rayasEstado: Record<EstadoPregunta, string> = {
+  correcta: 'border-l-emerald-500/70',
+  parcial: 'border-l-amber-400/70',
+  incorrecta: 'border-l-rose-500/70',
+  'sin-responder': 'border-l-contorno',
+};
+
 function tonoPorNota(porcentaje: number) {
   if (porcentaje >= 80) return { texto: 'text-emerald-300', trazo: 'stroke-emerald-400' };
   if (porcentaje >= 60) return { texto: 'text-cyan-300', trazo: 'stroke-cyan-400' };
@@ -42,7 +54,7 @@ function Anillo({ porcentaje, children }: { porcentaje: number; children: React.
   const tono = tonoPorNota(avance);
 
   return (
-    <div className="relative grid h-36 w-36 shrink-0 place-items-center">
+    <div className="relative grid h-24 w-24 shrink-0 place-items-center sm:h-32 sm:w-32">
       <svg viewBox="0 0 120 120" className="h-full w-full -rotate-90" aria-hidden>
         <circle cx="60" cy="60" r={radio} fill="none" strokeWidth="10" className="stroke-slate-800" />
         <circle
@@ -146,16 +158,23 @@ export default function PantallaResultado({
 
   const tono = tonoPorNota(resumen.porcentaje);
 
-  /* Las mismas tres acciones arriba y al final: son el mismo juego de botones. */
-  const acciones = (
+  /*
+   * Las mismas tres acciones arriba y al final. Arriba son una barra compacta al
+   * lado de los filtros; al final son el "¿y ahora?" de la pantalla, así que en
+   * celular ocupan el ancho completo y quedan en un orden fijo, con la acción
+   * principal abajo de todo, donde cae el pulgar.
+   */
+  const acciones = (clase?: string) => (
     <>
-      <Boton variante="fantasma" onClick={onVolver}>
+      <Boton variante="fantasma" onClick={onVolver} className={clase}>
         Cambiar configuración
       </Boton>
-      <Boton variante="secundario" onClick={onRepetir}>
+      <Boton variante="secundario" onClick={onRepetir} className={clase}>
         Repetir estas preguntas
       </Boton>
-      <Boton onClick={onNuevoTest}>Nuevo test</Boton>
+      <Boton onClick={onNuevoTest} className={clase}>
+        Nuevo test
+      </Boton>
     </>
   );
 
@@ -167,39 +186,64 @@ export default function PantallaResultado({
 
   return (
     <div className="space-y-6">
-      <Card className="flex flex-col items-center gap-6 border-contorno bg-slate-900/80 p-6 sm:flex-row sm:p-8">
-        <Anillo porcentaje={resumen.porcentaje}>
-          <span className={cn('text-3xl font-bold tabular-nums', tono.texto)}>{resumen.puntaje}</span>
-          <span className="text-xs text-tenue">de {PUNTAJE_MAXIMO}</span>
-        </Anillo>
+      {/*
+       * La nota y el detalle van uno al lado del otro también en celular: en
+       * columna y centrados se comían la primera pantalla entera y el repaso
+       * —que es a lo que viniste— arrancaba fuera de cuadro.
+       */}
+      <Card className="space-y-5 border-contorno bg-slate-900/80 p-5 sm:p-7">
+        <div className="flex items-center gap-4 sm:gap-6">
+          <Anillo porcentaje={resumen.porcentaje}>
+            <span className={cn('text-2xl font-bold tabular-nums sm:text-3xl', tono.texto)}>
+              {resumen.puntaje}
+            </span>
+            <span className="text-[11px] text-tenue sm:text-xs">de {PUNTAJE_MAXIMO}</span>
+          </Anillo>
 
-        <div className="flex-1 space-y-4 text-center sm:text-left">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-cyan-300/80">Resultado</p>
+          <div className="min-w-0 flex-1">
             {/* Destino del foco al llegar a esta pantalla: lo primero que se
                 anuncia es la nota, no el principio del documento. */}
             <h2
               ref={tituloRef}
               data-foco-pantalla
               tabIndex={-1}
-              className="mt-1 text-2xl font-semibold text-white"
+              className="text-balance text-2xl font-semibold text-white sm:text-3xl"
             >
               {nombre ? `${nombre}, sacaste ` : 'Sacaste '}
               <span className={tono.texto}>{resumen.porcentaje}%</span>
             </h2>
-            <p className="mt-1 text-sm text-slate-400">
+            <p className="mt-1.5 text-sm text-slate-400">
               {materiaNombre} <span aria-hidden>·</span> Parcial {parcial} <span aria-hidden>·</span>{' '}
               {preguntas.length} preguntas <span aria-hidden>·</span> {formatearTiempo(tiempoTotal)}
             </p>
           </div>
-
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-            <Metrica etiqueta="Correctas" valor={resumen.correctas} tono="ok" />
-            <Metrica etiqueta="Parciales" valor={resumen.parciales} tono="alerta" />
-            <Metrica etiqueta="Incorrectas" valor={resumen.incorrectas} tono="error" />
-            <Metrica etiqueta="Sin responder" valor={resumen.sinResponder} />
-          </div>
         </div>
+
+        <TiraDeMetricas>
+          <Metrica
+            etiqueta="Correctas"
+            valor={resumen.correctas}
+            tono="ok"
+            atenuada={resumen.correctas === 0}
+          />
+          <Metrica
+            etiqueta="Parciales"
+            valor={resumen.parciales}
+            tono="alerta"
+            atenuada={resumen.parciales === 0}
+          />
+          <Metrica
+            etiqueta="Incorrectas"
+            valor={resumen.incorrectas}
+            tono="error"
+            atenuada={resumen.incorrectas === 0}
+          />
+          <Metrica
+            etiqueta="Sin responder"
+            valor={resumen.sinResponder}
+            atenuada={resumen.sinResponder === 0}
+          />
+        </TiraDeMetricas>
       </Card>
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -227,7 +271,7 @@ export default function PantallaResultado({
         </div>
 
         <div role="group" aria-label="Acciones del resultado" className="flex flex-wrap gap-2">
-          {acciones}
+          {acciones()}
         </div>
       </div>
 
@@ -258,7 +302,12 @@ export default function PantallaResultado({
 
             return (
               <li key={clave}>
-                <article className="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-5">
+                <article
+                  className={cn(
+                    'rounded-2xl border border-l-4 border-slate-800/80 bg-slate-900/60 p-5',
+                    rayasEstado[estado],
+                  )}
+                >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
@@ -362,7 +411,7 @@ export default function PantallaResultado({
 
       {/* Cierre del repaso: las acciones de arriba otra vez, sin volver a subir. */}
       <Card className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
+        <div className="min-w-0">
           <p className="text-sm font-medium text-slate-200">Fin del repaso</p>
           <p className="mt-0.5 text-xs text-tenue">
             {visibles.length === preguntas.length
@@ -374,12 +423,12 @@ export default function PantallaResultado({
           ref={pieRef}
           role="group"
           aria-label="Acciones al final del repaso"
-          className="flex flex-wrap gap-2"
+          className="grid gap-2 sm:flex sm:flex-wrap"
         >
-          <Boton variante="fantasma" onClick={volverArriba}>
+          <Boton variante="fantasma" onClick={volverArriba} className="w-full sm:w-auto">
             <span aria-hidden>↑</span> Volver arriba
           </Boton>
-          {acciones}
+          {acciones('w-full sm:w-auto')}
         </div>
       </Card>
 
