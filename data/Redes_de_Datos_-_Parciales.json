@@ -4600,6 +4600,976 @@
       "parcial": 3,
       "tema": "Capa de aplicación",
       "explicacion": "Date (fecha y hora de envío), Reply-To (dirección a la que se responden los mensajes) y Subject (resumen corto del mensaje) son encabezados que el agente de usuario muestra y utiliza. Received y Return-Path los agregan y usan los agentes de transferencia."
+    },
+    {
+      "id": 135,
+      "texto": "Si una PC cliente se acaba de encender y solicita una configuración de red en una red con 2 servidores DHCP, ¿qué ocurre?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Un solo servidor responde ya que el cliente solo le envía el mensaje al servidor DHCP principal.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Ninguno responde ya que no es una configuración posible/recomendada.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Un servidor responderá la solicitud, ya que se turnan en responder dichas solicitudes.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Ambos servidores DHCP responderán la solicitud del cliente.",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "El DHCP Discover es un mensaje de broadcast, por lo que llega a todos los servidores DHCP de la LAN. Si ambos tienen direcciones disponibles, ambos responden con un DHCP Offer; el cliente elige una de las ofertas y confirma con un Request dirigido a ese servidor, descartando la otra."
+    },
+    {
+      "id": 136,
+      "texto": "¿Qué protocolo se utiliza para unir sistemas autónomos?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "OSPF.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "RIPv2.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Ninguna de las opciones.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "BGP.",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "IS-IS.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "BGP es el único protocolo de gateway exterior (EGP) de la lista: intercambia rutas ENTRE sistemas autónomos diferentes. OSPF, RIPv2 e IS-IS son protocolos internos (IGP) que funcionan dentro de un mismo sistema autónomo."
+    },
+    {
+      "id": 137,
+      "texto": "En una empresa que está configurando su red con soporte para VLANs, el equipo de redes está asignando los roles de cada puerto de los switches en la infraestructura. Durante este proceso, se discute cómo deben configurarse los puertos que conectan dispositivos finales, como computadoras y teléfonos IP. En este contexto, surge la pregunta: ¿Cómo se denominan los puertos de un switch, con soporte para VLANs, que están conectados a los dispositivos finales?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Acceso",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Subinterfaces",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Ninguna de las opciones",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Troncal",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Interfaces",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "VLANs y ruteo entre VLANs",
+      "explicacion": "Los puertos de acceso (access) pertenecen a una única VLAN y son los que se conectan a los dispositivos finales; el tráfico entra y sale sin etiqueta VLAN. Los puertos troncales, en cambio, transportan el tráfico etiquetado de varias VLANs entre switches o hacia el router."
+    },
+    {
+      "id": 138,
+      "texto": "Un administrador necesita consultar las asociaciones IPv4–MAC almacenadas en un equipo, sin modificarlas. ¿Qué comando debe ejecutar?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "arp -d",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "arp -s",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "arp -a",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "arp -s 192.168.1.20 00-11-22-33-44-55",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "arp -d *",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "arp -a muestra el contenido de la tabla ARP sin modificarla. arp -s agrega una entrada estática, arp -d elimina una entrada puntual y arp -d * las borra todas."
+    },
+    {
+      "id": 139,
+      "texto": "El equipo de la recepción de la empresa tiene su configuración de red visible a través del comando ifconfig (dirección IP, máscara, MAC y puerta de enlace de la interfaz). ¿Es posible saber, a partir de esta información, si la red a la que pertenece este equipo tiene configuradas VLANs?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Sí es posible, pertenece a la VLAN 10.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "No es posible, la configuración de la PC no basta para saber si se aplican VLANs en la red.",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "VLANs y ruteo entre VLANs",
+      "explicacion": "Para un host final las VLANs son transparentes: su configuración IP (la que muestra ifconfig o ipconfig) es igual esté o no la red segmentada en VLANs, porque el etiquetado ocurre en los switches y los enlaces troncales, no en la interfaz del host. Para confirmar la existencia de VLANs hay que revisar la configuración de los switches."
+    },
+    {
+      "id": 140,
+      "texto": "Tres switches (SW1, SW2 y SW3) están interconectados formando un triángulo mediante enlaces troncales que soportan las VLAN 10, 20 y 30. Los equipos están conectados así: en SW1, PC1 (VLAN 10) y PC2 (VLAN 20); en SW2, PC3 (VLAN 10) y PC4 (VLAN 30); en SW3, PC5 (VLAN 20) y PC6 (VLAN 30). Teniendo en cuenta esta topología, la PC1 envía un paquete de difusión ARP Request. ¿A cuáles de los siguientes equipos le llega dicha solicitud?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "PC 4",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "PC 1",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "PC 5",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "PC 2",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "PC 6",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "PC 3",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "VLANs y ruteo entre VLANs",
+      "explicacion": "Una VLAN es un dominio de broadcast independiente: la difusión ARP de PC1 (VLAN 10) sólo llega a los equipos de la MISMA VLAN, sin importar en qué switch estén, porque el enlace troncal entre SW1 y SW2 lleva etiquetado el tráfico de VLAN 10. Por eso sólo la recibe PC3. Un equipo tampoco recibe su propia difusión, y PC2, PC4, PC5 y PC6 pertenecen a otras VLANs."
+    },
+    {
+      "id": 141,
+      "texto": "¿Para qué se utiliza el control de flujo?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Garantiza que la red pueda transportar todo el tráfico que ingresa.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Garantizar que un emisor rápido no sature a un receptor lento.",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Ninguna de las opciones.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Es un control global de toda la red.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "El control de flujo es extremo a extremo, entre un emisor y un receptor puntuales, para evitar que el primero desborde el búfer del segundo. Garantizar que la red transporte todo el tráfico que ingresa y que el control sea global corresponden al control de congestión, no al de flujo."
+    },
+    {
+      "id": 142,
+      "texto": "En una sede, la estación de origen accede por 802.11 (Wi-Fi) y necesita enviar un paquete IP a un equipo ubicado en otra sede, sobre Ethernet. Entre ambas sedes hay un backbone MPLS del proveedor. Para que el paquete cruce el dominio MPLS, se requiere un tratamiento adicional. ¿Qué se hace y quién lo realiza?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se agrega una etiqueta y lo hace el primer router de la red MPLS para poder enviar el paquete al segundo router.",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Se agrega una etiqueta y la máquina fuente crea una conexión de extremo a extremo.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Se agrega una etiqueta y lo realiza la máquina fuente.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Se agrega una etiqueta en la máquina fuente y la máquina destino la saca.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Calidad de servicio (QoS)",
+      "explicacion": "MPLS es transparente para los hosts: la estación fuente envía el paquete IP normal, sin etiqueta. Es el primer router del dominio MPLS (LER de entrada) el que le agrega la etiqueta según su FEC, y el último router del dominio el que la quita antes de entregarlo, sin importar la tecnología de acceso en cada extremo."
+    },
+    {
+      "id": 143,
+      "texto": "Juan administra la red de la empresa y tiene problemas de conexión: los equipos que pertenecen a la VLAN 10 y a la VLAN 20, ubicados en switches diferentes, no logran conectarse entre sí a través del router de la empresa. Al revisar la configuración del switch, Juan observa que todos los puertos están definidos como puertos de acceso, cada uno asignado a una única VLAN, y que no hay ningún puerto configurado para transportar el tráfico etiquetado de varias VLANs hacia el router. ¿Qué problema tiene la configuración del switch?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "No tiene configurado los puertos troncales.",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "No tiene configurado los puertos principales.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "No tiene configurado los puertos untagged (sin etiqueta)",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "No tiene configurado los puertos de acceso, lo que no permite las conexiones de las VLANs a otras redes.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "VLANs y ruteo entre VLANs",
+      "explicacion": "Para que el tráfico de varias VLANs llegue hasta el router (y éste pueda encaminarlo entre ellas) hace falta un enlace troncal, que transporta el tráfico etiquetado de todas las VLANs por un único puerto. Si todos los puertos son de acceso, cada uno queda aislado a una sola VLAN y el router nunca ve el tráfico de las demás."
+    },
+    {
+      "id": 144,
+      "texto": "Un administrador consulta el campo «Desplazamiento del fragmento» de un datagrama IPv4. ¿Qué indica este campo?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La distancia entre el encabezado IP y el encabezado de transporte.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "La cantidad de datos que faltan para completar el datagrama.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "La posición de los datos del fragmento dentro de los datos originales.",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "El número de fragmentos que precedieron al actual en la red.",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "El tamaño de los datos que contiene el fragmento recibido.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento IPv4, VLSM y CIDR",
+      "explicacion": "El campo Desplazamiento del fragmento (Fragment Offset) indica, en unidades de 8 bytes, la posición que ocupan los datos de ese fragmento dentro del datagrama original completo, permitiendo al destino reensamblarlos en el orden correcto."
+    },
+    {
+      "id": 145,
+      "texto": "¿Qué tipos de router se utilizan para interconectar áreas diferentes en OSPF?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Router internos.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "ASBR.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "ABR.",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Ninguna de las opciones.",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Router troncales.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "El ABR (Area Border Router) es el que se conecta a dos o más áreas y las interconecta a través de la troncal (área 0). El router interno encamina dentro de una sola área, el ASBR interconecta con OTROS sistemas autónomos (no áreas), y los routers troncales son los que pertenecen al área 0."
+    },
+    {
+      "id": 146,
+      "texto": "¿Qué ventaja me brinda tener un servidor DHCP con agente relay?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Se cae un servidor y automáticamente se levanta el de respaldo",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Me dice a que LAN pertenece un puesto de trabajo cuando el administrador consulta el servidor",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Tener un sólo servidor en la empresa para varias LAN",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Solo puedo tener un servidor por LAN y mayor control",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "El agente relay, configurado en el router, reenvía como unicast al servidor los broadcasts DHCP que recibe de su LAN. Esto permite tener un único servidor DHCP centralizado atendiendo a varias LAN, en lugar de necesitar uno por cada una. No implementa redundancia/failover ni informa la ubicación de los equipos."
+    },
+    {
+      "id": 147,
+      "texto": "¿Cuál de los siguientes campos no se encuentra en la cabecera de IPv6?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Longitud de la cabecera.",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Siguiente cabecera.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Etiqueta de flujo.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Límite de saltos.",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Dirección origen.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento IPv6",
+      "explicacion": "La cabecera de IPv6 tiene longitud fija (40 bytes), por lo que no necesita el campo «Longitud de la cabecera» que sí existe en IPv4 (donde el largo es variable por las opciones). «Siguiente cabecera» reemplaza al campo Protocolo, «Límite de saltos» reemplaza al TTL, y se agrega la «Etiqueta de flujo», que no existe en IPv4."
+    },
+    {
+      "id": 148,
+      "texto": "Desde una PC se ejecuta un comando con destino a la IP 192.168.7.10. La salida muestra, en orden, las direcciones IP de 3 routers intermedios junto con sus tiempos de respuesta, antes de llegar finalmente a la IP de destino. ¿Qué comando se ejecutó para obtener esta salida?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "ping 192.168.7.10",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "tracert 192.168.7.10",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "arp -a",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "netstat -r",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "nslookup 192.168.7.10",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "Sólo tracert/traceroute muestra, salto por salto, la dirección de cada router intermedio hasta el destino. ping únicamente informa si el destino respondió y el tiempo total; arp -a muestra la tabla ARP local; netstat -r muestra la tabla de rutas local; nslookup resuelve nombres de dominio."
+    },
+    {
+      "id": 149,
+      "texto": "Sobre la captura del comando tracert ejecutado hacia la IP 192.168.7.10, la salida mostró 3 routers intermedios antes de llegar al destino. ¿Cuántos saltos hay que atravesar para llegar a la IP 192.168.7.10?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "3",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "4",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "No se puede determinar con esta información",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "Cada router intermedio que aparece en la salida del tracert representa un salto. Si se listaron 3 routers antes del destino, el paquete atravesó 3 saltos para llegar a la IP 192.168.7.10."
+    },
+    {
+      "id": 150,
+      "texto": "Indique cuál es la función principal del comando tracert (traceroute):",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Nos informa el camino que recorre el mensaje a través de la red hasta una IP destino.",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "Verifica si el destino está disponible enviando un único mensaje de eco.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Resuelve un nombre de dominio a su dirección IP correspondiente.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Muestra la tabla ARP almacenada en el equipo local.",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Configura una ruta estática hacia la IP de destino.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "tracert/traceroute envía mensajes echo request incrementando el TTL de a uno, para que cada router intermedio responda con un ICMP Time exceeded y así reconstruir el camino completo que recorre el paquete hasta el destino. Verificar disponibilidad con un solo eco es lo que hace ping."
+    },
+    {
+      "id": 151,
+      "texto": "¿Cuál es el algoritmo más utilizado cuando implementamos enrutamiento por vector distancia?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "El algoritmo de inundación.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Ninguna de las opciones.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El algoritmo de Dijkstra.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "El algoritmo de Bellman-Ford.",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "El vector distancia (por ejemplo RIP) se basa en el algoritmo de Bellman-Ford (Bellman-Ford-Fulkerson): cada router sólo conoce el costo hacia cada destino y la interfaz de salida, sin construir el grafo completo de la red. Dijkstra es el que usan los protocolos de estado de enlace, como OSPF."
+    },
+    {
+      "id": 152,
+      "texto": "Un administrador ejecuta un comando en su PC y observa, entre otras, la siguiente entrada: dirección física 94-08-53-90-86-9d asociada a la dirección IP 172.16.170.10. ¿Qué comando se ejecutó?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "arp -a",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "ipconfig /all",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "tracert",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "netstat -r",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "arp -s",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "arp -a muestra la tabla ARP local con los pares dirección IP–dirección física (MAC) que el equipo aprendió. arp -s, en cambio, se usa para AGREGAR una entrada estática, no para visualizarlas."
+    },
+    {
+      "id": 153,
+      "texto": "En la tabla ARP del ejercicio anterior, ¿qué representa el valor 94-08-53-90-86-9d?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La dirección física (MAC) asociada a una IP.",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "La dirección IP configurada en la interfaz de red.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "El identificador del fabricante de la placa de red únicamente.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La dirección de broadcast de la subred.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "94-08-53-90-86-9d es una dirección física (MAC) de 48 bits: es la que la tabla ARP asocia a la dirección IP consultada."
+    },
+    {
+      "id": 154,
+      "texto": "En la misma tabla ARP, ¿qué representa el valor 172.16.170.10?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "La dirección física de la interfaz de red.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "La dirección IP configurada en la interfaz de red por la que se aprendió la asociación.",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "La puerta de enlace por defecto del equipo.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "La dirección IP del servidor DNS.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "172.16.170.10 es la dirección IP asociada a la MAC 94-08-53-90-86-9d, es decir, la IP configurada en la interfaz de red desde la que se aprendió esa entrada de la tabla ARP."
+    },
+    {
+      "id": 155,
+      "texto": "¿Qué guardan los Router en la ROM?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "IOS limitado.",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "El archivo de configuración.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Tabla de enrutamiento.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Búfer de paquetes.",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Ninguna de las opciones.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "La ROM almacena una versión reducida del IOS (bootstrap) usada para el arranque inicial y diagnósticos, además del programa POST. El archivo de configuración se guarda en NVRAM, el IOS completo en la memoria Flash, y la tabla de enrutamiento y los búferes de paquetes se arman en la RAM, que es volátil."
+    },
+    {
+      "id": 156,
+      "texto": "Una PC tiene una configuración IPv4 estática. El administrador la traslada a otra área y la conecta a un puerto de otro switch que pertenece a una subred IPv4 diferente. ¿Qué debe hacer para que la PC se comunique correctamente en la nueva red?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Conservar la dirección IPv4 y modificar únicamente los servidores DNS.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Mantener la configuración IPv4 y actualizar la caché ARP.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Conservar la dirección IPv4 y modificar únicamente la puerta de enlace.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Mantener la configuración IPv4 y reiniciar la interfaz de red.",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Configurar una dirección IPv4 disponible de la nueva subred, su máscara y la puerta de enlace correspondiente.",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento IPv4, VLSM y CIDR",
+      "explicacion": "Al tratarse de una configuración ESTÁTICA, ningún parámetro se actualiza solo: como cambia de subred, el administrador debe asignar manualmente una IP válida de la nueva subred, su máscara y la puerta de enlace correspondiente. Con DHCP, en cambio, el cliente obtiene automáticamente la nueva configuración al reconectarse."
+    },
+    {
+      "id": 157,
+      "texto": "Un router recibe un paquete IPv4 para reenviarlo. Al reducir su TTL, el valor llega a cero y el router lo descarta. ¿Qué mensaje ICMP corresponde para informar al equipo de origen sobre este hecho?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Destino inaccesible.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Tiempo excedido.",
+          "correcta": true
+        },
+        {
+          "id": "c",
+          "texto": "Respuesta de eco.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Problema de parámetros.",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Redirección.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "ICMP y ARP",
+      "explicacion": "Cuando el TTL de un paquete llega a cero antes de alcanzar el destino, el router que lo descarta genera un mensaje ICMP «Tiempo excedido» (Time exceeded, tipo 11) y lo envía al origen. «Destino inaccesible» se usa cuando no hay ruta o el puerto/protocolo no está disponible."
+    },
+    {
+      "id": 158,
+      "texto": "Indique cuál es la abreviatura más corta para la siguiente dirección IP: 2001:0db8:0000:0000:0000:ff00:0042:8329",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "2001:db8::ff00:42:8329",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "2001:db8:0:0:0:ff00:42:8329",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "2001:db8::ff00::42:8329",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "2001:0db8::ff00:0042:8329",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "2001:db8:0000:0000:0000:ff00:42:8329",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento IPv6",
+      "explicacion": "Se eliminan los ceros a la izquierda de cada grupo (0db8→db8, 0042→42) y la secuencia más larga de grupos en cero consecutivos (0000:0000:0000) se reemplaza UNA sola vez por «::». La opción b no usa «::» aunque podría, y la c es inválida porque «::» sólo puede aparecer una vez en la dirección."
+    },
+    {
+      "id": 159,
+      "texto": "En la siguiente captura podemos ver la configuración de las interfaces de un router: la interfaz eth0 no tiene dirección IP asignada, la interfaz eth1 tiene una IP configurada directamente sobre la interfaz física, y sobre eth0 hay definidas dos subinterfaces (eth0.10 y eth0.20), cada una con su propia dirección IP para encaminar el tráfico etiquetado de dos VLANs distintas. ¿Cuántas redes (IPv4) conoce por estar directamente conectadas?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "3",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "4",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Ninguna, porque eth0 no tiene IP asignada",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "VLANs y ruteo entre VLANs",
+      "explicacion": "eth0 en sí no tiene IP y por lo tanto no aporta una red directamente conectada, pero cada una de sus subinterfaces (eth0.10 y eth0.20) sí tiene una dirección IP propia y cuenta como una red conectada, igual que eth1. En total: eth1 + eth0.10 + eth0.20 = 3 redes directamente conectadas."
+    },
+    {
+      "id": 160,
+      "texto": "¿Cada cuánto tiempo envía RIP sus tablas de enrutamiento a los vecinos?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "60 segundos.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "15 segundos.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "30 segundos.",
+          "correcta": true
+        },
+        {
+          "id": "d",
+          "texto": "Ninguna de las opciones.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "RIP envía actualizaciones periódicas completas de su tabla de enrutamiento a sus vecinos cada 30 segundos. Si un router no recibe novedades de un vecino durante 180 segundos (6 ciclos), considera la ruta caída."
+    },
+    {
+      "id": 161,
+      "texto": "¿Cuál de las siguientes opciones tiene menor distancia administrativa?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Redes directamente conectadas.",
+          "correcta": true
+        },
+        {
+          "id": "b",
+          "texto": "RIPv1.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Rutas estáticas.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Ninguna de las opciones.",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "RIPv2.",
+          "correcta": false
+        },
+        {
+          "id": "f",
+          "texto": "OSPF.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento en Internet (RIP, OSPF, BGP)",
+      "explicacion": "Las redes directamente conectadas tienen distancia administrativa 0, la menor de todas. Le siguen las rutas estáticas (1), OSPF (110) y por último RIP, tanto v1 como v2 (120)."
+    },
+    {
+      "id": 162,
+      "texto": "¿Qué hace el router después de recibir todos los paquetes de estado de enlace de los otros router de la red?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Devuelve a cada router de la red la confirmación de recepción del paquete.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Ejecuta el algoritmo de Dijkstra y arma su tabla de enrutamiento.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Solo arma la tabla de enrutamiento.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Construye la base de datos de la topología y arma el grafo de la red.",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Ninguna de las opciones.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Encaminamiento: conceptos y algoritmos",
+      "explicacion": "Con todos los LSP recibidos, el router primero arma su base de datos de estado de enlace y construye el grafo completo de la red; recién a partir de ese grafo ejecuta el algoritmo de Dijkstra para calcular las rutas y armar la tabla de enrutamiento. La opción b invierte el orden: no se puede correr Dijkstra antes de tener el grafo construido."
+    },
+    {
+      "id": 163,
+      "texto": "¿Qué protocolo utiliza un puesto de trabajo cuando utiliza un Servidor BOOTP?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "TCP.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "ARP.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "RARP.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "ICMP.",
+          "correcta": false
+        },
+        {
+          "id": "e",
+          "texto": "Ninguna de las opciones.",
+          "correcta": true
+        }
+      ],
+      "parcial": 2,
+      "tema": "Direccionamiento dinámico (BOOTP y DHCP)",
+      "explicacion": "BOOTP funciona sobre UDP/IP (puertos 67 y 68), lo que lo hace enrutable a diferencia de RARP, que opera directamente sobre tramas Ethernet y no puede atravesar routers. Como UDP no figura entre las opciones ofrecidas, la respuesta correcta es «Ninguna de las opciones»."
+    },
+    {
+      "id": 164,
+      "texto": "¿Para qué se utiliza el control de congestión?",
+      "respuestas": [
+        {
+          "id": "a",
+          "texto": "Es para que la LAN del emisor no se congestione.",
+          "correcta": false
+        },
+        {
+          "id": "b",
+          "texto": "Se utiliza para que dos dispositivos de encaminamiento no descarten paquetes.",
+          "correcta": false
+        },
+        {
+          "id": "c",
+          "texto": "Se relaciona con el tráfico entre un emisor y un receptor en particular.",
+          "correcta": false
+        },
+        {
+          "id": "d",
+          "texto": "Se ocupa de asegurar que la red sea capaz de transportar el tráfico ofrecido.",
+          "correcta": true
+        },
+        {
+          "id": "e",
+          "texto": "Ninguna de las opciones.",
+          "correcta": false
+        }
+      ],
+      "parcial": 2,
+      "tema": "Control de congestión",
+      "explicacion": "El control de congestión es un mecanismo GLOBAL: se ocupa de que la red en su conjunto pueda transportar el tráfico que se le ofrece, evitando que se sature. La opción c describe al control de flujo, que es extremo a extremo entre un emisor y un receptor puntuales, no un control de toda la red."
     }
   ]
 }
