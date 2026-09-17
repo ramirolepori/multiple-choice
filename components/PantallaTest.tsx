@@ -3,13 +3,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Pregunta } from '../types';
 import { esMultiple, formatearTiempo, preguntaKey } from '../lib/quiz';
-import { BarraProgreso, Boton, Card, ImagenAmpliable, cn } from './ui';
+import { BarraProgreso, Boton, Card, ImagenAmpliable, cn, prefiereMenosMovimiento } from './ui';
 import { useDialogoModal } from './useDialogoModal';
-
-function prefiereMenosMovimiento(): boolean {
-  if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return false;
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-}
 
 function anclaDe(clave: string): string {
   return `pregunta-${clave}`;
@@ -286,7 +281,7 @@ export default function PantallaTest({
                     </div>
                     <h2
                       id={`titulo-${clave}`}
-                      className="mt-2 text-base font-semibold leading-relaxed text-white sm:text-lg"
+                      className="mt-2 break-words text-base font-semibold leading-relaxed text-white sm:text-lg"
                     >
                       {pregunta.texto}
                     </h2>
@@ -312,9 +307,17 @@ export default function PantallaTest({
                  * El grupo se nombra con el enunciado además de la consigna: en
                  * modo formularios el lector no lee el h2, así que antes se
                  * respondía escuchando solo "Elegí una opción, agrupación".
+                 *
+                 * El `min-w-0` tampoco es decorativo: el <fieldset> arranca con
+                 * `min-inline-size: min-content`, así que una respuesta con una
+                 * dirección IPv6 entera ("2001:0000:...:0980", 44 caracteres sin
+                 * espacios) estiraba la tarjeta más que la pantalla. Con eso la
+                 * página entera scrolleaba en horizontal y, de paso, el visor de
+                 * imágenes —que es `fixed`— quedaba corrido, con el botón de
+                 * cerrar fuera de la pantalla.
                  */}
                 <fieldset
-                  className="mt-4 sm:mt-5"
+                  className="mt-4 min-w-0 sm:mt-5"
                   aria-labelledby={`titulo-${clave} instruccion-${clave}`}
                 >
                   <legend id={`instruccion-${clave}`} className="sr-only">
@@ -327,7 +330,7 @@ export default function PantallaTest({
                         <label
                           key={respuesta.id}
                           className={cn(
-                            'flex min-h-[52px] cursor-pointer items-center gap-3 rounded-xl border p-3.5 transition',
+                            'flex min-h-[52px] min-w-0 cursor-pointer items-center gap-3 rounded-xl border p-3.5 transition',
                             // focus-within ilumina la opción entera al tabular: el
                             // anillo del radio de 20px solo era muy difícil de ubicar.
                             'focus-within:border-cyan-300 focus-within:ring-2 focus-within:ring-cyan-300/40',
@@ -343,7 +346,9 @@ export default function PantallaTest({
                             onChange={() => onToggleRespuesta(clave, respuesta.id, multiple)}
                             className="h-5 w-5 shrink-0 border-slate-500 bg-slate-800 text-cyan-400 focus:ring-cyan-400"
                           />
-                          <span className="text-sm leading-relaxed text-slate-100">{respuesta.texto}</span>
+                          <span className="min-w-0 break-words text-sm leading-relaxed text-slate-100">
+                            {respuesta.texto}
+                          </span>
                         </label>
                       );
                     })}

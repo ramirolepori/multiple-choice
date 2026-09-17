@@ -65,6 +65,8 @@ Los `id` tienen que ser únicos dentro de cada parcial. Las imágenes locales va
 
 ## Notas
 
+- Las imágenes se abren a pantalla completa: pellizco, doble toque, rueda del mouse o los botones
+  para acercar, y arrastre (o las flechas del teclado) para recorrer el diagrama.
 - No guarda progreso entre sesiones (solo recuerda tu nombre en el navegador).
 - El puntaje total del test siempre se escala a 10 puntos.
 - Cada pregunta vale 10 dividido por la cantidad de preguntas seleccionadas.

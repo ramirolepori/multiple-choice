@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Pregunta } from '../types';
 import {
   PUNTAJE_MAXIMO,
@@ -10,7 +10,7 @@ import {
   type EstadoPregunta,
   type ResumenTest,
 } from '../lib/quiz';
-import { Boton, Card, ImagenAmpliable, Metrica, cn } from './ui';
+import { Boton, Card, ImagenAmpliable, Metrica, cn, prefiereMenosMovimiento } from './ui';
 
 type Filtro = 'todas' | 'repasar' | 'correctas';
 
@@ -90,6 +90,40 @@ export default function PantallaResultado({
   onVolver,
 }: PantallaResultadoProps) {
   const [filtro, setFiltro] = useState<Filtro>('todas');
+  const [lejosDelPrincipio, setLejosDelPrincipio] = useState(false);
+  const [pieALaVista, setPieALaVista] = useState(false);
+  const tituloRef = useRef<HTMLHeadingElement>(null);
+  const pieRef = useRef<HTMLDivElement>(null);
+
+  /*
+   * Revisar 30 preguntas deja las acciones (repetir, nuevo test) a una pantallada
+   * larguísima de scroll hacia arriba. Se repiten al final del repaso y, además,
+   * aparece un botón flotante apenas te alejás del principio.
+   */
+  const volverArriba = useCallback(() => {
+    if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+      window.scrollTo({ top: 0, left: 0, behavior: prefiereMenosMovimiento() ? 'auto' : 'smooth' });
+    }
+    // El scroll solo no alcanza: con teclado o lector de pantalla el foco se
+    // queda abajo y seguís leyendo desde la última pregunta.
+    tituloRef.current?.focus({ preventScroll: true });
+  }, []);
+
+  useEffect(() => {
+    const alScrollear = () => setLejosDelPrincipio(window.scrollY > 600);
+    alScrollear();
+    window.addEventListener('scroll', alScrollear, { passive: true });
+    return () => window.removeEventListener('scroll', alScrollear);
+  }, []);
+
+  // Llegando al final el botón flotante sobra y encima tapa "Nuevo test".
+  useEffect(() => {
+    const nodo = pieRef.current;
+    if (!nodo || typeof IntersectionObserver === 'undefined') return;
+    const observador = new IntersectionObserver(([entrada]) => setPieALaVista(entrada.isIntersecting));
+    observador.observe(nodo);
+    return () => observador.disconnect();
+  }, []);
 
   const estados = useMemo(() => {
     const mapa = new Map<string, EstadoPregunta>();
@@ -112,6 +146,19 @@ export default function PantallaResultado({
 
   const tono = tonoPorNota(resumen.porcentaje);
 
+  /* Las mismas tres acciones arriba y al final: son el mismo juego de botones. */
+  const acciones = (
+    <>
+      <Boton variante="fantasma" onClick={onVolver}>
+        Cambiar configuración
+      </Boton>
+      <Boton variante="secundario" onClick={onRepetir}>
+        Repetir estas preguntas
+      </Boton>
+      <Boton onClick={onNuevoTest}>Nuevo test</Boton>
+    </>
+  );
+
   const filtros: { id: Filtro; texto: string; cantidad: number }[] = [
     { id: 'todas', texto: 'Todas', cantidad: preguntas.length },
     { id: 'repasar', texto: 'Para repasar', cantidad: paraRepasar },
@@ -132,6 +179,7 @@ export default function PantallaResultado({
             {/* Destino del foco al llegar a esta pantalla: lo primero que se
                 anuncia es la nota, no el principio del documento. */}
             <h2
+              ref={tituloRef}
               data-foco-pantalla
               tabIndex={-1}
               className="mt-1 text-2xl font-semibold text-white"
@@ -178,14 +226,8 @@ export default function PantallaResultado({
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-2">
-          <Boton variante="fantasma" onClick={onVolver}>
-            Cambiar configuración
-          </Boton>
-          <Boton variante="secundario" onClick={onRepetir}>
-            Repetir estas preguntas
-          </Boton>
-          <Boton onClick={onNuevoTest}>Nuevo test</Boton>
+        <div role="group" aria-label="Acciones del resultado" className="flex flex-wrap gap-2">
+          {acciones}
         </div>
       </div>
 
@@ -234,7 +276,7 @@ export default function PantallaResultado({
                           </span>
                         )}
                       </div>
-                      <h3 className="mt-2 text-base font-semibold leading-relaxed text-white sm:text-lg">
+                      <h3 className="mt-2 break-words text-base font-semibold leading-relaxed text-white sm:text-lg">
                         {pregunta.texto}
                       </h3>
                     </div>
@@ -264,7 +306,7 @@ export default function PantallaResultado({
                         <li
                           key={respuesta.id}
                           className={cn(
-                            'rounded-xl border p-3.5',
+                            'min-w-0 rounded-xl border p-3.5',
                             acierto && 'border-emerald-500/60 bg-emerald-500/10',
                             faltante && 'border-emerald-500/30 bg-emerald-500/5',
                             fallo && 'border-rose-500/60 bg-rose-500/10',
@@ -289,7 +331,9 @@ export default function PantallaResultado({
                             >
                               {respuesta.correcta ? '✓' : fallo ? '✕' : respuesta.id.toUpperCase()}
                             </span>
-                            <span className="text-sm leading-relaxed text-slate-200">{respuesta.texto}</span>
+                            <span className="min-w-0 break-words text-sm leading-relaxed text-slate-200">
+                              {respuesta.texto}
+                            </span>
                           </div>
                           {/* Es el único portador textual de "¿la acerté?": iba en el
                               tono más tenue de la app, a 4.51:1. */}
@@ -304,7 +348,9 @@ export default function PantallaResultado({
                   {pregunta.explicacion && (
                     <div className="mt-4 rounded-xl border-l-2 border-cyan-400/50 bg-slate-950/50 p-4">
                       <p className="text-xs font-semibold uppercase tracking-wider text-cyan-300/70">Explicación</p>
-                      <p className="mt-1.5 text-sm leading-relaxed text-slate-300">{pregunta.explicacion}</p>
+                      <p className="mt-1.5 break-words text-sm leading-relaxed text-slate-300">
+                        {pregunta.explicacion}
+                      </p>
                     </div>
                   )}
                 </article>
@@ -312,6 +358,41 @@ export default function PantallaResultado({
             );
           })}
         </ol>
+      )}
+
+      {/* Cierre del repaso: las acciones de arriba otra vez, sin volver a subir. */}
+      <Card className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-sm font-medium text-slate-200">Fin del repaso</p>
+          <p className="mt-0.5 text-xs text-tenue">
+            {visibles.length === preguntas.length
+              ? `Revisaste las ${preguntas.length} preguntas.`
+              : `Estás viendo ${visibles.length} de ${preguntas.length} preguntas.`}
+          </p>
+        </div>
+        <div
+          ref={pieRef}
+          role="group"
+          aria-label="Acciones al final del repaso"
+          className="flex flex-wrap gap-2"
+        >
+          <Boton variante="fantasma" onClick={volverArriba}>
+            <span aria-hidden>↑</span> Volver arriba
+          </Boton>
+          {acciones}
+        </div>
+      </Card>
+
+      {/* Atajo para el medio de la lista, donde ni el principio ni el final están a mano. */}
+      {lejosDelPrincipio && !pieALaVista && (
+        <Boton
+          variante="secundario"
+          onClick={volverArriba}
+          aria-label="Volver arriba"
+          className="fixed bottom-4 right-4 z-30 h-12 w-12 rounded-full border border-contorno p-0 text-lg shadow-xl shadow-slate-950/50 mb-[env(safe-area-inset-bottom)]"
+        >
+          <span aria-hidden>↑</span>
+        </Boton>
       )}
     </div>
   );
