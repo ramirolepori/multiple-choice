@@ -335,7 +335,8 @@ describe('TestApp · envío', () => {
 
     const dialogo = screen.getByRole('dialog');
     expect(within(dialogo).getByText(/te faltan 2 preguntas/i)).toBeInTheDocument();
-    expect(screen.queryByText(/^Resultado$/i)).not.toBeInTheDocument();
+    // Confirmar no es enviar: el resultado todavía no tiene que existir.
+    expect(screen.queryByRole('heading', { name: /sacaste/i })).not.toBeInTheDocument();
 
     await user.click(within(dialogo).getByRole('button', { name: /seguir respondiendo/i }));
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();

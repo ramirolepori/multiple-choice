@@ -137,17 +137,25 @@ export function BarraProgreso({
   );
 }
 
-/** Píldora de métrica usada en la cabecera de resultados. */
+/**
+ * Celda del desglose de resultados. Va dentro de `TiraDeMetricas`, que las
+ * junta en un solo bloque: cuatro tarjetas sueltas idénticas no decían nada,
+ * competían entre sí y "Parciales 0" pesaba lo mismo que "Incorrectas 5".
+ * Acá el color queda para lo que hay que mirar y un cero se apaga.
+ */
 export function Metrica({
   etiqueta,
   valor,
   detalle,
   tono = 'neutro',
+  atenuada = false,
 }: {
   etiqueta: string;
   valor: ReactNode;
   detalle?: ReactNode;
   tono?: 'neutro' | 'ok' | 'alerta' | 'error' | 'acento';
+  /** Sin nada que reportar (un cero, casi siempre): sin color y sin peso. */
+  atenuada?: boolean;
 }) {
   const tonos = {
     neutro: 'text-white',
@@ -157,11 +165,50 @@ export function Metrica({
     acento: 'text-cyan-300',
   } as const;
 
+  const puntos = {
+    neutro: 'bg-tenue',
+    ok: 'bg-emerald-400',
+    alerta: 'bg-amber-400',
+    error: 'bg-rose-400',
+    acento: 'bg-cyan-400',
+  } as const;
+
   return (
-    <div className="rounded-xl border border-slate-800/80 bg-slate-950/50 px-3 py-2.5 sm:px-4 sm:py-3">
-      <p className="text-[11px] uppercase tracking-wider text-tenue sm:text-xs">{etiqueta}</p>
-      <p className={cn('mt-1 text-xl font-semibold tabular-nums sm:text-2xl', tonos[tono])}>{valor}</p>
+    // Los números van pegados al piso de la celda: en pantallas angostas
+    // "Sin responder" ocupa dos renglones y, sin esto, su número quedaba
+    // desalineado del de al lado.
+    <div className="flex h-full flex-col bg-slate-950/60 px-3 py-2.5 sm:px-4 sm:py-3">
+      <p className="flex items-start gap-1.5 text-[11px] uppercase tracking-wider text-tenue sm:text-xs">
+        <span
+          aria-hidden
+          className={cn(
+            'mt-[0.45em] h-1.5 w-1.5 shrink-0 rounded-full',
+            atenuada ? 'bg-slate-700' : puntos[tono],
+          )}
+        />
+        {etiqueta}
+      </p>
+      <p
+        className={cn(
+          'mt-auto pt-1 text-xl font-semibold tabular-nums sm:text-2xl',
+          atenuada ? 'text-tenue' : tonos[tono],
+        )}
+      >
+        {valor}
+      </p>
       {detalle ? <p className="mt-0.5 text-xs text-tenue">{detalle}</p> : null}
+    </div>
+  );
+}
+
+/**
+ * Las métricas como un objeto solo: el `gap-px` deja ver el fondo del
+ * contenedor y ése es el filete que separa las celdas.
+ */
+export function TiraDeMetricas({ children }: { children: ReactNode }) {
+  return (
+    <div className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-slate-800/80 bg-slate-800/70 sm:grid-cols-4">
+      {children}
     </div>
   );
 }
