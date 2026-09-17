@@ -46,6 +46,11 @@ const materiaConImagen: Materia = {
 
 const comenzar = () => screen.getByRole('button', { name: /comenzar test/i });
 
+/* Las acciones del resultado están dos veces (arriba y al final del repaso), así
+   que las consultas van acotadas al grupo que corresponde. */
+const accionesDeArriba = () => within(screen.getByRole('group', { name: /^acciones del resultado$/i }));
+const accionesDelFinal = () => within(screen.getByRole('group', { name: /al final del repaso/i }));
+
 async function responderTodoBien(user: ReturnType<typeof userEvent.setup>) {
   const opciones = [
     ...screen.queryAllByRole('radio', { name: /^Correcta/ }),
@@ -259,6 +264,64 @@ describe('TestApp · durante el test', () => {
     await user.click(within(visor).getByRole('button', { name: /cerrar/i }));
     expect(screen.queryByRole('dialog', { name: /diagrama de la pregunta 1/i })).not.toBeInTheDocument();
   });
+
+  it('el visor de imágenes acerca, aleja y vuelve a ajustar', async () => {
+    // Antes solo había dos estados ("ajustar al ancho" y "tamaño real"): en un
+    // celular un diagrama de 1000px no se leía ni ajustado ni a tamaño real.
+    const user = userEvent.setup();
+    render(<TestApp materias={[materiaConImagen]} />);
+    await user.click(comenzar());
+    await user.click(screen.getByRole('button', { name: /ampliar diagrama de la pregunta 1/i }));
+
+    const visor = screen.getByRole('dialog', { name: /diagrama de la pregunta 1/i });
+    expect(within(visor).getByText('100%')).toBeInTheDocument();
+    // Ajustada es el mínimo: no se puede alejar más ni hay nada que ajustar.
+    expect(within(visor).getByRole('button', { name: /alejar/i })).toBeDisabled();
+    expect(within(visor).getByRole('button', { name: /ajustar a la pantalla/i })).toBeDisabled();
+
+    await user.click(within(visor).getByRole('button', { name: /acercar/i }));
+    expect(within(visor).getByText('140%')).toBeInTheDocument();
+    expect(within(visor).getByRole('button', { name: /alejar/i })).toBeEnabled();
+
+    await user.click(within(visor).getByRole('button', { name: /alejar/i }));
+    expect(within(visor).getByText('100%')).toBeInTheDocument();
+
+    await user.click(within(visor).getByRole('button', { name: /acercar/i }));
+    await user.click(within(visor).getByRole('button', { name: /ajustar a la pantalla/i }));
+    expect(within(visor).getByText('100%')).toBeInTheDocument();
+  });
+
+  it('el visor se maneja con el teclado y no pasa del zoom máximo', async () => {
+    const user = userEvent.setup();
+    render(<TestApp materias={[materiaConImagen]} />);
+    await user.click(comenzar());
+    await user.click(screen.getByRole('button', { name: /ampliar diagrama de la pregunta 1/i }));
+
+    const visor = screen.getByRole('dialog', { name: /diagrama de la pregunta 1/i });
+    await user.keyboard('+++');
+    expect(within(visor).getByText('274%')).toBeInTheDocument();
+
+    // El tope existe para que no se pueda perder la imagen de vista.
+    await user.keyboard('++++++');
+    expect(within(visor).getByText('600%')).toBeInTheDocument();
+    expect(within(visor).getByRole('button', { name: /acercar/i })).toBeDisabled();
+
+    await user.keyboard('0');
+    expect(within(visor).getByText('100%')).toBeInTheDocument();
+  });
+
+  it('el visor se cierra con Escape y devuelve el foco a la imagen', async () => {
+    const user = userEvent.setup();
+    render(<TestApp materias={[materiaConImagen]} />);
+    await user.click(comenzar());
+
+    const miniatura = screen.getByRole('button', { name: /ampliar diagrama de la pregunta 1/i });
+    await user.click(miniatura);
+    await user.keyboard('{Escape}');
+
+    expect(screen.queryByRole('dialog', { name: /diagrama de la pregunta 1/i })).not.toBeInTheDocument();
+    expect(miniatura).toHaveFocus();
+  });
 });
 
 describe('TestApp · envío', () => {
@@ -382,7 +445,7 @@ describe('TestApp · resultados', () => {
     const user = userEvent.setup();
     await llegarAResultados(user);
 
-    await user.click(screen.getByRole('button', { name: /cambiar configuración/i }));
+    await user.click(accionesDeArriba().getByRole('button', { name: /cambiar configuración/i }));
     expect(comenzar()).toBeInTheDocument();
 
     await user.click(comenzar());
@@ -393,10 +456,36 @@ describe('TestApp · resultados', () => {
     const user = userEvent.setup();
     await llegarAResultados(user);
 
-    await user.click(screen.getByRole('button', { name: /repetir estas preguntas/i }));
+    await user.click(accionesDeArriba().getByRole('button', { name: /repetir estas preguntas/i }));
 
     expect(screen.getByText(/0 de 3 respondidas/i)).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Enunciado 1' })).toBeInTheDocument();
+  });
+
+  it('repite las acciones al final del repaso para no tener que scrollear hasta arriba', async () => {
+    const user = userEvent.setup();
+    await llegarAResultados(user);
+
+    const final = accionesDelFinal();
+    expect(final.getByRole('button', { name: /volver arriba/i })).toBeInTheDocument();
+    expect(final.getByRole('button', { name: /cambiar configuración/i })).toBeInTheDocument();
+    expect(final.getByRole('button', { name: /nuevo test/i })).toBeInTheDocument();
+
+    await user.click(final.getByRole('button', { name: /repetir estas preguntas/i }));
+    expect(screen.getByText(/0 de 3 respondidas/i)).toBeInTheDocument();
+  });
+
+  it('el botón de volver arriba sube la página y se lleva el foco al resultado', async () => {
+    const user = userEvent.setup();
+    await llegarAResultados(user);
+
+    vi.mocked(window.scrollTo).mockClear();
+    await user.click(accionesDelFinal().getByRole('button', { name: /volver arriba/i }));
+
+    expect(window.scrollTo).toHaveBeenCalledWith(expect.objectContaining({ top: 0 }));
+    // Con teclado o lector de pantalla el scroll solo no sirve: el foco tiene
+    // que volver al encabezado del resultado.
+    expect(screen.getByRole('heading', { name: /sacaste/i })).toHaveFocus();
   });
 });
 
