@@ -7,11 +7,31 @@ import { BarraProgreso, Boton, Card, TituloCampo, cn } from './ui';
 const claseCampo =
   'w-full rounded-xl border border-contorno bg-slate-950/70 px-3.5 py-2.5 text-white outline-none transition focus:border-cyan-400';
 
-function Paso({ numero, titulo, children }: { numero: number; titulo: string; children: React.ReactNode }) {
+function Paso({
+  numero,
+  titulo,
+  foco,
+  children,
+}: {
+  numero: number;
+  titulo: string;
+  /** Marca este paso como destino del foco al volver a esta pantalla. */
+  foco?: boolean;
+  children: React.ReactNode;
+}) {
   return (
     <section aria-label={`Paso ${numero}: ${titulo}`} className="space-y-3">
-      <h2 className="flex items-center gap-2.5 text-sm font-semibold uppercase tracking-wider text-slate-400">
-        <span className="grid h-6 w-6 place-items-center rounded-full bg-cyan-400/15 text-xs font-bold text-cyan-300">
+      {/* El número va oculto: el aria-label de la <section> ya dice "Paso N", y
+          dentro del h2 quedaba pegado al título ("1Qué vas a practicar"). */}
+      <h2
+        data-foco-pantalla={foco ? '' : undefined}
+        tabIndex={foco ? -1 : undefined}
+        className="flex items-center gap-2.5 text-sm font-semibold uppercase tracking-wider text-slate-400"
+      >
+        <span
+          aria-hidden
+          className="grid h-6 w-6 place-items-center rounded-full bg-cyan-400/15 text-xs font-bold text-cyan-300"
+        >
           {numero}
         </span>
         {titulo}
@@ -77,33 +97,49 @@ export default function PantallaInicio({
 
   return (
     <div className="space-y-8 sm:space-y-10">
-      <Paso numero={1} titulo="Qué vas a practicar">
+      <Paso numero={1} titulo="Qué vas a practicar" foco>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <label className="space-y-2">
-            <TituloCampo hint="Solo para esta sesión, no se guarda en ningún lado.">Tu nombre</TituloCampo>
+          <div className="space-y-2">
+            <TituloCampo htmlFor="campo-nombre" hintId="campo-nombre-hint" hint="Solo para esta sesión, no se guarda en ningún lado.">
+              Tu nombre
+            </TituloCampo>
             <input
+              id="campo-nombre"
+              aria-describedby="campo-nombre-hint"
               value={nombre}
               onChange={(event) => onNombre(event.target.value)}
               placeholder="Ej. Ramiro"
               autoComplete="given-name"
               className={claseCampo}
             />
-          </label>
+          </div>
 
-          <label className="space-y-2">
-            <TituloCampo hint={`${materias.length} materias cargadas.`}>Materia</TituloCampo>
-            <select value={materiaId} onChange={(event) => onMateria(event.target.value)} className={claseCampo}>
+          <div className="space-y-2">
+            <TituloCampo htmlFor="campo-materia" hintId="campo-materia-hint" hint={`${materias.length} materias cargadas.`}>
+              Materia
+            </TituloCampo>
+            <select
+              id="campo-materia"
+              aria-describedby="campo-materia-hint"
+              value={materiaId}
+              onChange={(event) => onMateria(event.target.value)}
+              className={claseCampo}
+            >
               {materias.map((materia) => (
                 <option key={materia.materia} value={materia.materia}>
                   {materia.materia}
                 </option>
               ))}
             </select>
-          </label>
+          </div>
 
-          <label className="space-y-2">
-            <TituloCampo hint={`${totalDelParcial} preguntas en este parcial.`}>Parcial</TituloCampo>
+          <div className="space-y-2">
+            <TituloCampo htmlFor="campo-parcial" hintId="campo-parcial-hint" hint={`${totalDelParcial} preguntas en este parcial.`}>
+              Parcial
+            </TituloCampo>
             <select
+              id="campo-parcial"
+              aria-describedby="campo-parcial-hint"
               value={parcial}
               onChange={(event) => onParcial(Number(event.target.value))}
               className={claseCampo}
@@ -114,7 +150,7 @@ export default function PantallaInicio({
                 </option>
               ))}
             </select>
-          </label>
+          </div>
         </div>
       </Paso>
 
@@ -158,7 +194,7 @@ export default function PantallaInicio({
                       >
                         {activo ? '✓' : ''}
                       </span>
-                      {tema}
+                      {tema}{' '}
                       <span className={activo ? 'text-cyan-300/70' : 'text-tenue'}>
                         {cuantas}
                         <span className="sr-only"> preguntas</span>
@@ -181,9 +217,13 @@ export default function PantallaInicio({
       <Paso numero={temasDisponibles.length > 0 ? 3 : 2} titulo="Formato del test">
         <div className="grid gap-4 lg:grid-cols-2">
           <Card className="space-y-4">
-            <label className="space-y-2">
-              <TituloCampo hint="El test siempre se escala a 10 puntos.">Cantidad de preguntas</TituloCampo>
+            <div className="space-y-2">
+              <TituloCampo htmlFor="campo-cantidad" hintId="campo-cantidad-hint" hint="El test siempre se escala a 10 puntos.">
+                Cantidad de preguntas
+              </TituloCampo>
               <select
+                id="campo-cantidad"
+                aria-describedby="campo-cantidad-hint"
                 value={cantidad}
                 onChange={(event) => onCantidad(Number(event.target.value))}
                 disabled={opcionesCantidad.length === 0}
@@ -195,20 +235,26 @@ export default function PantallaInicio({
                   </option>
                 ))}
               </select>
-            </label>
+            </div>
 
             <div className="space-y-3 border-t border-slate-800 pt-4">
-              <label className="flex cursor-pointer items-center justify-between gap-3">
-                <TituloCampo hint="Si no lo activás, el test solo mide cuánto tardaste.">
+              <div className="flex items-center justify-between gap-3">
+                <TituloCampo
+                  htmlFor="campo-usar-limite"
+                  hintId="campo-usar-limite-hint"
+                  hint="Si no lo activás, el test solo mide cuánto tardaste."
+                >
                   Límite de tiempo
                 </TituloCampo>
                 <input
+                  id="campo-usar-limite"
+                  aria-describedby="campo-usar-limite-hint"
                   type="checkbox"
                   checked={usarLimite}
                   onChange={(event) => onUsarLimite(event.target.checked)}
                   className="h-5 w-5 shrink-0 rounded border-contorno bg-slate-900 text-cyan-400 focus:ring-cyan-400"
                 />
-              </label>
+              </div>
 
               {usarLimite && (
                 <div className="flex items-center gap-2">
@@ -267,12 +313,15 @@ export default function PantallaInicio({
       <div className="sticky bottom-[calc(0.75rem+env(safe-area-inset-bottom))] z-20 sm:bottom-4">
         <Card className="flex flex-col gap-3 border-contorno bg-slate-900/95 backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <div className="min-w-0 space-y-2">
+            {/*
+             * Los espacios van FUERA del span oculto: adentro, al ignorarlo el
+             * lector pegaba los campos y anunciaba "Parcial 110 de 152 preguntas".
+             */}
             <p className="truncate text-sm text-slate-400">
-              <span className="font-semibold text-white">{materiaId}</span>
-              <span aria-hidden> · </span>Parcial {parcial}
-              <span aria-hidden> · </span>
-              {cantidad} de {disponibles} preguntas
-              {usarLimite ? ` · ${limiteMinutos} min` : ' · sin límite'}
+              <span className="font-semibold text-white">{materiaId}</span>{' '}
+              <span aria-hidden>·</span> Parcial {parcial}{' '}
+              <span aria-hidden>·</span> {cantidad} de {disponibles} preguntas{' '}
+              <span aria-hidden>·</span> {usarLimite ? `${limiteMinutos} min` : 'sin límite'}
             </p>
             <BarraProgreso
               valor={cantidad}

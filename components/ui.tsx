@@ -12,13 +12,17 @@ export function Card({
   children,
   className,
   as: Tag = 'div',
+  etiqueta,
 }: {
   children: ReactNode;
   className?: string;
-  as?: 'div' | 'section' | 'article' | 'aside';
+  as?: 'div' | 'section' | 'article' | 'aside' | 'nav';
+  /** Nombre accesible del landmark, cuando `as` es uno (nav, section, aside). */
+  etiqueta?: string;
 }) {
   return (
     <Tag
+      aria-label={etiqueta}
       className={cn(
         'rounded-2xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-lg shadow-slate-950/30 sm:p-5',
         className,
@@ -29,11 +33,32 @@ export function Card({
   );
 }
 
-export function TituloCampo({ children, hint }: { children: ReactNode; hint?: ReactNode }) {
+/*
+ * El hint va como `aria-describedby` y no dentro del <label>: envuelto, se pegaba
+ * al nombre accesible del campo y el lector anunciaba "Tu nombre Solo para esta
+ * sesión, no se guarda en ningún lado" cada vez que entrabas al input.
+ */
+export function TituloCampo({
+  children,
+  hint,
+  htmlFor,
+  hintId,
+}: {
+  children: ReactNode;
+  hint?: ReactNode;
+  htmlFor?: string;
+  hintId?: string;
+}) {
   return (
     <span className="block">
-      <span className="text-sm font-medium text-slate-200">{children}</span>
-      {hint ? <span className="mt-0.5 block text-xs text-tenue">{hint}</span> : null}
+      <label htmlFor={htmlFor} className="block cursor-pointer text-sm font-medium text-slate-200">
+        {children}
+      </label>
+      {hint ? (
+        <span id={hintId} className="mt-0.5 block text-xs text-tenue">
+          {hint}
+        </span>
+      ) : null}
     </span>
   );
 }

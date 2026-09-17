@@ -33,6 +33,15 @@ export function useDialogoModal(abierto: boolean, alCerrar: () => void) {
     if (!abierto) return;
     disparadorRef.current = document.activeElement;
 
+    /*
+     * Sin esto el fondo seguía scrolleando detrás del diálogo: con el foco
+     * atrapado adentro, la página se movía sola y perdías el punto de lectura.
+     * Se guarda el valor previo para que dos diálogos anidados (el visor de
+     * imagen sobre el test) lo restauren en el orden correcto.
+     */
+    const overflowPrevio = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
     const alPresionar = (evento: KeyboardEvent) => {
       if (evento.key === 'Escape') {
         cerrarRef.current();
@@ -60,6 +69,7 @@ export function useDialogoModal(abierto: boolean, alCerrar: () => void) {
     document.addEventListener('keydown', alPresionar);
     return () => {
       document.removeEventListener('keydown', alPresionar);
+      document.body.style.overflow = overflowPrevio;
       const disparador = disparadorRef.current;
       // Puede haber desaparecido si al cerrar cambió de pantalla.
       if (disparador instanceof HTMLElement && document.contains(disparador)) {

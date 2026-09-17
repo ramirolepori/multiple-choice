@@ -89,6 +89,28 @@ a,
   }
 }
 
+/*
+ * A 400% de zoom el viewport queda en ~256px de alto y las barras fijas del test
+ * se comían 143px: más de la mitad de la pantalla para el cromo. La barra de
+ * progreso es redundante con el "N de M respondidas" que tiene al lado, así que
+ * en pantallas bajas se cae y los rellenos se achican.
+ */
+@media (max-height: 420px) {
+  [data-barra-test] {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  [data-progreso-test] {
+    display: none;
+  }
+
+  [data-barra-inferior] > div {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -125,6 +125,21 @@ export default function PantallaTest({
   const apremiante = usarLimite && segundosRestantes !== null && segundosRestantes <= 60;
   const tiempo = usarLimite ? formatearTiempo(segundosRestantes ?? 0) : formatearTiempo(segundosTranscurridos);
 
+  /*
+   * El aviso cambia solo al cruzar un umbral. Antes interpolaba el cronómetro,
+   * así que la región live cambiaba una vez por segundo y el lector de pantalla
+   * anunciaba ~60 veces seguidas durante el último minuto: tapaba la pregunta
+   * que estabas leyendo justo cuando menos tiempo había para releerla.
+   */
+  const avisoTiempo = useMemo(() => {
+    if (!usarLimite || segundosRestantes === null) return '';
+    if (segundosRestantes <= 0) return 'Se acabó el tiempo.';
+    if (segundosRestantes <= 10) return 'Quedan 10 segundos.';
+    if (segundosRestantes <= 30) return 'Quedan 30 segundos.';
+    if (segundosRestantes <= 60) return 'Queda un minuto.';
+    return '';
+  }, [usarLimite, segundosRestantes]);
+
   const grillaIndice = (
     <ul className="flex flex-wrap gap-2">
       {preguntas.map((pregunta, indice) => {
@@ -139,6 +154,8 @@ export default function PantallaTest({
                 irAPregunta(clave);
               }}
               aria-label={`Ir a la pregunta ${indice + 1}, ${respondida ? 'respondida' : 'sin responder'}`}
+              // El anillo marcaba la pregunta actual solo de forma visual.
+              aria-current={indice === preguntaActual ? 'true' : undefined}
               className={cn(
                 'h-11 w-11 rounded-xl border text-sm font-medium tabular-nums transition',
                 respondida
@@ -159,7 +176,10 @@ export default function PantallaTest({
     // El padding inferior deja lugar para la barra fija del pulgar en celular.
     <div className="space-y-5 pb-28 sm:pb-0">
       {/* Barra superior: progreso y tiempo siempre visibles, sin scrollear 30 preguntas. */}
-      <div className="sticky top-0 z-30 -mx-4 border-b border-slate-800/80 bg-slate-950/90 px-4 py-2.5 backdrop-blur md:-mx-8 md:px-8">
+      <div
+        data-barra-test
+        className="sticky top-0 z-30 -mx-4 border-b border-slate-800/80 bg-slate-950/90 px-4 py-2.5 backdrop-blur md:-mx-8 md:px-8"
+      >
         <div className="flex items-center gap-3 sm:gap-6">
           <div className="min-w-0 flex-1">
             <p className="hidden truncate text-xs text-tenue sm:block">
@@ -199,7 +219,7 @@ export default function PantallaTest({
           </Boton>
         </div>
 
-        <div className="mt-2">
+        <div className="mt-2" data-progreso-test>
           <BarraProgreso
             valor={respondidas}
             maximo={preguntas.length}
@@ -210,11 +230,11 @@ export default function PantallaTest({
       </div>
 
       <p aria-live="polite" className="sr-only">
-        {apremiante ? `Queda menos de un minuto: ${tiempo}` : ''}
+        {avisoTiempo}
       </p>
 
       {/* En escritorio el índice vive inline; en celular se abre desde la barra inferior. */}
-      <Card className="hidden space-y-3 sm:block">
+      <Card as="nav" etiqueta="Índice de preguntas" className="hidden space-y-3 sm:block">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="text-sm font-medium text-slate-300">Índice de preguntas</p>
           {sinResponder.length > 0 && (
@@ -264,7 +284,10 @@ export default function PantallaTest({
                         </span>
                       )}
                     </div>
-                    <h2 className="mt-2 text-base font-semibold leading-relaxed text-white sm:text-lg">
+                    <h2
+                      id={`titulo-${clave}`}
+                      className="mt-2 text-base font-semibold leading-relaxed text-white sm:text-lg"
+                    >
                       {pregunta.texto}
                     </h2>
                   </div>
@@ -285,8 +308,16 @@ export default function PantallaTest({
                   </div>
                 )}
 
-                <fieldset className="mt-4 sm:mt-5">
-                  <legend className="sr-only">
+                {/*
+                 * El grupo se nombra con el enunciado además de la consigna: en
+                 * modo formularios el lector no lee el h2, así que antes se
+                 * respondía escuchando solo "Elegí una opción, agrupación".
+                 */}
+                <fieldset
+                  className="mt-4 sm:mt-5"
+                  aria-labelledby={`titulo-${clave} instruccion-${clave}`}
+                >
+                  <legend id={`instruccion-${clave}`} className="sr-only">
                     {multiple ? 'Elegí todas las opciones correctas' : 'Elegí una opción'}
                   </legend>
                   <div className="grid gap-2.5 sm:grid-cols-2">
@@ -349,7 +380,10 @@ export default function PantallaTest({
       </Card>
 
       {/* Barra inferior solo en celular: avanzar de a una pregunta sin estirar el pulgar hasta arriba. */}
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-slate-800 bg-slate-950/95 pb-[env(safe-area-inset-bottom)] backdrop-blur sm:hidden">
+      <div
+        data-barra-inferior
+        className="fixed inset-x-0 bottom-0 z-30 border-t border-slate-800 bg-slate-950/95 pb-[env(safe-area-inset-bottom)] backdrop-blur sm:hidden"
+      >
         <div className="flex items-center gap-2 px-3 py-2">
           <Boton
             variante="fantasma"
@@ -431,12 +465,13 @@ export default function PantallaTest({
             role="dialog"
             aria-modal="true"
             aria-labelledby="titulo-confirmar"
+            aria-describedby="desc-confirmar"
             className="w-full max-w-md rounded-2xl border border-contorno bg-slate-900 p-5 shadow-2xl sm:p-6"
           >
             <h2 id="titulo-confirmar" className="text-lg font-semibold text-white">
               Te faltan {sinResponder.length} {sinResponder.length === 1 ? 'pregunta' : 'preguntas'}
             </h2>
-            <p className="mt-2 text-sm text-slate-400">
+            <p id="desc-confirmar" className="mt-2 text-sm text-slate-400">
               Las preguntas sin responder cuentan como 0. ¿Querés enviar igual?
             </p>
             <ul className="mt-4 flex max-h-40 flex-wrap gap-2 overflow-y-auto">

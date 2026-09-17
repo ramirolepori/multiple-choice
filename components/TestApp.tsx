@@ -129,6 +129,23 @@ export default function TestApp({ materias }: TestAppProps) {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
   }, [fase]);
 
+  /*
+   * El scroll volvía arriba pero el foco no: el botón que disparaba el cambio se
+   * desmontaba y el navegador mandaba el foco al <body>. Con teclado o lector de
+   * pantalla no había manera de enterarse de que la pantalla había cambiado, ni
+   * de escuchar la nota al terminar. Cada pantalla marca su destino con
+   * `data-foco-pantalla`; en el primer render no se toca nada.
+   */
+  const yaMontado = useRef(false);
+  useEffect(() => {
+    if (!yaMontado.current) {
+      yaMontado.current = true;
+      return;
+    }
+    const destino = document.querySelector<HTMLElement>('[data-foco-pantalla]');
+    destino?.focus({ preventScroll: true });
+  }, [fase]);
+
   const registrarFoco = useCallback((clave: string) => {
     const ahora = Date.now();
     const previo = activoRef.current;
@@ -277,15 +294,20 @@ export default function TestApp({ materias }: TestAppProps) {
     );
   }
 
+  // Durante el test el título del sitio cede el h1 al nombre del test.
+  const TituloSitio = fase === 'test' ? 'p' : 'h1';
+
   return (
     <main className="min-h-dvh px-4 pb-6 pt-[calc(1.25rem+env(safe-area-inset-top))] md:px-8 md:pb-10 md:pt-10">
       <div className="mx-auto max-w-5xl space-y-6 sm:space-y-8">
         {/*
-         * Con el encabezado oculto la página se quedaba sin h1 en celular, así que
-         * se lo reemplaza por uno solo para lectores de pantalla.
+         * Durante el test el h1 de la página es el test, no el nombre del sitio
+         * (que abajo pasa a ser un <p>). Así siempre hay exactamente un h1, sirve
+         * de destino de foco al entrar, y no depende del breakpoint: con el
+         * encabezado oculto en celular la página se quedaba sin h1.
          */}
         {fase === 'test' && (
-          <h1 className="sr-only sm:hidden">
+          <h1 data-foco-pantalla tabIndex={-1} className="sr-only">
             Test de {materia.materia}, parcial {parcialActivo}
           </h1>
         )}
@@ -302,7 +324,9 @@ export default function TestApp({ materias }: TestAppProps) {
         >
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300/70">Multiple choice</p>
-            <h1 className="mt-1.5 text-2xl font-semibold text-white sm:text-3xl">Plataforma de estudio rápido</h1>
+            <TituloSitio className="mt-1.5 text-2xl font-semibold text-white sm:text-3xl">
+              Plataforma de estudio rápido
+            </TituloSitio>
             {fase === 'inicio' && (
               <p className="mt-2 max-w-xl text-sm text-slate-400">
                 Elegí materia, parcial y temas. Respondé el test y revisá el detalle de cada pregunta.

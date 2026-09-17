@@ -129,7 +129,13 @@ export default function PantallaResultado({
         <div className="flex-1 space-y-4 text-center sm:text-left">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-cyan-300/80">Resultado</p>
-            <h2 className="mt-1 text-2xl font-semibold text-white">
+            {/* Destino del foco al llegar a esta pantalla: lo primero que se
+                anuncia es la nota, no el principio del documento. */}
+            <h2
+              data-foco-pantalla
+              tabIndex={-1}
+              className="mt-1 text-2xl font-semibold text-white"
+            >
               {nombre ? `${nombre}, sacaste ` : 'Sacaste '}
               <span className={tono.texto}>{resumen.porcentaje}%</span>
             </h2>
@@ -163,7 +169,11 @@ export default function PantallaResultado({
                   : 'border-contorno bg-slate-950/50 text-slate-400 hover:border-slate-500 hover:text-slate-200',
               )}
             >
-              {texto} <span className="tabular-nums opacity-60">{cantidad}</span>
+              {/* `opacity-60` dejaba el contador en 3.39:1; el tono explícito llega a 5.4:1. */}
+              {texto}{' '}
+              <span className={cn('tabular-nums', filtro === id ? 'text-cyan-300' : 'text-tenue')}>
+                {cantidad}
+              </span>
             </button>
           ))}
         </div>
@@ -178,6 +188,18 @@ export default function PantallaResultado({
           <Boton onClick={onNuevoTest}>Nuevo test</Boton>
         </div>
       </div>
+
+      {/* Cambiar de filtro reemplazaba la lista en silencio: nada anunciaba
+          cuántas preguntas quedaban, ni que el filtro no tenía ninguna. */}
+      <p role="status" className="sr-only">
+        {/* El nombre del filtro va incluido a propósito: sin él, pasar de un
+            filtro a otro con el mismo conteo dejaba el texto igual y la región
+            live no anunciaba nada aunque la lista hubiera cambiado. */}
+        {`${filtros.find((item) => item.id === filtro)?.texto ?? 'Todas'}: `}
+        {visibles.length === 0
+          ? 'no hay preguntas en este filtro.'
+          : `mostrando ${visibles.length} de ${preguntas.length} preguntas.`}
+      </p>
 
       {visibles.length === 0 ? (
         <Card className="py-10 text-center text-sm text-slate-400">
@@ -230,6 +252,13 @@ export default function PantallaResultado({
                       const acierto = respuesta.correcta && elegida;
                       const fallo = !respuesta.correcta && elegida;
                       const faltante = respuesta.correcta && !elegida;
+                      const veredicto = acierto
+                        ? 'La marcaste y es correcta'
+                        : faltante
+                          ? 'Correcta, no la marcaste'
+                          : fallo
+                            ? 'La marcaste y es incorrecta'
+                            : null;
 
                       return (
                         <li
@@ -247,22 +276,26 @@ export default function PantallaResultado({
                               aria-hidden
                               className={cn(
                                 'mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-md text-xs font-bold',
-                                respuesta.correcta
+                                // El acierto va macizo y la que se te pasó, contorneada:
+                                // antes las dos mostraban el mismo ✓ verde.
+                                acierto
                                   ? 'bg-emerald-500/25 text-emerald-300'
-                                  : fallo
-                                    ? 'bg-rose-500/25 text-rose-300'
-                                    : 'bg-slate-800 text-slate-300',
+                                  : faltante
+                                    ? 'border border-emerald-400/70 text-emerald-300'
+                                    : fallo
+                                      ? 'bg-rose-500/25 text-rose-300'
+                                      : 'bg-slate-800 text-slate-300',
                               )}
                             >
                               {respuesta.correcta ? '✓' : fallo ? '✕' : respuesta.id.toUpperCase()}
                             </span>
                             <span className="text-sm leading-relaxed text-slate-200">{respuesta.texto}</span>
                           </div>
-                          <p className="mt-1.5 pl-[1.9rem] text-xs text-tenue">
-                            {acierto && 'La marcaste y es correcta'}
-                            {faltante && 'Correcta, no la marcaste'}
-                            {fallo && 'La marcaste y es incorrecta'}
-                          </p>
+                          {/* Es el único portador textual de "¿la acerté?": iba en el
+                              tono más tenue de la app, a 4.51:1. */}
+                          {veredicto && (
+                            <p className="mt-1.5 pl-[1.9rem] text-xs text-slate-300">{veredicto}</p>
+                          )}
                         </li>
                       );
                     })}
